@@ -30,4 +30,32 @@ Before you grab the values of the user input, try and make a request to this API
 Once the console.log(response) given to you comes back as a proper response, you'll know you've completed this step.
 
 ### Step 3
+Once you've completed step 2, you've already overcome the biggest hurdle in this exercise. 
 
+In step 3, you'll be concatenating the users' input into our query. The users' input should replace the values we put into the quesry ourselves. 
+
+Fill out the form and see if you can get a response from the API with your new URL string.
+
+You'll have finished when you get back a console.log() of response that seems pertinent to the values you entered into the form.
+
+### Step 4
+You will need to loop through an object nested within the response to grab a hold of the following values:
+
+- The original logo for the event
+- The name of the event
+- The description of the event
+
+Console.log all of these values for each event returned to you. 
+
+### Step 5
+
+Now it's time to render our response to the page. 
+
+Instead of console.log()(ing) these values, we will append them to a div found within the div with the class of apiReturns.
+
+Within your loop, concatenate the same values you console.log()(ed) in the last step into an HTML string with the following format:
+
+```
+'<div class="eventPic-holder"><img src="" class="eventPic"></div><h1 class="eventName"></h1><p class="eventText"></p><hr>'
+
+```
