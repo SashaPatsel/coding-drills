@@ -59,3 +59,11 @@ Within your loop, concatenate the same values you console.log()(ed) in the last 
 '<div class="eventPic-holder"><img src="" class="eventPic"></div><h1 class="eventName"></h1><p class="eventText"></p><hr>'
 
 ```
+
+- The logo will go into the src attribute of the image tag.
+- The name will go inside of the h1 tag
+- The description of the event will go inside the p tag.
+
+#### Your final product should look like this: 
+
+<img src="demo.png">
