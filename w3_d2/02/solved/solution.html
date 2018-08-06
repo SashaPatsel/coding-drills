@@ -107,7 +107,7 @@
         var location = $("#location").val()
 
         $.ajax({
-          url: 'https://www.eventbriteapi.com/v3/events/search/?q=' + eventName + '&price=' + paid + '&location.address='+ location +'&token=3E3OABVSUMGUEJIZPXHF',
+          url: 'https://www.eventbriteapi.com/v3/events/search/?q=' + eventName + '&price=' + paid + '&location.address='+ location +'&token=????',
           method: "GET"
         }).then(function (response) {
           console.log(response)
