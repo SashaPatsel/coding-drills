@@ -17,3 +17,19 @@ Once you've hit submit on the popup, you'll be brought to a new page with inform
 
 ### Step 3
 With your keys in hand, it's now time to learn how to query this API.
+
+Go to [this link](https://unsplash.com/documentation) and read up on the documentation.
+
+Specifically, you are looking to find how to return a random photo limited only by a search term.
+
+### Step 4
+
+You are given no code in this exercise aside from the ajax prefilter (again, used to avouid cross-origin errors).
+
+Your job is to grab the users' input and use it as a search term to limit the random photo return. 
+
+Once you've gotten a return (which should only contain information for one photo), append it to the div with the class of `holder`. Make sure that you give your img tag the class `img`.
+
+Your final product should look like this after the user has searched for a couple of photos:
+
+<img src="final.png">

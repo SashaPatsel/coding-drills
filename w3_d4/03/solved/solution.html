@@ -10,16 +10,43 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 
+  <style>
+    .heading {
+      text-align: center;
+    }
 
+    input {
+      display: block;
+      margin: 10px auto;
+
+    }
+
+    .holder {
+      margin: 0 10%;
+    }
+
+    .img {
+      height: 200px;
+      width: 200px;
+      margin: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
+    <h1 class="heading">Stock Photo Generator!!!</h1>
+    <form id="form">
+      <input type="text" id="imgQuery">
+      <input type="submit">
+    </form>
 
+  <div class="holder"></div>
 
   <script>
+        $(document).ready(function () {
     // Some APIs will give us a cross-origin (CORS) error. This small function is a fix for that error. You can also check out the chrome extenstion (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en).
-    $(document).ready(function () {
+
 
 
       jQuery.ajaxPrefilter(function (options) {
@@ -28,21 +55,25 @@
         }
       });
 
+      $("#form").on("submit", function (event) {
+        event.preventDefault()
+        var searchTerm = $("#imgQuery").val();
+        $.ajax({
+          url: 'https://api.unsplash.com//photos/random?client_id=07dacab89ab64ea68532f6383a048daac380765c1f6e20a9b5e3d60961db4e2b&query=' + searchTerm + '',
+          method: "GET"
+        }).then(function (response) {
+          console.log(response)
+          $(".holder").append("<img class='img' src='" + response.urls.raw + "'/>")
+
+
+        });
+      })
 
 
 
-var searchTerm = "chicken";
-
-// 'https://api.unsplash.com/users/kellysikkema/collections?client_id=07dacab89ab64ea68532f6383a048daac380765c1f6e20a9b5e3d60961db4e2b'
-      $.ajax({
-        url: 'https://api.unsplash.com/users/kellysikkema/collections?client_id=07dacab89ab64ea68532f6383a048daac380765c1f6e20a9b5e3d60961db4e2b',
-        method: "GET"
-      }).then(function (response) {
-        console.log(response)
 
 
 
-      });
     })
 
 
