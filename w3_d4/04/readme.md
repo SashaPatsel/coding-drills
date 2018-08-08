@@ -40,12 +40,30 @@ Once you've console.log()ed a successful response, you're ready for the next ste
 
 
 ### Step 5 
-Now that yopu've made a successful API call, replace your hard-coded values with values input by the user. 
+Now that you've made a successful API call, replace your hard-coded values with values input by the user. 
 
 You're ready to move to the next step once the response changes depending on the user input.
 
-
 ### Step 6
 
+Loop through your response and grab a hold of the following values in each object:
+
+- The business's name
+- The business's phone number
+- The business's image
+- The business's address, including street address, city and zip.
+
+Move on once you've console logged the above information for each iteration of our loop
+
+
+### Step 7
+Now that we're able to get the information we want, it's time to render it to the page. Do your best to make your weboage look like this:
 
 <img src="final.png">
+
+To render our returns in the same way as the above image, use this html format: 
+
+'<img class="thumbnail" src="' + response.businesses[i].image_url + '"/><h2 class="name"></h2><p class="phone"></p><p class="address"></p><hr>
+
+Important note: Note the format the address is coming back in. You may have to separate the strings you get with spaces and/or commas.
+
