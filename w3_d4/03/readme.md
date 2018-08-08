@@ -1,4 +1,4 @@
-# So you think you can API? Pt.2
+# So you think you can API? Pt.3
 
 ## Learn to use brand new APIs!
 
