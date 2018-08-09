@@ -93,13 +93,13 @@
           url: 'https://api.yelp.com/v3/businesses/search?term=' + category + '&location=' + location + '',
           method: "GET",
           headers: {
-            authorization: "Bearer ???????????????????"
+            authorization: "Bearer ???????????????"
           }
         }).then(function (response) {
           console.log(response)
 
           for (var i = 0; i < response.businesses.length; i++) {
-            $(".container").append('<img class="thumbnail" src="' + response.businesses[i].image_url + '"/><h2 class="name">' + response.businesses[i].name + '</h2><p class="phone">(415) 937-0161</p><p class="address">' + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + '</p><hr>')
+            $(".container").append('<img class="thumbnail" src="' + response.businesses[i].image_url + '"/><h2 class="name">' + response.businesses[i].name + '</h2><p class="phone">'+response.businesses[i].display_phone+'</p><p class="address">' + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + '</p><hr>')
           }
 
 

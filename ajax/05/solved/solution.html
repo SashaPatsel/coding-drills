@@ -31,7 +31,7 @@
       });
 
         $.ajax({
-          url: 'https://itunes.apple.com/search?term=adele&entity=album',
+          url: 'https://itunes.apple.com/search?term=adele&entity=songs',
           method: "GET"
         }).then(function (response) {
           console.log(JSON.parse(response))
