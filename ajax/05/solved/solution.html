@@ -70,57 +70,48 @@
 <body>
 
     <div class="form-contain">
-        <h3 class="search-heading">Search for songs!</h3>
-        <form id="itunes">
-          <input placeholder="term" id="term" type="text">
-          <input type="submit">
-        </form>
-      </div>
+      <h3 class="search-heading">Search for songs!</h3>
+      <form id="itunes">
+        <input placeholder="term" id="term" type="text">
+        <input type="submit">
+      </form>
+    </div>
     
 
-  <div class="library">
-
-  </div>
+  <div class="library"></div>
 
   <script>
+
     $(document).ready(function () {
       // Some APIs will give us a cross-origin (CORS) error. This small function is a fix for that error. You can also check out the chrome extenstion (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en).
-
-
-
       jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
           options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
         }
       });
 
+      // ===================== YOUR CODE HERE ==================
 
       $("#itunes").on("submit", function(event) {
         event.preventDefault()
         var term = $("#term").val()
-
+        
         $.ajax({
         url: 'https://itunes.apple.com/search?term='+ term +'&entity=musicTrack',
         method: "GET"
-      }).then(function (response) {
-        console.log(JSON.parse(response))
-        var res = JSON.parse(response).results
-        for (var i = 0; i < res.length; i++) {
-          $(".library").prepend('<div class="song"><img class="thumb" src="' + res[i].artworkUrl100 + '"><h2 class="song-name">' + res[i].trackName + '</h2><h4 class="song-artist">' + res[i].artistName + '</h4><audio class="song-audio" src="' + res[i].previewUrl + '"controls></audio></div>')
-        }
+        }).then(function (response) {
+            console.log(JSON.parse(response))
+            var res = JSON.parse(response).results
+            for (var i = 0; i < res.length; i++) {
+              $(".library").prepend('<div class="song"><img class="thumb" src="' + res[i].artworkUrl100 + '"><h2 class="song-name">' + res[i].trackName + '</h2><h4 class="song-artist">' + res[i].artistName + '</h4><audio class="song-audio" src="' + res[i].previewUrl + '"controls></audio></div>')
+            }
 
-        $("#term").val("")
-      });
-      })
+            $("#term").val("")
+          });
+        });
 
-
-
-
-    })
-
-
-
-
+      // ======================================================
+    });
 
   </script>
 </body>

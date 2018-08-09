@@ -73,10 +73,8 @@
 
   <script>
     $(document).ready(function () {
+
       // Some APIs will give us a cross-origin (CORS) error. This small function is a fix for that error. You can also check out the chrome extenstion (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en).
-
-
-
       jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
           options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
@@ -86,12 +84,15 @@
       $(".yelp").on("submit", function () {
         event.preventDefault()
 
+        // ===================== YOUR CODE HERE ==================
+
         var location = $("#location").val()
         var category = $("#category").val()
 
         $.ajax({
           url: 'https://api.yelp.com/v3/businesses/search?term=' + category + '&location=' + location + '',
           method: "GET",
+                // This solution does not include an API key. You will have to fill in the API key yourself
           headers: {
             authorization: "Bearer ???????????????"
           }
@@ -102,18 +103,12 @@
             $(".container").append('<img class="thumbnail" src="' + response.businesses[i].image_url + '"/><h2 class="name">' + response.businesses[i].name + '</h2><p class="phone">'+response.businesses[i].display_phone+'</p><p class="address">' + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ' ' + response.businesses[i].location.zip_code + '</p><hr>')
           }
 
-
-
         });
 
-      })
+      // =========================================================
 
-
-    })
-
-
-
-
+      });
+    });
 
   </script>
 </body>

@@ -54,12 +54,12 @@
 </head>
 
 <body>
-<div class="heading__container">
-  <h1 class="heading__main">Extra, Extra! Read all about it!</h1>
-</div>
+  <div class="heading__container">
+    <h1 class="heading__main">Extra, Extra! Read all about it!</h1>
+  </div>
+
   <div class="news">
     <div class="appendMe"></div>
-    <!-- <div><h3 class="title">Suspect in Houston doctor's killing commits suicide as police confront him, chief says</h3> <p class="author">Jason Hanna, CNN</p> <p class="desc">The man suspected of killing a prominent Houston doctor in broad daylight two weeks ago fatally shot himself in the head as two police officers confronted him on Friday morning, Police Chief Art Acevedo said.</p> <hr></div> -->
 
   </div>
 
@@ -75,6 +75,7 @@
     $.ajax({
       url: 'https://newsapi.org/v2/top-headlines?' +
         'country=us&' +
+        // This solution does not include an API key. You will have to fill in the API key in the query url
         'apiKey=???????',
       method: "GET"
     }).then(function (response) {

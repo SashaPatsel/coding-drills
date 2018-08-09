@@ -86,18 +86,15 @@
 </div>
 
   <script>
-    // Some APIs will give us a cross-origin (CORS) error. This small function is a fix for that error. You can also check out the chrome extenstion (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en).
+    
     $(document).ready(function () {
 
-
+      // Some APIs will give us a cross-origin (CORS) error. This small function is a fix for that error. You can also check out the chrome extenstion (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en).
       jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
           options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
         }
       });
-
-
-
 
       $(document).on("submit", ".event-form", function (event) {
         event.preventDefault()
@@ -105,6 +102,8 @@
         
         var eventName = $("#eventName").val()
         var location = $("#location").val()
+
+        // This solution does not include an API key. You will have to fill in the API key in the query url
 
         $.ajax({
           url: 'https://www.eventbriteapi.com/v3/events/search/?q=' + eventName + '&price=' + paid + '&location.address='+ location +'&token=????',

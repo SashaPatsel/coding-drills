@@ -9,3 +9,9 @@
         margin: 0;
         padding: 0;
       }
+
+      .location {
+        position: absolute;
+        z-index: 1000;
+        background-color: transparent;
+      }
