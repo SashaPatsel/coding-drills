@@ -42,3 +42,27 @@ Use the value we retrieved in step 5, and concatenate it into the url we are usi
 Remember, we want only the search term to change, but we are still interested in the songs related to that term.
 
 ### Step 7
+With the tools we've been accumulating over the past few steps, you should now be able to console.log an object returning information about songs relative to a search term input by the user. 
+
+Now, we want to `prepend` (so that the latest query will be shown at the top) our values within the div with the class of library.
+
+We will do so in the following format:
+
+```
+<div class="song">
+  <img class="thumb" src="">
+  <h2 class="song-name"></h2>
+  <h4 class="song-artist"></h4>
+  <audio class="song-audio" src="" controls></audio>
+</div>
+
+```
+
+- The artwork goes inside of the src attribute of the image tag
+- The name of the song goes inside the h2 with the class of `song-name`
+- The name of the artist goes inside the h4 with the class of `song-artist`
+- The song preview goes inside of the src attribute of the audio tag
+
+Your final product should look like this:
+
+<img src="final.png">

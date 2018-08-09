@@ -63,7 +63,13 @@ Now that we're able to get the information we want, it's time to render it to th
 
 To render our returns in the same way as the above image, use this html format: 
 
-'<img class="thumbnail" src="' + response.businesses[i].image_url + '"/><h2 class="name"></h2><p class="phone"></p><p class="address"></p><hr>
+```
+<img class="thumbnail" src=""/>
+<h2 class="name"></h2>
+<p class="phone"></p>
+<p class="address"></p>
+<hr>
+```
 
 Important note: Note the format the address is coming back in. You may have to separate the strings you get with spaces and/or commas.
 
