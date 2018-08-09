@@ -13,6 +13,38 @@ Students are meant to use only the readme and prompt file for each exercise. Onc
 Teachers using these exercises are encouraged to remove the solved folders from each exercise until their students have completed the prompts. 
 
 
+## Examples
+
+### Final Products
+
+#### Mastering the Bootstrap grid
+<img src="bootstrap/41/grid.png">
+
+
+#### Mastering AJAX and API research
+<img src="ajax/02/demo.png">
+
+### Prompts
+
+```
+// ========================= QUESTION 1 =========================
+// Without loonking back at the example given to you in the readme, do your best to recreate the same code using a ternary.
+// Remember, if the argument is true "Yea, it's true" is logged to the console, and if it's false "Nah, it's false" is logged to the console. 
+
+var bool = false;
+
+function fun(arg) {
+
+  //Your answer in the console.log()
+  console.log();
+}
+
+fun(bool) 
+
+
+// ==============================================================
+```
+
 ### Installing
 
 Feel free to clone down this repository!
