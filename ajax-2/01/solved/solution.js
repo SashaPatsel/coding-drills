@@ -1,15 +1,3 @@
-/* 
-	Before you begin install this chrome extennsion: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en 
-	make sure the extension is enabled, will be a green icon not red
-*/
-
-/* 
-	add https://funwithajax.herokuapp.com/api/* to intercepted URLs and patterns 
-*/
-
-/*
-	Create a ready event to make all function available after the document is loaded
-*/
 
 $(document).ready(function () {
 

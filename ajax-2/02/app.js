@@ -36,6 +36,7 @@ $(document).ready(function() {
     3.
 				Using ajax make a `GET` request to:
 					`cors` plus `baseURL` plus `query`
+					Close your promise (.then()) just before you close the function. We will be writing the rest of our code within the promise, ensuring that all this logic happens only once we've received a return from the API.
 			*/
 
 		/* 
@@ -215,7 +216,7 @@ $(document).ready(function() {
 		*/
   
     //8.
-		/* BONUS Split these actions into multuple functions */
+		/* BONUS Split these actions into multiple functions */
 
     getWeather()
 })

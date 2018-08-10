@@ -1,4 +1,4 @@
-# AJA(X)ctice pt.2
+# AJAX practice pt.2
 
 ## Query an API and use the return to render content to the DOM.
 
