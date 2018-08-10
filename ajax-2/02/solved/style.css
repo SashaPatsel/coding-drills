@@ -1,0 +1,297 @@
+body {
+	min-height: 100vh;
+	font-size: 16px;
+	font-weight: 300;
+}
+#wrap {
+	padding: 2% 0;
+	min-height: 100vh;
+}
+
+#content {
+	font-weight: 300;
+	background-color: rgba(255,255,255,.8);
+	margin: 0 auto;
+	min-height: 400px;
+}
+
+/* HEROES ACTIVITY */
+.blue {
+	background-color: rgba(0,0,255, .5);
+}
+.hero-BKG {
+	background: url(../img/pow-star.png) fixed;
+}
+
+.header {
+	border-bottom: 1px solid #000;
+	font-family: 'Bangers', cursive;
+}
+.header h2 {
+	font-size: 2.5em;
+}
+.characters {
+	margin-top: 10%;
+}
+
+.characters:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.img-wrap {
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+	border: 1px dashed #0000FF;
+	padding: 10px;
+	margin-top: -84px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.hero-image {
+	width: 150px;
+	height: 150px;
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 100%;
+	background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: .5s ease-in-out;
+}
+
+.img-wrap:hover .hero-image {
+	-webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.characters p {
+	margin-bottom: 0;
+}
+
+.characters p:first-of-type {
+	font-weight: bolder;
+}
+
+.hero {
+	margin: 10% 10px;
+  background-color: #eee;
+  padding: 10px 0px;
+  width: 40%;
+  display: inline-block;
+}
+
+/* END HEROES */
+
+
+/* WEATHER ACTIVITY */
+.weather-BKG {
+	background: url(../img/weather.png) fixed;
+}
+.weather-wrap {
+  height: 600px !important;
+  width: 600px !important;
+  border-radius: 100%;
+  margin: 5% auto !important;
+  background-color: rgba(255,255,255,.6) !important;
+}
+.weather {
+	padding-top: 20%;
+}
+.weather .row1 {
+	padding-top: 6%;
+}
+
+.row1 {
+	border-bottom: 2px solid lightblue;
+}
+
+.weather .row {
+	margin: 2% 22%;
+}
+
+.weather h2 {
+	font-family: 'Amatic SC', cursive;
+	font-size: 4em;
+	color: #98FB98;
+}
+
+.hot {
+	color: #a70d23;
+	margin-top: 40px;
+}
+
+.nice {
+	color: #e67b3a;
+	margin-top: 40px;
+}
+
+.cold {
+	color: #5fb4d9;
+	margin-top: 40px;
+}
+
+.weather h3 {
+	font-weight: 300;
+}
+
+.weather-img {
+	height: 65px;
+	animation: spin 1 4s linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* END WEATHER */
+
+/* MUSIC ACTIVITY */
+.music {
+  background-color: transparent !important;
+  min-height: 400px;
+  border: 30px solid rgba(255,255,255, .5);
+  margin: 5% auto !important;
+}
+
+.music-BKG {
+	background: url(../img/leaf.jpg) fixed;
+}
+
+.track-wrap {
+	min-height: 550px;
+  background: white;
+  margin: 22px 10px;
+  background-color: white;
+  padding: 45px 10%;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+.track-wrap h2, h4 {
+	font-family: 'Poiret One', cursive;
+	color: #264426;
+}
+
+.track-wrap h2 {
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+.track-wrap h4 {
+	font-size: 2.5em;
+	text-transform: uppercase;
+}
+
+.track-wrap p {
+	font-size: 20px;
+}
+
+.track-wrap a:hover {
+	text-decoration: none;
+}
+
+.track-wrap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.t-col-1, .t-col-2 {
+	-webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */    
+  flex: 1;
+}
+
+.t-col-2 {
+	padding-top: 12%;
+}
+
+.track-btn {
+	border: 2px solid #5A9A72;
+  width: 200px;
+  padding: 10px 0;
+  color: #5A9A72;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 10%;
+  outline: none;
+}
+
+.track-btn:hover {
+	border: 2px solid #5A9A72;
+	background-color: #5A9A72;
+	color: #fff;
+}
+/* END MUSIC */
+
+
+/* Small screen */
+@media only screen and (max-width: 40em) { 
+
+	#wrap {
+		padding: 10% 0;
+	}
+
+	/* heroes */
+	.characters {
+    margin-top: 15%;
+	}
+
+	.img-wrap {
+    width: 100px;
+    height: 100px;
+    margin-top: -64px;
+  }
+
+  .hero-image {
+  	width: 100px;
+    height: 100px;
+  }
+
+  /* weather */
+  .weather-wrap {
+	  height: 400px !important;
+	  width: 400px !important;
+	  border-radius: 100%;
+	  margin: 5% auto !important;
+	}
+
+	.weather .row {
+		margin: 2% 0;
+	}
+
+	.weather h2 {
+		font-size: 3em;
+	}
+
+	/*Music*/
+	.track-wrap {
+		padding: 45px 5px;
+		display: block; 
+	}
+
+	.track-btn {
+		width: 100%;
+	}
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+
+/* Medium screen */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+
+	/*Music*/
+	.track-wrap {
+		 padding: 45px 5px;
+		 display: block; 
+	}
+
+	.track-btn {
+		width: 100%;
+	}
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
