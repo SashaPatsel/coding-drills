@@ -65,18 +65,12 @@
 
   <script>
 
-    jQuery.ajaxPrefilter(function (options) {
-      if (options.crossDomain && jQuery.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-      }
-    });
-
 
     $.ajax({
       url: 'https://newsapi.org/v2/top-headlines?' +
         'country=us&' +
         // This solution does not include an API key. You will have to fill in the API key in the query url
-        'apiKey=???????',
+        'apiKey=??????????',
       method: "GET"
     }).then(function (response) {
       console.log(response);
