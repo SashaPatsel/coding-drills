@@ -20,7 +20,7 @@ body {
 	background-color: rgba(0,0,255, .5);
 }
 .hero-BKG {
-	background: url(pow-star.png) fixed;
+	background: url(../pow-star.png) fixed;
 }
 
 .header {
@@ -90,7 +90,7 @@ body {
 
 /* WEATHER ACTIVITY */
 .weather-BKG {
-	background: url(weather.png) fixed;
+	background: url(../weather.png) fixed;
 }
 .weather-wrap {
   height: 600px !important;
