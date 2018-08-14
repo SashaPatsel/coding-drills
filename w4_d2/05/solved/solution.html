@@ -15,7 +15,31 @@
     
 
 
-    // console.log()
+    function largestSum(arr) {
+      var largest = 0;
+      var secondLargest = 0;
+
+      for (var i = 0 ; i < arr.length + 1 ; i++) {
+
+        if (arr[i] > largest) {
+          largest = arr[i]
+          arr.splice(arr[i],1)
+        }
+      }
+
+      for (var i = 0 ; i < arr.length + 1 ; i++) {
+        if (arr[i] > secondLargest) {
+          secondLargest = arr[i]
+          arr.splice(arr.indexOf(arr[i]),1)
+        }
+      }
+
+      var sum = largest + secondLargest
+      return sum
+    }
+
+
+    console.log(largestSum(array))
   </script>
 </body>
 </html>
