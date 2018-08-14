@@ -1,18 +1,12 @@
-# Algos N.4
+# Algos N.5
 
-## Compressor
+## Largest sum
 
-Your job in this algorithm is to create a function which will return a compressed string.
+Given an array of numbers, create a function which returns the largest sum of any of the two numbers in that array.
 
-### Example 
+### Example
+Imagine you are given the following array :
 
-Given the string "hhhkkkkkkttttttttt", our function should return h3k6t9.
+[13, 22, 4, 18, 51, 8, 12, 36]
 
-- h3 because there are 3 "h"s in the string
-- k6 because there are 6 "k"s in the string
-- t9 because there are 9 "t"s in the string
-
-Note: the characters do not have to be in order. The string "hrkjqehvewqjhvheqvwjcgfwegiuf" should return "h4r1k1j3q3e4v3w3c1g2f2i1u1"
-
-### Instructions
-Create a function which takes a string as an argument.
+Your function should return 87, because 87 is the sum of 51 and 36, the two largest values in this array. 

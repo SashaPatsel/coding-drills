@@ -1,23 +1,15 @@
-# Algos N.1
+# Algos N.2
 
-## Hamming Distance
+## Levensthein distance
 
-#### Hamming Distance
+The Levensthein distance between two strings is the amount of replacements or insertions/removals it would take to make two string identical.
 
-the Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different. In other words, it measures the minimum number of substitutions required to change one string into the other, or the minimum number of errors that could have transformed one string into the other. In a more general context, the Hamming distance is one of several string metrics for measuring the edit distance between two sequences.[1](https://en.wikipedia.org/wiki/Hamming_distance)
+### Example
+For example, the Levenshtein distance between kitten and sitting is 3, since the following three edits change one into the other, and there is no way to do it with fewer than three edits:
 
-
-Examples
-The Hamming distance between:
-
-"jerome" and "gerald" is 4.
-1011101 and 1001001 is 2.
-2173896 and 2233796 is 3.
-
+kitten → sitten (substitution of "s" for "k")
+sitten → sittin (substitution of "i" for "e")
+sittin → sitting (insertion of "g" at the end).
 
 ### Instructions
-Create a function which takes in two strings. Your function should return the hamming distance between those two strings. 
-
-If the strings are not the same length, return a string that reads: "Please pass two strings of equal length to this function"
-
-Proceed to prompt.html to solve the algorithm
+Create a function which takes two strings as arguments. Your function should return the Levensthein distance between those two strings.

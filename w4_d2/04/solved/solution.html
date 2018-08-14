@@ -1,72 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-
 <body>
-
+  
 
   <script>
+    
+    var array = [1, 2, 4, 25, 9, 7, 16, 12, 20]
+    
     //Less efficient solution
-    function compressor(str) {
+    function largestSum1(arr) {
+      var largestSum = 0;
 
-      var newString = ""
-
-      for (var i = 0; i < str.length; i++) {
-        inc = 0
-        for (var j = 0; j < str.length; j++) {
-          if (str[i] === str[j]) {
-            inc++
+      for (var i = 0 ; i < arr.length ; i++) {
+        for (var j = 0; j < arr.length; j++) {
+          if (i !== j) {
+            var sum = arr[i] + arr[j]
+            if (sum > largestSum) {
+              largestSum = sum;
+            }
           }
         }
-        if (!(newString.includes(str[i]))) {
-          newString += (str[i] + inc.toString())
-        }
-
       }
-      return newString
+      return largestSum
     }
 
     //More efficient solution
-    function compressor1(str) {
+    function largestSum(arr) {
+      var largest = 0;
+      var secondLargest = 0;
 
-      var newString = ""
+      for (var i = 0 ; i < arr.length + 1 ; i++) {
 
-      var compare = str.split("");
-      var obj = {}
-
-      
-      for (var i = 0; i < str.length; i++) {
-        if (obj[str[i]]) {
-          obj[str[i]]++
-        } else {
-          obj[str[i]] = 1
+        if (arr[i] > largest) {
+          secondLargest = largest
+          largest = arr[i]
+        } else if (arr[i] > secondLargest) {
+          secondLargest = arr[i]
         }
-
-      
       }
 
-      for (var i = 0; i < str.length; i++) {
-        if (!(newString.includes(str[i]))) {
-          newString+=(str[i]+obj[str[i]])
-        }
-        
-      }
-     
-      return newString
+      var sum = largest + secondLargest
+      return sum
     }
-    console.log(compressor1("hhhkkkkkkttttttttt"))
-    console.log(compressor1("hrkjqehvewqjhvheqvwjcgfwegiuf"))
 
 
-
+    console.log(largestSum(array))
   </script>
-
 </body>
-
 </html>

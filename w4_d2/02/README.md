@@ -1,15 +1,16 @@
-# Algos N.2
+# Algos N.3
 
-## Levensthein distance
+## Unique characters
 
-The Levensthein distance between two strings is the amount of replacements or insertions/removals it would take to make two string identical.
+For this algorithm, you will create a function that takes one string as an argument.
+
+If the given string contains the same character more than once, return false (it is not a string with all unique characters).
+
+If the given string never has more than once instance of the same character, return true (it is a string with all unique characters).
 
 ### Example
-For example, the Levenshtein distance between kitten and sitting is 3, since the following three edits change one into the other, and there is no way to do it with fewer than three edits:
+- "chicken" will return false because there is more than one instance of the letter "c".
 
-kitten → sitten (substitution of "s" for "k")
-sitten → sittin (substitution of "i" for "e")
-sittin → sitting (insertion of "g" at the end).
+- "robert" will return false because there is more than one instance of the letter "r".
 
-### Instructions
-Create a function which takes two strings as arguments. Your function should return the Levensthein distance between those two strings.
+- "ricky" will return true because there is no letter in that word that is repeated.

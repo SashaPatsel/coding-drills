@@ -7,50 +7,38 @@
   <title>Document</title>
 </head>
 <body>
-  
+
 
   <script>
-    
-    var array = [1, 2, 4, 25, 9, 7, 16, 12, 20]
-    
-    //Less efficient solution
-    function largestSum1(arr) {
-      var largestSum = 0;
 
-      for (var i = 0 ; i < arr.length ; i++) {
-        for (var j = 0; j < arr.length; j++) {
-          if (i !== j) {
-            var sum = arr[i] + arr[j]
-            if (sum > largestSum) {
-              largestSum = sum;
-            }
-          }
-        }
-      }
-      return largestSum
+var sentence = "It is our choices, that show what we truly are, far more than our abilities"
+
+function longestWord(sen) {
+
+
+    // ====================== YOUR WORK HERE ===================
+  var senArr = sen.split(" ")
+
+
+  var longestWord = "";
+
+  for (var i = 0 ; i < senArr.length; i ++) {
+
+    var noPunc = senArr[i].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+  
+    if (noPunc.length > longestWord.length) {
+      
+      longestWord = noPunc
     }
+  }
 
-    //More efficient solution
-    function largestSum(arr) {
-      var largest = 0;
-      var secondLargest = 0;
+return longestWord
+    // =========================================================
+  
 
-      for (var i = 0 ; i < arr.length + 1 ; i++) {
-
-        if (arr[i] > largest) {
-          secondLargest = largest
-          largest = arr[i]
-        } else if (arr[i] > secondLargest) {
-          secondLargest = arr[i]
-        }
-      }
-
-      var sum = largest + secondLargest
-      return sum
-    }
-
-
-    console.log(largestSum(array))
+}
+console.log(longestWord(sentence))
   </script>
+  
 </body>
 </html>

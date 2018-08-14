@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
 
 
   <script>
-    
-    function levensthein(str1, str2) {
-      var lev = 0;
-      var longer = compare(str1, str2)
-      
-      for (var i = 0 ; i < longer ; i++) {
-        if (str1[i] !== str2[i]) {
-         
-          lev++
+
+    // Solution 1: Less efficient
+    function unique(str) {
+      var compare = str.split("");
+
+
+      for (var i = 0; i < str.length; i++) {
+        var temp = compare.indexOf(str[i])
+        compare.splice(temp, 1)
+        if (compare.indexOf(str[i]) > -1) {
+          return false
         }
+
       }
-      return lev
+      return true
     }
 
-    function compare(str1, str2) {
-      if (str1.length > str2.length) {
-        return str1.length
-      } else {
-        return str2.length
+    console.log(unique1("chicken"))
+    console.log(unique1("robert"))
+    console.log(unique1("ricky"))
+
+    // Solution 2: More efficient
+    function unique1(str) {
+      var compare = str.split("");
+      var obj = {}
+      
+      for (var i = 0; i < str.length; i++) {
+        if (obj[str[i]]) {
+          return false
+        } else {
+          obj[str[i]] = 1
+        }
+
       }
+      return true
     }
 
-    levensthein("robert", "robbery")
-    levensthein("yeah", "lmno")
-    levensthein("yo", "yo")
-    levensthein("l", "length")
-    levensthein("sitting", "kitten")
-    
+
   </script>
-  
+
 </body>
+
 </html>

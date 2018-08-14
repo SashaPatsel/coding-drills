@@ -1,16 +1,18 @@
-# Algos N.3
+# Algos N.4
 
-## Unique characters
+## Compressor
 
-For this algorithm, you will create a function that takes one string as an argument.
+Your job in this algorithm is to create a function which will return a compressed string. If the given string contains more than one instance of the same character, the compressed string should contain the repeated character, followed by the number of times it was repeated. The compressed string should never have the same character more than once.
 
-If the given string contains the same character more than once, return false (it is not a string with all unique characters).
+### Example 
 
-If the given string never has more than once instance of the same character, return true (it is a string with all unique characters).
+Given the string "hhhkkkkkkttttttttt", our function should return h3k6t9.
 
-### Example
-- "chicken" will return false because there is more than one instance of the letter "c".
+- h3 because there are 3 "h"s in the string
+- k6 because there are 6 "k"s in the string
+- t9 because there are 9 "t"s in the string
 
-- "robert" will return false because there is more than one instance of the letter "r".
+Note: the characters do not have to be in order. The string "hrkjqehvewqjhvheqvwjcgfwegiuf" should return "h4r1k1j3q3e4v3w3c1g2f2i1u1"
 
-- "ricky" will return true because there is no letter in that word that is repeated.
+### Instructions
+Create a function which takes a string as an argument.
