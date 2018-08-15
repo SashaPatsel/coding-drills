@@ -11,20 +11,10 @@
 
   <script>
     
-    var elevator = "^^^^^vvv^v^vv^v^^^vvvvv^^^^^^v^^v^^^v^^vvv"
+    var elevator = "^^^^^vv^v^vv^v^^^vvv^^^^^^v^^v^^^v^^vvv"
     
     function whichFloor(str) {
-      var floor = 0
 
-      for (var i = 0 ; i < str.length ; i++) {
-        if (str[i] === "^") {
-          floor++
-        } else if (str[i] === "v") {
-          floor--
-        }
-      }
-
-      return floor
     }
 
     console.log(whichFloor(elevator))
