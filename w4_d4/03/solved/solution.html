@@ -10,24 +10,70 @@
   
 
   <script>
-    
-    var elevator = "^^^^^vvv^v^vv^v^^^vvvvv^^^^^^v^^v^^^v^^vvv"
-    
-    function whichFloor(str) {
-      var floor = 0
+    var roman = "MMMDCCLXXXII"
+    var roman2 = "IX"
 
+    function convertRoman(str) {
+      var numString = 0;
+      var special = []
+      var final = 0;
       for (var i = 0 ; i < str.length ; i++) {
-        if (str[i] === "^") {
-          floor++
-        } else if (str[i] === "v") {
-          floor--
+        switch (str[i]) {
+          case "I":
+            numString+=1
+            special.push(1)
+            break;
+          case "V": 
+            numString+=5
+            special.push(5)
+            break;
+          case "X":
+            numString+=10;
+            special.push(10)
+            break;
+          case "L":
+            numString+=50;
+            special.push(50)
+            break;
+          case "C":
+            numString+=100
+            special.push(100)
+            break;
+          case "D":
+            numString+=500
+            special.push(500)
+            break;
+          case "M":
+            numString+=1000
+            special.push(1000)
+            break;
+          default:
+            return "Wait, you're not a Roman"         
+
         }
       }
 
-      return floor
+
+      for (var i = 0 ; i < special.length + 1 ; i++ ) {
+        if (special[i] < special[i + 1]) {
+
+          special[i + 1] = (special[i + 1] - special[i])
+          special = special.splice(i, 1)
+
+        }
+      }
+
+      console.log(special)
+     
+     for (var i = 0 ; i < special.length ; i++) {
+       final += special[i]
+     }
+
+      return final
     }
 
-    console.log(whichFloor(elevator))
+    console.log(convertRoman(roman2))
+
   </script>
 </body>
 </html>
