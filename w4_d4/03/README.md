@@ -21,6 +21,7 @@ If the string you are given is not a proper Roman numeral sequence return "Wait,
 
 ### Bonus
 #### Special Rules
+
 This exercise may prove pretty tricky. If you are having trouble, simply convert the numerals to their corresponding values.
 
 For this algorithm to work properly though, we need to write logic that handles the "special rules" of Roman numerals.

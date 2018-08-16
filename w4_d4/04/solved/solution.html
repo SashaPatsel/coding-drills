@@ -9,11 +9,30 @@
 <body>
   
 
-
   <script>
+    var number = 3782
+    var number2 = 9
+    var number3 = 944
 
-  
+    function convertRoman(num) {
+
+      //Convert our number into a string and then split the characters into an array so we can handle each digit separately.
+      var numArr = num.toString().split("")
+      //Reverse the array so we can handle the digits in ascending order.
+      numArr = numArr.reverse()
+
+
+      for (var i = 0 ; i < numArr.length ; i++) {
+        switch (numArr[i]) {
+          case "0": 
+            
+        }
+      }
+
+    }
+
+    console.log(convertRoman(number))
+
   </script>
-
 </body>
 </html>
