@@ -12,6 +12,7 @@
   <script>
     var roman = "MMMDCCLXXXII"
     var roman2 = "IX"
+    var roman3 = "CMXLIV"
 
     function convertRoman(str) {
       var numString = 0;
@@ -56,14 +57,11 @@
 
       for (var i = 0 ; i < special.length + 1 ; i++ ) {
         if (special[i] < special[i + 1]) {
-
           special[i + 1] = (special[i + 1] - special[i])
-          special = special.splice(i, 1)
-
+          special.splice(i, 1)
         }
       }
 
-      console.log(special)
      
      for (var i = 0 ; i < special.length ; i++) {
        final += special[i]
@@ -72,7 +70,7 @@
       return final
     }
 
-    console.log(convertRoman(roman2))
+    console.log(convertRoman(roman3))
 
   </script>
 </body>
