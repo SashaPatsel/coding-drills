@@ -1,19 +1,23 @@
 # Algos N.2
 
-## Find the combos
+## What floor am I on???
 
 ### Instructions
-Given an array of numbers and a single number, each as a separate argument, create a function which returns two indices within the array that point to values whose sum equals the second argument, or the target number.
 
-If there are multiple values whose sum equals the target, that is ok. We only need to return two of the values.
+In this exercise you will be given a string containing ONLY the following characters: `v` and `^`.
+
+The `v` means the elevator will go down one floor. The `^` means the elevator will go up one floor. Assume the elevator starts on floor 0.
+
+Given a string in this format, create a function that returns the floor the elevator will land at. 
+
+If the elevator goes lower than floor zero, return a string informing the user that the elevator has, unfortunately, crashed.
 
 ### Example
-Given the following two variables:
-var array = [3,5,12,4,19,1,18];
-var target = 22;
 
-Our function should return any of the four following values: [0,4], [4,0], [3,6], or [6,3]
+Given the following string: "^^^vv^^^v^^"
 
-Remeber, we are returning the INDICES of the values, not the values themselves
+Your function should return 5. The elevator goes up to floor 3, back down two floors to 1, up three back to 4, down one to 3 and finally back up two to 5.
+
 
 ### Bonus
+Create a condition that returns a string which says the function is unable to take in the input if the input includes any character OTHER than `v` or `^`.

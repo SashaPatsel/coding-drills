@@ -10,35 +10,67 @@
   
 
   <script>
-    var array = ["predestined", "predetermined", "prescient", "preschool", "precious"]
-    var array2 = ["predestined", "predetermined"]
-    var array3 = ["prescient", "preschool"]
-    function longestPrefix(arr) {
-      //We can compare every value against the first in the array. It needs to be an array do we can use the splice method
-      var compare = arr[0].split("")
-      var newstring = ""
-      
-      for (var i = 1 ; i < arr.length ; i++) {
+    var roman = "MMMDCCLXXXII"
+    var roman2 = "IX"
+    var roman3 = "CMXLIV"
 
-        //Compare `each` letter of `each` word
-        for (var j = 0 ; j < arr[i].length ; j++) {
+    function convertRoman(str) {
+      var numString = 0;
+      var special = []
+      var final = 0;
+      for (var i = 0 ; i < str.length ; i++) {
+        switch (str[i]) {
+          case "I":
+            numString+=1
+            special.push(1)
+            break;
+          case "V": 
+            numString+=5
+            special.push(5)
+            break;
+          case "X":
+            numString+=10;
+            special.push(10)
+            break;
+          case "L":
+            numString+=50;
+            special.push(50)
+            break;
+          case "C":
+            numString+=100
+            special.push(100)
+            break;
+          case "D":
+            numString+=500
+            special.push(500)
+            break;
+          case "M":
+            numString+=1000
+            special.push(1000)
+            break;
+          default:
+            return "Wait, you're not a Roman"         
 
-          if (compare[j] !== arr[i][j] && compare[j]) {
-          //Remove the rest of the chacters in the array representing our word
-          compare = compare.splice(compare[j], j)
-
-          }
         }
       }
-      //Convert our final product into a string
-      compare = compare.join("")
-      return compare
 
+
+      for (var i = 0 ; i < special.length + 1 ; i++ ) {
+        if (special[i] < special[i + 1]) {
+          special[i + 1] = (special[i + 1] - special[i])
+          special.splice(i, 1)
+        }
+      }
+
+     
+     for (var i = 0 ; i < special.length ; i++) {
+       final += special[i]
+     }
+
+      return final
     }
 
-    console.log(longestPrefix(array))
-    console.log(longestPrefix(array2))
-    console.log(longestPrefix(array3))
+    console.log(convertRoman(roman3))
 
   </script>
 </body>

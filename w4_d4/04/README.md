@@ -1,23 +1,14 @@
 # Algos N.4
 
-## You thought you were done with Roman numerals, didn't you Squidward?
+## Find the prefix in common
 
-<img src="squidward-meme.jpg">
 
 ### Instructions
-Given a number, create a function which returns the numbers value, but expressed in Roman numerals (string).
 
-For reference, see this table conatining the numerals and their corresponding values:
-
-<img src="roman-numerals.png">
-
-If the input is not a number, return "You're not using my function correctly"
-
+Given an array (of any length) of strings, create a function that returns the longest prefix those strings have in common.
 
 ### Example
-1. Given the number 3782, your function should return "MMMDCCLXXXII".
+Given the following array: ["predestined", "predetermined", "prescient", "preschool", "precious"]
 
-2. Given the number 944, your function should return "CMXLIV".
+Your function should return the string "pre". "pre" is the longest sequence of characters that the elements in the given array have in common. 
 
-
-### Bonus

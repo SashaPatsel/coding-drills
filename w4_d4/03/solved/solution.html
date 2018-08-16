@@ -10,68 +10,23 @@
   
 
   <script>
-    var roman = "MMMDCCLXXXII"
-    var roman2 = "IX"
-    var roman3 = "CMXLIV"
+var array = [3,5,12,4,19,1,18];
+var target = 22;
 
-    function convertRoman(str) {
-      var numString = 0;
-      var special = []
-      var final = 0;
-      for (var i = 0 ; i < str.length ; i++) {
-        switch (str[i]) {
-          case "I":
-            numString+=1
-            special.push(1)
-            break;
-          case "V": 
-            numString+=5
-            special.push(5)
-            break;
-          case "X":
-            numString+=10;
-            special.push(10)
-            break;
-          case "L":
-            numString+=50;
-            special.push(50)
-            break;
-          case "C":
-            numString+=100
-            special.push(100)
-            break;
-          case "D":
-            numString+=500
-            special.push(500)
-            break;
-          case "M":
-            numString+=1000
-            special.push(1000)
-            break;
-          default:
-            return "Wait, you're not a Roman"         
+function getSum(arr, trg) {
 
-        }
+  for (var i = 0 ; i < arr.length ; i++) {
+    for(var j = 0 ; j < arr.length ; j++) {
+      if ((arr[i] + arr[j]) === trg) {
+        return [i, j]
       }
-
-
-      for (var i = 0 ; i < special.length + 1 ; i++ ) {
-        if (special[i] < special[i + 1]) {
-          special[i + 1] = (special[i + 1] - special[i])
-          special.splice(i, 1)
-        }
-      }
-
-     
-     for (var i = 0 ; i < special.length ; i++) {
-       final += special[i]
-     }
-
-      return final
     }
+  }
 
-    console.log(convertRoman(roman3))
+  return results
+}
 
+console.log(getSum(array, target))
   </script>
 </body>
 </html>
