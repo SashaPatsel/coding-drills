@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+  var sent1 = "Sasha is very nice";
+  var sent2 = "Robert is very kind";
+  
+  function uncommon(s1, s2) {
+    var obj = {}
+    var results = []
+
+    var senArr1 = s1.split(" ")
+    var senArr2 = s2.split(" ")
+
+    for (var i = 0 ; i < senArr1.length ; i++) {
+      if (!obj[senArr1[i]]) {
+        obj[senArr1[i]] = 1
+      } else {
+        obj[senArr1[i]] ++
+      }
+      
+    }
+
+    
+
+    for (var i = 0 ; i < senArr2.length ; i++) {
+      if (!obj[senArr2[i]]) {
+
+        obj[senArr2[i]] = 1
+      } else {
+        obj[senArr2[i]]++
+      }
+    }
+
+    var objKeys = Object.keys(obj)
+
+    for (var i = 0 ; i < objKeys.length ; i++) {
+
+      if (obj[objKeys[i]] < 2) {
+        results.push(objKeys[i])
+      }
+    }
+   
+    return results
+    
+  }
+
+  console.log(uncommon(sent1, sent2))
+  
+  </script>
+</body>
+</html>
