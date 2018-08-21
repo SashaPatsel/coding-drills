@@ -7,52 +7,42 @@
   <title>Document</title>
 </head>
 <body>
-
-
-  <script>
-  var string = "ilovetowritecode";
-  var character = "o"
   
-  function distanceFrom(str, char) {
-    var indices = []
-    
-    var final = []
+  <script>
 
-    for (var i = 0 ; i < str.length ; i ++) {
-      if (str[i] === char) {
-        //Send all the target characters' indices to a single array
-        indices.push(i)
-      }
-    }
+    var movements = "UUURDLURLDDRDLLLLRRUUDDDRLRU"
 
 
-    var hold = []
-    for (var i = 0 ; i < str.length ; i ++) {
-      var temp = []
-      for (var j = 0 ; j < indices.length ; j++) {
-        var thing = i - indices[j]
-        temp.push(Math.abs(thing))
+    function backToSquareOne(moves) {
+    var robot = [0,0]
+    var math = []
 
-      }
-      hold.push(temp)
-    }
-
-    for (var i = 0 ; i < hold.length ; i++) {
-      //Max distance an element can be
-      var index = str.length;
-      for (var j = 0 ; j < hold[i].length ; j++) {
-        if (hold[i][j] < index) {
-          index = hold[i][j]
+      for (var i = 0 ; i < moves.length ; i++) {
+        switch (moves[i]) {
+          case "U": 
+            robot[0] += 1
+            break;
+          case "D":
+            robot[0] -= 1
+            break;
+          case "L":
+            robot[1] -= 1
+            break;
+          case "R":
+            robot[1] += 1
+            break;
+          default:
+            return "invalid move(s)"
         }
       }
-      final.push(index)
-    }
 
-    return final
-  }
-  
-  console.log(distanceFrom(string, character))
+
+    return (robot[0] === 0 && robot[1]===0)
+
+
+    }
+  //Returns true
+    console.log(backToSquareOne(movements))
   </script>
-  
 </body>
 </html>

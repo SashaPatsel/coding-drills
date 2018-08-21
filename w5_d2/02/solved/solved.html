@@ -18,6 +18,7 @@
 
 //Worse solution
   function numSourPatch(s, c) {
+
     var total = 0;
 
     for (var i = 0 ; i < c.length ; i++) {
@@ -52,6 +53,9 @@
   }
   console.log(numSourPatch(sourPatch, candy))
   console.log(numSourPatch2(sourPatch, candy))
+
+  //NOTE:
+  // The first solution is worse because it contains a loop inside of a loop. That means that the time it takes to run this application will be the size of the input squared. In the second solution, we are simply looping over once, rather than creating a new loop in every iteration of the first.
   </script>
 </body>
 </html>
