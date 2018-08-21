@@ -3,9 +3,8 @@
 ## What's so special about this sentence anyway???
 
 ## Instructions
-Given two sentences (as strings), return an array containing all the words that appear only once.
+Given two sentences (as strings), return an array containing all the words that appear only once across both strings.
 
-An uncommon word is a word that appears only once in either of the two sentences.
 
 ## Example
 Given the strings "Sasha is very nice" and "Robert is very kind", your function should return ["Sasha", "Robert, "nice", "kind"].

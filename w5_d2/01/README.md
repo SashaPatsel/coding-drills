@@ -9,11 +9,12 @@ The group has only one flashlight among them. What's worse, the bridge looks pre
 
 If any of them cross the bridge without the flashlight, they'll surely fall through one of the steps 😧. That means no matter what, a flashlight must be present when one or two people cross the bridge.
 
-The foursome find themselves in varying degrees of physical shape. 
+The foursome find themselves in varying degrees of physical shape:
+
 - Jerome can cross the bridge in 1 minute. 
 - Ricky can cross in 2 minutes. 
 - Robert can cross in 5 minutes
-- Sasha, who clealry should go to the gym more, takes 10 minutes to cross.
+- Sasha, who clearly should go to the gym more, takes 10 minutes to cross.
 
 Because of the flashlight, if two people cross the bridge together, they can only go as fast as the slower of the two.
 
