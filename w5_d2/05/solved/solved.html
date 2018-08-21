@@ -10,6 +10,50 @@
   
   <script>
 
+    var movements = "UUURDLURLDDRDLLLLRRUUDDDRLRU"
+
+
+    function backToSquareOne(moves) {
+    var robot = [0,0]
+    var math = []
+
+      for (var i = 0 ; i < moves.length ; i++) {
+        switch (moves[i]) {
+          case "U": 
+            math.push("y1")
+            break;
+          case "D":
+            math.push("y-1")
+            break;
+          case "L":
+            math.push("x-1")
+            break;
+          case "R":
+            math.push("x1")
+            break;
+          default:
+            return "invalid move(s)"
+        }
+      }
+
+    for (var i = 0 ; i < math.length ; i++) {
+      if (math[i][0] === "y") {
+       var y = math[i].replace("y","")
+        robot[0] += parseInt(y)
+      } else {
+        var x = math[i].replace("x","")
+        
+        robot[1] += parseInt(x)
+      }
+    }
+    console.log(robot, [0,0])
+
+    return (robot[0] === 0 && robot[1]===0)
+
+
+    }
+  //Returns true
+    console.log(backToSquareOne(movements))
   </script>
 </body>
 </html>
