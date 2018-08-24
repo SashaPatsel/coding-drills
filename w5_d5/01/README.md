@@ -17,7 +17,7 @@ You will need to create three different `types` of objects:
 ```
 var hero = {
   health: 100,
-  agility: 40
+
 }
 ```
 * Health represents the player's current health. When it hits 0, the game is over.
@@ -44,12 +44,13 @@ var bearHands = {
 * Uses is the amount of rounds a gun can be played before it is no longer usable
 
 3. A zombie object:
+```
 var zombie1 = {
   health: 100,
   attack: [0, 5],
   agility: 15
 }
-
+```
 * Attack and agility behave the same as the hero's does. 
 
 * Attack behaves the same as a gun's does
@@ -66,4 +67,142 @@ var zombie1 = {
 
 5. Using a zombie's agility, determine randomly whether or not the zombie will receive damage. This will be calculated individually for each zombie
 
-6. 
+6. Using the gun's risk, determine randomly whether or not the hero will receive damage.
+
+7. If the hero receives damage, calculate a damage from each zombie using their respective attack. The hero will receive the sum of their attacks as damage in return.
+
+8. The hero wins if all the zombies' health is at or below 0. The zombies win if the hero's health is at or below 0. 
+
+9. The reach of a gun will do damage to x number of other zombies. Determine randomly which other zombies will be damaged.
+
+
+### Stats:
+
+#### If you're not feeling creative, feel free to use the following stats:
+
+```
+ bearHands = {
+  //number of zombies affected
+  reach: 1,
+  //Range of possible damage
+  attack: [5,5],
+  //Chance of taking damge back (%)
+  risk: 95,
+  //chance of landing damage (%)
+  reliability: 90,
+  //"health" of gun
+  uses: 1000000000000000 
+}
+
+ machete = {
+  //number of zombies affected
+  reach: 1,
+  //Range of possible damage
+  attack: [40,60],
+  //Chance of taking damge back (%)
+  risk: 80,
+  //chance of landing damage (%)
+  reliability: 90,
+  //"health" of gun
+  uses: 5 
+}
+
+ shotgun = {
+  //number of zombies affected
+  reach: 2,
+  //Range of possible damage
+  attack: [30,50],
+  //Chance of taking damge back (%)
+  risk: 65,
+  reliability: 80,
+  //"health" of gun
+  uses: 5 
+}
+
+ pistol = {
+  //number of zombies affected
+  reach: 2,
+  //Range of possible damage
+  attack: [25,40],
+  //Chance of taking damge back (%)
+  risk: 50,
+  reliability: 75,
+  //"health" of gun
+  uses: 5 
+}
+
+ machineGun = {
+  //number of zombies affected
+  reach: 3,
+  //Range of possible damage
+  attack: [15,30],
+  //Chance of taking damge back (%)
+  risk: 30,
+  reliability: 65,
+  //"health" of gun
+  uses: 5 
+}
+
+ sniper = {
+  //number of zombies affected
+  reach: 1,
+  //Range of possible damage
+  attack: [40,60],
+  //Chance of taking damge back (%)
+  risk: 50,
+  reliability: 10,
+  //"health" of gun
+  uses: 5 
+}
+
+ rpg = {
+  //number of zombies affected
+  reach: 4,
+  //Range of possible damage
+  attack: [40,60],
+  //Chance of taking damge back (%)
+  risk: 95,
+  reliability: 40,
+  //"health" of gun
+  uses: 5 
+}
+
+     zombie1 = {
+      health: 100,
+      attack: [0, 5],
+      //Chance of dodging (%)
+      agility: 15
+    }
+
+     zombie2 = {
+      health: 90,
+      attack: [1, 6],
+      //Chance of dodging (%)
+      agility: 18
+    }
+
+     zombie3 = {
+      health: 85,
+      attack: [2, 4],
+      //Chance of dodging (%)
+      agility: 20
+    }
+
+
+     zombie4 = {
+      health: 80,
+      attack: [2, 5],
+      //Chance of dodging (%)
+      agility: 22
+    }
+
+
+     zombie5 = {
+      health: 60,
+      attack: [7, 10],
+      //Chance of dodging (%)
+      agility: 10
+    }
+
+
+```
