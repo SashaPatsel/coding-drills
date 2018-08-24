@@ -101,7 +101,7 @@ sniper: {
   //Range of possible damage
   attack: [40,60],
   //Chance of taking damge back (%)
-  risk: 50,
+  risk: 30,
   reliability: 10,
   //"health" of gun
   uses: 5 
@@ -240,7 +240,7 @@ function playRound() {
     console.log("You chose a "+ game.gun + "!")
     switch (game.gun) {
 
-      case "Bear Hands":
+      case "Bear hands":
         //Set the player's damae to the range
         playerDam = calcDamage(weapons.bearHands.attack[0], weapons.bearHands.attack[1]);
         playerDidDam = damageBool(weapons.bearHands.reliability)
@@ -262,7 +262,7 @@ function playRound() {
         pickZombie(weapons.shotgun)
         break;
       case "Pistol":
-        playerDam = calcDamage(weapons.pistol.attack[0], pistol.attack[1]);
+        playerDam = calcDamage(weapons.pistol.attack[0], weapons.pistol.attack[1]);
         playerDidDam = damageBool(weapons.pistol.reliability)
         weapons.pistol.uses--
         pickZombie(weapons.pistol)
@@ -304,22 +304,43 @@ function pickZombie(weapon) {
   ]).then(function(zombie) {
     zombies[zombie.zombie].receivedDam = damageBool(zombies[zombie.zombie].agility)
 
-    if (zombies[zombie.zombie].receivedDam === true) {
-      console.log("Congrats, you landed a shot for" + playerDam + " damge!")
+    if (!damageBool(weapon.reliability)) {
+      console.log("Shot on target")
+    
+    if (zombies[zombie.zombie].receivedDam === true ) {
+      console.log("Congrats, you landed a shot for " + playerDam + " damge!")
       zombies[zombie.zombie].health -= playerDam
-      console.log(zombies[zombie.zombie] + " health: " + zombies[zombie.zombie].health)
+      
     } else {
       console.log("The zombie dodged your attack")
     }
+
+  } else {
+    console.log("Oooooh, tough miss")
+  }
 
     if (zombies[zombie.zombie].health <= 0) {
 
       for (var i = 0 ; i < zombieChoices.length ; i++) {
         if (zombieChoices[i] === zombie.zombie) {
-          zombieChoices.splice(i,1)
+          console.log("Congrats, you defeated" + zombieChoices[i])
+          //Make the zombie unable to attack anymore
+          zombies[zombie.zombie].attack = [0,0]
+          zombieChoices.splice(i,1) 
         }
       }
+      
+    }
 
+    if (!damageBool(weapon.risk)) {
+      var zombieDamSum = calcDamage(zombies.zombie1.attack[0],[1]) + calcDamage(zombies.zombie2.attack[0],[1]) + calcDamage(zombies.zombie3.attack[0],[1]) + calcDamage(zombies.zombie4.attack[0],[1]) + calcDamage(zombies.zombie5.attack[0],[1]);
+      
+      hero.health-= zombieDamSum
+
+      console.log("The hero has " + hero.health + " health.")
+
+    } else {
+      console.log("Phew, that was a close one")
     }
     checkRound()
   })  
