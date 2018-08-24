@@ -194,7 +194,7 @@ function checkRound() {
 
 
   // If the zombie has less than 0 health.... then the user won.
-  if (zombies.length === 0) {
+  if (zombieChoices.length === 0) {
 
     console.log("###############################################");
     console.log("");
@@ -308,7 +308,7 @@ function pickZombie(weapon) {
       console.log("Shot on target")
     
     if (zombies[zombie.zombie].receivedDam === true ) {
-      console.log("Congrats, you landed a shot for " + playerDam + " damge!")
+      console.log("Congrats, you landed a shot for " + playerDam + " damage!")
       zombies[zombie.zombie].health -= playerDam
       
     } else {
