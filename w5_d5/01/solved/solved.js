@@ -185,12 +185,6 @@ function checkRound() {
     process.exit();
   }
 
-  for (var i = 0 ; i < zombies.length ; i++) {
-    if (zombies[i].health <= 0) {
-      zombies.splice(zombies.indexOf(zombies[i]))
-    }
-  }
-
 
 
   // If the zombie has less than 0 health.... then the user won.
@@ -214,19 +208,19 @@ function checkRound() {
 
 // This function holds the game logic
 function playRound() {
+
+  for (var i = 0 ; i < zombieChoices.length ; i++) {
+    // Pass in the names of the zombies in the array to locate them in the object.
+    var zIndex = "zombie" + (i + 1)
+    if (zombies[zIndex].health > 0) {
+      console.log("\n=============================\n")
+      console.log(zombieChoices[i] +" Health: ", zombies[zIndex].health)
+
+    }
+  }
   console.log("\n=============================\n")
-  console.log("Hero Health: ",hero.health)
-  console.log("\n=============================\n")
-  console.log("Zombie1 Health: ",zombies.zombie1.health)
-  console.log("\n=============================\n")
-  console.log("Zombie2 Health: ",zombies.zombie2.health)
-  console.log("\n=============================\n")
-  console.log("Zombie3 Health: ",zombies.zombie3.health)
-  console.log("\n=============================\n")
-  console.log("Zombie4 Health: ",zombies.zombie4.health)
-  console.log("\n=============================\n")
-  console.log("Zombie5 Health: ",zombies.zombie5.health)
-  console.log("\n=============================\n")
+  console.log("Hero Health: " + hero.health + "\n")
+ 
   // We create a list prompt. Specifying that the user must pick a random number between 1 and 5.
   inquirer.prompt([
     {
@@ -308,7 +302,7 @@ function pickZombie(weapon) {
       console.log("Shot on target")
     
     if (zombies[zombie.zombie].receivedDam === true ) {
-      console.log("Congrats, you landed a shot for " + playerDam + " damage!")
+      console.log("Congrats, you landed a shot for " + playerDam + " damage on " + zombie.zombie +"!")
       zombies[zombie.zombie].health -= playerDam
       
     } else {
@@ -336,7 +330,7 @@ function pickZombie(weapon) {
       var zombieDamSum = calcDamage(zombies.zombie1.attack[0],[1]) + calcDamage(zombies.zombie2.attack[0],[1]) + calcDamage(zombies.zombie3.attack[0],[1]) + calcDamage(zombies.zombie4.attack[0],[1]) + calcDamage(zombies.zombie5.attack[0],[1]);
       
       hero.health-= zombieDamSum
-
+      console.log("The hero has been dealt " + zombieDamSum + " damage.")
       console.log("The hero has " + hero.health + " health.")
 
     } else {
