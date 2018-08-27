@@ -7,25 +7,41 @@ var hero = {
   health: 100,
 }
 
-//Game vars
-var playerDam = 0;
-var playerDidDam = false;
 
+//Weapon constructor
+function Weapon (name, reach, attack, risk, reliability, uses) {
+  this.name = name
+  this.reach = reach
+  this.attack = attack
+  this.risk = risk
+  this.reliability = reliability
+  this.uses = uses
+  this.landedShot = false
+  this.roundDamage = 0
 
-//Game functions
-function calcDamage(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
+  this.used = function() {
+    this.uses--
+  }
 
-function damageBool(perc) {
-  var comp = Math.floor(Math.random() * 100) + 1
+  this.damageBool = function(perc) {
+    var comp = Math.floor(Math.random() * 100) + 1
+  
+    if (perc - comp > 0) {
+      this.landedShot = false
+    } else {
+      this.landedShot = true
+    }
+  }
 
-  if (perc - comp > 0) {
-    return false
-  } else {
-    return true
+  this.calcDamage = function(min, max) {
+    this.roundDamage = Math.floor(Math.random() * (max - min) + min);
   }
 }
+
+//Create new instances of our weapons
+var machineGun = new Weapon()
+
+
 
 
 //For inquirer prompt
@@ -34,145 +50,6 @@ var zombieChoices = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
 //For objecy lookup
 var zombieIndex = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
 
-var weapons = {
-  bearHands: {
-    name: "Bear Hands",
-    //number of zombies affected
-    reach: 1,
-    //Range of possible damage
-    attack: [5, 5],
-    //Chance of taking damge back (%)
-    risk: 95,
-    //chance of landing damage (%)
-    reliability: 90,
-    //"health" of gun
-    uses: 1000000000000000
-  },
-
-  machete: {
-    name: "Machete",
-    //number of zombies affected
-    reach: 1,
-    //Range of possible damage
-    attack: [40, 60],
-    //Chance of taking damge back (%)
-    risk: 80,
-    //chance of landing damage (%)
-    reliability: 90,
-    //"health" of gun
-    uses: 5
-  },
-
-  shotgun: {
-    name: "Shotgun",
-    //number of zombies affected
-    reach: 2,
-    //Range of possible damage
-    attack: [30, 50],
-    //Chance of taking damge back (%)
-    risk: 65,
-    reliability: 80,
-    //"health" of gun
-    uses: 5
-  },
-
-  pistol: {
-    name: "Pistol",
-    //number of zombies affected
-    reach: 2,
-    //Range of possible damage
-    attack: [25, 40],
-    //Chance of taking damge back (%)
-    risk: 50,
-    reliability: 75,
-    //"health" of gun
-    uses: 5
-  },
-
-  machineGun: {
-    name: "Machine Gun",
-    //number of zombies affected
-    reach: 3,
-    //Range of possible damage
-    attack: [15, 30],
-    //Chance of taking damge back (%)
-    risk: 30,
-    reliability: 65,
-    //"health" of gun
-    uses: 5
-  },
-
-  sniper: {
-    name: "Sniper",
-    //number of zombies affected
-    reach: 1,
-    //Range of possible damage
-    attack: [40, 60],
-    //Chance of taking damge back (%)
-    risk: 30,
-    reliability: 20,
-    //"health" of gun
-    uses: 5
-  },
-
-  rpg: {
-    name: "RPG",
-    //number of zombies affected
-    reach: 4,
-    //Range of possible damage
-    attack: [20, 35],
-    //Chance of taking damge back (%)
-    risk: 95,
-    reliability: 40,
-    //"health" of gun
-    uses: 5
-  }
-}
-
-var zombies = {
-
-  zombie1: {
-    health: 100,
-    attack: [0, 5],
-    //Chance of dodging (%)
-    agility: 15,
-    receivedDam: false
-  },
-
-  zombie2: {
-    health: 90,
-    attack: [1, 6],
-    //Chance of dodging (%)
-    agility: 18,
-    receivedDam: false
-  },
-
-  zombie3: {
-    health: 85,
-    attack: [2, 4],
-    //Chance of dodging (%)
-    agility: 20,
-    receivedDam: false
-  },
-
-
-  zombie4: {
-    health: 80,
-    attack: [2, 5],
-    //Chance of dodging (%)
-    agility: 22,
-    receivedDam: false
-  },
-
-
-  zombie5: {
-    health: 60,
-    attack: [7, 10],
-    //Chance of dodging (%)
-    agility: 10,
-    receivedDam: false
-  }
-}
 
 var guns = ["Bear hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG", "View Weapon Stats"]
 
