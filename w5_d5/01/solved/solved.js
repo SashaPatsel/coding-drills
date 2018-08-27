@@ -250,7 +250,6 @@ console.log("\n=============================\n")
     switch (game.gun) {
 
       case "Bear hands":
-        //Set the player's damae to the range
         playerDam = calcDamage(weapons.bearHands.attack[0], weapons.bearHands.attack[1]);
         playerDidDam = damageBool(weapons.bearHands.reliability)
 
@@ -298,7 +297,7 @@ console.log("\n=============================\n")
         break;
 
         case "View Weapon Stats":
-        console.log( "Bear Hands:\n reach: 1\n attack: 5 \n risk:95\n reliability: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n risk: 80\n reliability: 90\n uses: 5\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n risk: 65\n reliability: 80\n uses: 5\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n risk: 50\n reliability: 75\n uses: 5\n\nMachine Gun:\n reach: 3\n attack: min(15), max(30)\n risk: 30\n reliability: 65\n uses: 5\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n risk: 30\n reliability: 20\n uses: 5\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n risk: 95\n reliability: 40\n uses: 5\n\n")
+        console.log( "Bear Hands:\n reach: 1\n attack: 5 \n risk:95\n reliability: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n risk: 80\n reliability: 90\n uses: "+ weapons.machete.uses +"\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n risk: 65\n reliability: 80\n uses: "+ weapons.shotgun.uses +"\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n risk: 50\n reliability: 75\n uses: "+ weapons.pistol.uses +"\n\nMachine Gun:\n reach: 3\n attack: min(15), max(30)\n risk: 30\n reliability: 65\n uses: "+ weapons.machineGun.uses +"\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n risk: 30\n reliability: 20\n uses: "+ weapons.sniper.uses +"\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n risk: 95\n reliability: 40\n uses: "+ weapons.rpg.uses +"\n\n")
 
         nextRound()
         break;

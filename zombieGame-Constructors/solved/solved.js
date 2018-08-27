@@ -16,7 +16,7 @@ function Weapon (name, reach, attack, risk, reliability, uses) {
   this.risk = risk
   this.reliability = reliability
   this.uses = uses
-  this.landedShot = false
+  this.didDam = false
   this.roundDamage = 0
 
   this.used = function() {
@@ -27,9 +27,9 @@ function Weapon (name, reach, attack, risk, reliability, uses) {
     var comp = Math.floor(Math.random() * 100) + 1
   
     if (perc - comp > 0) {
-      this.landedShot = false
+      this.didDam = false
     } else {
-      this.landedShot = true
+      this.didDam = true
     }
   }
 
@@ -39,9 +39,43 @@ function Weapon (name, reach, attack, risk, reliability, uses) {
 }
 
 //Create new instances of our weapons
-var machineGun = new Weapon()
+var bearHands = new Weapon("Bear Hands", 1, [5,5], 95, 90, 100000000000000)
+var machete = new Weapon("Machete", 1, [40,60], 80, 90, 5)
+var shotgun = new Weapon("Shotgun", 2, [30,50], 65, 80, 5)
+var pistol = new Weapon("Pistol", 1, [25,40], 50, 75, 5)
+var machineGun = new Weapon("Machine Gun", 1, [15,30], 30, 65, 5)
+var sniper = new Weapon("Sniper", 1, [40,60], 30, 20, 5)
+var rpg = new Weapon("RPG", 1, [20,35], 95, 40, 5)
 
+//Zombie constructor
+function Zombie(health, attack, agility) {
+  this.health = health
+  this.attack = attack
+  this.agility = agility
+  this.receivedDam = false
+  this.roundDamage = 0
 
+  this.damageBool = function(perc) {
+    var comp = Math.floor(Math.random() * 100) + 1
+  
+    if (perc - comp > 0) {
+      this.receivedDam = false
+    } else {
+      this.receivedDam = true
+    }
+  }
+
+  this.calcDamage = function(min, max) {
+    this.roundDamage = Math.floor(Math.random() * (max - min) + min);
+  }
+}
+
+//Create new instances of zombies
+var zombie1 = new Zombie(100, [0,5], 15)
+var zombie2 = new Zombie(90, [1,6], 18)
+var zombie3 = new Zombie(85, [2,4], 20)
+var zombie4 = new Zombie(80, [2,5], 22)
+var zombie5 = new Zombie(60, [7,10], 10)
 
 
 //For inquirer prompt
@@ -95,6 +129,8 @@ function checkRound() {
 }
 
 
+
+
 // This function holds the game logic
 function playRound() {
 console.log("\n=============================\n")
@@ -127,55 +163,82 @@ console.log("\n=============================\n")
     switch (game.gun) {
 
       case "Bear hands":
-        //Set the player's damae to the range
-        playerDam = calcDamage(weapons.bearHands.attack[0], weapons.bearHands.attack[1]);
-        playerDidDam = damageBool(weapons.bearHands.reliability)
 
-        weapons.bearHands.uses--
+        bearHands.roundDamage = bearHands.calcDamage(bearHands.attack[0],bearHands.attack[1])
 
-        pickZombie(weapons.bearHands)
+        bearHands.didDam = bearHands.damageBool(bearHands.reliability)
+        
+
+        bearHands.uses--
+
+        pickZombie(bearHands)
+
         break;
+
       case "Machete":
-        playerDam = calcDamage(weapons.machete.attack[0], weapons.machete.attack[1]);
-        playerDidDam = damageBool(weapons.machete.reliability)
-        weapons.machete.uses--
-        pickZombie(weapons.machete)
+      machete.roundDamage = machete.calcDamage(machete.attack[0],machete.attack[1])
+
+      machete.didDam = machete.damageBool(machete.reliability)
+      
+
+      machete.uses--
+
+      pickZombie(machete)
         break;
       case "Shotgun":
-        playerDam = calcDamage(weapons.shotgun.attack[0], weapons.shotgun.attack[1]);
-        playerDidDam = damageBool(weapons.shotgun.reliability)
-        weapons.shotgun.uses--
-        pickZombie(weapons.shotgun)
+      shotgun.roundDamage = shotgun.calcDamage(shotgun.attack[0],shotgun.attack[1])
+
+      shotgun.didDam = shotgun.damageBool(shotgun.reliability)
+      
+
+      shotgun.uses--
+
+      pickZombie(shotgun)
         break;
       case "Pistol":
-        playerDam = calcDamage(weapons.pistol.attack[0], weapons.pistol.attack[1]);
-        playerDidDam = damageBool(weapons.pistol.reliability)
-        weapons.pistol.uses--
-        pickZombie(weapons.pistol)
+      pistol.roundDamage = pistol.calcDamage(pistol.attack[0],pistol.attack[1])
+
+      pistol.didDam = pistol.damageBool(pistol.reliability)
+      
+
+      pistol.uses--
+
+      pickZombie(pistol)
         break;
       case "Machine Gun":
-        playerDam = calcDamage(weapons.machineGun.attack[0], weapons.machineGun.attack[1]);
-        playerDidDam = damageBool(weapons.machineGun.reliability)
-        weapons.machineGun.uses--
-        pickZombie(weapons.machineGun)
+      machineGun.roundDamage = machineGun.calcDamage(machineGun.attack[0],machineGun.attack[1])
+
+      machineGun.didDam = machineGun.damageBool(machineGun.reliability)
+      
+
+      machineGun.uses--
+
+      pickZombie(machineGun)
         break;
       case "Sniper":
-        playerDam = calcDamage(weapons.sniper.attack[0], weapons.sniper.attack[1]);
-        playerDidDam = damageBool(weapons.sniper.reliability)
-        weapons.sniper.uses--
-        pickZombie(weapons.sniper)
+      sniper.roundDamage = sniper.calcDamage(sniper.attack[0],sniper.attack[1])
+
+      sniper.didDam = sniper.damageBool(sniper.reliability)
+      
+
+      sniper.uses--
+
+      pickZombie(sniper)
         break;
 
       case "RPG":
-        playerDam = calcDamage(weapons.rpg.attack[0], weapons.rpg.attack[1]);
-        playerDidDam = damageBool(weapons.rpg.reliability)
-        weapons.rpg.uses--
-        pickZombie(weapons.rpg)
+      rpg.roundDamage = rpg.calcDamage(rpg.attack[0],rpg.attack[1])
 
+      rpg.didDam = rpg.damageBool(rpg.reliability)
+      
+
+      rpg.uses--
+
+      pickZombie(rpg)
         break;
 
         case "View Weapon Stats":
-        console.log( "Bear Hands:\n reach: 1\n attack: 5 \n risk:95\n reliability: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n risk: 80\n reliability: 90\n uses: 5\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n risk: 65\n reliability: 80\n uses: 5\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n risk: 50\n reliability: 75\n uses: 5\n\nMachine Gun:\n reach: 3\n attack: min(15), max(30)\n risk: 30\n reliability: 65\n uses: 5\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n risk: 30\n reliability: 20\n uses: 5\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n risk: 95\n reliability: 40\n uses: 5\n\n")
+        console.log( "Bear Hands:\n reach: 1\n attack: 5 \n risk:95\n reliability: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n risk: 80\n reliability: 90\n uses: "+ machete.uses +"\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n risk: 65\n reliability: 80\n uses: "+ shotgun.uses +"\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n risk: 50\n reliability: 75\n uses: "+ pistol.uses +"\n\nMachine Gun:\n reach: 3\n attack: min(15), max(30)\n risk: 30\n reliability: 65\n uses: "+ machineGun.uses +"\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n risk: 30\n reliability: 20\n uses: "+ sniper.uses +"\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n risk: 95\n reliability: 40\n uses: "+ rpg.uses +"\n\n")
 
         nextRound()
         break;
