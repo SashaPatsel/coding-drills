@@ -27,8 +27,6 @@ function damageBool(perc) {
   }
 }
 
-//POSSIBLE GUNS
-var guns = ["Bear hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG"]
 
 //For inquirer prompt
 var zombieChoices = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
@@ -38,6 +36,7 @@ var zombieIndex = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
 
 var weapons = {
   bearHands: {
+    name: "Bear Hands",
     //number of zombies affected
     reach: 1,
     //Range of possible damage
@@ -51,6 +50,7 @@ var weapons = {
   },
 
   machete: {
+    name: "Machete",
     //number of zombies affected
     reach: 1,
     //Range of possible damage
@@ -64,6 +64,7 @@ var weapons = {
   },
 
   shotgun: {
+    name: "Shotgun",
     //number of zombies affected
     reach: 2,
     //Range of possible damage
@@ -76,6 +77,7 @@ var weapons = {
   },
 
   pistol: {
+    name: "Pistol",
     //number of zombies affected
     reach: 2,
     //Range of possible damage
@@ -88,6 +90,7 @@ var weapons = {
   },
 
   machineGun: {
+    name: "Machine Gun",
     //number of zombies affected
     reach: 3,
     //Range of possible damage
@@ -100,18 +103,20 @@ var weapons = {
   },
 
   sniper: {
+    name: "Sniper",
     //number of zombies affected
     reach: 1,
     //Range of possible damage
     attack: [40, 60],
     //Chance of taking damge back (%)
     risk: 30,
-    reliability: 10,
+    reliability: 20,
     //"health" of gun
     uses: 5
   },
 
   rpg: {
+    name: "RPG",
     //number of zombies affected
     reach: 4,
     //Range of possible damage
@@ -169,9 +174,12 @@ var zombies = {
   }
 }
 
+var guns = ["Bear hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG"]
+
 
 // Created a generic function that checks if the user won or lost.
 function checkRound() {
+
 
   console.log("");
   console.log("");
@@ -212,19 +220,21 @@ function checkRound() {
 
 // This function holds the game logic
 function playRound() {
-
+console.log("\n=============================\n")
   for (var i = 0; i < zombieIndex.length; i++) {
     // Pass in the names of the zombies in the array to locate them in the object.
     var zIndex = "zombie" + (i + 1)
 
     if (zombies[zIndex].health > 0) {
-      console.log("\n=============================\n")
+      
       console.log(zombieIndex[i] + " Health: ", zombies[zIndex].health)
 
     }
   }
+  
+  console.log("\nHero Health: " + hero.health + "")
   console.log("\n=============================\n")
-  console.log("Hero Health: " + hero.health + "\n")
+
 
   // We create a list prompt. Specifying that the user must pick a random number between 1 and 5.
   inquirer.prompt([
@@ -284,6 +294,7 @@ function playRound() {
         playerDidDam = damageBool(weapons.rpg.reliability)
         weapons.rpg.uses--
         pickZombie(weapons.rpg)
+
         break;
     }
 
@@ -312,7 +323,7 @@ function pickZombie(weapon) {
     }
 
     if (!damageBool(weapon.reliability)) {
-      console.log("Shot on target")
+      console.log("\nShot on target")
 
       for (var i = 0; i < zombieVictims.length; i++) {
         zombies[zombieVictims[i]].receivedDam = damageBool(zombies[zombieVictims[i]].agility)
@@ -320,52 +331,101 @@ function pickZombie(weapon) {
 
 
         if (zombies[zombieVictims[i]].receivedDam === true) {
-          console.log("Congrats, you landed a shot for " + playerDam + " damage on " + zombieVictims[i] + "!")
+          console.log("\nCongrats, you landed a shot for " + playerDam + " damage on " + zombieVictims[i] + "!")
           zombies[zombieVictims[i]].health -= playerDam
 
         } else {
-          console.log(zombieVictims[i] + " dodged your attack")
+          console.log("\n"+zombieVictims[i] + " dodged your attack")
         }
 
 
-        //If a zombie is defeated
-        if (zombies[zombieVictims[i]].health <= 0) {
 
-          for (var i = 0; i < zombieChoices.length; i++) {
-            if (zombieChoices[i] === zombieVictims[i]) {
-              console.log("Congrats, you defeated " + zombieChoices[i])
-              //Make the zombie unable to attack anymore
-              zombies[zombieVictims[i]].attack = [0, 0]
-              //Remove the zombie as a choice in the inquirer prompt
-              zombieChoices.splice(i, 1)
-            }
-          }
-
-        }
 
       }
     } else {
-      console.log("Oooooh, tough miss. Your shot was not on target.")
+      console.log("\nOooooh, tough miss. Your shot was not on target.")
     }
 
-    
+    //If a zombie is defeated
+
+
+      for (var i = 0; i < zombieVictims.length; i++) {
+        if (zombies[zombieVictims[i]].health <= 0) {
+          console.log("\nCongrats, you defeated " + zombieVictims[i])
+          //Make the zombie unable to attack anymore
+          zombies[zombieVictims[i]].attack = [0, 0]
+          //Remove the zombie as a choice in the inquirer prompt
+          zombieChoices.splice(zombieChoices.indexOf(zombieVictims[i]), 1)
+        }
+      }
+
+
 
     // If the hero takes damage
     if (!damageBool(weapon.risk)) {
       var zombieDamSum = calcDamage(zombies.zombie1.attack[0], [1]) + calcDamage(zombies.zombie2.attack[0], [1]) + calcDamage(zombies.zombie3.attack[0], [1]) + calcDamage(zombies.zombie4.attack[0], [1]) + calcDamage(zombies.zombie5.attack[0], [1]);
 
       hero.health -= zombieDamSum
-      console.log("The hero has been dealt " + zombieDamSum + " damage.")
-      console.log("The hero has " + hero.health + " health.")
+      console.log("\nThe hero has been dealt " + zombieDamSum + " damage.")
+      console.log("\nThe hero has " + hero.health + " health.")
 
     } else {
-      console.log("Phew, that was a close one")
+      console.log("\nPhew, that was a close one. You avoided all damage")
     }
-    checkRound()
+    
+    if (weapon.uses < 1) {
+      guns.splice(guns.indexOf(weapon.name), 1)
+    }
+
+    nextRound()
+  })
+}
+
+function nextRound() {
+  inquirer.prompt([    {
+    type: "list",
+    name: "play",
+    message: "Choose your Weapon",
+    choices: ["Continue", "View Stats"]
+  }]).then(function(choice) {
+    if (choice.play === "View Stats") {
+      console.log( "Bear Hands:\n reach: 1\nattack: 5 \n risk:95\n reliability: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n risk: 80\n reliability: 90\n uses: 5\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n risk: 65\n reliability: 80\n uses: 5\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n risk: 50\n reliability: 75\n uses: 5\n\nMachine Gun:\n  reach: 3\n attack: min(15), max(30)\n risk: 30\n reliability: 65\n uses: 5\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n risk: 30\n reliability: 20\n uses: 5\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n risk: 95\n reliability: 40\n uses: 5\n\n")
+
+      inquirer.prompt([
+        {
+          type: "input",
+          name:"continue",
+          message: "Press ENTER to continue"
+        }
+      ]).then(function(res) {
+        checkRound()
+      })
+    } else {
+      checkRound()
+    }
   })
 }
 
 
 // Starts the game!
+
+console.log("\nWELCOME TO ZOMBIE FIGHTER PRO. USE STRATEGY AND GRIT TO ELIMINATE THE HORDE OF ONCOMING ZOMBIES. HERE ARE THE WEAPONS YOU CAN CHOOSE. YOU WILL PICK ONE FOR EACH FIGHT!")
+
+console.log("\n===========================================\n")
+
+console.log("Bear hands: Zombies don't feel punches the same way humans do. Only use these as a last resort \n uses: ∞ \n\n", 
+
+"Machete: Go up close and personal for critical damage to a single zombie. \n uses: " + weapons.machete.uses + " \n\n", 
+
+"Shotgun: A reliable, close-range weapon. Can hit two zombies at once. \n uses: " + weapons.shotgun.uses + " \n\n", 
+
+"Pistol: A solid mid-range weapon. Can hit two zombies at once \n uses: " + weapons.pistol.uses + " \n\n", 
+
+"Machine Gun: An erratic weapon. Can hit three zombies at a time though. \n uses: " + weapons.machineGun.uses + " \n\n", 
+
+"Sniper: A low-risk, high-reward weapon that can damage a single zombie. It's tough to hit shots with it though. \n uses: " + weapons.sniper.uses + " \n\n", 
+
+"RPG: An incredibly difficult weapon to use. If you can manage to get it to work, it will deal damage to up to 4 zombies. \n uses: " + weapons.rpg.uses + " \n\n")
+
 playRound();
 
