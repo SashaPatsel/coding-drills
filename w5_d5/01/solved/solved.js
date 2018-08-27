@@ -30,7 +30,10 @@ function damageBool(perc) {
 //POSSIBLE GUNS
 var guns = ["Bear hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG"]
 
+//For 
 var zombieChoices = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
+
+var zombieIndex = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
 
 var weapons = {
 bearHands: {
@@ -122,7 +125,7 @@ rpg: {
 
 var zombies = {
 
-     zombie1: {
+     zombie1: { 
       health: 100,
       attack: [0, 5],
       //Chance of dodging (%)
@@ -130,7 +133,7 @@ var zombies = {
       receivedDam: false
     },
 
-     zombie2: {
+     zombie2: { 
       health: 90,
       attack: [1, 6],
       //Chance of dodging (%)
@@ -138,7 +141,7 @@ var zombies = {
       receivedDam: false
     },
 
-     zombie3: {
+     zombie3: { 
       health: 85,
       attack: [2, 4],
       //Chance of dodging (%)
@@ -147,7 +150,7 @@ var zombies = {
     },
 
 
-     zombie4: {
+     zombie4: { 
       health: 80,
       attack: [2, 5],
       //Chance of dodging (%)
@@ -156,7 +159,7 @@ var zombies = {
     },
 
 
-     zombie5: {
+     zombie5: { 
       health: 60,
       attack: [7, 10],
       //Chance of dodging (%)
@@ -209,12 +212,13 @@ function checkRound() {
 // This function holds the game logic
 function playRound() {
 
-  for (var i = 0 ; i < zombieChoices.length ; i++) {
+  for (var i = 0 ; i < zombieIndex.length ; i++) {
     // Pass in the names of the zombies in the array to locate them in the object.
     var zIndex = "zombie" + (i + 1)
+
     if (zombies[zIndex].health > 0) {
       console.log("\n=============================\n")
-      console.log(zombieChoices[i] +" Health: ", zombies[zIndex].health)
+      console.log(zombieIndex[i] +" Health: ", zombies[zIndex].health)
 
     }
   }
@@ -317,7 +321,7 @@ function pickZombie(weapon) {
 
       for (var i = 0 ; i < zombieChoices.length ; i++) {
         if (zombieChoices[i] === zombie.zombie) {
-          console.log("Congrats, you defeated" + zombieChoices[i])
+          console.log("Congrats, you defeated " + zombieChoices[i])
           //Make the zombie unable to attack anymore
           zombies[zombie.zombie].attack = [0,0]
           zombieChoices.splice(i,1) 
