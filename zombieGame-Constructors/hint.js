@@ -179,27 +179,29 @@ function Game() {
 
 
 
-    
+
   
     // ======================================
       
-    } 
+
+    
+
+  // ======================================
+  //6.8 Take care of the fallen zombies
+
+  //6.8.1 Loop through zombieVictims
+  //6.8.2 If a given zombies health is less than or equal to 0,inform the user that they've defeated that zombie
+  //6.8.3 Set the zombie's min and max attack to 0
+  //6.8.4 Using the zombie's name, remove the fallen zombie from the zombieChoices array
 
 
 
-    for (var i = 0; i < zombieVictims.length; i++) {
-      if (zombieVictims[i].health <= 0) {
-        console.log("\nCongrats, you defeated " + zombieVictims[i].name)
-        //Make the zombie unable to attack anymore
-        zombieVictims[i].attack = [0, 0]
-        //Remove the zombie as a choice in the inquirer prompt
-        zombieChoices.splice(zombieChoices.indexOf(zombieVictims[i].name), 1)
-      }
-    }
+    // ======================================
 
 
 
-    // If the hero takes damage
+  // ======================================
+
     if (!weapon.damageBool(weapon.risk)) {
       
       zombie1.calcDamage(zombie1.attack[0], zombie1.attack[1])
