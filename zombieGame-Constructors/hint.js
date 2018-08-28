@@ -201,24 +201,15 @@ function Game() {
 
 
   // ======================================
+//6.9 Determine the damage the hero takes.
 
-    if (!weapon.damageBool(weapon.risk)) {
-      
-      zombie1.calcDamage(zombie1.attack[0], zombie1.attack[1])
-      zombie2.calcDamage(zombie2.attack[0], zombie2.attack[1])
-      zombie3.calcDamage(zombie3.attack[0], zombie3.attack[1])
-      zombie4.calcDamage(zombie4.attack[0], zombie4.attack[1])
-      zombie5.calcDamage(zombie5.attack[0], zombie5.attack[1])
-      
-      var zombieDamSum = zombie1.roundDamage + zombie2.roundDamage + zombie3.roundDamage + zombie4.roundDamage + zombie5.roundDamage;
-
-      hero.health -= zombieDamSum
-      console.log("\nThe hero has been dealt " + zombieDamSum + " damage.")
-      console.log("\nThe hero has " + hero.health + " health.")
-
-    } else {
-      console.log("\nPhew, that was a close one. You avoided all damage")
-    }
+//6.9.1 If a player takes damage (determined by weapon risk and the calcDamage function):
+//6.9.2 set the roundDamage for each zombie (they all attack every round)
+//6.9.3 create a variable called zombieDamSum set to the sum of the roundDamage from all the zombies. 
+//6.9.4 Subtract zombieDamSum from the hero's health
+//6.9.5 Inform the user how much damage they've been dealt
+//6.9.6 Inform the user how much health they have left
+//6.9.7 If the player does not take damage, console.log("\nPhew, that was a close one. You avoided all damage")
 
     if (weapon.uses < 1) {
       guns.splice(guns.indexOf(weapon.name), 1)
