@@ -1,6 +1,9 @@
-var inquirer = require("inquirer")
-var Weapon = require("./weapon")
-var Zombie = require("./zombie")
+// ====================== STEP 4 ======================
+//Require Inquirer, the Weapon constructor, and the Zombie Constructor
+
+
+
+// ====================================================
 
 
 // OUR HERO'S STATS
@@ -9,7 +12,7 @@ var hero = {
 }
 
 
-// ====================== STEP 3 ======================
+// ====================== STEP 4 ======================
 //CREATE 6 WEAPONS
 
 
@@ -19,7 +22,7 @@ var hero = {
 
 
 
-// ====================== STEP 4 ======================
+// ====================== STEP 5 ======================
 //CREATE 5 ZOMBIES
 
 
@@ -27,13 +30,13 @@ var hero = {
 // ====================================================
 
 
-//For inquirer prompt
+//Used for the inquire prompt. When a zombie is defeated, it is removed from this array so that the user can no longer choose to attack it. If you have not chosen the strings below as the names for your zombies, change the values in this array to the names you chose for your zombies.
 var zombieChoices = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
 
-//for Gameplay
+//For Gameplay
 var zombieFighters = [zombie1, zombie2, zombie3, zombie4, zombie5]
 
-
+// For inquirer prompt. When a gun has no more uses, it is removed from this array.
 var guns = ["Bear hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG", "View Weapon Stats"]
 
 
