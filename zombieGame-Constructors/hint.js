@@ -230,8 +230,11 @@ function Game() {
 // ======================================
   }
 
+// ======================================
+  //6.12 Invoke the checkRound function after the user has hit enter
+    // Hint: You may lose track of "this". If you do, please reference step 6.2
   this.nextRound = function () {
-    var play = this
+
     inquirer.prompt([
       {
         type: "input",
@@ -239,9 +242,12 @@ function Game() {
         message: "Press ENTER to continue"
       }
     ]).then(function (res) {
-      play.checkRound()
+      
     })
   }
+
+// ======================================
+
 
   // Created a generic function that checks if the user won or lost.
   this.checkRound = function () {
@@ -285,3 +291,5 @@ function Game() {
 }
 
 // =============================================
+
+//If you've made it all the way down here, you might be finished!!! Be sure to play your game and check for errors. Take time to make sure the game is behaving how you expect it to.
