@@ -38,13 +38,6 @@ var zombieFighters = [zombie1, zombie2, zombie3, zombie4, zombie5]
 var guns = ["Bear hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG", "View Weapon Stats"]
 
 
-
-
-
-
-
-
-
 // Starts the game!
 console.log("\nWELCOME TO ZOMBIE FIGHTER PRO. USE STRATEGY AND GRIT TO ELIMINATE THE HORDE OF ONCOMING ZOMBIES. HERE ARE THE WEAPONS YOU CAN CHOOSE. YOU WILL PICK ONE FOR EACH FIGHT!")
 
@@ -106,7 +99,7 @@ function Game() {
           bearHands.didDam = bearHands.damageBool(bearHands.reliability)
 
 
-          bearHands.uses--
+          bearHands.used()
 
           play.pickZombie(bearHands)
 
@@ -118,7 +111,7 @@ function Game() {
           machete.didDam = machete.damageBool(machete.reliability)
 
 
-          machete.uses--
+          machete.used()
 
           play.pickZombie(machete)
           break;
@@ -128,7 +121,7 @@ function Game() {
           shotgun.didDam = shotgun.damageBool(shotgun.reliability)
 
 
-          shotgun.uses--
+          shotgun.used()
 
           play.pickZombie(shotgun)
           break;
@@ -138,7 +131,7 @@ function Game() {
           pistol.didDam = pistol.damageBool(pistol.reliability)
 
 
-          pistol.uses--
+          pistol.used()
 
           play.pickZombie(pistol)
           break;
@@ -149,7 +142,7 @@ function Game() {
 
 
 
-          machineGun.uses--
+          machineGun.used()
 
           play.pickZombie(machineGun)
           break;
@@ -159,7 +152,7 @@ function Game() {
           sniper.didDam = sniper.damageBool(sniper.reliability)
 
 
-          sniper.uses--
+          sniper.used()
 
           play.pickZombie(sniper)
           break;
@@ -170,7 +163,7 @@ function Game() {
           rpg.didDam = rpg.damageBool(rpg.reliability)
 
 
-          rpg.uses--
+          rpg.used()
 
           play.pickZombie(rpg)
           break;
