@@ -211,11 +211,23 @@ function Game() {
 //6.9.6 Inform the user how much health they have left
 //6.9.7 If the player does not take damage, console.log("\nPhew, that was a close one. You avoided all damage")
 
-    if (weapon.uses < 1) {
-      guns.splice(guns.indexOf(weapon.name), 1)
-    }
 
-    this.nextRound()
+
+
+
+  // ======================================
+
+  // ======================================
+  //6.10 If a weapon does not have any uses left, remove it from the guns array
+
+
+  // ======================================
+
+  // ======================================
+  //6.11 Invoke the nextRound function
+
+
+// ======================================
   }
 
   this.nextRound = function () {
