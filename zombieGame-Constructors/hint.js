@@ -152,39 +152,39 @@ function Game() {
   
 
   this.fight = function (zombie, weapon) {
-    // Determine reach
-    var zombieVictims = []
-    zombieVictims.push(zombie)
-    for (var i = 0; i < zombieFighters.length; i++) {
-      if (zombieVictims.length < weapon.reach && zombieFighters[i].name !== zombie.name) {
-        zombieVictims.push(zombieFighters[i])
-      }
-    }
+     // ======================================
+    //6.6: Determine zombies affected by weapon's reach
+    //  6.6.1 Create a variable called zombieVictims and set it to an empty array
+    // 6.6.2 push the zombie chosen by the user into the array you created in 6.6.1
 
-    if (!weapon.didDam) {
-      console.log("\nShot on target")
-
-      for (var i = 0; i < zombieVictims.length; i++) {
-       
-        zombieVictims[i].damageBool(zombieVictims[i].agility)
-
-        if (zombieVictims[i].receivedDam === true) {
-          console.log("\nCongrats, you landed a shot for " + weapon.roundDamage + " damage on " + zombieVictims[i].name + "!")
-          zombieVictims[i].health -= weapon.roundDamage
-
-        } else {
-          console.log("\n" + zombieVictims[i].name + " dodged your attack")
-        }
+    //6.6.3 Looping through zombieFighters, push all the zombies within to zombieVictims, but only under the following conditions:
+    // - The length of zombieVictims is less than the reach of the gun
+    // - The name of the chosen zombie does not match the one in zombieFighters
 
 
 
 
-      }
-    } else {
-      console.log("\nOooooh, tough miss. Your shot was not on target.")
-    }
+    // ======================================
 
-    //If a zombie is defeated
+
+    // ======================================
+    // 6.7 Determine whether your shot was on target, and how many zombies were able to dodge the shot if it was on target.
+    //6.7.1 If the didDam property of the chosen weapon evaluates to true: console.log("\nShot on target"). Otherwise, console.log("\nOooooh, tough miss. Your shot was not on target.")
+
+    //6.7.2 If the condition created in 6.7.1 is met, Loop through zombieVictims.
+    //6.7.3 In each iteration of the loop, determine whether a given zombie received damage. Use the zombies agility and the damageBool function 
+    //6.7.4 If a zombie did receive damage, congratulate the user, inform them how much damage they did and to which zombie. 
+    //6.7.5 within the same condition as 6.7.4, subtract the roundDamage of the chosen weapon from the zombie's health
+    //6.7.6 If a zombie did not receive damage, inform the user which zombie dodged their attack
+
+
+
+    
+  
+    // ======================================
+      
+    } 
+
 
 
     for (var i = 0; i < zombieVictims.length; i++) {
