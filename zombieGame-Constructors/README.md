@@ -95,3 +95,15 @@ Require the following:
 4. Create six different weapons using your `Weapon` constructor. Feel free to use the properties given in original.js. If you are unsure what a given property does, please reference `reminder` in this README.
 
 5. Create five different zombies using your `Zombie` constructor. Feel free to use the properties given in original.js. If you are unsure what a given property does, please reference `reminder` in this README.
+
+6. In step 6, you have two options: You can rebuild the game from scratch (using original.js or not), or, using hint.js, you can follow the instructions and build the constructor step by step.
+Keep in mind, the completed version will amount to roughly 300 lines of code. The benefit of doing it yourself is that you can truly claim the game as your own creation.  
+- If you choose to build it yourself, simply navigate down to STEP 6 in prompt.js * 
+- If you want to follow more detailed instructions, navigate to hint.js. Copy/paste paste the constructor into step 6 of prompt.js, and fill out the work. This should make it easier to test.
+
+* Note: if you choose to make this constructor on your own, you may want to give it the following properties (all functions which map to a counterpart in original.js):
+- playRound
+- pickZombie
+- fight
+- nextRound
+- checkRound
