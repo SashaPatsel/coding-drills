@@ -1,5 +1,6 @@
-var inquirer = require("inquirer");
-
+var inquirer = require("inquirer")
+var Weapon = require("./weapon")
+var Zombie = require("./zombie")
 
 
 // OUR HERO'S STATS
@@ -26,7 +27,6 @@ var zombie3 = new Zombie("zombie3", 85, [2, 4], 20)
 var zombie4 = new Zombie("zombie4", 80, [2, 5], 22)
 var zombie5 = new Zombie("zombie5", 60, [7, 10], 10)
 
-var zombieCons = []
 
 //For inquirer prompt
 var zombieChoices = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
@@ -345,3 +345,4 @@ function Game() {
 
   }
 }
+
