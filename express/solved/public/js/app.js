@@ -23,9 +23,7 @@ $(document).ready(function () {
             type: "POST",
             url: "/api/restaurants/new",
             data: newRestaurant
-          }).then(function(data) {
-              console.log(data)
-          });
+          })
     })
 
 

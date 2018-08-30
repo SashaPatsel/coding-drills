@@ -32,6 +32,7 @@ app.use(bodyParser.json())
 //Serve up static assets from public
 app.use(express.static("public"));
 
+//======================== HTML ========================
 
  app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"))
@@ -40,6 +41,9 @@ app.use(express.static("public"));
  app.get("/add", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/add.html"))
  })
+
+
+ // ===================================================
 
 
  // ====================== API ==========================
@@ -56,7 +60,8 @@ app.use(express.static("public"));
  app.post("/api/restaurants/new", function(req, res) {
 
   console.log(req.body)
-
+  var restaurant = req.body
+  connection.query("INSERT INTO restaurants SET ?", restaurant)
 
  })
 
