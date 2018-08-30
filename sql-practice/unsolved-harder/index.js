@@ -1,12 +1,13 @@
-// Require mysql to use it as a database, inquirer so a user can interact with that database however he/she chooses
+//1.  Require mysql to use it as a database, inquirer so a user can interact with that database however he/she chooses
 //Remember, you'll have to install all the packages we've required here
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
 // We're going to manage our nominees in style with this awesome package
+ //(https://www.npmjs.com/package/cli-table.)
 var Table = require('cli-table');
 
-// configure our connection with mysql and a local server
+// 2. Configure our connection with mysql and a local server
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -25,7 +26,7 @@ connection.connect(function (err) {
 
 //This function will be called multiple times to show us an updated version of our list of nominees
 function review() {
-    // Let's grab a list of all the nominees
+    //3.  Let's grab a list of all the nominees
     //TO-DO go to this link and read the documentation: https://www.npmjs.com/package/cli-table.
     //Display all of the nominees and their respective data to the command line using CLI Table
     //Once you've done so, invoke the restart function at the end of this function
@@ -55,21 +56,21 @@ function manageNominees() {
 
             //UPDATE    
             case "Change a nominee's rating":
-           //Call the populate nominees function here, and pass it upddateRating as an argument. This will give us an array of options to give to the user when they want to choose who to update;
+           // 4. Call the populate nominees function here, and pass it upddateRating as an argument. This will give us an array of options to give to the user when they want to choose who to update;
                 break;
 
             //DELETE    
             case "Delete a nominee :(":
             //Oooooh, look! ANOTHER callback
-                //Call the populate nominees function here, and pass it remove as an argument. This will give us an array of options to give to the user when they want to choose who to update;
+                // 5. Call the populate nominees function here, and pass it remove as an argument. This will give us an array of options to give to the user when they want to choose who to update;
                 break;
 
         }
     })
 }
 
-//===================== TO DO =========================
-//1. 
+
+//6. 
 //Let's make it so that we can add a nominee to our prestigious list. 
 //As you can see from the prompt, we'll be filling out every column for our nominees' data.
 function add() {
@@ -87,9 +88,10 @@ function add() {
         message: "Give it a rating out of 10.\n"
 
     }]).then(function(answers){
-        //complete the query string:
+        //7. complete the query string:
         var queryString = //"????"
         connection.query(queryString, {
+         //8.
           //??????
         })
         //Let's have a gander at our updated table (pulling straight from our database!!!!)
@@ -98,16 +100,16 @@ function add() {
 }
 //In our inquirer, we could have the user manually type in the name of a show... but what if they mispell?! 
 
-//2.
-//It'd probably be better if we query our db for a list of the nominees, and put those in an array so we can provide them as choices for inquirer. Otherwise, the user would have to input text that exactl matches data in our tabel... yuck
+//9.
+//Using the values in our table, populate an inquirer list of nominees. 
 function populateNominees(crud){
-    //We don't wan't this array doubling, tripling, etc.. every time we call this function. Let's empty it everytime so we can refill it with our updated data.
+    //We don't wan't this array doubling, tripling, etc.. every time we call this function. 
     options = []
-    //Complete the query string.
+    //10. Complete the query string.
     var queryString = //"?????"
     connection.query(queryString, function (err, res) {
        
-        //LOOP through the names of the nominees, and PUSH them into our options array
+        //11. LOOP through the names of the nominees, and PUSH them into our options array
        
         //Here is our callback. It will call either the update or delete functions depending on what we pass to it in our switch/case
         crud(options)
@@ -116,7 +118,6 @@ function populateNominees(crud){
 
 }
 
-//3.
 //This function will allow the user to update the rating of a show.
 
 function updateRating(list) {
@@ -131,13 +132,15 @@ function updateRating(list) {
         name: "rating",
         message: "Enter the new rating out of 10 (decimals up to two places are accepted)"
     }]).then(function(answers){
+        //12. Complete the query string
         var queryString = //"????"
         connection.query(queryString,[
+            //13. Update the rating of the chosen show
           //?????????
         ], 
         function(err, res) {
             console.log("Here is an updated list of the nominees:")
-            //Let's have a gander at our updated table (pulling straight from our database!!!!)
+            //Let's have a look at our updated table (pulling straight from our database!!!!)
             review()   
         }
     )
@@ -145,7 +148,7 @@ function updateRating(list) {
 
     
 }
-//4.
+
 //This function will remove one show from out database
 function remove(list) {
     inquirer.prompt([{
@@ -155,8 +158,10 @@ function remove(list) {
         choices: options,
         message: "Who is getting booted from the nominees?"
     }]).then(function(answer){
+        //14. Complete the query string
         var queryString = //"?????"
         connection.query(queryString,{
+            //15. Delete the chosen nominee
             //This is the row WHERE we will execute our delete
               //?????
         })

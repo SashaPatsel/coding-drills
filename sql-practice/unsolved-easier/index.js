@@ -1,4 +1,4 @@
-// Require mysql to use it as a database, inquirer so a user can interact with that database however he/she chooses
+//1.  Require mysql to use it as a database, inquirer so a user can interact with that database however he/she chooses
 //Remember, you'll have to install all the packages we've required here
 var mysql = require("mysql");
 var inquirer = require("inquirer");
@@ -6,7 +6,7 @@ var inquirer = require("inquirer");
 // We're going to manage our nominees in style with this awesome package
 var Table = require('cli-table');
 
-// configure our connection with mysql and a local server
+//2.  configure our connection with mysql and a local server
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -23,7 +23,8 @@ connection.connect(function (err) {
     if (err) throw err;
 });
 
-//This functions is already complete. It returns us a list of all the nominees and their corresponding data 
+//3. Review the function below. It is the display for our nominees
+//This function is already complete. It returns us a list of all the nominees and their corresponding data 
 function review() {
     // Let's grab a list of all the nominees
     connection.query("SELECT * FROM nominees", function (err, res) {
@@ -83,8 +84,7 @@ function manageNominees() {
     })
 }
 
-//===================== TO DO =========================
-//1. 
+
 //Let's make it so that we can add a nominee to our prestigious list. 
 //As you can see from the prompt, we'll be filling out every column for our nominees' data.
 function add() {
@@ -102,9 +102,10 @@ function add() {
         message: "Give it a rating out of 10.\n"
 
     }]).then(function(answers){
-        //complete the query string:
+        //4. complete the query string:
         var queryString = "INSERT ????"
         connection.query(queryString, {
+            //5. Input the appropriate info where the ?s are
             show_name: //???,
             num_seasons: //????,
             genre: //?????,
@@ -117,16 +118,16 @@ function add() {
 }
 //In our inquirer, we could have the user manually type in the name of a show... but what if they mispell?! 
 
-//2.
-//It'd probably be better if we query our db for a list of the nominees, and put those in an array so we can provide them as choices for inquirer. Otherwise, the user would have to input text that exactl matches data in our tabel... yuck
+//6.
+//It'd probably be better if we query our db for a list of the nominees, and put those in an array so we can provide them as choices for inquirer. Otherwise, the user would have to input text that exactly matches data in our tabel... yuck
 function populateNominees(crud){
     //We don't wan't this array doubling, tripling, etc.. every time we call this function. Let's empty it everytime so we can refill it with our updated data.
     options = []
-    //Complete the query string. Remember, * means all
+    //7. Complete the query string. Remember, * means all
     var queryString = "SELECT * ?????"
     connection.query(queryString, function (err, res) {
        
-        //LOOP through the names of the nominees, and PUSH them into our options array
+        //8. LOOP through the names of the nominees, and PUSH them into our options array
        
         //Here is our callback. It will call either the update or delete functions depending on what we pass to it in our switch/case
         //Crud will act as either the update or remove function, depending on what you ask of it
@@ -136,7 +137,6 @@ function populateNominees(crud){
 
 }
 
-//3.
 //This function will allow the user to update the rating of a show.
 
 function updateRating(list) {
@@ -151,8 +151,10 @@ function updateRating(list) {
         name: "rating",
         message: "Enter the new rating out of 10 (decimals up to two places are accepted)"
     }]).then(function(answers){
+        //9.  Complete the query string
         var queryString = "UPDATE ????"
         connection.query(queryString,[{
+            //10. Input the appropriate information
             //This is the new data we will SET
 
             rating: //????? remeber, this needs to be a number capable of having decimal places
@@ -170,7 +172,7 @@ function updateRating(list) {
 
     
 }
-//4.
+
 //This function will remove one show from out database
 function remove(list) {
     inquirer.prompt([{
@@ -180,8 +182,11 @@ function remove(list) {
         choices: options,
         message: "Who is getting booted from the nominees?"
     }]).then(function(answer){
+        //11. Complete the query string
         var queryString = "DELETE ?????"
-        connection.query(,{
+
+        connection.query(queryString,{
+            //12. Input the appropriate information
             //This is the row WHERE we will execute our delete
             show_name: //?????
         })
