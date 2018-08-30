@@ -6,6 +6,7 @@ var inquirer = require("inquirer");
 // We're going to manage our nominees in style with this awesome package
 var Table = require('cli-table');
 
+
 //2.  configure our connection with mysql and a local server
 var connection = mysql.createConnection({
     host: "localhost",
@@ -22,6 +23,7 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
     if (err) throw err;
 });
+
 
 //3. Review the function below. It is the display for our nominees
 //This function is already complete. It returns us a list of all the nominees and their corresponding data 
@@ -102,15 +104,21 @@ function add() {
         message: "Give it a rating out of 10.\n"
 
     }]).then(function(answers){
+
+
         //4. complete the query string:
         var queryString = "INSERT ????"
         connection.query(queryString, {
+
+
             //5. Input the appropriate info where the ?s are
             show_name: //???,
             num_seasons: //????,
             genre: //?????,
             //Don't forget... this needs to be a number that can have decimal places....
             rating: //???????
+
+
         })
         //Let's have a gander at our updated table (pulling straight from our database!!!!)
         review()
@@ -123,11 +131,14 @@ function add() {
 function populateNominees(crud){
     //We don't wan't this array doubling, tripling, etc.. every time we call this function. Let's empty it everytime so we can refill it with our updated data.
     options = []
+
+
+
     //7. Complete the query string. Remember, * means all
     var queryString = "SELECT * ?????"
     connection.query(queryString, function (err, res) {
        
-        //8. LOOP through the names of the nominees, and PUSH them into our options array
+    //8. LOOP through the names of the nominees, and PUSH them into our options array
        
         //Here is our callback. It will call either the update or delete functions depending on what we pass to it in our switch/case
         //Crud will act as either the update or remove function, depending on what you ask of it
@@ -151,9 +162,13 @@ function updateRating(list) {
         name: "rating",
         message: "Enter the new rating out of 10 (decimals up to two places are accepted)"
     }]).then(function(answers){
+
+
         //9.  Complete the query string
         var queryString = "UPDATE ????"
         connection.query(queryString,[{
+
+
             //10. Input the appropriate information
             //This is the new data we will SET
 
@@ -182,10 +197,14 @@ function remove(list) {
         choices: options,
         message: "Who is getting booted from the nominees?"
     }]).then(function(answer){
+
+
         //11. Complete the query string
         var queryString = "DELETE ?????"
 
         connection.query(queryString,{
+
+            
             //12. Input the appropriate information
             //This is the row WHERE we will execute our delete
             show_name: //?????

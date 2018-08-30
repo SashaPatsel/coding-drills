@@ -7,6 +7,7 @@ var inquirer = require("inquirer");
  //(https://www.npmjs.com/package/cli-table.)
 var Table = require('cli-table');
 
+
 // 2. Configure our connection with mysql and a local server
 var connection = mysql.createConnection({
     host: "localhost",
@@ -26,6 +27,8 @@ connection.connect(function (err) {
 
 //This function will be called multiple times to show us an updated version of our list of nominees
 function review() {
+
+
     //3.  Let's grab a list of all the nominees
     //TO-DO go to this link and read the documentation: https://www.npmjs.com/package/cli-table.
     //Display all of the nominees and their respective data to the command line using CLI Table
@@ -56,13 +59,17 @@ function manageNominees() {
 
             //UPDATE    
             case "Change a nominee's rating":
+
+
            // 4. Call the populate nominees function here, and pass it upddateRating as an argument. This will give us an array of options to give to the user when they want to choose who to update;
                 break;
 
             //DELETE    
             case "Delete a nominee :(":
             //Oooooh, look! ANOTHER callback
-                // 5. Call the populate nominees function here, and pass it remove as an argument. This will give us an array of options to give to the user when they want to choose who to update;
+
+
+            // 5. Call the populate nominees function here, and pass it remove as an argument. This will give us an array of options to give to the user when they want to choose who to update;
                 break;
 
         }
@@ -88,9 +95,13 @@ function add() {
         message: "Give it a rating out of 10.\n"
 
     }]).then(function(answers){
+
+
         //7. complete the query string:
         var queryString = //"????"
         connection.query(queryString, {
+
+
          //8.
           //??????
         })
@@ -100,14 +111,18 @@ function add() {
 }
 //In our inquirer, we could have the user manually type in the name of a show... but what if they mispell?! 
 
+
 //9.
 //Using the values in our table, populate an inquirer list of nominees. 
 function populateNominees(crud){
     //We don't wan't this array doubling, tripling, etc.. every time we call this function. 
     options = []
+
+
     //10. Complete the query string.
     var queryString = //"?????"
     connection.query(queryString, function (err, res) {
+
        
         //11. LOOP through the names of the nominees, and PUSH them into our options array
        
@@ -132,9 +147,13 @@ function updateRating(list) {
         name: "rating",
         message: "Enter the new rating out of 10 (decimals up to two places are accepted)"
     }]).then(function(answers){
+
+
         //12. Complete the query string
         var queryString = //"????"
         connection.query(queryString,[
+
+
             //13. Update the rating of the chosen show
           //?????????
         ], 
@@ -158,9 +177,13 @@ function remove(list) {
         choices: options,
         message: "Who is getting booted from the nominees?"
     }]).then(function(answer){
+
+
         //14. Complete the query string
         var queryString = //"?????"
         connection.query(queryString,{
+
+            
             //15. Delete the chosen nominee
             //This is the row WHERE we will execute our delete
               //?????
