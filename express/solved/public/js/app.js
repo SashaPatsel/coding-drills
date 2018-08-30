@@ -11,6 +11,25 @@ $(document).ready(function () {
 
     })
 
+    $("#newRestaurant").on("submit", function() {
+        var newRestaurant = {
+            restaurant_name: $("#restauarant_name").val().trim(),
+            restaurant_link: $("#restauarant_link").val().trim(),
+            restaurant_img: $("#restauarant_img").val().trim(),
+            rating: $("#rating").val().trim(),
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/api/restaurants/new",
+            data: newRestaurant
+          }).then(function(data) {
+              console.log(data)
+          });
+    })
+
+
+
 
 
 

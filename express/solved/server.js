@@ -41,6 +41,8 @@ app.use(express.static("public"));
   res.sendFile(path.join(__dirname, "./public/add.html"))
  })
 
+
+ // ====================== API ==========================
  app.get("/api/restaurants", function(req, res) {
 
 
@@ -50,6 +52,15 @@ app.use(express.static("public"));
 
  })
 
+
+ app.post("/api/restaurants/new", function(req, res) {
+
+  console.log(req.body)
+
+
+ })
+
+  // ===================================================
 
 
 
