@@ -37,6 +37,10 @@ app.use(express.static("public"));
   res.sendFile(path.join(__dirname, "./public/index.html"))
  })
 
+ app.get("/add", function(req, res) {
+  res.sendFile(path.join(__dirname, "./public/add.html"))
+ })
+
  app.get("/api/restaurants", function(req, res) {
 
 
