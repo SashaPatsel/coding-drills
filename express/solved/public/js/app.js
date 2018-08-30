@@ -27,6 +27,76 @@ $(document).ready(function () {
     })
 
 
+    $(".stars2").hover(function() {
+        
+        $(".stars1").addClass("star-gold")
+        $(".stars2").addClass("star-gold")
+    })
+
+
+    $(".stars3").hover(function() {
+        
+        $(".stars1").addClass("star-gold")
+        $(".stars2").addClass("star-gold")
+        $(".stars3").addClass("star-gold")
+    })
+
+    $(".stars4").hover(function() {
+        
+        $(".stars1").addClass("star-gold")
+        $(".stars2").addClass("star-gold")
+        $(".stars3").addClass("star-gold")
+        $(".stars4").addClass("star-gold")
+    })
+
+    $(".stars5").hover(function() {
+        
+        $(".stars1").addClass("star-gold")
+        $(".stars2").addClass("star-gold")
+        $(".stars3").addClass("star-gold")
+        $(".stars4").addClass("star-gold")
+        $(".stars5").addClass("star-gold")
+    })
+    $(".stars5").mouseleave(function() {
+        $(".stars1").removeClass("star-gold")
+        $(".stars2").removeClass("star-gold")
+        $(".stars3").removeClass("star-gold")
+        $(".stars4").removeClass("star-gold")
+        $(".stars5").removeClass("star-gold")
+    })
+
+    $(".stars4").mouseleave(function() {
+        $(".stars1").removeClass("star-gold")
+        $(".stars2").removeClass("star-gold")
+        $(".stars3").removeClass("star-gold")
+        $(".stars4").removeClass("star-gold")
+        $(".stars5").removeClass("star-gold")
+    })
+
+    $(".stars3").mouseleave(function() {
+        $(".stars1").removeClass("star-gold")
+        $(".stars2").removeClass("star-gold")
+        $(".stars3").removeClass("star-gold")
+        $(".stars4").removeClass("star-gold")
+        $(".stars5").removeClass("star-gold")
+    })
+
+    $(".stars2").mouseleave(function() {
+        $(".stars1").removeClass("star-gold")
+        $(".stars2").removeClass("star-gold")
+        $(".stars3").removeClass("star-gold")
+        $(".stars4").removeClass("star-gold")
+        $(".stars5").removeClass("star-gold")
+    })
+
+    $(".stars1").mouseleave(function() {
+        $(".stars1").removeClass("star-gold")
+        $(".stars2").removeClass("star-gold")
+        $(".stars3").removeClass("star-gold")
+        $(".stars4").removeClass("star-gold")
+        $(".stars5").removeClass("star-gold")
+    })
+
 
 
 
