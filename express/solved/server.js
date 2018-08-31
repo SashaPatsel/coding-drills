@@ -47,8 +47,9 @@ app.use(express.static("public"));
 
 
  // ====================== API ==========================
- app.get("/api/restaurants", function(req, res) {
 
+ //Get all restaurants
+ app.get("/api/restaurants", function(req, res) {
 
   connection.query("SELECT * FROM restaurants", function(err, response) {
     return res.json(response)
@@ -56,12 +57,20 @@ app.use(express.static("public"));
 
  })
 
-
+//Create new restaurant
  app.post("/api/restaurants/new", function(req, res) {
 
   console.log(req.body)
   var restaurant = req.body
   connection.query("INSERT INTO restaurants SET ?", restaurant)
+
+ })
+
+ //Update restaurant rating
+ app.put("/api/restaurants/:id/rating/:value", function(req, res) {
+  
+
+  connection.query("UPDATE restaurants SET rating = ? WHERE restaurant_id = ?", [req.params.value,req.params.id])
 
  })
 
