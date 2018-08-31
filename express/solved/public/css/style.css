@@ -2,8 +2,11 @@
   height: 200px;
   width: 200px;
   border-radius: 100px;
-  margin: 0 auto 20px;
   display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .stars {
@@ -35,17 +38,30 @@
   border-radius: 10px;
   height: 400px;
   margin-bottom: 20px;
+  background-color: rgba(235,235,235, 1);
+  box-shadow: 0 10px 20px rgba(0,0,0,.7);
+  position: relative;
 }
 
 h3 {
   font-size: 25px;
   text-align: center;
-  margin-bottom: 20px;
   margin-top: 20px;
+}
+
+p {
+font-size: 10px;
+color: black;
+text-align: center;
+margin-top: 5px;
 }
 
 .rating-contain {
   margin: auto;
   display: block;
   width: 120px;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, -2%);
 }
