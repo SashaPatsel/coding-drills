@@ -7,11 +7,15 @@
   font-size: 20px;
 }
 
-.stars1:hover {
+/* .stars1:hover {
+  color: gold;
+} */
+
+.star-hov {
   color: gold;
 }
 
-.star-gold {
+.star-click {
   color: gold;
 }
 
