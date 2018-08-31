@@ -4,8 +4,8 @@ $(document).ready(function () {
     console.log(res)
 
     for (var i = 0 ; i < res.length ; i++) {
-        
-        $(".restaurants").append("<div><h3>" + res[i].restaurant_name + "</h3><a href='"+ res[i].restaurant_link +"'> <img class='restaurant__img' src=" + res[i].restaurant_img +"></a><p>STARS: "+ res[i].rating +"</p>  <div id='"+ res[i].restaurant_id +"' class='rating-contain'><div class='stars-contain stars1' value='1'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars2' value='2'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars3' value='3'><i class='fa fa-star stars' aria-hidden='true'></i> </div><div class='stars-contain stars4' value='4'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars5' value='5'><i class='fa fa-star stars' aria-hidden='true'></i></div></div> </div>")
+        //separate appends
+        $(".restaurants").append("<div class='col-md-4'><div class='restaurant-card'><h3>" + res[i].restaurant_name + "</h3><a href='"+ res[i].restaurant_link +"'> <img class='restaurant__img' src=" + res[i].restaurant_img +"></a><div id='"+ res[i].restaurant_id +"' class='rating-contain'><div class='stars-contain stars1' value='1'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars2' value='2'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars3' value='3'><i class='fa fa-star stars' aria-hidden='true'></i> </div><div class='stars-contain stars4' value='4'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars5' value='5'><i class='fa fa-star stars' aria-hidden='true'></i></div></div> </div></div>")
 
 
         for (var j = 0 ; j < 5 ; j++) {
@@ -13,10 +13,11 @@ $(document).ready(function () {
        
         var childStars = $("#"+(res[i].restaurant_id)).children()[j]
         var starVal = parseInt($(childStars).attr("value"))
-            console.log(starVal)  
+            console.log(childStars)  
             
             if (starVal === res[i].rating){
-                console.log("yo")
+                $(childStars).addClass("star-click")
+                $(childStars).prevAll().addClass("star-click")
             }
         }
    
