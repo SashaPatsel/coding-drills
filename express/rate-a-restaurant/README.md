@@ -30,7 +30,15 @@ Rate-a-restaurant is an application that allows the user to enter information ab
 - Render two different HTML pages at two different routes
 - Create three API routes
 
-Make sure that these routes behave as you expect them to. You can provide these routes with dummy data in order to test them. 
+- Make sure that these routes behave as you expect them to. You can provide these routes with dummy data in order to test them. 
 
-5. 
+5. Finally, navigate to app.js and follow the instructions there. You will be asked to:
+- Render components based on our query to our database.
+- Allow the use to update the rating of a restaurant. 
+- Allow the use to add new restaurants.
+
+6. You're all done!!!
+
+
+Note: You do not need to touch any of the HTML files, style.css or stars.js
 
