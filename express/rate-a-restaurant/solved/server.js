@@ -66,9 +66,14 @@ app.use(express.static("public"));
  //Update restaurant rating
  app.put("/api/restaurants/:id/rating/:value", function(req, res) {
   
-console.log(req.params.id, req.params.value)
   connection.query("UPDATE restaurants SET rating = ? WHERE restaurant_id = ?", [req.params.value,req.params.id])
 
+ })
+
+ app.delete("/api/restaurants/:id/delete", function(req,res) {
+   connection.query("DELETE FROM restaurants WHERE ?", {
+    restaurant_id: req.params.id
+   });
  })
 
   // ===================================================

@@ -28,9 +28,9 @@ Rate-a-restaurant is an application that allows the user to enter information ab
 - Require and install some packages (specified in server.js)
 - Configure the database to your own settings
 - Render two different HTML pages at two different routes
-- Create three API routes
+- Create four API routes
 
-- Make sure that these routes behave as you expect them to. You can provide these routes with dummy data in order to test them. 
+- Make sure that these routes behave as you expect them to. You can provide these routes with dummy data, use POSTMAN, or skip ahead and do the front-end section first in order to test them. 
 
 5. Finally, navigate to app.js and follow the instructions there. You will be asked to:
 - Render components based on our query to our database.

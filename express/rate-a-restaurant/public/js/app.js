@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-
+    // This helper function takes in the name, link, image url, id, and rating for a restaurant and renders that restaurant card to the DOM. You will not need to change this function.
     function renderCards(name, link, img, id, rating) {
-        //separate appends
-        $(".restaurants").append("<div class='col-md-4'><div class='restaurant-card'><h3>" + name + "</h3><a href='"+ link +"'> <img class='restaurant__img' src=" + img +"></a><div id='"+ id +"' class='rating-contain'><div class='stars-contain stars1' value='1'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars2' value='2'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars3' value='3'><i class='fa fa-star stars' aria-hidden='true'></i> </div><div class='stars-contain stars4' value='4'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars5' value='5'><i class='fa fa-star stars' aria-hidden='true'></i><p>rating</p></div></div> </div></div>")
+        
+        $(".restaurants").append("<div class='col-md-4'><div class='restaurant-card'><div key="+ id +" class='delete-button'>&#10008;</div><h3>" + name + "</h3><a href='"+ link +"'> <img class='restaurant__img' src=" + img +"></a><div id='"+ id +"' class='rating-contain'><div class='stars-contain stars1' value='1'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars2' value='2'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars3' value='3'><i class='fa fa-star stars' aria-hidden='true'></i> </div><div class='stars-contain stars4' value='4'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars5' value='5'><i class='fa fa-star stars' aria-hidden='true'></i><p>rating</p></div></div> </div></div>")
 
 
         for (var j = 0 ; j < 5 ; j++) {
@@ -33,7 +33,13 @@ $(document).ready(function () {
 
 // TO DO: When the form with the ID of newRestaurant is submited, grab the values of all the inputs in the form and store them in an object.
 
+
 // TO DO: Create a POST route to /api/restaurants/new, sending the object we created in the last step. This adds a new restaurant to the database.
 
+
+// TO DO: Create a click listener for the element with the class of delete-button. Grab the value found in the "key" attribute.
+
+
+// TO DO: Create a DELETE route to /api/restaurants/:id/delete. Instead of :id, we will use the id of the clicked card in the route. You should also remove the display of the card. 
 
 })

@@ -3,8 +3,8 @@ $(document).ready(function () {
 
 
     function renderCards(name, link, img, id, rating) {
-        //separate appends
-        $(".restaurants").append("<div class='col-md-4'><div class='restaurant-card'><h3>" + name + "</h3><a href='"+ link +"'> <img class='restaurant__img' src=" + img +"></a><div id='"+ id +"' class='rating-contain'><div class='stars-contain stars1' value='1'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars2' value='2'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars3' value='3'><i class='fa fa-star stars' aria-hidden='true'></i> </div><div class='stars-contain stars4' value='4'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars5' value='5'><i class='fa fa-star stars' aria-hidden='true'></i><p>rating</p></div></div> </div></div>")
+        
+        $(".restaurants").append("<div class='col-md-4'><div class='restaurant-card'><div key="+ id +" class='delete-button'>&#10008;</div><h3>" + name + "</h3><a href='"+ link +"'> <img class='restaurant__img' src=" + img +"></a><div id='"+ id +"' class='rating-contain'><div class='stars-contain stars1' value='1'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars2' value='2'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars3' value='3'><i class='fa fa-star stars' aria-hidden='true'></i> </div><div class='stars-contain stars4' value='4'><i class='fa fa-star stars' aria-hidden='true'></i></div><div class='stars-contain stars5' value='5'><i class='fa fa-star stars' aria-hidden='true'></i><p>rating</p></div></div> </div></div>")
 
 
         for (var j = 0 ; j < 5 ; j++) {
@@ -70,7 +70,16 @@ $(document).ready(function () {
     })
 
 
+$(document).on("click", ".delete-button", function() {
 
+    var key = $(this).attr("key")
+    $(this).parent().remove()
+
+    $.ajax({
+        type: "DELETE",
+        url: "/api/restaurants/"+ key +"/delete",
+      })
+})
 
 
 

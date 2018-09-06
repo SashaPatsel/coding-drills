@@ -56,6 +56,8 @@ app.use(express.static("public"));
  //Create a PUT route at "/api/restaurants/:id/rating/:value". This route will update the rating (value) of a restaurant at id
 
 
+  //Create a DELETE route at "/api/restaurants/:id/delete". This route will delete the restaurant from the database
+
   // ===================================================
 
 
