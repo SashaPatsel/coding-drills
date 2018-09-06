@@ -2,8 +2,6 @@
 var express = require("express");
 // To read our API returns more easily
 var bodyParser = require("body-parser")
-// To ping APIs
-var request = require("request")
 // TO use HTMl files
 var path = require("path")
 // To query our db
@@ -60,7 +58,6 @@ app.use(express.static("public"));
 //Create new restaurant
  app.post("/api/restaurants/new", function(req, res) {
 
-  console.log(req.body)
   var restaurant = req.body
   connection.query("INSERT INTO restaurants SET ?", restaurant)
 
@@ -69,7 +66,7 @@ app.use(express.static("public"));
  //Update restaurant rating
  app.put("/api/restaurants/:id/rating/:value", function(req, res) {
   
-
+console.log(req.params.id, req.params.value)
   connection.query("UPDATE restaurants SET rating = ? WHERE restaurant_id = ?", [req.params.value,req.params.id])
 
  })
