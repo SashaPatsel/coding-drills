@@ -23,7 +23,7 @@ var chosenStudentId;
     }
 
 
-    var htmlString = '<div class="school-students" id='+ id +'><h2 class="student-name">' + name + '</h2><img class="house-crest"  src=' + crest + ' alt=""><div class="teacher-contain"><img class="student-pic" src=' + pic + '>'
+    var htmlString = '<div class="school-students studentsExtra" id='+ id +'><h2 class="student-name">' + name + '</h2><img class="house-crest"  src=' + crest + ' alt=""><div class="teacher-contain"><img class="student-pic" src=' + pic + '>'
 
 
       for (var i = 0; i < skills.length; i++) {
@@ -68,10 +68,10 @@ var chosenStudentId;
   function getStudents() {
     $.get("/api/students/all")
       .then(function (data) {
-        console.log(data)
+      
         for (var i = 0; i < data.length; i++) {
           if (data[i].skills.length === 7) {
-            console.log(data[i].skills.length)
+            
             passOWLS(data[i].id)
             
           }
@@ -90,8 +90,9 @@ var chosenStudentId;
 
   getStudents()
 
+  
 //Pick student
-$(document).on("click", ".school-students", function() {
+$(document).on("click", ".studentsExtra", function() {
  
   $(".school-students").addClass("cursor-no")
 
@@ -103,7 +104,7 @@ $(document).on("click", ".school-students", function() {
   $(this).removeClass("cursor-no")
 
   chosenStudentId = $(this).attr("id")
-
+  $(".school-students").removeClass("studentsExtra")
 })
 
   //Add badge
@@ -119,6 +120,7 @@ $(document).on("click", ".school-students", function() {
         getStudents()
         $(".teacher-img").reomveClass("skillPick")
         $(".teachers-img").addClass("cursor-no")
+        $(".school-students").addClass("studentsExtra")
       })
   })
 

@@ -22,7 +22,7 @@ var students = [
     id: 1,
     name: "Luna Lovegood",
     house: "Ravenclaw",
-    img: "http://purepng.com/public/uploaads/large/purepng.com-luna-with-magical-wandharry-potterjkrollingginnyscarypremadeswordmagicspellronaldronnyweaselyrongeorgehermioneluna-241519480015g9oot.png",
+    img: "https://img00.deviantart.net/ad92/i/2018/028/e/2/luna_lovegood_ii___render_by_barbaratp-dbtoojr.png",
     skills: []
   },{
     id: 2,
