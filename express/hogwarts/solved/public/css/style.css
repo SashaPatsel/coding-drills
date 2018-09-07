@@ -22,6 +22,7 @@ body {
 
 .letter-label {
   display: block;
+  color: white;
 }
 
 .parallax {
@@ -99,6 +100,10 @@ width: 100%;
   letter-spacing: 15px;
   margin: 20px 0;
   font-size: 30px;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 
@@ -182,11 +187,61 @@ width: 100%;
   z-index: -2;
 }
 
+.hogwarts-img {
+  width: 100px;
+}
+
+.hogwarts-img:hover {
+  transform: scale(1.2);
+}
+
+.hogwarts-contain {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.sorting-heading {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 35px;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.form-contain {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 20px;
+  width: 30%;
+  border-radius: 10px;
+  background-color: rgba(0,0,0, .7);
+/* Brown: 110,71,32 */
+}
+
 input {
   display: block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 50px auto;
+  width: 90%;
 }
 
 select {
   display: block;
+  margin: auto;
+  border-radius: 10px;
+  height: 40px;
+  width: 92%;
 }
 

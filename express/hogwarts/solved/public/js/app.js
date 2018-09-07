@@ -81,14 +81,13 @@ var chosenStudentId;
 //Pick student
 $(document).on("click", ".school-students", function() {
  
-  $(".school-students").addClass("blur")
   $(".school-students").addClass("cursor-no")
 
   $(".teachers-img").removeClass("cursor-no")
   $(".teachers-img").addClass("cursor-pointer")
   $(".teachers").addClass("skillPick")
 
-  $(this).removeClass("blur")
+  $(this).addClass("blur")
   $(this).removeClass("cursor-no")
 
   chosenStudentId = $(this).attr("id")
@@ -112,11 +111,12 @@ $(document).on("click", ".school-students", function() {
   })
 
   //Add student
-  $(document).on("submit", "#newStudent", function () {
+  $(document).on("submit", "#addStudent", function () {
     var student = {
       name: $("#name").val().trim(),
+      img: $("#img").val().trim(),
       house: $("#house").val().trim(),
-      skills: $("#skills").val().trim()
+      
     };
     $.post("/api/students/add", student)
       .then(function (data) {

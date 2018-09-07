@@ -75,6 +75,7 @@ app.post("/api/students/add", function(req, res) {
     id: idCounter,
     name: req.body.name,
     house: req.body.house,
+    img: req.body.img,
     skills: []
   };
   idCounter++;
