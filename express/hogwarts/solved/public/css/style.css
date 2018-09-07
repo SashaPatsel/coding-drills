@@ -2,6 +2,28 @@ body {
   margin: 0;
 }
 
+.add-student {
+  text-decoration: none;
+  color: white;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+
+
+.hogwarts-letter {
+  width: 100px;
+}
+
+.hogwarts-letter:hover {
+  transform: scale(1.2);
+}
+
+.letter-label {
+  display: block;
+}
+
 .parallax {
   background-image: url("http://cdn.playbuzz.com/cdn/7aa950b4-eaa0-417d-93af-3bd332dc8086/5e549d0d-aad1-4ec1-96c9-31e36f08af8c.jpg");
   position: fixed;
@@ -144,3 +166,27 @@ width: 100%;
 .blur {
   background-color: rgba(255,255,255,.7)
 }
+
+
+/* ADD */
+
+.parallax-add {
+  background-image: url("https://vignette.wikia.nocookie.net/harrypotter/images/9/9c/Pottermore_background_the_sorting_ceremony.jpg/revision/latest?cb=20160816192355");
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top;
+  background-blend-mode: screen;
+  position: fixed;
+  z-index: -2;
+}
+
+input {
+  display: block;
+}
+
+select {
+  display: block;
+}
+
