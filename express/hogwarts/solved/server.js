@@ -5,7 +5,7 @@ var path = require("path");
 
 // Setting up express
 var app = express();
-var PORT = 3005;
+var PORT = process.env.PORT || 3005;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -22,7 +22,7 @@ var students = [
     id: 1,
     name: "Luna Lovegood",
     house: "Ravenclaw",
-    img: "http://purepng.com/public/uploads/large/purepng.com-luna-with-magical-wandharry-potterjkrollingginnyscarypremadeswordmagicspellronaldronnyweaselyrongeorgehermioneluna-241519480015g9oot.png",
+    img: "http://purepng.com/public/uploaads/large/purepng.com-luna-with-magical-wandharry-potterjkrollingginnyscarypremadeswordmagicspellronaldronnyweaselyrongeorgehermioneluna-241519480015g9oot.png",
     skills: []
   },{
     id: 2,
