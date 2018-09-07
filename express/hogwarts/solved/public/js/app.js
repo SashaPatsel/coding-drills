@@ -70,10 +70,22 @@ var chosenStudentId;
       .then(function (data) {
         console.log(data)
         for (var i = 0; i < data.length; i++) {
+          if (data[i].skills.length === 7) {
+            console.log(data[i].skills.length)
+            passOWLS(data[i].id)
+            
+          }
           renderStudents(data[i].id, data[i].house, data[i].name, data[i].img, data[i].skills)
         }
 
       })
+  }
+
+  function passOWLS(id) {
+    $.ajax({
+      type: "DELETE",
+      url: "/api/students/" + id
+    })
   }
 
   getStudents()
@@ -94,10 +106,10 @@ $(document).on("click", ".school-students", function() {
 
 })
 
-  //Skill
+  //Add badge
   $(document).on("click", ".skillPick", function () {
     var imageSkill = $(this).attr('skill')
-    console.log(imageSkill)
+
     $.ajax({
       type: "PUT",
       url:"api/students/"+ chosenStudentId +"/learn",

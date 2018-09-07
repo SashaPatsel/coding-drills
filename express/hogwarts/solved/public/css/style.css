@@ -1,3 +1,23 @@
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 1800px) {
+  font-size: 75%;
+}
+
+@media (max-width: 1200px) {
+  font-size: 56.25%;
+}
+
+@media (max-width: 900px) {
+  font-size: 50%;
+}
+
+@media (max-width: 600px) {
+  font-size: 40%;
+}
+
 body {
   margin: 0;
 }
@@ -6,14 +26,14 @@ body {
   text-decoration: none;
   color: white;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 2rem;
+  left: 2rem;
 }
 
 
 
 .hogwarts-letter {
-  width: 100px;
+  width: 10rem;
 }
 
 .hogwarts-letter:hover {
@@ -23,6 +43,7 @@ body {
 .letter-label {
   display: block;
   color: white;
+  font-size: 1.5rem;
 }
 
 .parallax {
@@ -45,16 +66,16 @@ body {
 
 .header {
   background-color: rgba(0,0,0,1);
-  border-radius: 10px;
+  border-radius: 1rem;
   color: white;
-  padding: 20px 0;
+  padding: 2rem 0;
   position: fixed;
   z-index: 3;
   width: 80%;
 }
 
 .header-ghost {
-  height: 200px;
+  height: 24rem;
 }
 
 .teacher-contain {
@@ -72,11 +93,11 @@ body {
 
 
 .teachers:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 
 .teachers-img {
-height: 100px;
+height: 10rem;
 width: 100%;
 }
 
@@ -90,16 +111,17 @@ width: 100%;
   display: block;
   clear: both;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
+  font-size: 2rem;
 }
 
 .instructions {
   text-align: center;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 15px;
-  margin: 20px 0;
-  font-size: 30px;
+  letter-spacing: 1.5rem;
+  margin: 2rem 0;
+  font-size: 3rem;
   text-shadow: -1px -1px 0 #000,
   1px -1px 0 #000,
   -1px 1px 0 #000,
@@ -110,17 +132,18 @@ width: 100%;
 /* STUDENTS */
 
 .school-students {
-  margin: 20px 0;
+  margin: 2rem 0;
   background-color: rgba(0,0,0,.7);
-  border-radius: 10px;
+  border-radius: 1rem;
   position: relative;
 }
 
 .student-pic {
-  height: 200px;
+  height: 20rem;
+  max-width: 20rem;
   width: auto;
   display: inline;
-  margin-right: 30px;
+  margin-right: 3rem;
   cursor: pointer;
 }
 
@@ -132,22 +155,22 @@ width: 100%;
   display: inline-block;
   margin: auto;
   position: relative;
-  bottom: 70px;
+  bottom: 7rem;
 }
 
 .teachers-badge {
-  width: 60px;
+  width: 6rem;
 }
 
 .badges:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 
 .house-crest {
   position: absolute;
-  width: 70px;
-  top:10px;
-  left: 10px;
+  width: 7rem;
+  top:1rem;
+  left: 1rem;
 }
 
 .student-name {
@@ -188,7 +211,7 @@ width: 100%;
 }
 
 .hogwarts-img {
-  width: 100px;
+  width: 10rem;
 }
 
 .hogwarts-img:hover {
@@ -197,19 +220,19 @@ width: 100%;
 
 .hogwarts-contain {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 1rem;
+  left: 1rem;
 }
 
 .sorting-heading {
   text-align: center;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 20px;
+  letter-spacing: 2rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 35px;
+  font-size: 3.5rem;
   text-shadow: -1px -1px 0 #000,
   1px -1px 0 #000,
   -1px 1px 0 #000,
@@ -222,26 +245,26 @@ width: 100%;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  padding: 20px;
+  padding: 2rem;
   width: 30%;
-  border-radius: 10px;
+  border-radius: 1rem;
   background-color: rgba(0,0,0, .7);
 /* Brown: 110,71,32 */
 }
 
 input {
   display: block;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 50px auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 5rem auto;
   width: 90%;
 }
 
 select {
   display: block;
   margin: auto;
-  border-radius: 10px;
-  height: 40px;
+  border-radius: 1rem;
+  height: 4rem;
   width: 92%;
 }
 
