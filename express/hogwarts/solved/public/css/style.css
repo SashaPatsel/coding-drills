@@ -3,19 +3,30 @@ html {
 }
 
 @media (max-width: 1800px) {
-  font-size: 75%;
+  html {
+    font-size: 75%;
+  }
+  
 }
 
 @media (max-width: 1200px) {
-  font-size: 56.25%;
+  html {
+    font-size: 56.25%;
+  }
 }
 
 @media (max-width: 900px) {
-  font-size: 50%;
+  html {
+    font-size: 50%;
+  }
+  
 }
 
 @media (max-width: 600px) {
-  font-size: 40%;
+  html {
+    font-size: 40%;
+  }
+  
 }
 
 body {
