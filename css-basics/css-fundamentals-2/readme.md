@@ -1,3 +1,7 @@
+# CSS Fundamentals
+
+## Parents & Children
+
 5. NEST four divs inside of your section element. This means you will create CHILD ELEMENTS, for the section element, the PARENT. For example: 
 <!------------ PARENTS & CHILDREN -------------->
 

@@ -1,3 +1,7 @@
+# CSS Fundamentals
+
+## Targeting Elements
+
 1. Create a section tag in the body of your starter HTML file
 
 2. Make sure your style.css file is properly linked. Replace the hashes in the link tag, found nested in the head tag of index.html. 

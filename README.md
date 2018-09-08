@@ -1,12 +1,16 @@
-# Coding Drills
+<h1 align="center">💻  Code Drills  💻</h1>
 
-This repo contains a series of original coding drills designed to help people enhance their coding skills. 
+This repository contains original code drills designed to help people refine their coding skills.
+
+
 
 These drills are also designed to accompany the curriculum of the [Trilogy Ed](https://www.trilogyed.com/) Full-Stack Coding Bootcamp.
 
 ## Getting Started
 
-Each folder is named after the topic the exercises within cover. Each folder within a given topic contains its own unique exercise. 
+Each folder is named after the topic the exercises within cover. Each folder within a given topic contains its own unique exercises. 
+
+These exercises work best for individuals who have some proficiency in a given topic, and would like to practice through conquering new challenges.
 
 Students are meant to use only the readme and prompt file for each exercise. Once they have finished, they should compare their results against those found in the solved folder.
 

@@ -1,3 +1,7 @@
+# CSS Fundamentals
+
+## Positioning pt.2
+
 12. Outside of our first section, make another section. Give this section it's own unique class. It should have the same dimensions as the section above it, and its own unique background color. 
 
 Finally give the section an id. Remember, an id MUST be unique. We won't use this id for styling, but we will still use it later.
