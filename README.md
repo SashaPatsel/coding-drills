@@ -2,52 +2,42 @@
 
 This repository contains original code drills designed to help people refine their coding skills.
 
-
-
 These drills are also designed to accompany the curriculum of the [Trilogy Ed](https://www.trilogyed.com/) Full-Stack Coding Bootcamp.
 
-## Getting Started
+<h2 align="center">🏁 Getting Started 🏁</h2>
 
 Each folder is named after the topic the exercises within cover. Each folder within a given topic contains its own unique exercises. 
 
-These exercises work best for individuals who have some proficiency in a given topic, and would like to practice through conquering new challenges.
+These exercises work best for individuals who have some proficiency in a given topic, and would like to practice through conquering new challenges. In other words, these exercises are best used for refining skills rather than learning them from scratch. 
+
+To learn skills from scratch, please visit resources like [freecodecamp](https://www.freecodecamp.org/) and [udemy](https://www.udemy.com/).
 
 Students are meant to use only the readme and prompt file for each exercise. Once they have finished, they should compare their results against those found in the solved folder.
 
 Teachers using these exercises are encouraged to remove the solved folders from each exercise until their students have completed the prompts. 
 
 
-## Examples
+<h2 align="center">👩‍💻 What You'll Make 👨‍💻</h2>
 
-### Final Products
+These code drills contain a mixture of algorithms and project-based exercises. 
 
-#### Mastering the Bootstrap grid
-<img src="bootstrap/41/grid.png">
+These drills are designed to both refine your thinking as an engineer, and to add to your portfolio. 
 
+You can use the algorithms to pracitce for your next interview,  or make projects you can add to your own portfolio. 
 
-#### Mastering AJAX and API research
-<img src="ajax/02/demo.png">
+Projects include, but are not limited to:
+- An original yelp search engine
+- A command line zombie game
+- An interactive TV show database
 
-### Prompts
+## Live Demos
 
-```
-// ========================= QUESTION 1 =========================
-// Without loonking back at the example given to you in the readme, do your best to recreate the same code using a ternary.
-// Remember, if the argument is true "Yea, it's true" is logged to the console, and if it's false "Nah, it's false" is logged to the console. 
-
-var bool = false;
-
-function fun(arg) {
-
-  //Your answer in the console.log()
-  console.log();
-}
-
-fun(bool) 
+### [Rate-A-Restaurant](https://rate-a-restaurant-app.herokuapp.com/):
+<img src="express/rate-a-restaurant/demo.png">
 
 
-// ==============================================================
-```
+### [Hogwarts](https://hogwarts-415.herokuapp.com/):
+<img src="express/hogwarts/demo.png">
 
 ### Installing
 
