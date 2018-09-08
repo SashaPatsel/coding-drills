@@ -8,6 +8,8 @@ Create a CLI (Command Line Interface) application that reads the name a user put
 
 In this exercise, you are given an empty prompt.js (where you will do your work), and a quotes.txt.
 
+You will only need to use the fs module and process.argv.
+
 The only names the user will be able to get quotes for are the ones included in quotes.txt.
 
 If the user inputs a name not found in the file, return the message "That person never said anything".
