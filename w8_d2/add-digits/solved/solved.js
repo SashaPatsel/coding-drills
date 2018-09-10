@@ -1,4 +1,4 @@
-var input = 644;
+var input = 89657;
 
 function addDigits(num) {
 
