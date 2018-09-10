@@ -52,7 +52,7 @@ var chosenStudentId;
             break;
 
         }
-        htmlString += '<div class="badges" skill="potions"><img src=' + badge + '  class="teachers-badge"></div>'
+        htmlString += '<div class="badges" skill="'+ skills[i] +'"><img src=' + badge + '  class="teachers-badge"></div>'
       }
     
 
