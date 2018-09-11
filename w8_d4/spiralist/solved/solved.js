@@ -6,6 +6,7 @@ function spiralist(n) {
   }
 
   var counter = 1;
+
 // Keep track of columns
   var sc = 0;
   var ec = n;
@@ -56,6 +57,5 @@ console.log(1, spiralist(1))
 console.log(2, spiralist(2))
 
 console.log(3, spiralist(3))
-
 
 console.log(9, spiralist(9))
