@@ -7,7 +7,7 @@ function productivity(data, id) {
   for (var i = 0 ; i < data.length ; i++ ) {
     if (data[i][0] === id) {
       productivityPts+=data[i][1]
-      subId = data[2]
+      subId = data[i][2]
     }
   }
 
