@@ -14,10 +14,29 @@ function spiralist(n) {
   // Try to think what the above variables should be set to. Remember, these will be used to tell us where we're inserting our counter value. 
   
 
-  // 5. Almost all of the rest of your logic should execute under the following condition: the start column is less than or equal to the end column AND the start row is less than or equal to the end row.
+  // 5. Almost all of the rest of your logic should execute under the following condition: the start column is less than or equal to the end column AND the start row is less than or equal to the end row. 
 
-  // 6. Create 
+  // In each of the iterations of all the following loops, you should increment counter.
 
+  // Important note: You can assign values to a given index of an array, even if that array or that given index is empty.
+
+  // 6. Iterate from the starting column to the end column. This first loop will fill out a row left to right.
+
+  // 7. Increment the starting row.
+
+  // 8. Iterate from the starting row to the ending row. This  loop will fill a column top to bottom.
+
+  // 9. Decrement the ending column.
+  
+  // 10. Iterate from the end column to the start column. This loop will fill a row from right to left.
+
+  // 11. Decrement the ending row.
+
+  // 12. Iterate from the end row to the start row. This will fill out a column from bottom to top.
+
+  // 14. Increment the starting column.
+
+  // 15. Finally, outside the condition expressed in step 5. You should be ready to return the array we created in step 1.
 }
 
 console.log(0, spiralist(0))
