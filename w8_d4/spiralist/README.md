@@ -42,4 +42,6 @@ This problem may prove very challenging. If you'd like to give it a shot on your
 
 Otherwise, open prompt.js, where you are give pseudocode that will guide you through this challenging problem.
 
+There are a series of tests written below the function you need to fill in. You will know it's solved when the result of all those tests match the structure of the spiral matrix described above.
+
 
