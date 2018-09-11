@@ -5,9 +5,11 @@ var input4 = [0,1,3];
 
 
 function missing(arr) {
+  // Start with the first value and reassign depending on whether i is higher or lower
 var high = arr[0];
 var low = arr[0];
-// Assigns the boundaries 
+
+// Assigns the boundaries to the vars above
 for (var i = 0 ; i < arr.length ; i++) {
   if (arr[i] > high) {
     high = arr[i];
@@ -19,7 +21,7 @@ for (var i = 0 ; i < arr.length ; i++) {
 }
 
 var final = [];
-
+// Whatever isnt included will go to the final array
 for (var i = low ; i < high ; i++) {
   if (!arr.includes(i)) {
     final.push(i)
