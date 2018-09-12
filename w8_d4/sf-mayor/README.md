@@ -7,7 +7,7 @@ San Francisco's mayor has been put in a tough spot. On the one hand she's being 
 The mayor relies heavily on programmers like us. She's come up with a plan. She's commisiomed YOU to come up with a program that tells her the maximum height you can increase the buildings in the city while still maintaining the skyline.
 
 ## Instructions
-Given a matrix (an array of arrays), return the max height you can increase all the buildings while maintaining the sky line.
+Given a square matrix (an array of arrays, the amount of subarrays and elements within each one being equal), return the max height you can increase all the buildings while maintaining the sky line.
 
 The skyline is defined by the tallest buildings (the highest value in a row or column in the matrix) viewed from "north" "east" "west" or "south".
 

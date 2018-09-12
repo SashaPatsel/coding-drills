@@ -8,15 +8,19 @@ var input = [
 function skyline(arr) {
   
   var holderX = []
+  var holderY = []
 
   for (var i = 0 ; i < arr.length ; i++) {
     
     var highestXInfo = []
     var highestX = arr[i][0]
 
+    var highestYInfo = []
+    var highestY = arr[0][i]
+
     for (var j = 0 ; j < arr.length ; j++) {
 
-      
+   
 
       if (arr[i][j] >= highestX) {
         highestXInfo = []
@@ -24,13 +28,23 @@ function skyline(arr) {
         highestXInfo.push(highestX, i, j)
       }
 
+      if (arr[j][i] >= highestY) {
+        highestYInfo = []
+        highestY = arr[j][i]
+        highestYInfo.push(highestY, i, j)
+
+
+      }
+
     } 
     
     holderX.push(highestXInfo)
-    
+    holderY.push(highestYInfo)
   }
 
-  console.log(holderX)
+  console.log("X",holderX)
+  console.log("Y",holderY)
+  
 
 }
 
