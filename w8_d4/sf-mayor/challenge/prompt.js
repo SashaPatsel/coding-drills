@@ -16,15 +16,9 @@ var input2 = [
 
 
 function skyline(arr) {
-// STEPS TO SOLVING THIS PROBLEM:
-// 1. Find the highest building in each row and in each column.
-//    a. HINT: Keep in mind this is a SQUARE matrix. 
-//    b. 
+
 }
 
 
 console.log(skyline(input)) //35
 console.log(skyline(input2)) // 268
-
-
-
