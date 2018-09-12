@@ -16,7 +16,7 @@ The array contains a number of sub arrays, each containing data on a specific mi
 
 In addition to being given data on all the minions, you are also given a number. This number represents the id of the minion in question.
 
-Your job is to return the overall productivity points for the minion in question added to the sum of the productivity of all that minion's subordinates.
+Your job is to return the overall productivity points for the minion in question added to the sum of the productivity of all that minion's DIRECT subordinates.
 
 
 ## Example
