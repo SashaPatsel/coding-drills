@@ -25,21 +25,34 @@ Imagine you are given the following matrix:
 
 If we look from the "north", we see the tallest buildings are 9 (arr[2][0]), 4 (arr[1][1]), 8 (arr[0][2]), and 7 (arr[1][3]).
 
-So if we were only looking from the north, we'd be able, in the first column increase the 3, 2 and 0 to 8, because they are still smaller than 9... You can still see the "9" building.
+As an example, let's change the first row to fit the new skyline. The 3 at arr[0][0] becomes a 7. To keep the nine in view, we could make it an 8. But then if looked from the "west" it would overtake the other 8 to its right. Therefore, it becomes a 7.
 
-However, you need to take all the other buildings into account. 
+The 0 at arr[0][1] becomes a 3. This keeps it smaller than the four in its column (the four is the tallest number in that column). The 3 is still smaller than 8 (the tallest building in its row), so it remains a 3.
+
+8 at arr[0][2] is already the tallest building in its row and column. Therefore it does not change.
+
+Finally, the 4 at arr[0][3] becomes a 6. That ensures that it is smaller than both the 8 in its row, and the 7 in its column.
+
 
 The completed matrix would look like this:
 
 ```
 [ 
-  [8, 4, 8, 7],
-  [7, 4, 7, 7],
-  [9, 4, 8, 7],
-  [3, 3, 3, 3] 
+  [7, 3, 8, 6],
+  [6, 4, 6, 7],
+  [9, 3, 7, 6],
+  [2, 3, 2, 2] 
 ]
 ```
 
-However, that is not what we want to return. We want to return 35, which is the sum of how much all the non-tallest buildings were increased.
+However, that is not what we want to return. We want to return 24, which is the sum of how much all the non-tallest buildings were increased.
 
-Don't let the mayor down. Give her your algorithm in prompt.js
+You will need to keep track of how much each building grew in the new plans for the city, and return the sum of that growth.
+
+Don't let the mayor down. Give her your algorithm in prompt.js!
+
+You have two options... you can proceed to prompt.js, or go to challenge/prompt.js.
+
+This is quite a difficult problem. In prompt.js, you'll find some pseudo code to guide you through the problem.
+
+In challenge/prompt.js, you are given nothing so that you may attempt to solve the problem completely independently.

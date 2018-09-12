@@ -5,6 +5,13 @@ var input = [
   [0, 3, 1, 0] 
 ]
 
+var input2 = [ 
+  [23, 55, 28, 14], 
+  [12, 64, 55, 67],
+  [65, 32, 26, 53],
+  [70, 36, 61, 80] 
+]
+
 function skyline(arr) {
   
   var holderX = []
@@ -44,8 +51,6 @@ function skyline(arr) {
     holderY.push(highestYInfo)
   }
 
-  console.log("X",holderX)
-  console.log("Y",holderY)
 
   for (var i = 0 ; i < arr.length ; i ++) {
 
@@ -67,7 +72,7 @@ function skyline(arr) {
 
 
       if (tallest.length === 3 && tallest[0] < tallest[1] && tallest[0] < tallest[2]) {
-        console.log("tallest", tallest)
+
         var smaller = tallest[1]
         
         if (tallest[2] <= smaller) {
@@ -76,8 +81,7 @@ function skyline(arr) {
         
         var newHeight = smaller - 1
         
-        console.log("diff", newHeight, arr[i][j])
-        sum += (smaller - arr[i][j] )
+        sum += (newHeight - arr[i][j] )
       }
 
     }
@@ -87,4 +91,5 @@ function skyline(arr) {
 
 }
 
-console.log(skyline(input))
+console.log(skyline(input)) //35
+console.log(skyline(input2)) // 268
