@@ -6,16 +6,31 @@ var input = [
 ]
 
 function skyline(arr) {
+  
+  var holderX = []
 
   for (var i = 0 ; i < arr.length ; i++) {
+    
+    var highestXInfo = []
+    var highestX = arr[i][0]
 
     for (var j = 0 ; j < arr.length ; j++) {
+
       
-      
+
+      if (arr[i][j] >= highestX) {
+        highestXInfo = []
+        highestX = arr[i][j]
+        highestXInfo.push(highestX, i, j)
+      }
 
     } 
-
+    
+    holderX.push(highestXInfo)
+    
   }
+
+  console.log(holderX)
 
 }
 
