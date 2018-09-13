@@ -15,8 +15,14 @@ function groups(str) {
       }
       
       if (str[i] !== str[j] && str[i] === str[j-1]) {
-    
-        group.push(i,j-1)
+        var indices = [];
+        for (var k = 0 ; k < groups.length ; k++) {
+          indices.push(groups[k][1])
+        }
+        if (!indices.includes(j-1)) {
+          group.push(i,j-1)
+        }
+        
         
         if (group[1]-group[0] >= 2 && !groups.includes(group)) {
 
@@ -33,16 +39,7 @@ function groups(str) {
     
 
   }
-  var final = [];
-final.push(groups[0])
-  for (var i = 0 ; i < groups.length; i++) {
-    
-    for (var j = 0 ; j < groups.length; j++) {
-        if (groups[i][1]){
 
-        }
-    }
-  }
  
 
 
