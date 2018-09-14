@@ -1,5 +1,10 @@
-var input = "aabbbccdddddeefggggg"
-// Solution 1
+// Compare the solutions below, in the designated section, write out their respective runtimes and which is faster
+
+// ========================= GROUPS =========================== 
+
+// Return an array of arrays. Each subarray should contain the beginning and ending index of each sequence of thrre or ore consecutive, reappearing characters.
+
+
 function groups(str) {
 // The final array
   var groups = []
@@ -42,21 +47,14 @@ function groups(str) {
 
     }
     
-
   }
-
- 
-
 
   return groups
 
 }
 
-console.log(groups(input))
 
-
-// Solution 2 (Better)
-function groups2(str) {
+function groups(str) {
   // The final array
   var groups = []
   // Use this to check consecutive characters
@@ -89,7 +87,5 @@ function groups2(str) {
   return groups;
 }
 
-var input3 = "aabbbccdddddeefggggg"
-var input2 = "aaabnaaaaaghghghghhhhhhhhhh"
-console.log(groups2(input3))
-console.log(groups2(input2))
+
+// =============================================================
