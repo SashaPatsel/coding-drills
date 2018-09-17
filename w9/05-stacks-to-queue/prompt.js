@@ -1,5 +1,5 @@
-var Queue = function(data = []) {
-  
+var Stack = function(data = []) {
+ 
   this.data = data
 
   this.add = function(record) {
@@ -7,12 +7,13 @@ var Queue = function(data = []) {
   }
 
   this.remove = function() {
-   return this.data.shift()
+    return this.data.pop()
   }
 
   this.peek = function() {
-    return this.data[0]
+    return this.data[data.length -1]
   }
-
 }
+
+
 // YOUR WORK HERE
