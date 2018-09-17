@@ -1,5 +1,243 @@
 // Compare the solutions below, in the designated section, write out their respective runtimes and which is faster
-// **************************  1. ************************
+
+  
+  
+  // ****************************  1. *************************
+  
+  // ======================= Compressor ========================= 
+  
+  // Given a string like the following: "hhhkkkkkkttttttttt", compress the string so that it read like so "h3k6t9", where the number indicates how many times the number preciding it appears in the string.
+  
+  // #1    
+      function compressor(str) {
+        var newString = ""
+        for (var i = 0; i < str.length; i++) {
+          inc = 0
+          for (var j = 0; j < str.length; j++) {
+            if (str[i] === str[j]) {
+              inc++
+            }
+          }
+          if (!(newString.includes(str[i]))) {
+            newString += (str[i] + inc.toString())
+          }
+        }
+        return newString
+      }
+  
+  // #2
+      function compressor(str) {
+        var newString = ""
+        var compare = str.split("");
+        var obj = {}          
+        for (var i = 0; i < str.length; i++) {
+          if (obj[str[i]]) {
+            obj[str[i]]++
+          } else {
+            obj[str[i]] = 1
+          }       
+        } 
+        for (var i = 0; i < str.length; i++) {
+          if (!(newString.includes(str[i]))) {
+            newString+=(str[i]+obj[str[i]])
+          }     
+        } 
+        return newString
+      }
+  
+  
+  
+    
+    // _______________________ ANSWERS HERE _______________________
+    
+    // Time complexity for #1: (O)n^2
+    
+    // Time complexity for #2: (O)n
+    
+    // Which solution, if any, is faster: #2
+    
+    // ____________________________________________________________
+    
+    // =============================================================
+  
+  
+  
+  
+  
+  
+  
+  
+    // ****************************  2. *************************
+  
+  // ======================= Largest Sum ========================= 
+  
+  // Given an array of numbers, create a function which returns the largest sum of any of the two numbers in that array.
+  
+  // #1
+  function largestSum(arr) {
+    var largest = 0;
+    var secondLargest = 0;
+    for (var i = 0 ; i < arr.length + 1 ; i++) {
+      if (arr[i] > largest) {
+        secondLargest = largest
+        largest = arr[i]
+      } else if (arr[i] > secondLargest) {
+        secondLargest = arr[i]
+      }
+    }
+    var sum = largest + secondLargest
+    return sum
+  }
+  
+  
+  // #2
+  function largestSum(arr) {
+    var largestSum = 0;
+    for (var i = 0 ; i < arr.length ; i++) {
+      for (var j = 0; j < arr.length; j++) {
+        if (i !== j) {
+          var sum = arr[i] + arr[j]
+          if (sum > largestSum) {
+            largestSum = sum;
+          }
+        }
+      }
+    }
+    return largestSum
+  }
+    
+    // _______________________ ANSWERS HERE _______________________
+    
+    // Time complexity for #1: (O)n
+    
+    // Time complexity for #2: (O)n^2
+    
+    // Which solution, if any, is faster: #1
+    
+    // ____________________________________________________________
+    
+    // =============================================================
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    // ****************************  3. *************************
+  
+  // ======================= Unique Characters ========================= 
+  
+  // Given a string, return true if any character in that string occurs more than once. Otherwise, return false
+  
+  // #1     
+  function unique(str) {
+    var compare = str.split("");
+    var obj = {}
+    for (var i = 0; i < str.length; i++) {
+      if (obj[str[i]]) {
+        return false
+      } else {
+        obj[str[i]] = 1
+      }
+    }
+    return true
+  }
+  
+  
+  // #2
+  function unique(str) {
+    var compare = str.split("");
+    for (var i = 0; i < str.length; i++) {
+      var temp = compare.indexOf(str[i])
+      compare.splice(temp, 1)
+      if (compare.indexOf(str[i]) > -1) {
+        return false
+      }
+    }
+    return true
+  }
+    
+    // _______________________ ANSWERS HERE _______________________
+    
+    // Time complexity for #1: (O)n
+    
+    // Time complexity for #2: (O)n^2
+    
+    // Which solution, if any, is faster:  #1. Don't forget that built-in methods have their own time-complexity. Let's look at indexOf, for example. Index of iterates through an array until it finds the value passed to it in the argument. That means that for every iteration of our loop, we are looking through the array again. 
+    // ____________________________________________________________
+    
+    // =============================================================
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    // ****************************  4. *************************
+  
+  // ======================= Repeat Characters ========================= 
+  
+  // Given two strings, output how many times any of the characters in the first string appear in the secon
+  
+  // #1
+  function repeatChars(s, c) {
+  
+    var total = 0;
+  
+    for (var i = 0 ; i < c.length ; i++) {
+      for (var j = 0 ; j < s.length ; j++) {
+        if (s[j] === c[i]) {
+          total++
+        }
+      }
+    }
+  
+    return total
+  }
+  
+  
+  // #2
+  
+  function repeatChars(s, c) {
+    var obj = {};
+    var total = 0; 
+  
+    for (var i = 0 ; i < s.length ; i ++) {
+      obj[s[i]] = true ;
+  
+    }
+  
+    for (var i = 0 ; i < c.length ; i ++) {
+      if (obj[c[i]]) {
+        total++
+      }
+        
+    }
+  
+    return total
+  }
+    
+    // _______________________ ANSWERS HERE _______________________
+    
+    // Time complexity for #1: (O)n^2
+    
+    // Time complexity for #2: (O)n
+    
+    // Which solution, if any, is faster: #2. There are two loops, but they are not nested. Therefore, the time it takes to run this function still grows with the input in linear time. 
+    
+    // ____________________________________________________________
+    
+    // =============================================================
+
+
+
+    // **************************  5. ************************
 
 // ========================= GROUPS =========================== 
 
@@ -94,268 +332,8 @@ function groups(str) {
   
   // Time complexity for #2: (O)n
   
-  // Which solution is faster: #2
+  // Which solution, if any, is faster: #2
   
   // ____________________________________________________________
   
   // =============================================================
-  
-  
-  
-  
-  
-  
-  // ****************************  2. *************************
-  
-  // ======================= Compressor ========================= 
-  
-  // Given a string like the following: "hhhkkkkkkttttttttt", compress the string so that it read like so "h3k6t9", where the number indicates how many times the number preciding it appears in the string.
-  
-  // #1    
-      function compressor(str) {
-  
-        var newString = ""
-  
-        for (var i = 0; i < str.length; i++) {
-          inc = 0
-          for (var j = 0; j < str.length; j++) {
-            if (str[i] === str[j]) {
-              inc++
-            }
-          }
-          if (!(newString.includes(str[i]))) {
-            newString += (str[i] + inc.toString())
-          }
-  
-        }
-        return newString
-      }
-  
-  // #2
-      function compressor(str) {
-  
-        var newString = ""
-  
-        var compare = str.split("");
-        var obj = {}
-  
-        
-        for (var i = 0; i < str.length; i++) {
-          if (obj[str[i]]) {
-            obj[str[i]]++
-          } else {
-            obj[str[i]] = 1
-          }
-  
-        
-        }
-  
-        for (var i = 0; i < str.length; i++) {
-          if (!(newString.includes(str[i]))) {
-            newString+=(str[i]+obj[str[i]])
-          }
-          
-        }
-       
-        return newString
-      }
-  
-  
-  
-    
-    // _______________________ ANSWERS HERE _______________________
-    
-    // Time complexity for #1:
-    
-    // Time complexity for #2:
-    
-    // Which solution is faster: 
-    
-    // ____________________________________________________________
-    
-    // =============================================================
-  
-  
-  
-  
-  
-  
-  
-  
-    // ****************************  3. *************************
-  
-  // ======================= Largest Sum ========================= 
-  
-  // Given an array of numbers, create a function which returns the largest sum of any of the two numbers in that array.
-  
-  // #1
-  function largestSum(arr) {
-    var largest = 0;
-    var secondLargest = 0;
-  
-    for (var i = 0 ; i < arr.length + 1 ; i++) {
-  
-      if (arr[i] > largest) {
-        secondLargest = largest
-        largest = arr[i]
-      } else if (arr[i] > secondLargest) {
-        secondLargest = arr[i]
-      }
-    }
-  
-    var sum = largest + secondLargest
-    return sum
-  }
-  
-  
-  // #2
-  function largestSum(arr) {
-    var largestSum = 0;
-  
-    for (var i = 0 ; i < arr.length ; i++) {
-      for (var j = 0; j < arr.length; j++) {
-        if (i !== j) {
-          var sum = arr[i] + arr[j]
-          if (sum > largestSum) {
-            largestSum = sum;
-          }
-        }
-      }
-    }
-    return largestSum
-  }
-    
-    // _______________________ ANSWERS HERE _______________________
-    
-    // Time complexity for #1:
-    
-    // Time complexity for #2:
-    
-    // Which solution is faster: 
-    
-    // ____________________________________________________________
-    
-    // =============================================================
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    // ****************************  4. *************************
-  
-  // ======================= Unique Characters ========================= 
-  
-  // Given a string, return true if any character in that string occurs more than once. Otherwise, return false
-  
-  // #1     
-  function unique(str) {
-    var compare = str.split("");
-    var obj = {}
-    
-    for (var i = 0; i < str.length; i++) {
-      if (obj[str[i]]) {
-        return false
-      } else {
-        obj[str[i]] = 1
-      }
-  
-    }
-    return true
-  }
-  
-  
-  // #2
-  function unique(str) {
-    var compare = str.split("");
-  
-  
-    for (var i = 0; i < str.length; i++) {
-      var temp = compare.indexOf(str[i])
-      compare.splice(temp, 1)
-      if (compare.indexOf(str[i]) > -1) {
-        return false
-      }
-  
-    }
-    return true
-  }
-    
-    // _______________________ ANSWERS HERE _______________________
-    
-    // Time complexity for #1:
-    
-    // Time complexity for #2:
-    
-    // Which solution is faster: 
-    
-    // ____________________________________________________________
-    
-    // =============================================================
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    // ****************************  5. *************************
-  
-  // ======================= Repeat Characters ========================= 
-  
-  // Given two strings, output how many times any of the characters in the first string appear in the secon
-  
-  // #1
-  function repeatChars(s, c) {
-  
-    var total = 0;
-  
-    for (var i = 0 ; i < c.length ; i++) {
-      for (var j = 0 ; j < s.length ; j++) {
-        if (s[j] === c[i]) {
-          total++
-        }
-      }
-    }
-  
-    return total
-  }
-  
-  
-  // #2
-  
-  function repeatChars(s, c) {
-    var obj = {};
-    var total = 0; 
-  
-    for (var i = 0 ; i < s.length ; i ++) {
-      obj[s[i]] = true ;
-  
-    }
-  
-    for (var i = 0 ; i < c.length ; i ++) {
-      if (obj[c[i]]) {
-        total++
-      }
-        
-    }
-  
-    return total
-  }
-    
-    // _______________________ ANSWERS HERE _______________________
-    
-    // Time complexity for #1:
-    
-    // Time complexity for #2:
-    
-    // Which solution is faster: 
-    
-    // ____________________________________________________________
-    
-    // =============================================================
