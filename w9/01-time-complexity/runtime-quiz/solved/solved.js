@@ -50,9 +50,9 @@
     
     // _______________________ ANSWERS HERE _______________________
     
-    // Time complexity for #1: (O)n^2
+    // Time complexity for #1: O(n^2)
     
-    // Time complexity for #2: (O)n
+    // Time complexity for #2: O(n)
     
     // Which solution, if any, is faster: #2
     
@@ -108,9 +108,9 @@
     
     // _______________________ ANSWERS HERE _______________________
     
-    // Time complexity for #1: (O)n
+    // Time complexity for #1: O(n)
     
-    // Time complexity for #2: (O)n^2
+    // Time complexity for #2: O(n^2)
     
     // Which solution, if any, is faster: #1
     
@@ -162,9 +162,9 @@
     
     // _______________________ ANSWERS HERE _______________________
     
-    // Time complexity for #1: (O)n
+    // Time complexity for #1: O(n)
     
-    // Time complexity for #2: (O)n^2
+    // Time complexity for #2: O(n^2)
     
     // Which solution, if any, is faster:  #1. Don't forget that built-in methods have their own time-complexity. Let's look at indexOf, for example. Index of iterates through an array until it finds the value passed to it in the argument. That means that for every iteration of our loop, we are looking through the array again. 
     // ____________________________________________________________
@@ -225,9 +225,9 @@
     
     // _______________________ ANSWERS HERE _______________________
     
-    // Time complexity for #1: (O)n^2
+    // Time complexity for #1: O(n^2)
     
-    // Time complexity for #2: (O)n
+    // Time complexity for #2: O(n)
     
     // Which solution, if any, is faster: #2. There are two loops, but they are not nested. Therefore, the time it takes to run this function still grows with the input in linear time. 
     
@@ -328,9 +328,9 @@ function groups(str) {
   
   // _______________________ ANSWERS HERE _______________________
   
-  // Time complexity for #1: (O)n^2 * Log(n)
+  // Time complexity for #1: O(n^3). This is a tricky one. The loop using the letter k is what takes this algorithm to the next level. It has to check an array of consecutive entries. So if we want [0,5], we'll get [0,1], [0,2], [0,3], [0,4], [0,5]. The loop extracts just the last. Worst case scenario, we get a string like "aaaaaaaaaaaaaa", in which case, this become O(n^3)
   
-  // Time complexity for #2: (O)n
+  // Time complexity for #2: O(n)
   
   // Which solution, if any, is faster: #2
   

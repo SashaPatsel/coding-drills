@@ -6,9 +6,9 @@
 
 Make a queue!
 
-A queue is a data strucutred that can be described by the term FIFO (First In First Out). The first element added to the array is the first one you can retrieve from it.
+A queue is a data strucutre that can be described by the term FIFO (First In First Out). The first element added to the array is the first one you can retrieve from it.
 
-A queue acts a lot like an array, but with less functionality.
+A queue acts a lot like an array, but with a more focused scope.
 
 However, some algorithms are best solved only with the methods available to a queue. 
 
