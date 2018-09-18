@@ -25,6 +25,22 @@ var Queue = function(data = []) {
 
 var Stack = function() {
 
+  this.queue1 = new Queue([1,2,3,4,5,6,7])
+  
+  this.add = function() {
+
+  }
+
+
+  this.remove = function() {
+
+
+
+  }
+
+  this.peek = function() {
+
+  }
 }
 
 var s = new Stack()
