@@ -11,4 +11,4 @@ Create a new queue constructor with the same three methods as the one we made in
 - remove
 - peek
 
-You can only use the methods of the stack constructor to manipulate your data. 
+You can only use the methods of the stack constructor to manipulate your data. Do not use any other data structures for this activity.
