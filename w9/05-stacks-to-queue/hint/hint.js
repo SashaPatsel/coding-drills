@@ -47,4 +47,20 @@ var Queue = function() {
   }
   
 }
+var q = new Queue()
 
+console.log(q.peek())
+
+console.log(q.remove())
+console.log(q.remove())
+console.log(q.remove())
+console.log(q.remove())
+console.log(q.remove())
+console.log(q.remove())
+console.log(q.remove())
+
+q.add(11)
+q.add(14)
+q.add(3)
+q.add(7)
+console.log(q.peek())
