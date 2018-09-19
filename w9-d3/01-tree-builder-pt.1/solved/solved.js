@@ -1,18 +1,27 @@
-var Node = function (data) {
-  // Initialize data to what is passed to the node constructor
-  this.data = data
-  // Will keep track of all the child nodes
-  this.children = []
 
-  this.add = function (data) {
-    // Push a newly initialized node to the children array
-    this.children.push(new Node(data))
+var Node = function (data) {
+  // The value in the node
+  this.data = data
+  // A pointer to all this node's children
+  this.children = []
+}
+
+
+
+
+
+var Tree = function () {
+  this.root = null
+
+  this.add = function (node, data) {
+    // Push a newly initialized node to the children array of Node
+    node.children.push(new Node(data))
   }
 
-  this.remove = function (data) {
-    // Returns the children array, but without node's whose data === data.
-    this.children.filter(function (node) {
-      return node.data !== data
+  this.remove = function (node, data) {
+    // Returns a node's children array, but without node's whose data === data.
+    node.children.filter(function (child) {
+      return child.data !== data
     })
   }
 }
