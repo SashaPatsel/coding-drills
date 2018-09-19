@@ -2,21 +2,22 @@
 var Node = function (data) {
   this.data = data
   this.children = []
-
-  this.add = function (data) {
-    this.children.push(new Node(data))
-  }
-
-  this.remove = function (data) {
-    // Returns a the children array but without node's whose data === data.
-    this.children.filter(function (node) {
-      return node.data !== data
-    })
-  }
 }
+
+
 
 var Tree = function () {
   this.root = null
+
+  this.add = function(node, data) {
+    node.children.push(new Node(data))
+  }
+
+  this.remove = function(node, data) {
+    node.children.filter(function(child) {
+      return child.data !== data
+    })
+  }
 
   this.breadth = function (func) {
     // Initialize empty array
@@ -51,14 +52,15 @@ var Tree = function () {
     }
   }
 }
-
+// TEST
 var letters = [];
 var t = new Tree();
 t.root = new Node('a');
-t.root.add('b');
-t.root.add('c');
-t.root.children[0].add('d');
-
+t.add(t.root, 'b');
+t.add(t.root, 'c');
+t.add(t.root.children[0], 'd');
+t.add(t.root.children[0], 'e');
+t.add(t.root.children[1], 'f');
 t.depth(node => {
   letters.push(node.data);
 });

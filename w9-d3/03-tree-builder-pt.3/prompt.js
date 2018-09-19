@@ -1,3 +1,7 @@
+var Node = function (data) {
+  this.data = data
+  this.children = []
+}
 // YOUR WORK HERE
 
 

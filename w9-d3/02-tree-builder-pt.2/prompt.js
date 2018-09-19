@@ -3,25 +3,13 @@ var Node = function (data) {
   this.children = []
 }
 
-var Tree = function () {
-  this.root = null
-
-  this.add = function(node, data) {
-    node.children.push(new Node(data))
-  }
-
-  this.remove = function(node, data) {
-    node.children.filter(function(child) {
-      return child.data !== data
-    })
-  }
 
 // YOUR WORK HERE
 
 
 
 
-}
+
 // TESTS
 
 var letters = [];
