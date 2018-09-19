@@ -7,9 +7,6 @@ var Node = function (data) {
 }
 
 
-
-
-
 var Tree = function () {
   this.root = null
 
