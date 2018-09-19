@@ -38,7 +38,7 @@ var Tree = function () {
 
 // TESTS
 
-const letters = [];
+const arr = [];
 const t = new Tree();
 t.root = new Node('a');
 t.root.add('b');
@@ -48,7 +48,6 @@ t.root.children[0].add('e');
 t.root.children[1].add('f');
 
 t.breadth(function(node) {
-  // console.log("\n",node,"\n")
   letters.push(node.data);
 });
 

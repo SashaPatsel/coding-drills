@@ -6,15 +6,33 @@
 
 By the end of this 3-part exercise, we'll build a tree capable of breadth-first and depth-first searches.
 
-In order to accomplish this, we'll be creating two constructors: one for the tree itself, and one for each individual node. 
+In part two, we'll be building a tree capable of a breadth first search.
 
-In part one, we'll be building the constructor for each individual node. 
+A breadth first search examines a tree row by row, starting from the top, or the root node.
+
+#### Let's take this tree as an example:
+<img src="breadth-first.png">
+
+In this example, `a`, at the top, is the root node. In breadth first and depth first searches, we start there.
+
+The next row down has `b`, `c`, and `d`. Our search will go from left to right in this row. 
+
+Then, we move on to the next, and in this case, the last, row. We would again go left to right, looking at `e`, `f`, `g`, and `h`, respectively. 
+
+In sum the order of our search would be alphabetical in this case: [a,b,c,d,e,f,g,h]
+
+`Build a search tree with the following properties`
 
 The constructor will have the following properties:
 
-- data: a variable pointing to the data that was given to an instance of the Node.
-- children: an array of all a given node's child nodes.
-- add: a function which takes an argument of data, and adds a new node with the data handed down from the argument to the children array.
-- remove: a function which takes an argument of data, and returns th children array, but without the nodes specified in "data".
+- root: a variable initialized to null.
+- breadth: a function which conducts a breadth-first search on a given instance of the tree constructor. breadth should take a function as an argument. It should invoke this callback function with every given node, in the correct order, as an argument. In other words, if wee invoked:
+```
+var arr = []
+ tree.breadth(function(node) {
+     arr.push(node.data);
+ })
+```
+The single function call above should populate the array `arr` with the data of every single node in the tree, in a breadth-first order.
 
-In prompt.js, you are given nothing. In hint.js, you are given the skeleton of the constructor, as well as some hints.
+In prompt.js, you are given nothing aside from some tests. In hint.js, you are given the skeleton of the constructor the same tests, and some hints.
