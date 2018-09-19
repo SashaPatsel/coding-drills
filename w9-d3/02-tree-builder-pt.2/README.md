@@ -35,4 +35,4 @@ var arr = []
 ```
 The single function call above should populate the array `arr` with the data of every single node in the tree, in a breadth-first order.
 
-In prompt.js, you are given nothing aside from some tests. In hint.js, you are given the skeleton of the constructor the same tests, and some hints.
+In prompt.js, you are given nothing aside from some tests. Feel free to paste your code from the previous exercises. In hint.js, you are given the skeleton of the constructor the same tests, and some hints.

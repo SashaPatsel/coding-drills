@@ -29,7 +29,7 @@ var Tree = function () {
 
       // Create a loop that iterates through all  the children of the variable we created in the last step
 
-      // Send each child to to the array we created.
+      // Send each child to the array we created.
 
       // Invoke the callback "func" on each node (what the variable we created points to)
   }
