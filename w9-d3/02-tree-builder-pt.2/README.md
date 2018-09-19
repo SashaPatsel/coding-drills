@@ -26,7 +26,7 @@ In sum the order of our search would be alphabetical in this case: [a,b,c,d,e,f,
 The constructor will have the following properties:
 
 - root: a variable initialized to null.
-- breadth: a function which conducts a breadth-first search on a given instance of the tree constructor. breadth should take a function as an argument. It should invoke this callback function with every given node, in the correct order, as an argument. In other words, if wee invoked:
+- breadth: a function which conducts a breadth-first search on a given instance of the tree constructor. breadth should take a function as an argument. It should invoke this callback function with every given node, in the correct order, as an argument. In other words, if we invoked:
 ```
 var arr = []
  tree.breadth(function(node) {

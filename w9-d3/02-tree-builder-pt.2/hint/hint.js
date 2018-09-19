@@ -43,8 +43,8 @@ var Tree = function () {
 
 // TESTS
 
-const arr = [];
-const t = new Tree();
+var arr = [];
+var t = new Tree();
 t.root = new Node('a');
 t.root.add('b');
 t.root.add('c');
