@@ -19,7 +19,7 @@ var Node = function (data) {
 function branchWidth(root) {
   // Initialize an array with the root node and a string we can use later as a condition check
   var arr = [root, "stop"]
-// What we'll return
+  // What we'll return
   var widths = [0]
 
   while(arr.length > 1) {
