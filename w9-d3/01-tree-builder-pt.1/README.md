@@ -6,7 +6,7 @@
 
 By the end of this 3-part exercise, we'll build a tree capable of breadth-first and depth-first searches.
 
-In part one, we'll be building add and removes functions for our tree constructor. 
+In part one, we'll be building add and remove functions for our tree constructor. 
 
 - add: a function which takes arguments of node, and data and adds a new node with the data handed down from the argument to the children array of the given node.
 - remove: a function which takes arguments of node, and data and returns the children arrayof the given node, but without the nodes specified in "data".

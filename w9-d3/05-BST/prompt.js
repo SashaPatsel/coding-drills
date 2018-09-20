@@ -1,17 +1,25 @@
+var Node = function(data) {
+  this.data = data;
+
+  this.left = null;
+  this.right = null;
+}
+
+
 // YOUR WORK HERE
 
 
 
 // TESTS
-var tree = new BST(10);
+var tree = new BST(new Node(10));
 
-tree.insert(5);
-tree.insert(15);
-tree.insert(20);
-tree.insert(0);
-tree.insert(-5);
-tree.insert(3);
+tree.insert(new Node(5));
+tree.insert(new Node(15));
+tree.insert(new Node(20));
+tree.insert(new Node(0));
+tree.insert(new Node(-5));
+tree.insert(new Node(3));
 
-var three = tree.left.left.right;
+var three = tree.root.left.left.right;
 
 console.log(three)

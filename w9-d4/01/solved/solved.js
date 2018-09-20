@@ -32,6 +32,28 @@ var BST = function(root) {
       }
     }
   }
+
+  this.search = function(node) {
+    
+    var find = node
+    node = this.root
+
+    while (node) {
+     
+      if(find === node.data) {
+        return node
+      } else if (find < node.data) {
+        node = node.left
+      // If it should go to the right... 
+      } else if (find > node.data) {
+        node = node.right
+      } 
+    }
+
+    if (!node) {
+      return null
+    }
+  }
 }
 
 var tree = new BST(new Node(10));
@@ -46,3 +68,6 @@ tree.insert(new Node(3));
 var three = tree.root.left.left.right;
 
 console.log(three)
+console.log(tree.search(0))
+
+console.log(tree.search(220))
