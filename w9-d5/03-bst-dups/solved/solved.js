@@ -59,34 +59,9 @@ var BST = function(root) {
     }
   }
 
-  this.lcs = function(n1, n2) {
 
-    var allNodes = []
-
-    var arr = [this.root]
-
-    while (arr.length) {
-      var node = arr.shift()
-      // LCA is found when only one node is lesser of greater than current node
-      if (n1 < node.data && n2 < node.data) {
-        arr.unshift(node.left)
-      } else if (n1 > node.data && n2 > node.data) {
-        arr.unshift(node.right)
-      } else {
-        if (node.data === n1 || node.data === n2 ) {
-          return null
-        }
-        return node
-      }
-      
-    }
-
-  }
-
-
-  this.height = function() {
-
-    var height = 0
+  this.duplicate = function() {
+    var dups = {}
 
     var allNodes = []
 
@@ -107,12 +82,17 @@ var BST = function(root) {
     }
 
     for (var i = 0 ; i < allNodes.length ; i++) {
-      if (allNodes[i] < allNodes[i -1]) {
-        height++
+
+      if (dups[allNodes[i]]) {
+        return "invalid tree"
       }
+
+      dups[allNodes[i]] = 1
+
+      
     }
 
-    return height
+    return "valid tree"
   }
 }
 
@@ -129,14 +109,14 @@ tree.insert(new Node(32));
 tree.insert(new Node(26));
 tree.insert(new Node(13));
 tree.insert(new Node(14));
-
-console.log("4",tree.height()) // Should be 4
-
-
 tree.insert(new Node(-6));
 tree.insert(new Node(-7));
 tree.insert(new Node(-8));
 tree.insert(new Node(-9));
 tree.insert(new Node(-10));
 
-console.log("8",tree.height()) // Should be 8
+console.log(tree.duplicate()) //valid
+
+tree.root.right.right.right.left.left = new Node(-10)
+
+console.log(tree.duplicate()) //invalid

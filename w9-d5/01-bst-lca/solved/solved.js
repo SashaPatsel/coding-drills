@@ -59,7 +59,7 @@ var BST = function(root) {
     }
   }
 
-  this.lcs = function(n1, n2) {
+  this.lca = function(n1, n2) {
 
     var allNodes = []
 
@@ -67,15 +67,19 @@ var BST = function(root) {
 
     while (arr.length) {
       var node = arr.shift()
-      // LCA is found when only one node is lesser of greater than current node
+      // LCA is found when only one node is lesser of greater than current node.
+      // Send the left node to our search array
       if (n1 < node.data && n2 < node.data) {
         arr.unshift(node.left)
+        // send the right node to the search array
       } else if (n1 > node.data && n2 > node.data) {
         arr.unshift(node.right)
       } else {
+        // If the nodes are on the same level, we return nul
         if (node.data === n1 || node.data === n2 ) {
           return null
         }
+        // The first node to not hit any of the above conditions, that is to say, the lowest common ancestor, is returned here. 
         return node
       }
       
@@ -98,6 +102,6 @@ tree.insert(new Node(26));
 tree.insert(new Node(13));
 tree.insert(new Node(14));
 
-console.log(tree.lcs(26, 14)) // Should return 15
-console.log(tree.lcs(3, 0)) // Should return null
-console.log(tree.lcs(6, -5)) // Should return 5
+console.log(tree.lca(26, 14)) // Should return 15
+console.log(tree.lca(3, 0)) // Should return null
+console.log(tree.lca(6, -5)) // Should return 5
