@@ -34,22 +34,26 @@ var BST = function(root) {
   }
 
   this.search = function(node) {
-    
+    // Keep track of the original value we're looking for
     var find = node
+    // Initialize the first search to the root node
     node = this.root
-
+    // Run this loop as long as node has value
     while (node) {
      
       if(find === node.data) {
+        // Return the node if we find it
         return node
+        // If the value is less than the node we're comparing against, we'll check to that node's left
       } else if (find < node.data) {
+
         node = node.left
-      // If it should go to the right... 
+      // The opposite of above
       } else if (find > node.data) {
         node = node.right
       } 
     }
-
+    // If we never found our node, return null
     if (!node) {
       return null
     }
