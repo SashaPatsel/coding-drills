@@ -1,0 +1,3 @@
+- When you click on a nav link, it hits a post that adds to the history stack
+- When you hit the back arrow, it removes and returns from the history stack and adds to the forward stack
+- When you hit the forward arrow, it removes and returns from the forward stack and adds to the history stack
