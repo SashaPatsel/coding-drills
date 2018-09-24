@@ -66,14 +66,14 @@ var BST = function(root) {
     var arr = [this.root]
 
     while (arr.length) {
-      var node = arr.shift()
+      var node = arr.pop()
       // LCA is found when only one node is lesser of greater than current node.
       // Send the left node to our search array
       if (n1 < node.data && n2 < node.data) {
-        arr.unshift(node.left)
+        arr.push(node.left)
         // send the right node to the search array
       } else if (n1 > node.data && n2 > node.data) {
-        arr.unshift(node.right)
+        arr.push(node.right)
       } else {
         // If the nodes are on the same level, we return nul
         if (node.data === n1 || node.data === n2 ) {

@@ -60,15 +60,24 @@ var BST = function(root) {
   }
 
 
+function height(node) {
+  // YOUR WORK HERE 
 
-  this.height = function() {
-    // YOUR WORK HERE 
 
-    // This problem is essentially asking for a breadth first search. We are interested in the number of ROWS. The most straightforward way to solve this problem is to conduct a breadth-first search, and increment a counter variable every time you move on to a new row. Keep in mind though, that we are looking for the number of rows, not the number of connections between rows.
-  }
+// This problem is most easily done recursively.
+
+// In recursive functions, it extremely important that we create conditions that allow us to back out. If the node passed to this function is null, we should return 0.
+
+// This function should then return the larger of the values between this function called on the left node, and this function called on the right node (We will also need to add 1 to the greater of the values so that we account for the root node). 
+}
+
+this.height = function() {return height(this.root)}
 }
 
 // TESTS
+
+
+
 var tree = new BST(new Node(10));
 
 tree.insert(new Node(5));
@@ -86,10 +95,79 @@ tree.insert(new Node(14));
 console.log("5",tree.height()) // Should be 5
 
 
-tree.insert(new Node(-6));
-tree.insert(new Node(-7));
-tree.insert(new Node(-8));
-tree.insert(new Node(-9));
-tree.insert(new Node(-10));
+tree.insert(new Node(100));
+tree.insert(new Node(58));
+tree.insert(new Node(68));
+tree.insert(new Node(78));
+tree.insert(new Node(88));
+tree.insert(new Node(98));
+tree.insert(new Node(97));
 
-console.log("9",tree.height()) // Should be 9
+console.log("12",tree.height()) // Should be 12
+
+var tree2 = new BST(new Node(10));
+
+
+
+tree2.insert(new Node(5));
+tree2.insert(new Node(15));
+tree2.insert(new Node(20));
+tree2.insert(new Node(0));
+tree2.insert(new Node(-5));
+tree2.insert(new Node(6));
+tree2.insert(new Node(30));
+tree2.insert(new Node(32));
+tree2.insert(new Node(26));
+tree2.insert(new Node(13));
+tree2.insert(new Node(14));
+
+
+
+
+tree2.insert(new Node(-6));
+tree2.insert(new Node(-15));
+tree2.insert(new Node(-20));
+tree2.insert(new Node(-21));
+tree2.insert(new Node(-22));
+tree2.insert(new Node(-23));
+tree2.insert(new Node(-30));
+tree2.insert(new Node(-32));
+tree2.insert(new Node(-36));
+tree2.insert(new Node(-43));
+tree2.insert(new Node(-54));
+tree2.insert(new Node(-57));
+tree2.insert(new Node(-58));
+tree2.insert(new Node(-60));
+tree2.insert(new Node(-70));
+
+console.log("19",tree2.height()) // Should be 19
+
+var tree3 = new BST(new Node(10));
+
+
+
+tree3.insert(new Node(5));
+tree3.insert(new Node(15));
+tree3.insert(new Node(20));
+tree3.insert(new Node(0));
+tree3.insert(new Node(-5));
+tree3.insert(new Node(6));
+tree3.insert(new Node(30));
+tree3.insert(new Node(32));
+tree3.insert(new Node(26));
+tree3.insert(new Node(13));
+tree3.insert(new Node(14));
+
+tree3.insert(new Node(50));
+tree3.insert(new Node(150));
+tree3.insert(new Node(-20));
+tree3.insert(new Node(-110));
+tree3.insert(new Node(-58));
+tree3.insert(new Node(80));
+tree3.insert(new Node(40));
+tree3.insert(new Node(-320));
+tree3.insert(new Node(260));
+tree3.insert(new Node(-130));
+tree3.insert(new Node(160));
+
+console.log("9",tree3.height()) // Should be 9
