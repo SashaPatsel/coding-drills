@@ -64,7 +64,7 @@ var BST = function(root) {
   this.height = function() {
   // YOUR WORK HERE
 
-
+  }
 
 }
 

@@ -60,13 +60,16 @@ var BST = function(root) {
   }
 
 
+  this.duplicate = function() {
+    // YOUR WORK HERE
 
-  this.height = function() {
-    // YOUR WORK HERE 
 
-    // This problem is essentially asking for a breadth first search. We are interested in the number of ROWS. The most straightforward way to solve this problem is to conduct a breadth-first search, and increment a counter variable every time you move on to a new row. Keep in mind though, that we are looking for the number of rows, not the number of connections between rows.
+
+
+    
   }
 }
+
 
 // TESTS
 var tree = new BST(new Node(10));
@@ -82,14 +85,14 @@ tree.insert(new Node(32));
 tree.insert(new Node(26));
 tree.insert(new Node(13));
 tree.insert(new Node(14));
-
-console.log("5",tree.height()) // Should be 5
-
-
 tree.insert(new Node(-6));
 tree.insert(new Node(-7));
 tree.insert(new Node(-8));
 tree.insert(new Node(-9));
 tree.insert(new Node(-10));
 
-console.log("9",tree.height()) // Should be 9
+console.log(tree.duplicate()) //valid
+
+tree.root.right.right.right.left.left = new Node(-10)
+
+console.log(tree.duplicate()) //invalid
