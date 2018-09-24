@@ -18,6 +18,11 @@
     width: 20%;
   }
 
+  .arrows {
+    text-decoration: none;
+    color: black;
+  }
+
   .arrows:hover {
     cursor: pointer;
     color: red;
@@ -36,6 +41,8 @@
     margin-top: 100px;
     left: 50%;
     transform: translateX(-50%);
+    height: auto;
+    width: 400px;
   }
 </style>
 
@@ -53,35 +60,17 @@
   </div>
 
   <div class="arrows-contain">
-    <div class="back arrows">&larr;</div>
-    <div class="forward arrows">&rarr;</div>
+    <div class="back">
+        <a href="/back" class="arrows">&larr;</a>
+    </div>
+    <div class="forward">
+        <a href="/forward" class="arrows">&rarr;</a>
+    </div>
+    
+    
   </div>
   <img class="img" src="https://i.skyrock.net/4209/59484209/pics/3191481007_1_24_NVtSPmnx.gif">
 
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script>
-
-    $(".new").on("click", function(data) {
-      $.post("/new", function (data) {
-
-      })
-    })
-
-    $(".back").on("click", function () {
-      $.get("/back", function (data) {
-
-      })
-    })
-
-    $(".forward").on("click", function () {
-      $.get("/forward", function (data) {
-
-      })
-    })
-
-
-
-  </script>
 </body>
 
 </html>
