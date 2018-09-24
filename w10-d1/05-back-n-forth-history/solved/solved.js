@@ -30,9 +30,13 @@ var forwardHistory = new Stack()
 // API ROUTES
 
 app.get("/back", function (req, res) {
+
   if (backHistory.peek()) {
     // Add the current page to the forwards history
-    forwardHistory.add(backHistory.remove())
+    if (backHistory.data.length > 1) {
+      forwardHistory.add(backHistory.remove())
+    }
+    
 
     return res.redirect(backHistory.remove())
   }
