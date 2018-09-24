@@ -89,7 +89,7 @@ var BST = function(root) {
       }
     }
 
-    return height
+    return height + 1
   }
 }
 
@@ -107,7 +107,7 @@ tree.insert(new Node(26));
 tree.insert(new Node(13));
 tree.insert(new Node(14));
 
-console.log("4",tree.height()) // Should be 4
+console.log("5",tree.height()) // Should be 5
 
 
 tree.insert(new Node(-6));
@@ -116,4 +116,4 @@ tree.insert(new Node(-8));
 tree.insert(new Node(-9));
 tree.insert(new Node(-10));
 
-console.log("8",tree.height()) // Should be 8
+console.log("9",tree.height()) // Should be 9
