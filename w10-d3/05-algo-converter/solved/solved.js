@@ -89,3 +89,80 @@ console.log(longestPrefix1(array))
 console.log(longestPrefix1(array2))
 console.log(longestPrefix1(array3))
 
+
+// 3.
+const input = [9,4,3,6,8,2];
+const input2 = [13,22,20,18,15,16];
+const input3 = [0,2,3,4];
+const input4 = [0,1,3];
+// ES5
+
+
+function missing(arr) {
+  // Start with the first value and reassign depending on whether i is higher or lower
+var high = arr[0];
+var low = arr[0];
+
+// Assigns the boundaries to the vars above
+for (var i = 0 ; i < arr.length ; i++) {
+  if (arr[i] > high) {
+    high = arr[i];
+  }
+
+  if (arr[i] < low) {
+    low = arr[i]
+  }
+}
+
+var final = [];
+// Whatever isnt included will go to the final array
+for (var i = low ; i < high ; i++) {
+  if (!arr.includes(i)) {
+    final.push(i)
+  }
+}
+
+return final
+}
+
+console.log(missing(input))
+console.log(missing(input2))
+console.log(missing(input3))
+console.log(missing(input4))
+
+// ES6
+
+missing1 = arr => {
+  // Start with the first value and reassign depending on whether i is higher or lower
+let high = arr[0];
+let low = arr[0];
+
+// Assigns the boundaries to the vars above
+
+  arr.forEach(i => {
+    if (i > high) {
+      high = i;
+    }
+  
+    if (i < low) {
+      low = i
+    }
+  });
+
+
+
+let final = [];
+// Whatever isnt included will go to the final array
+for (let i = low ; i < high ; i++) {
+  if (!arr.includes(i)) {
+    final = [...final, i]
+  }
+}
+
+return final
+}
+
+console.log(missing1(input))
+console.log(missing1(input2))
+console.log(missing1(input3))
+console.log(missing1(input4))

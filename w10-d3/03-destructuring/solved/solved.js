@@ -81,3 +81,30 @@ letterP = () => {
 }
 
 console.log(letterP())
+
+// 4. Create a function which returns all the students in hogwarts except for Seamus, Pansy, Cho, or Ernie
+
+forgetThem = () => {
+  let {gryffindor, slytherin, ravenclaw, hufflepuff} = hogwarts
+  gryffindor = gryffindor.slice(1)
+  slytherin = slytherin.slice(1)
+  ravenclaw = ravenclaw.slice(1)
+  hufflepuff = hufflepuff.slice(1)
+  return [...gryffindor, ...slytherin, ...ravenclaw, ...hufflepuff]
+}
+
+console.log(forgetThem())
+
+// 5. SWAP HOUSES.... Manipulate the original object so that all the students in Gryffindor move to Hufflepuff, all the Hufflepuffs move to Slytherin, all the Slytherins move to Ravenclaw, and all the Ravenclaws move to Gryffindor
+
+houseSwap = () => {
+  let {gryffindor, slytherin, ravenclaw, hufflepuff} = hogwarts
+
+  hogwarts.hufflepuff = gryffindor
+  hogwarts.slytherin = hufflepuff
+  hogwarts.ravenclaw = slytherin
+  hogwarts.gryffindor = ravenclaw
+  console.log("hogwarts",hogwarts)
+}
+
+houseSwap()
