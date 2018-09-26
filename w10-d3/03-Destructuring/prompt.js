@@ -56,20 +56,23 @@ console.log(battleOfHogwarts())
 
 
 // 4.
-// Create a function which returns an array of all the hogwarts students who have a p in their names
+// Create a function called "letterP" which returns an array of all the hogwarts students who have a p in their names
+// You must use an arrow function, object destructuring, array destructuring and the filter method
 
-letterP = () => {
-  const {gryffindor, slytherin, ravenclaw, hufflepuff} = hogwarts
 
-  let p = [...gryffindor, ...slytherin, ...ravenclaw, ...hufflepuff]
+// ============ YOUR WORK HERE ===========
 
-  return p.filter(student => student.includes("n"))
 
-}
 
+
+
+//  ============== END WORK ==============
+
+// TESTS
 console.log(letterP())
 
-// 5. Create a function which returns all the students in hogwarts except for Seamus, Pansy, Cho, or Ernie
+// 5. Create a function called "forgetThem" which returns all the students in hogwarts except for Seamus, Pansy, Cho, or Ernie
+// You must use an arrow function, object destructuring and array destructuring.
 
 forgetThem = () => {
   let {gryffindor, slytherin, ravenclaw, hufflepuff} = hogwarts
@@ -79,19 +82,27 @@ forgetThem = () => {
   hufflepuff = hufflepuff.slice(1)
   return [...gryffindor, ...slytherin, ...ravenclaw, ...hufflepuff]
 }
+// ============ YOUR WORK HERE ===========
 
+
+
+
+
+//  ============== END WORK ==============
+
+// TESTS
 console.log(forgetThem())
 
-// 6. SWAP HOUSES.... Manipulate the original object so that all the students in Gryffindor move to Hufflepuff, all the Hufflepuffs move to Slytherin, all the Slytherins move to Ravenclaw, and all the Ravenclaws move to Gryffindor
+// 6. Create a function called houseSwap. You function must manipulate the original object so that all the students in Gryffindor move to Hufflepuff, all the Hufflepuffs move to Slytherin, all the Slytherins move to Ravenclaw, and all the Ravenclaws move to Gryffindor
 
-houseSwap = () => {
-  let {gryffindor, slytherin, ravenclaw, hufflepuff} = hogwarts
 
-  hogwarts.hufflepuff = gryffindor
-  hogwarts.slytherin = hufflepuff
-  hogwarts.ravenclaw = slytherin
-  hogwarts.gryffindor = ravenclaw
-  console.log("hogwarts",hogwarts)
-}
+// ============ YOUR WORK HERE ===========
 
-houseSwap()
+
+
+
+
+//  ============== END WORK ==============
+
+// TESTS
+console.log(houseSwap())
