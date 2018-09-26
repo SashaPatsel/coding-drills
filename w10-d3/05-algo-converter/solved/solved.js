@@ -13,8 +13,8 @@ function compressor1(str) {
   }
   for (var i = 0; i < str.length; i++) {
     if (!(newString.includes(str[i]))) {
-      newString+=(str[i]+obj[str[i]])
-    } 
+      newString += (str[i] + obj[str[i]])
+    }
   }
   return newString
 }
@@ -34,8 +34,8 @@ compressor = str => {
   }
   for (let i = 0; i < str.length; i++) {
     if (!(newString.includes(str[i]))) {
-      newString+=(str[i]+obj[str[i]])
-    } 
+      newString += (str[i] + obj[str[i]])
+    }
   }
   return newString
 }
@@ -54,10 +54,10 @@ var array3 = ["prescient", "preschool"]
 function longestPrefix(arr) {
   var compare = arr[0].split("")
   var newstring = ""
-  for (var i = 1 ; i < arr.length ; i++) {
-    for (var j = 0 ; j < arr[i].length ; j++) {
+  for (var i = 1; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].length; j++) {
       if (compare[j] !== arr[i][j] && compare[j]) {
-      compare.splice(j)
+        compare.splice(j)
       }
     }
   }
@@ -74,10 +74,10 @@ console.log(longestPrefix(array3))
 
 longestPrefix1 = arr => {
   let compare = arr[0].split("")
-  for (let i = 1 ; i < arr.length ; i++) {
-    for (let j = 0 ; j < arr[i].length ; j++) {
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
       if (compare[j] !== arr[i][j] && compare[j]) {
-      compare.splice(j)
+        compare.splice(j)
       }
     }
   }
@@ -91,38 +91,32 @@ console.log(longestPrefix1(array3))
 
 
 // 3.
-const input = [9,4,3,6,8,2];
-const input2 = [13,22,20,18,15,16];
-const input3 = [0,2,3,4];
-const input4 = [0,1,3];
+const input = [9, 4, 3, 6, 8, 2];
+const input2 = [13, 22, 20, 18, 15, 16];
+const input3 = [0, 2, 3, 4];
+const input4 = [0, 1, 3];
 // ES5
 
 
 function missing(arr) {
-  // Start with the first value and reassign depending on whether i is higher or lower
-var high = arr[0];
-var low = arr[0];
-
-// Assigns the boundaries to the vars above
-for (var i = 0 ; i < arr.length ; i++) {
-  if (arr[i] > high) {
-    high = arr[i];
+  var high = arr[0];
+  var low = arr[0];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > high) {
+      high = arr[i];
+    }
+    if (arr[i] < low) {
+      low = arr[i]
+    }
+  }
+  var final = [];
+  for (var i = low; i < high; i++) {
+    if (!arr.includes(i)) {
+      final.push(i)
+    }
   }
 
-  if (arr[i] < low) {
-    low = arr[i]
-  }
-}
-
-var final = [];
-// Whatever isnt included will go to the final array
-for (var i = low ; i < high ; i++) {
-  if (!arr.includes(i)) {
-    final.push(i)
-  }
-}
-
-return final
+  return final
 }
 
 console.log(missing(input))
@@ -133,33 +127,24 @@ console.log(missing(input4))
 // ES6
 
 missing1 = arr => {
-  // Start with the first value and reassign depending on whether i is higher or lower
-let high = arr[0];
-let low = arr[0];
-
-// Assigns the boundaries to the vars above
-
+  let high = arr[0];
+  let low = arr[0];
   arr.forEach(i => {
     if (i > high) {
       high = i;
     }
-  
+
     if (i < low) {
       low = i
     }
   });
-
-
-
-let final = [];
-// Whatever isnt included will go to the final array
-for (let i = low ; i < high ; i++) {
-  if (!arr.includes(i)) {
-    final = [...final, i]
+  let final = [];
+  for (let i = low; i < high; i++) {
+    if (!arr.includes(i)) {
+      final = [...final, i]
+    }
   }
-}
-
-return final
+  return final
 }
 
 console.log(missing1(input))
