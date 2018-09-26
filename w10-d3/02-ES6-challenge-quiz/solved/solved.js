@@ -86,5 +86,3 @@ function madLibs(occupation, transportVerb, adverb, adjective, animal, presentTe
 madlibs = (occupation, transportVerb, adverb, adjective, animal, presentTenseVerb, adjective2) => {
   `The ${occupation} ${transportVerb} on his/her way to the church very ${adverb}. The surrounding crowd could not believe he/she would do so on such a/an ${adjective} day. Meanwhile, across the street, an ${animal} was ${presentTenseVerb}. It was truly a/an ${adjective2} sight to see`
 }
-
-// Have fun making your own test on this one 😈.

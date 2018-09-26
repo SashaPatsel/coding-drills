@@ -42,19 +42,20 @@ sortHufflepuff = (student) => {
 
   hogwarts.hufflepuff = [...hufflepuff]
 } 
-
-// In one line of code, create a function which takes 
-goToCommonRoom = (house) => hogwarts[house]
-
 // TESTS
 sortGryffindor("Harry Potter")
 sortSlytherin("Draco Malfoy")
 sortRavenclaw("Luna Lovegood")
 sortHufflepuff("Cedric Diggory")
 
+
+// 2. In one line of code, create a function which takes 
+goToCommonRoom = (house) => hogwarts[house]
+
+// TEST
 console.log(goToCommonRoom("gryffindor"))
 
-// 2.
+// 3.
 // Create a function that returns the students from all the houses except Slytherin in one array.
 
 battleOfHogwarts = () => {
@@ -68,7 +69,7 @@ battleOfHogwarts = () => {
 console.log(battleOfHogwarts())
 
 
-// 3.
+// 4.
 // Create a function which returns an array of all the hogwarts students who have a p in their names
 
 letterP = () => {
@@ -82,7 +83,7 @@ letterP = () => {
 
 console.log(letterP())
 
-// 4. Create a function which returns all the students in hogwarts except for Seamus, Pansy, Cho, or Ernie
+// 5. Create a function which returns all the students in hogwarts except for Seamus, Pansy, Cho, or Ernie
 
 forgetThem = () => {
   let {gryffindor, slytherin, ravenclaw, hufflepuff} = hogwarts
@@ -95,7 +96,7 @@ forgetThem = () => {
 
 console.log(forgetThem())
 
-// 5. SWAP HOUSES.... Manipulate the original object so that all the students in Gryffindor move to Hufflepuff, all the Hufflepuffs move to Slytherin, all the Slytherins move to Ravenclaw, and all the Ravenclaws move to Gryffindor
+// 6. Create a function called houseSwap. You function must manipulate the original object so that all the students in Gryffindor move to Hufflepuff, all the Hufflepuffs move to Slytherin, all the Slytherins move to Ravenclaw, and all the Ravenclaws move to Gryffindor
 
 houseSwap = () => {
   let {gryffindor, slytherin, ravenclaw, hufflepuff} = hogwarts
