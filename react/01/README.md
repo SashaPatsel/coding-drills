@@ -1,6 +1,6 @@
 # React
 
-## Getting Started
+## Initial Setup
 
 React is great for a lot of reasons. One of those reasons is how organized it can keep us through development. We have to think about how our page will be built before we get to building it. 
 
