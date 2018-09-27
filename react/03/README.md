@@ -19,5 +19,5 @@ In this exercise, we will update who our nav is greeting in real time as the use
   - Set state so that the name points to the value. (Hint: use bracket notation)
 4. Within Landing, set state to an empty object (this does NOT mean invoke the setState method)
 
-#### If you've followed the above steps correctly, your app should do the following.
+#### If you've followed the above steps correctly, your app should do the following...
 <img src="demo.gif">

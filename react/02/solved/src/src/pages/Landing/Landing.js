@@ -31,10 +31,10 @@ class Landing extends Component {
       <div className="landing">
         <Nav name={this.state.name}/>
          <div className="landing__form">
-         {this.state.entered ? 
+         {this.state.enterted ? 
          <p> Welcome, {this.state.name}</p>
         :
-        <form onSubmit={this.formSubmit}>
+        <form>
           <Input name="name" type="text" change={this.handleChange}/>
           <div className="landing__submit-btn">
             <Input type="submit" value="Join"/>
