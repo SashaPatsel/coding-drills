@@ -2,6 +2,8 @@
 
 ## Functionality
 
+* This is part 3 in a 4-part react exercise. If you have not completed the prior exercises, please refer to yesterday's code drills.
+
 To this point, we've set ourselves up pretty nicely. We have a webpage to look at. However, we still have no functionality. 
 
 In this exercise, we'll explore the benefits of how state and props can interact with one another in React. Whenever the state of a component is updated, React will use the powers of the Virtual DOM to rerender just that component, but not the entire page. 
