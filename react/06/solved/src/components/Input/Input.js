@@ -3,7 +3,7 @@ import "./input.css"
 
 const Input = props => (
   <div>
-    <input type={props.type} value={props.value}/>
+    <input name={props.name} onChange={props.onChange} type={props.type} value={props.value}/>
   </div>  
 )
 

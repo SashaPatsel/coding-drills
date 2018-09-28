@@ -18,4 +18,6 @@ In part two, we'll be creating three components.
 4. Inside of Input, insert an input with the props:
   - type (a placeholder for the input type)
   - value (a placeholder for the input value)
+  - name (a placeholder for the input name)
+  - onChange (a placeholder function)
 5. That's all for this exercise. In part three, we'll be puting out Input component to use.
