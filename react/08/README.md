@@ -14,7 +14,7 @@ In part four, we'll start to integrate axios into our app.
 3. Within the utils folder, create the file `API.js`.
 4. Hit [this link](https://newsapi.org/register) to get an API key for NewsAPI. It's a great, free, easy-to-use API for getting news stories from as many sources as you could want. Once you get your key, set it as a const in `API.js`.
 5. Within your `API.js` file, `export default` an empty object.
-6. Within the exported object, create a key `getNews` which points to a function that takes an argument `query`.
+6. Within the exported object, create a key `getNews` which points to a function that takes an argument `query` (we'll be using this in the next and final step).
 7. Your function should execute the following line of code: 
 ```javascript
 return axios.get(`https://newsapi.org/v2/top-headlines?sources=bleacher-report&apiKey=${key}`);
