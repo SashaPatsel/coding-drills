@@ -44,7 +44,7 @@ class Home extends Component {
   }
 
   render () {
-    {console.log(this.state.stories)}
+    
     return (
       <div>
       <h1 className="home__heading">Welcome, {this.state.name}</h1>
