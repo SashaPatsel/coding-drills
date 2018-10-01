@@ -9,7 +9,8 @@ const hogwarts = {
 // 1. Create four functions. Each function takes a student as an argument, and then sorts that student into a different house. 
 // For example, if I invoke sortGryffindor passing "Hermione Granger" as an argument, Hermione is added to the key of gryffindor in the object above. 
 // In each function, you must use an arrow function, object destructuring, and array destructuring
-// Note that your goal is to manipulate the original object, not a copy of an array one of its keys points to
+// Note that your goal is to manipulate the original object, not a copy of an array one of its keys points to.
+// This isquite an annoying ask, as it is not the best way to accomplish what we're trying to do. But this demonstrates a good understanding of destructuring and what it can do. 
 
 // ============ YOUR WORK HERE ===========
 
