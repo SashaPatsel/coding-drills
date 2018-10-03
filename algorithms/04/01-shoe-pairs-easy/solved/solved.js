@@ -6,17 +6,10 @@ function countPairs(arr) {
 
   for (let i = 0 ; i < arr.length ; i++) {
     if (obj[arr[i]]) {
-      obj[arr[i]] ++
+      obj[arr[i]] = false
+      pairs++
     } else {
-      obj[arr[i]] = 1
-    }
-  }
-
-  for (let p in obj) {
-    if (p % 2 !== 0) {
-      p--
-    } else {
-      pairs += p/2
+      obj[arr[i]] = true
     }
   }
 
