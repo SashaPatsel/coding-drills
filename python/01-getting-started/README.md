@@ -81,3 +81,6 @@ In Python, we use three quotation marks `"""` as opposed to a `/` and a `*`. How
 - Declare ten variables and set them to whatever values you'd like. However, you must use at least four different data types.
 - Print every single one of those variables to the command line.
 - Run you script by using `python prompt.js`, as opposed to `node prompt.js`.
+
+# COVER INPUTS
+# COVER CONCATENATION

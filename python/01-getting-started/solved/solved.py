@@ -4,8 +4,8 @@ class People:
   sasha= "Sasha"
 name = "Timmy"
 age = 24
-likeBBall = True
-likeCountry = False
+like_bball = True
+like_country = False
 nuthin = None
 decimal = 4.2
 otherArr = [1,2,3,5]
@@ -16,8 +16,8 @@ print(arr)
 print(People.sasha)
 print(name)
 print(age)
-print(likeBBall)
-print(likeCountry)
+print(like_bball)
+print(like_country)
 print(nuthin)
 print(decimal)
 print(otherArr)
