@@ -7,7 +7,7 @@ consecutive = (arr) => {
 
   count = 0
 // When we've checked everything in the array
-  while (count < arr.length + 1) {
+  while (count < arr.length) {
  
     if (arr[count+1] - arr[count] === 1) {
       seq.push(arr[count + 1])
@@ -21,4 +21,4 @@ consecutive = (arr) => {
   return seqs
 }
 
-console.log(consecutive([1,2,3,6,7,8,15,18,19,21,22,24])) //[[1,2,3],[6,7,8],[15],[18,19,21,22,24]]
+console.log(consecutive([1,2,3,6,7,8,15,18,19,21,22,24])) //[[1,2,3],[6,7,8],[15],[18,19],[21,22],[24]]
