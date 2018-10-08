@@ -1,13 +1,13 @@
 
 
-# "Global" students list.
-students = []
+# "Global" users list.
+users = []
 
 while True:
 
     # Initialize a new user. This uses fromkeys as a shorthand for literally
     # creating a new dictionary and setting its values to None, which is fine.
-    # But, show this to students, since it's much faster.
+    # But, show this to users, since it's much faster.
     # user = dict.fromkeys(['first_name', 'last_name', 'middle_initial', 'address','email', 'phone_number'])
  
     user =	{
@@ -41,8 +41,8 @@ while True:
     
     # Prompt for confirmation. Use lower so users can enter either Y or y.
     if input('Is this information correct? (Y/n) ').lower() == 'y':
-        students.append(user)
-        print(students)
+        users.append(user)
+        print(users)
 
         # Prompt users to add more user information.
         if input ('Would you like to input another user\'s information? (Y/n)').lower() == 'y':
@@ -53,7 +53,7 @@ while True:
             print('-' * 18)
 
             # Print information for every user in the list.
-            for user in students:
+            for user in users:
                 for key, value in user.items():
                     print('your {0} is {1}.'.format(key, value))
 
