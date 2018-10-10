@@ -1,10 +1,14 @@
 # Python
 
-## Changing our program based on the user's input
+## Some new syntax
 
 
 ## Intro
+As we've noted, Python and Node are functionally identical for the most part. That being said, there are significant differences in their syntax.
 
+Take note of some of the topics below.
+
+* Note: Python's convention is to separate words using an underscore instead of camelCase. For example, a variable would look like this in Python: joe_shmoe, as opposed to joeShmoe
 
 ### Dictonaries
 In Python, objects are called dictionaries. Other than the name though, the behave much.
@@ -80,24 +84,14 @@ You can see an example of conditionals in the while loop above. It's pretty stra
 name = "Kevin"
 if name == "Kevin":
   print("Hart")
-else :
+else:
   print("I don't know that guy.")  
 ```
 
 
 
 ## Instructions
-In this exercise, we'll essentially be doing the same thing as the first exercise, but instead using objects and loops. 
+In this exercise, we'll be practicing Python syntax topic-by-topic. 
 
-1. Create a variable users, and initialize it to an empty array.
-2. Create an infinite while loop. This may seem counterintuitive, but it is the use of the continue and break key words that will allow this structure to work. There are many ways to create an infinite loop. See if you can come up with one. 
-3. Initialize an object with the following keys. Each key should point to an empty string.
-   - first_name
-   - last_name 
-   - middle_initial 
-   - address 
-   - email 
-   - phone_number 
-4. Using bracket notation (like you would in javascript), assign each key in the object to an input asking the user for the piece of information associated with the key.
-  - (Example: user["first_name"] = input("what is your first name?"))
-5. Loop through the updated object, and reiterate the user's information to them (use the keys and the values)
+Navigate to prompt.py, and follow the instructions therein. 
+
