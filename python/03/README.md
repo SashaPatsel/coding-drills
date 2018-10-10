@@ -12,6 +12,8 @@ This next exercise will have mostly the same functinality as the product first e
 ## Instructions
 In this exercise, we'll essentially be doing the same thing as the first exercise, but instead using objects and loops. 
 
+In promt.py, your are not given any code. Follow the pseudocode below to create this program.
+
 1. Create a variable users, and initialize it to an empty array.
 2. Create an infinite while loop. This may seem counterintuitive, but it is the use of the continue and break key words that will allow this structure to work. There are many ways to create an infinite loop. See if you can come up with one. 
 3. Initialize an object with the following keys. Each key should point to an empty string.
@@ -32,6 +34,10 @@ obj = {
 for key, value in obj.items():
   print("My {0} is {1}".format(key, value))
 ```
+* The .items() method is grabbing key/value pairs from the object we invoke it on. 
+
+* The .format() method is informing the string it is invoked on what each value in curly braces corresponds to. For example, {0} will refer to key, because key is the first argument passed into the format method. 
+
 6. Once you've reprinted the user's own information to them (step 5), ask them if their information is correct (it is recommended to ask them to input y or n). Create an if statement that checks to see whether the user affirmed the input or not. The rest of our logic can lie in this if statement. Because we set up an infinite loop, any input that does not meet the condition we set, will trigger the loop again.
 
 7. If the user affirms their information is correct, insert their information into the users array. This is done using the .append() method, which works exactly the same as the .push method in javascript.
