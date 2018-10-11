@@ -4,7 +4,7 @@
 
 
 ## Intro
-As we've noted, Python and Node are functionally identical for the most part. That being said, there are significant differences in their syntax.
+As we've noted, Python and Javascript are functionally identical for the most part (except that Python CANNOT be used client-side). That being said, there are significant differences in their syntax.
 
 Take note of some of the topics below.
 

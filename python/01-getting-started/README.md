@@ -2,7 +2,7 @@
 
 ## Learning the basics
 
-Python is a server-side scripting language. In other words, it can only be used on the back-end. You can think of it as an alternative to Node.
+Python is a server-side scripting language. In other words, `it can only be used on the back-end`. You can think of it as an alternative to Node.
 
 Python has many syntactic differences to Node, but for the most part, functions in much the same way.
 
