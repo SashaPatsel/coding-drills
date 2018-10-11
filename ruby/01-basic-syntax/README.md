@@ -1,3 +1,31 @@
+# Ruby
+
+## Syntax basics - store owner
+
+## Intro
+We're going to be setting up shop in Ruby in the follwing exercises. Ruby is a programming language like Javascript (`except it can only be used on the back-end`).
+
+
+## Syntax
+
+### Variables
+
+### Dictionaries
+
+* Arrays, numbers, strings and booleans are the same in ruby and javascript.
+
+### Array methods
+
+
+## Instructions
+In this exercise, we'll be setting up a shop using ruby!
+
+1. Create you store's profile using a dictionary.
+
+
+
+
+
 #### Topics
 - variables
 - print/puts
