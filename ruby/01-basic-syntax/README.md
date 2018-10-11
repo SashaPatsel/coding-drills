@@ -8,13 +8,15 @@ We're going to be setting up shop in Ruby in the follwing exercises. Ruby is a p
 
 ## Syntax
 
+### Prints/puts
+
 ### Variables
 
 ### Dictionaries
 
 * Arrays, numbers, strings and booleans are the same in ruby and javascript.
 
-### Array methods
+### Array methodw
 
 
 ## Instructions

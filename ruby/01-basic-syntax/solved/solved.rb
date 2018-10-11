@@ -1,16 +1,26 @@
-profile = {
-  :name => "Sasha",
-  :age => 24,
-  :family_members => ["Ken", "Galina", "Katia", "Nastia"],
-  :likesMushrooms => false
+# 1. Create a dictionary of information about your store
+patsel_grocery = {
+  :owner => "Sasha P",
+  :location => "San Francisco",
+  :num_stores => 8,
+  :foods => ["beans", "cream cheese", "hummus", "guacamole", "cookies", "pizza", "twix", "peach"]
 }
-# You cannot directly access elements in arrays nested in dictionaries in ruby
-family_members = profile[:family_members]
 
-puts "#{profile[:name]}'s older sister is #{family_members[2]}"
+# 2. Print out a short bio about your store using some of the keys in the dictionary you just created.
 
-puts "Jim: #{profile[:name]}, age #{profile[:age]}, likes Mushrooms"
+puts "Welcome to Patsel Grocery. We have #{patsel_grocery[:num_stores]} locations in #{patsel_grocery[:location]}!"
+puts("="*10)
+# 3. Print all the items your store sells.
+puts "At Patsel Grocery, we sell #{patsel_grocery[:foods]}."
+puts("="*10)
+# 4. Add 5 new items to your warehouse and print out your updated stores.
+patsel_grocery[:foods] << ["half and half", "English muffins", "beer", "eggs", "Cap\'n Crunch"]
 
-puts "Dwight: #{profile[:likesMushrooms]}. #{profile[:name]} does not like mushrooms"
+puts patsel_grocery[:foods]
+puts("="*10)
+# 5. remove three items from your warehourse and print out your updated stores.
 
-family_members >> ""
+patsel_grocery[:foods] -= ["pizza", "twix", "Cap\'n Crunch"]
+
+puts patsel_grocery[:foods]
+puts("="*10)
