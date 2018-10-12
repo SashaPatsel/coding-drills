@@ -4,6 +4,7 @@ patsel_grocery = {
   :num_stores => 8,
   :foods => ["beans", "cream cheese", "hummus", "guacamole", "cookies", "pizza", "twix", "peach"]
 }
+
 # 1.
 patsel_grocery[:foods].each do | food |
   puts food
