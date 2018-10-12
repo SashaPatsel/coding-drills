@@ -102,6 +102,10 @@ print evenNums #Returns all numbers in the first array that were not present in 
 ## Instructions
 In this exercise, we'll be setting up a shop using ruby!
 
+To run a file in ruby, simply enter ruby and then the file name in the command line.
+
+In `prompt.rb`: 
+
 1. Create you store's profile using a dictionary. You must include at least 4 different keys, and one of those keys must point to an array of items your store sells.
 
 2. Print out a short bio about your store using some of the keys in the dictionary you just created.
