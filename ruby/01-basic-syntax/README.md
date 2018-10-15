@@ -35,10 +35,10 @@ number = 8
 animals = ["rhino", "hippo", "tiger"]
 ```
 
-### Dictionaries
+### Hashes
 Arrays, numbers, strings and booleans are the same in ruby and javascript.
 
-Objects however, are a little different. In Ruby, they're called dictionaries.
+Objects however, are a little different. In Ruby, they're called hashes.
 
 You can write them in a couple of different ways:
 
@@ -59,7 +59,7 @@ profile2 = {
 }
 ```
 
-We can access the values in dictionaries like so:
+We can access the values in hashes like so:
 
 ```ruby
 

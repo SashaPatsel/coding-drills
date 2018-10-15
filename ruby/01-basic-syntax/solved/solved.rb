@@ -1,4 +1,4 @@
-# 1. Create you store's profile using a dictionary. You must include at least 4 different keys, and one of those keys must point to an array of items your store sells.
+# 1. Create you store's profile using a hash. You must include at least 4 different keys, and one of those keys must point to an array of items your store sells.
 patsel_grocery = {
   :owner => "Sasha P",
   :location => "San Francisco",
@@ -6,7 +6,7 @@ patsel_grocery = {
   :foods => ["beans", "cream cheese", "hummus", "guacamole", "cookies", "pizza", "twix", "peach"]
 }
 
-# 2. Print out a short bio about your store using some of the keys in the dictionary you just created.
+# 2. Print out a short bio about your store using some of the keys in the hash you just created.
 
 puts "Welcome to Patsel Grocery. We have #{patsel_grocery[:num_stores]} locations in #{patsel_grocery[:location]}!"
 puts("="*10)
