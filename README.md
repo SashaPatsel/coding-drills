@@ -4,6 +4,24 @@ This repository contains original code drills designed to help people refine the
 
 These drills are also designed to accompany the curriculum of the [Trilogy Ed](https://www.trilogyed.com/) Full-Stack Coding Bootcamp.
 
+<h2 align="center">🗄 Table of Contents 🗄</h2>
+
+1. [CSS Basics](https://github.com/SashaPatsel/coding-drills/tree/master/css-basics)
+
+2. [Responsive Design](https://github.com/SashaPatsel/coding-drills/tree/master/responsive-design)
+3. [Javascript Basics](https://github.com/SashaPatsel/coding-drills/tree/master/js-basics)
+4. [AJAX](https://github.com/SashaPatsel/coding-drills/tree/master/ajax)
+5. [Node](https://github.com/SashaPatsel/coding-drills/tree/master/node)
+6. [Constructors](https://github.com/SashaPatsel/coding-drills/tree/master/zombieGame-Constructors)
+7. [MySQL](https://github.com/SashaPatsel/coding-drills/tree/master/MySQL)
+8. [Express](https://github.com/SashaPatsel/coding-drills/tree/master/express)
+9. [Algorithms](https://github.com/SashaPatsel/coding-drills/tree/master/algorithms)
+10. [ES6](https://github.com/SashaPatsel/coding-drills/tree/master/ES6)
+11. [React](https://github.com/SashaPatsel/coding-drills/tree/master/react)
+12. [Python](https://github.com/SashaPatsel/coding-drills/tree/master/python)
+13. [Ruby](https://github.com/SashaPatsel/coding-drills/tree/master/ruby)
+14. [Guides](https://github.com/SashaPatsel/coding-drills/tree/master/guides)
+
 <h2 align="center">🏁 Getting Started 🏁</h2>
 
 Each folder is named after the topic the exercises within cover. Each folder within a given topic contains its own unique exercises. 
@@ -38,6 +56,7 @@ Projects include, but are not limited to:
 
 ### [Hogwarts](https://hogwarts-415.herokuapp.com/):
 <img src="express/hogwarts/demo.png">
+
 
 ### Installing
 
