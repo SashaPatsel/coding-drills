@@ -1,9 +1,4 @@
-patsel_grocery = {
-  :owner => "Sasha P",
-  :location => "San Francisco",
-  :num_stores => 8,
-  :foods => ["beans", "cream cheese", "hummus", "guacamole", "cookies", "pizza", "twix", "peach"]
-}
+# Import the hash for your own store from the previous exercise. 
 
 # 1. Loop through the items in your store, and print each item on a separate line.
 # ============ YOUR WORK HERE ============

@@ -22,7 +22,7 @@ while count < all_foods.length do
       :name => all_foods[count],
       :id => count
   }
-  count += 1 
+  count += 1  
 end  
 
 print patsel_grocery[:foods]
