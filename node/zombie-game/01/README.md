@@ -80,7 +80,7 @@ var zombie1 = {
 
 11. Inform the user whether or not their shot made contact, whether a zombie was hit (display the damage done to the zombie if they were), how much damage the hero received, and the hero's remaining health. 
 
-12. If a zombie's health is at or below 0, that zombie should no longer be able to do damage and should be reomoved from displays and as an attack choice. 
+12. If a zombie's health is at or below 0, that zombie should no longer be able to do damage and should be removed from displays and as an attack choice. 
 
 13. The hero wins if all the zombies' health is at or below 0. The zombies win if the hero's health is at or below 0. 
 
@@ -93,7 +93,7 @@ var zombie1 = {
 ```
 
   bearHands: {
-    name: "Bear Hands",
+    name: "Bare Hands",
     reach: 1,
     attack: [5, 5],
     risk: 95,
