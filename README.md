@@ -1,8 +1,8 @@
 <h1 align="center">💻  Code Drills  💻</h1>
 
-This repository contains original code drills designed to help people refine their coding skills.
+This repository contains original code drills designed to help people both refine their coding skills and to pick up new ones.
 
-These drills are also designed to accompany the curriculum of the [Trilogy Ed](https://www.trilogyed.com/) Full-Stack Coding Bootcamp.
+These drills are also designed to accompany the curriculum of the [Trilogy Ed](https://www.trilogyed.com/) Full-Stack Coding Bootcamp. However, users not attending this program may also find value in these exercises. 
 
 <h2 align="center">🗄 Table of Contents 🗄</h2>
 
