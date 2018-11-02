@@ -10,11 +10,15 @@ In this first step, we won't be writing any code. Instead, we'll just be doing s
 
 ## Instructions
 1. Create a brand new directory wherever you like on your computer. Call it puppy-pal. Within that new folder, create a file called `index.html`.
+
 2. Create a folder called `assets`.
   - Within that folder, create two other folders:
     - `css` and `images`
+
 3. Within `css`, create a file called `style.css`.
+
 4. The above steps should all be stuff you're pretty used to. Now we're going to start implementing our sass files. Within assets, create a folder called `sass`.
+
 5. Within `sass`, create five new folders:
   - `abstracts`
   - `base`
@@ -22,6 +26,7 @@ In this first step, we won't be writing any code. Instead, we'll just be doing s
   - `layout`
   - `pages`
 6.  Within `sass`, create a file called `main.scss`. Sass files have the .scss file extension. main.scss is going to serve as our central hub. We won't write any styling there, but that's where we'll import all the files we're working on. 
+
 7. Navigate to `abstracts` and create three new files:
   - `_functions.scss`
   - `_mixins.scss`
