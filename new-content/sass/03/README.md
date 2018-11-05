@@ -1,6 +1,6 @@
 # Sass 
 
-## Puppy Pal Part 3
+## BEM and Sass
 
 In the last section, we were introduced to some of the features in Sass. In this section, we'll be diving into what really makes Sass unique. 
 
@@ -99,14 +99,18 @@ Now that you've been introduced to some of the key syntax in Sass, it's time to 
 
 2. Build out the HTML for the `nav` using the BEM convention. The nav contains a logo, and three tabs. (reference the image below if this is unclear).
 
-3. Using Sass, and the syntax shown above, style the nav of your app. At the end, all of your styling for the navbar should be contained within the styling of the nav block.
+3. Using Sass, and the syntax shown above, style the nav of your app. In the `components` folder, create the file `_nav.scss`. You will do your work in there. A navbar should be a reusable component. Therefpre, we'll store it in the components folder. At the end, all of your styling for the navbar should be contained within the styling of the nav block.
 
 * Use a variable for the background color of the navbar. 
 
 * Feel free to use the logo provided in this folder.
 
+* Do not forget to import the _nav.scss file once you've created it.
+
 Your finished project should look like the following:
 
 <img src="demo.png">
 
-4. BONUS: Taking advantage of Sass's syntax, add a hover effect to the nav tabs. 
+4. 
+- BONUS: Taking advantage of Sass's syntax, add a hover effect to the nav tabs. 
+- BONUS: Research the :not psuedoclass and the :last-child pseudoclass. Use these tools to give ONLY the first two nav-tabs borders to their right.

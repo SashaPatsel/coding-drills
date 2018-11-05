@@ -1,6 +1,6 @@
 # Sass 
 
-## Puppy Pal Part 2
+## Base and Variables
 
 In the last section, we did a lot of setup, but barely wrote any code. In this section, we'll be doing a little more setup, but we'll also jump into some sass code and already get a taste of some of sass's perks.
 

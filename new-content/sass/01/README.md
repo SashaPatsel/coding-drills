@@ -1,6 +1,6 @@
 # SASS
 
-## Puppy Pal Part 1
+## Setup
 
 Like many other technologies, the best way to learn SASS is to use it. Throughout the next few exercises, we'll be building an app in SASS!
 
