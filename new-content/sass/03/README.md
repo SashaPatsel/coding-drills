@@ -101,6 +101,10 @@ Now that you've been introduced to some of the key syntax in Sass, it's time to 
 
 3. Using Sass, and the syntax shown above, style the nav of your app. At the end, all of your styling for the navbar should be contained within the styling of the nav block.
 
+* Use a variable for the background color of the navbar. 
+
+* Feel free to use the logo provided in this folder.
+
 Your finished project should look like the following:
 
 <img src="demo.png">
