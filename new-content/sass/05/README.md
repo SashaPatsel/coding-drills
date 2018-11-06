@@ -10,7 +10,8 @@ Feel free to be as creative as you'd like with this. You may put in as much or a
 Again, feel free to style this app however you like. If you are not feeling like coming up with a design, please replicate the image below to the best of your abilities. 
 
 - Take as much advantage of Sass as yu possibly can. 
-- Remember to first write out your HTML
-- Remember to follow the BEM convention
+- Remember to first write out your HTML.
+- Remember to follow the BEM convention.
 - Use utility classes, variables and mixins where appropriate.
 - Consider whether a block is a reusable component (like a button or card) or a part of the overall layout (something that has unique styling). 
+- Don't forget to import new files you create.

@@ -25,6 +25,10 @@ body {
   font-size: 2rem;
   font-style: italic; }
 
+.heading--alt {
+  font-size: 2.8rem;
+  text-transform: uppercase; }
+
 .mb-sm {
   margin-bottom: 2rem; }
 
@@ -33,6 +37,24 @@ body {
 
 .mb-lg {
   margin-bottom: 6rem; }
+
+.txt-center {
+  text-align: center; }
+
+.card {
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin-bottom: 30px;
+  background-color: rgba(235, 235, 235, 0.8);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.7);
+  padding: 4rem;
+  width: 30rem; }
+
+.footer {
+  text-align: center;
+  padding: 3rem;
+  background-color: #018B78;
+  font-size: 2rem; }
 
 .nav {
   padding: 2rem;
@@ -67,6 +89,32 @@ body {
         cursor: pointer;
         color: #DE8F01; }
 
+.user-story {
+  border: black solid 2px;
+  overflow: auto;
+  padding: 3rem;
+  width: 50rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.7);
+  font-size: 1.8rem;
+  text-align: center; }
+  .user-story__img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 100%;
+    float: left;
+    margin-right: 1rem; }
+
+.about {
+  text-align: center;
+  padding: 5rem; }
+  .about__content {
+    display: flex;
+    justify-content: space-around; }
+  .about__text {
+    font-size: 1.8rem;
+    line-height: 1.6; }
+
 .header {
   background-image: linear-gradient(to bottom right, #FFC356, #8A5900);
   text-align: center;
@@ -74,3 +122,8 @@ body {
   .header__img {
     height: 25rem;
     border-radius: 100%; }
+
+.stories__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
