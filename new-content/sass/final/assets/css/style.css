@@ -52,7 +52,8 @@ body {
       flex: 0 0 1; }
   .nav__brand {
     margin-left: .5rem;
-    align-self: flex-end; }
+    align-self: flex-end;
+    font-style: italic; }
   .nav__tabs {
     flex: 0 0 1;
     display: flex;
