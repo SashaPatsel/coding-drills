@@ -52,7 +52,7 @@ In this first step, we won't be writing any code. Instead, we'll just be doing s
 @import "base/utilities";
 
 ```
-Notice that we did not include the underscore. We do not have to. The underscore has signaled that the files in question will be imported elsewhere. 
+Notice that we did not include the underscore. We do not have to. The underscore has signaled that the files in question will be imported elsewhere. Feel free to copy this into your  `main.scss` file.
 
 10. To this point, we've create a professional-grade file structure for Sass projects. We've even imported several files into one central one. However, the browser cannot parse Sass code. It must first be compiled to css, which all browsers are equipped to read. We will be using an external package to help us with this compilation. 
 
@@ -64,7 +64,7 @@ Notice that we did not include the underscore. We do not have to. The underscore
 
 13. In the last step we installed a package that will allow us to compile our sass code into css. Now we need to actually make that happen. In your package.json, you should see an object called "scripts" (if you don't, add one). Within scripts, add the following line: `"sass": "node-sass assets/sass/main.scss assets/css/style.css -w"`. 
 
-14. Throughout the development of this app, you should keep the process listed above running. In other words, run this command: `"sass": "node-sass assets/sass/main.scss assets/css/style.css -w"` from the command line. It will start a process that won't stop until you make it (you can do so by hitting ctrl + c). This command compiles all your sass code and writes it to style.css. `You will not need to work within style.css at all`. 
+14. Throughout the development of this app, you should keep the process listed above running. In other words, run this command: `npm run sass` from the command line. It will start a process that won't stop until you make it (you can do so by hitting ctrl + c). This command compiles all your sass code and writes it to style.css. `You will not need to work within style.css at all`. 
 
 15. Link `style.css` to your HTML document. Remember, though we won't be working in this file, it will ultimately contain ALL of our css code. 
 

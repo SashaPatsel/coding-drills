@@ -63,4 +63,13 @@ The $ symbol siginifies that the following text will be a variable. What we set 
 
 In `abstracts/_variables.scss`, set variables for a primary, secondary and tertiary color. Feel free to use the colors in the example above. 
 
+The way we reference a variable is the exact same way we declare it. So to use the primary color we could do the following 
+
+```scss
+.box {
+  background-color: $color-primary;
+}
+
+```
+
 Give the body tag a background color again. This time, set it using a variable. If it worked, you're ready to proceed to the next section. 

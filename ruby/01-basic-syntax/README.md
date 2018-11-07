@@ -84,7 +84,7 @@ nums << [5,6,7,8]
 
 # Or
 # This functions exactly the same as the line of code above
-nums +=[5,6,7,8]
+nums += [5,6,7,8]
 
 ```
 
@@ -102,13 +102,13 @@ print evenNums #Returns all numbers in the first array that were not present in 
 ## Instructions
 In this exercise, we'll be setting up a shop using ruby!
 
-To run a file in ruby, simply enter ruby and then the file name in the command line.
+To run a file in ruby, simply enter `ruby` (just as you would `node`) and then the file name in the command line.
 
 In `prompt.rb`: 
 
-1. Create you store's profile using a dictionary. You must include at least 4 different keys, and one of those keys must point to an array of items your store sells.
+1. Create your store's profile using a hash. You must include at least 4 different keys, and one of those keys must point to an array of items your store sells. The keys can include things like number of store locations, headquarters, profits, etc...
 
-2. Print out a short bio about your store using some of the keys in the dictionary you just created.
+2. Print out a short bio about your store using some of the keys in the hash you just created.
 
 3. Print all the items your store sells.
 
