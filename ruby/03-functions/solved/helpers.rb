@@ -1,6 +1,10 @@
-module Helpers
 
-  # 1.
+
+  # 1. 
+  def print_spaces()
+    puts "=" * 20
+  end  
+  # 2.
   def convert_items_to_obj(obj) 
     all_foods = obj[:foods]
     obj[:foods] = []
@@ -14,18 +18,18 @@ module Helpers
       }
       count += 1  
     end  
-    print obj[:foods]
+    puts obj[:foods]
   end
 
-  # convert_items_to_obj(obj = patsel_grocery)
 
-  # 2. 
-  def add_props(key, value)
-    patsel_grocery[:key] = value
+  # 3 
+  def add_props(obj, key, value)
+    obj[:key] = value
+    puts "You added #{obj[:key]}"
   end  
 
 
-  # 3. 
+  # 4. 
   def net_profit(inventory)
     profit = 0
     cost = 0
@@ -35,10 +39,9 @@ module Helpers
     end
     return profit - cost  
   end  
-  # puts "=" * 10
-  # puts net_profit(inventory = patsel_grocery[:foods])
-
-  # 4. 
 
   # 5. 
-end  
+  def goodbye(name)
+    puts "Goodbye, #{name}! Come again soon."
+  end
+

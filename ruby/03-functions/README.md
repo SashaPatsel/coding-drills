@@ -9,6 +9,7 @@ We will also see that import content from other files.
 
 ## Syntax
 
+### Functions
 Rather than using curlies, we use indentation and the `end` keyword to contain our logic. 
 
 So in javascript, a typical function will look like this:
@@ -21,7 +22,6 @@ function math(num1, num2) {
 
 ```
 
-
 Whereas in ruby, the same function looks like:
 
 ```ruby
@@ -31,7 +31,22 @@ end
 
 ```
 
+### Imports
+Remember how we require files or packages in Node? We can actually use the exact same keyword here!
 
+In Javascript, it looked like this
+```javascript
+require("./helpers")
+```
+
+In ruby, it's almost exactly the same!
+```ruby
+require "./helpers" 
+```
+Once we require a file in ruby, we still need to specifiy what we want from that file. We can do so using the keyword `include`. 
+
+
+## Modules
 
 
 ## Instructions

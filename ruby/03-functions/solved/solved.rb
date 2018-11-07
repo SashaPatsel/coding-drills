@@ -1,7 +1,5 @@
 require "./helpers"
 
-include Helpers
-
 
 patsel_grocery = {
   :owner => "Sasha P",
@@ -11,4 +9,20 @@ patsel_grocery = {
 }
 
 
+print_spaces()
+
 convert_items_to_obj(patsel_grocery)
+
+print_spaces()
+
+add_props(patsel_grocery, "other owner", "Jimmy Tutron")
+
+print_spaces()
+
+puts net_profit(patsel_grocery[:foods])
+
+print_spaces()
+
+goodbye(patsel_grocery[:owner])
+
+print_spaces()

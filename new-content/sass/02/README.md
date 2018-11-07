@@ -73,3 +73,7 @@ The way we reference a variable is the exact same way we declare it. So to use t
 ```
 
 Give the body tag a background color again. This time, set it using a variable. If it worked, you're ready to proceed to the next section. 
+
+
+* Note: Sometimes, you may notice that your stying is not applying. You've tried everything, triple-checked your syntax, and still no changes. 
+Sometimes, there is an error in the compilation process. No worries! All we have to do is stop the process (where you ran `npm run sass`, exit that process by hitting `ctrl + c`). You can restart the process by simpy running `npm run sass` again. Make any change and save it to retest whether your code was not compiling correctly
