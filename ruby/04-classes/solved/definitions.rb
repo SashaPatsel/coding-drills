@@ -1,11 +1,11 @@
 class Hero
   attr_reader :name, :power, :health, :attack
 
-  def initialize(name, secret_identity, powers, enemies)
+  def initialize(name, power, health, attack)
     @name = name
-    @secret_identity = secret_identity
-    @powers = powers
-    @enemies = enemies
+    @power = power
+    @health = health
+    @attack = attack
   end
   
   
