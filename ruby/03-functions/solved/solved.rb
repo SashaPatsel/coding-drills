@@ -11,7 +11,7 @@ patsel_grocery = {
 
 print_spaces()
 
-convert_items_to_obj(patsel_grocery)
+convert_items_to_obj(patsel_grocery, :foods)
 
 print_spaces()
 

@@ -4,13 +4,14 @@
   def print_spaces()
     puts "=" * 20
   end  
+
   # 2.
-  def convert_items_to_obj(obj) 
-    all_foods = obj[:foods]
-    obj[:foods] = []
+  def convert_items_to_obj(obj, key) 
+    all_foods = obj[key]
+    obj[key] = []
     count = 0
     while count < all_foods.length do
-      obj[:foods] << {
+      obj[key] << {
           :name => all_foods[count],
           :id => count,
           :sell_price => 2.50,
@@ -18,9 +19,8 @@
       }
       count += 1  
     end  
-    puts obj[:foods]
+    puts obj[key]
   end
-
 
   # 3 
   def add_props(obj, key, value)
