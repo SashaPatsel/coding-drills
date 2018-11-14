@@ -120,6 +120,16 @@ In ruby:
 joe.say_hi()
 ```
 
+#### Convert strings to numbers
+
+In javascript, we can convert string to numpers with the `parseInt()` method. In ruby, that works like this:
+
+```ruby
+string = "53"
+# Will return 47
+100 - string.to_i
+```
+
 
 ## Instructions
 
@@ -149,4 +159,19 @@ This function:
   - Invoke the fight method from the hero argument. Pass villain as an argument.
 - If the user answers no, puts "OK, fighting is bad anyway", and finish the script
 
-5. 
+5. Now in `definitions.rb`, we'll create our hero class, and our villain class. 
+
+6. First, create a class called `Hero`.
+- Hero has the following properties:
+  - name
+  - power
+  - health
+  - attack
+- Create a method called fight
+  - fight takes and argument `oponent`.
+  - invoke the lose_health method of the `oponent` argument. 
+  - Create a condition for when the `oponent`'s health drops below 0. 
+  - Within that condition, display the opponents name and remaining health (the method we invoked above should reduce it. Don't worry, we'll write that logic soon).
+  - Also within that condition, congratulate the user on defeating the villain (refer to th villain by his/her name).
+  - If the oponent still has health, that is to say, more than 0 health, inform the user they have weakened their opponent, and display the oponent's remianing health.
+  - Reduce the hero's health by 
