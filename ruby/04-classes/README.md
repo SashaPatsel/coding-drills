@@ -171,7 +171,19 @@ This function:
   - fight takes and argument `oponent`.
   - invoke the lose_health method of the `oponent` argument. 
   - Create a condition for when the `oponent`'s health drops below 0. 
-  - Within that condition, display the opponents name and remaining health (the method we invoked above should reduce it. Don't worry, we'll write that logic soon).
+  - Within that condition, display the opponents name and remaining health (the lose_health method we invoked above should reduce it. Don't worry, we'll write that logic soon).
   - Also within that condition, congratulate the user on defeating the villain (refer to th villain by his/her name).
-  - If the oponent still has health, that is to say, more than 0 health, inform the user they have weakened their opponent, and display the oponent's remianing health.
-  - Reduce the hero's health by 
+  - If the oponent still has health, that is to say, more than 0 health, inform the user they have weakened their opponent, and display the oponent's remaining health.
+  - Reduce the hero's health by the opponent's attack
+  - Create a new condition (this condition is found within the condition of the user having more than 0 health). This condtion will trigger if the hero's health drops below 0.
+    - Inform the user that the hero has been defeated.
+    - Show the user the hero's health (should be 0 or a negative value)
+    - Exit the script
+  - If the hero has more than 0 health after the opponent's attack, inform the user that the hero has survived, and how much health the hero has left.
+
+7. Create a class called `Villain`
+- Villain has the following properties:
+  - name
+  - power
+  - health
+  - attack
