@@ -18,11 +18,11 @@ class Hero
       puts "You have weakened #{opponent.name}. #{opponent.name} now has #{opponent.health} health."
       @health = @health.to_i - opponent.attack.to_i
       if @health < 0
-        puts " #{opponent.name} has struck back. The attack was fatal. The hero has been defeated"
+        puts "#{opponent.name} has struck back. The attack was fatal. The hero has been defeated"
         puts "#{@name} health: #{@health}"
         exit
       else   
-        puts " #{opponent.name} has struck back. You survived with #{@health} health"
+        puts "#{opponent.name} has struck back. You survived with #{@health} health"
       end  
     end    
   end
