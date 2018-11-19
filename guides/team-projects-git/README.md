@@ -15,6 +15,12 @@
 
 5. [Pulling from Master](#pulling-from-master)
 
+6. [Best Practices](#best-practices)
+
+7. [Starting a Project](#starting-a-project)
+
+8. [Stubbing](#stubbing)
+
 
 ### Introduction
 Github can be at times an incredibly useful tool, at other times, it can be very frustrating--especially when collaborating on the same repo with others.
@@ -123,3 +129,29 @@ However, there are some important things to understand while merging pull reques
 
 
 ### Pulling from Master
+So at this point, everyone in the group should be able to create their own branches, work in those branches, and submit their changes to the master branch.
+
+What's still missing is everyone else in the group receiving those changes on their own device. This is where you will need to do a `git pull`. 
+
+From their own branches, everyone in the group can run `git pull origin master` from the command line. This will update everyone's respective branches with the latest content that has been merged with the master branch. 
+
+`Merge conflicts` can arise often if you're not careful. They can be quite annoying to deal with sometimes. One of the best ways to avoid these conflicts is by making sure that everyone is consistent about updating their own local content. Therefore, when a pull request is merged to master, it is best if the entire group is notified. Each member should temporarily stop their work, and accept the new change. The more often this is done, the less likely your group is to run into merge conflicts. 
+
+## Best Practices
+
+### Starting a Project
+
+New projects in software are extremely diverse. From the scope of the project to the languages being used to build it, there are almost infinite variations on how a group can start a project together. 
+
+With that being said, there are still some best practices that any group starting a project together with github can follow. 
+
+For the purposes of this example, we will assume that your group is building a simple front-end application using only javascript, HTML and CSS. We will cover the concepts in such a way that the methods stated here can be uses regardless of stack scope or any other changing variables. 
+
+1. The project itself should be thought of first. What will it do? Who will use it? What will it look like? Hammer out all of these details before you proceed with any code. 
+
+2. Next up, decide the roles for each member of your group. Who will work on what? Where does each group member's strenghts lie? Define these roles as clearly as you possibly can in these early stages of your project. 
+
+3. 
+
+
+### Stubbing  
