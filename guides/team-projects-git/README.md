@@ -25,7 +25,7 @@
 
 
 ### Introduction
-Github can be at times an incredibly useful tool, at other times, it can be very frustrating--especially when collaborating on the same repo with others.
+Github can be at times an incredibly useful tool, at other times, it can be very frustrating--especially when collaborating on the same repository with others.
 
 In this guide, we'll be covering topics from the basics of working with git in teams, to best practices that can help you use github seamlessly.
 
@@ -53,7 +53,7 @@ Before we write any code, every person in your group should have access to the s
 ### Branches
 If you've been working on projects with github alone. You should be very used to the following: `git push origin master`. What you're doing here is actually a specific set of instructions. You are pushing your changes up to a single, specific branch. That branch happens to be called `master`.
 
-`You do not need to push your changes to the master branch`. In fact, you actively want to `avoid` doing so when you are working as a member in a group. 
+`You do not need to push your changes directly to the master branch`. In fact, you actively want to `avoid` doing so when you are working as a member in a group. 
 
 `Each member in your group should be working in their own respective branch(es)`. This is essential.
 
@@ -67,18 +67,20 @@ So long as you follow best practices, you should be able to keep github working 
 
 Once you have done so, navigate to that repo from the command line.  
 
-Before you proceed, delegate roles for everyone to work on in your group.
+Before you proceed, delegate roles for everyone to work on in your group. Refer [here](#starting-a-project) for more information. 
 
 From the root of the repository in the command line, have everyone type in the following command: `git branch <BRANCH NAME>`. Remember, <BRANCH NAME> is a stand in for what you will actually name your branch. In this case, everyone should replace <BRANCH NAME> with whatever feature/role you've all agreed they'll be working in. If you were not able to delegate roles at this point, it is ok, for now, to simply have each group member's name be a stand in. For example:
 `git branch joe`
 
-Once you've run the above command, you'll notice that it still says `[master]` in terminal/bash. This is because all you have done is create the branch. You have not yet checked out to that branch. This is working very similarly to `mkdir`. When you create directory/folder from the command line, you have only created that folder. You still need to `cd` to that folder to work within it.
+Once you've run the above command, you'll notice that it still says `[master]` in terminal/bash. This is because all you have done is create the branch. You have not yet checked out to that branch. This is working very similarly to `mkdir`. When you create a directory/folder from the command line, you have only created that folder. You still need to "cd" to that folder to work within it.
 
 The equivalent to that `cd` in git is `git checkout <BRANCH NAME>`. Run this command with the appropriate branch name, and you should see that the branch you created will replace `[master]` in terminal/bash.
 
 In sum:
 
 <img src="images/branch-checkout.png">
+
+Notice the change in branch name between hard brackets on the command line.
 
 ### Pull Requests
 
@@ -198,7 +200,7 @@ The key reason stubbing work is because each member of the group has their own s
 
 Rather than designating stubs for individual members to work within, simply designate files. 
 
-It is best to use both the separate file and stubbing strategies together. In many cases, group members can comfortabluy work in seprate files. However, sometimes programmers' areas of interests will inevitably overlap when working together on an app. In that case identify what files that overlap will be affected by, and comment stubs out within the files concerned.
+It is best to use both the separate file and stubbing strategies together. In many cases, group members can comfortably work in seprate files. However, sometimes programmers' areas of interests will inevitably overlap when working together on an app. In that case identify what files that overlap will be affected by, and comment stubs out within the files concerned.
 
 The most important takeaway from the best practices mentioned here is the pivotal nature of `planning`. Your group needs to be in constant communication.
 
