@@ -21,6 +21,8 @@
 
 8. [Stubbing](#stubbing)
 
+9. [Separate Files](#separate-files)
+
 
 ### Introduction
 Github can be at times an incredibly useful tool, at other times, it can be very frustrating--especially when collaborating on the same repo with others.
@@ -145,13 +147,59 @@ New projects in software are extremely diverse. From the scope of the project to
 
 With that being said, there are still some best practices that any group starting a project together with github can follow. 
 
-For the purposes of this example, we will assume that your group is building a simple front-end application using only javascript, HTML and CSS. We will cover the concepts in such a way that the methods stated here can be uses regardless of stack scope or any other changing variables. 
-
-1. The project itself should be thought of first. What will it do? Who will use it? What will it look like? Hammer out all of these details before you proceed with any code. 
+1. The project itself should be thought of first. What will it do? Who will use it? What will it look like? What technologies will it be built with? Hammer out all of these details before you proceed with any code. 
 
 2. Next up, decide the roles for each member of your group. Who will work on what? Where does each group member's strenghts lie? Define these roles as clearly as you possibly can in these early stages of your project. 
 
-3. 
+3. If you've finished the above steps, your group should be able to agree on a file structure. Take some time to carefully consider what folders/files your project will need. Once you've decides on that, `the person who is hosting the project on their github should build out that file structure on the master branch before any pull requests are made`.
 
+4. Think of the most basic aspects of the project. Will their be components/snippets of code multiple team members will need to work with? If so, build these out together, so that each member can in turn work independently.
 
 ### Stubbing  
+
+Stubbing is one of the best techniques for avoiding merge conflicts. It is also great for clearly defining roles. 
+
+In the most simple terms, `a merge confilct occurs when two or more members of a group simultaneously make different changes to the same thing`.
+
+Stubbing avoids this problem by clearly staking out territories for each group member to work in. The idea is that if each member is working in their own space, it will be impossible for two people to change the same thing. 
+
+Stubbing looks like this:
+
+
+```javascript
+
+//   ======================== GROUP MEMBER 1 WORK AREA ========================
+
+// Group member 1, and only group member 1, writes code here
+
+// ============================================================================
+
+
+//   ======================== GROUP MEMBER 2 WORK AREA ========================
+
+// Group member 2, and only group member 2, writes code here
+
+// ============================================================================
+
+
+//   ======================== GROUP MEMBER 3 WORK AREA ========================
+
+// Group member 3, and only group member 3, writes code here
+
+// ============================================================================
+
+```
+
+It is called stubbing because each group member is staking out a "stub" to work in. Each group member may only work within their designated stubs. Work in someone else's stub, and you're almost guaranteed to run into a merge conflict. 
+
+### Separate files
+
+The key reason stubbing work is because each member of the group has their own space to work in. Therefore, it is impossible to overwrite another's work. Another tool you may want to use in addition to stubbing is working in separate files. This also ensures that overwriting another's work is impossible. 
+
+Rather than designating stubs for individual members to work within, simply designate files. 
+
+It is best to use both the separate file and stubbing strategies together. In many cases, group members can comfortabluy work in seprate files. However, sometimes programmers' areas of interests will inevitably overlap when working together on an app. In that case identify what files that overlap will be affected by, and comment stubs out within the files concerned.
+
+The most important takeaway from the best practices mentioned here is the pivotal nature of `planning`. Your group needs to be in constant communication.
+
+At any given time a group member should be able to know what files their fellow group members are working in. If someone needs to work in new/different file, he/she should let the rest of his/her team know before he/she does so. 
