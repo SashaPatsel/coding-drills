@@ -148,3 +148,6 @@ If you'd like to find or organize any study groups for the class, visit this cha
 This channel is for technical questions. Note that if your question came from a homework or a code drill, you should probably post it in those channels.
 
 ### 0 Channels
+The "0" channels are private channels. At the beginning of the entire class, you will join one of these channels along with your instructor and the TAs. This is where you will most often communicate with the instructional team.
+
+Additionally, when you start a group project, you will also be invited to one of these channels along with your team members and the insturctional staff.
