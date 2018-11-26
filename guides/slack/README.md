@@ -108,5 +108,43 @@ When you click on the `Code or Text` snippet, you will be shown a pop-up window.
 
 ### Coding Bootcamp Channels
 
+#### _coding-bootcamp
+This is the "main" channel. The instructors will post most of the content in this channel. Any class information or files slacked out by instructors can be found here. 
+
+#### general
+General is where you should post a message if your message does not fit into any of the other categories, but is still relevant to the class.
+
+#### code-drill-feedback
+If you find any issues with the code drills, whether they be typos, unclear instructions, or maybe they're just too hard or too easy, post those concerns in this channel. That way the code drills can be updated and improved for everyone!
+
+#### code-drills
+This is a place to ask fellow students about content in the code drills. Perhaps a given topic is still confusing you and you want to understand more about it. This is the place to post any comments or suggestions regarding the code drills directed towards your fellow students.
+
+#### coding-career
+This is a place where career services, your Student Success Manager (SSM) will post about career services or career opportunities. Students can also post to this channel with any information or questions relevant to career services and/or opportunities.
+
+#### homework
+This channel is used specifically for homework assignments. If you have any insights or questions regarding the current, or even past, assignments, post them here. 
+
+#### professional-outings
+This is a place to share any professional/networking events you have heard about or plan on attending. These outings should be related to tech or tech careers.
+
+#### random
+As you can gather from the name, this is a channel for random content. Anything you want to share that doesn't fit in any of the other channels, or is just plain silly, should go here. 
+
+#### remote-class
+If you are attending class remotely, and would like to post any questions or comments about the remote class, post those here. 
+
+#### resources
+Post any resources you find here! If you find any useful libraries, stack overflow posts, tools etc... that you think are worthy of sharing with your classmates, post them here. 
+
+#### social-outings
+Want to grab some food after class? Want to invite your classmates to go see a movie? Post those outings here. 
+
+#### study-group
+If you'd like to find or organize any study groups for the class, visit this channel. 
+
+#### technical questions
+This channel is for technical questions. Note that if your question came from a homework or a code drill, you should probably post it in those channels.
 
 ### 0 Channels
