@@ -52,22 +52,59 @@ Direct messages are an alternative way to communicate on slack. Rather than mess
 To send a direct message, click on the `+` sybmol found inside of a small circle next to the words `Direct Messages`. This will also be found in the navbar on the left-hand-side. 
 
 ### Threads
-Channels and direct messages can easily become cluttered, especially with larger slack teams. 
+Channels and direct messages can easily become cluttered, especially with larger slack teams. When people communicate a lot in one channel, messages sent just 10 minutes ago can easily be backlogged later in the message history. 
+
+Threads help a lot for cleaning this clutter up. They create a sort of sub-message history. As an analogy, think of posts on Facebook as individual messages. Comments on those posts are like threads. Just like you don't immediately see comments on a Facebook posts, you have to click on the thread of a message to be abe to see its history. 
+
+To create a thread, hover over a message until you see a set of icons. When you do, click on the chat bubble. Once you do so, you will be shown an input that, once submitted, will add to a thread for that message. 
 
 ### Reactions
+Reactions are a good way to acknowledge a message or, well, react to it without words.
 
+Reactions a reactions are just emojis that will be shown below a message when added. To add a reaction to a message, hover on a message, then click on the smily face with a plus on the top right of its face. 
 
 ### Tagging
+Tagging in slack works very similarly to several social media applications. To tag someone, use the `@` symbol (alternatively to manually typing this, you can click on the `@` symbol found in the input). Once you type in the `@` symbol, you'll be shown a list of names. Continue to type until you find the name you're looking for. 
 
+Tagging will directly notify whoever was tagged. Perhaps I have a question for an entire channel, but I have a feeling Sarah knows the answer. I can post the question in the channel, and then tag Sarah in it. Sarah will be notified immediately because she has been tagged in the message. Of course, this is just one among many uses for tagging others in a message.
+
+You can also tag everyone in a message by using `@channel`. That will tag all members of the channel in the message. Use this sparingly.
 
 ### Message Formatting
+Slack supports a lot of markdown syntax. If you are familiar with markdown, try to use some in Slack and see what works. 
 
+We'll cover some of the most important message formatting here.
+
+#### Highlighting
+To highlight words, enclose them in backticks (\` \`).  `This text is highlighted. It's a note of emphasis in my message I want to make sure people see.`
+
+#### New lines
+Messages in slack do not have to be gigantice clumps of words. 
+
+You can create new lines in messages. Obviously, when you hit the enter key, you submit everything you've typed to that point as a message. However, if you hit (on Macs) the `option key` or (on PCs) the `alt key`, you create a new line. 
+
+
+#### Small code snippets
+We will cover code snippets in a bit, but say you want to quickly share just a couple lines of code. Code enclose between two sets of three backticks (\`\`\`) will create code snippets.
+
+For example:
+
+```
+var name = "Joe"
+
+name += " Smith"
+
+console.log(name)
+
+```
 
 ### Attachments
-
+Attachments are very useful for Slack messages. If you want to upload a photo or zip file (among other things), you can add them ass attachments. Within the input where you would normally type a message, you will find a `+` symbol on the left hand side. Click on it, and you will be given a set of choices of where to upload a file from. Once you select it, Slack will prompt yu to either upload the content immediately, or to add a message along with it. 
 
 ### Code Snippets
+If you've uploaded a file, or even clicked on the `+` symbol within the input for submitting a message to slack, you may have noticed an option to add a code snippet.
 
+When you click on the `Code or Text` snippet, you will be shown a pop-up window. In that popup window, you can go ahead and paste or just start typing code. By default, Slack will try to autodetect which language is being used. If you'd like to be more explicit, you can go ahead and choose one from the dropdown menu found towards the top of the pop-up.
 
 ### Coding Bootcamp Channels
 
