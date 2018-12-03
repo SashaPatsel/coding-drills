@@ -68,15 +68,13 @@ var zombie1 = {
 
 7. Prompt the user to select a zombie to attack. If the reach is larger than 1, the game should determine the other zombies that are affected. 
 
-8. Using a zombie's agility, determine randomly whether or not the zombie will receive damage. This will be calculated individually for each zombie.
+8. Each turn, calculate a damage from each zombie using their respective attack. The hero will receive the sum of their attacks as damage in return.
 
-9. Each turn, calculate a damage from each zombie using their respective attack. The hero will receive the sum of their attacks as damage in return.
+9. Inform the user whether or not their shot made contact, whether a zombie was hit (display the damage done to the zombie if they were), how much damage the hero received, and the hero's remaining health. 
 
-10. Inform the user whether or not their shot made contact, whether a zombie was hit (display the damage done to the zombie if they were), how much damage the hero received, and the hero's remaining health. 
+10. If a zombie's health is at or below 0, that zombie should no longer be able to do damage and should be removed from displays and as an attack choice. 
 
-11. If a zombie's health is at or below 0, that zombie should no longer be able to do damage and should be removed from displays and as an attack choice. 
-
-12. The hero wins if all the zombies' health is at or below 0. The zombies win if the hero's health is at or below 0. 
+11. The hero wins if all the zombies' health is at or below 0. The zombies win if the hero's health is at or below 0. 
 
 
 
@@ -143,40 +141,36 @@ var zombie1 = {
   }
 
 
+
   zombie1: {
     health: 100,
     attack: [0, 5],
-    agility: 15,
-    receivedDam: false
+    agility: 15
   }
 
   zombie2: {
     health: 90,
     attack: [1, 6],
-    agility: 18,
-    receivedDam: false
+    agility: 18
   }
 
   zombie3: {
     health: 85,
     attack: [2, 4],
-    agility: 20,
-    receivedDam: false
+    agility: 20
   }
 
   zombie4: {
     health: 80,
     attack: [2, 5],
-    agility: 22,
-    receivedDam: false
+    agility: 22
   }
 
 
   zombie5: {
     health: 60,
     attack: [7, 10],
-    agility: 10,
-    receivedDam: false
+    agility: 10
   }
 
 

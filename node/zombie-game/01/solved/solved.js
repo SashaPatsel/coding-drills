@@ -102,11 +102,11 @@ var weapons = {
     //number of zombies affected
     reach: 1,
     //Range of possible damage
-    attack: [40, 60],
+    attack: [75, 90],
     //Chance of taking damge back (%)
-    accuracy: 20,
+    accuracy: 50,
     //"health" of gun
-    uses: 5
+    uses: 3
   },
 
   rpg: {
