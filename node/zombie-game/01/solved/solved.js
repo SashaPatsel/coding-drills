@@ -128,24 +128,21 @@ var zombies = {
     health: 100,
     attack: [0, 5],
     //Chance of dodging (%)
-    accuracy: 15,
-    receivedDam: false
+    accuracy: 15
   },
 
   zombie2: {
     health: 90,
     attack: [1, 6],
     //Chance of dodging (%)
-    accuracy: 18,
-    receivedDam: false
+    accuracy: 18
   },
 
   zombie3: {
     health: 85,
     attack: [2, 4],
     //Chance of dodging (%)
-    accuracy: 20,
-    receivedDam: false
+    accuracy: 20
   },
 
 
@@ -153,8 +150,7 @@ var zombies = {
     health: 80,
     attack: [2, 5],
     //Chance of dodging (%)
-    accuracy: 22,
-    receivedDam: false
+    accuracy: 22
   },
 
 
@@ -162,8 +158,7 @@ var zombies = {
     health: 60,
     attack: [7, 10],
     //Chance of dodging (%)
-    accuracy: 10,
-    receivedDam: false
+    accuracy: 10
   }
 }
 
@@ -322,31 +317,15 @@ function pickZombie(weapon) {
 
     if (!damageBool(weapon.accuracy)) {
       console.log("\nShot on target")
-
       for (var i = 0; i < zombieVictims.length; i++) {
-        zombies[zombieVictims[i]].receivedDam = damageBool(zombies[zombieVictims[i]].accuracy)
-
-
-
-        if (zombies[zombieVictims[i]].receivedDam === true) {
           console.log("\nCongrats, you landed a shot for " + playerDam + " damage on " + zombieVictims[i] + "!")
           zombies[zombieVictims[i]].health -= playerDam
-
-        } else {
-          console.log("\n"+zombieVictims[i] + " dodged your attack")
-        }
-
-
-
-
       }
     } else {
       console.log("\nOooooh, tough miss. Your shot was not on target.")
     }
 
     //If a zombie is defeated
-
-
       for (var i = 0; i < zombieVictims.length; i++) {
         if (zombies[zombieVictims[i]].health <= 0) {
           console.log("\nCongrats, you defeated " + zombieVictims[i])

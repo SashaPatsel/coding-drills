@@ -26,8 +26,7 @@ var hero = {
 var bareHands = {
   reach: 1,
   attack: [5,5],
-  risk: 95,
-  reliability: 90,
+  accuracy: 90,
   uses: 1000000000000000 
 }
 ```
@@ -36,9 +35,7 @@ var bareHands = {
 
 * Attack is the amount of damage a gun can do. The index of 0 in the array represents the minimum, the index of 1 in the array represents the maximum
 
-* Risk is the percentage chance a user has of taking damage back in return from a zombie. This will be recalculated every round
-
-* Reliability is the chance a gun will do the damage that has been calculated from that gun's attack
+* Accuracy is the chance a gun will do the damage that has been calculated from that gun's attack
 
 * Uses is the amount of rounds a gun can be played before it is no longer usable
 
@@ -47,10 +44,10 @@ var bareHands = {
 var zombie1 = {
   health: 100,
   attack: [0, 5],
-  agility: 15
+  accuracy: 15
 }
 ```
-* Attack and agility behave the same as the hero's does. 
+* Attack and accuracy behave the same as the hero's does. 
 
 * Attack behaves the same as a gun's does
 
@@ -63,25 +60,23 @@ var zombie1 = {
 
 3. Each round a hero should choose a single gun
 
-4. A gun's uses should decrement by one after a round if it is the gun the hero chose in that same round. It should no longer be a choice.
+4. A gun's uses should decrement by one after a round if it is the gun the hero chose in that same round. When the gun is out of uses, it should no longer be a choice.
 
 5. The gun's damage should be calculated once a user chooses a gun. It should be a random number between the two values in the gun's `attack` array
 
-6. Using the gun's reliability, determine randomly whether or not the gun will do damage. This will only be calculated once, not for each zombie.
+6. Using the gun's accuracy, determine randomly whether or not the gun will do damage. This will only be calculated once, not for each zombie.
 
 7. Prompt the user to select a zombie to attack. If the reach is larger than 1, the game should determine the other zombies that are affected. 
 
 8. Using a zombie's agility, determine randomly whether or not the zombie will receive damage. This will be calculated individually for each zombie.
 
-9. Using the gun's risk, determine randomly whether or not the hero will receive damage.
+9. Each turn, calculate a damage from each zombie using their respective attack. The hero will receive the sum of their attacks as damage in return.
 
-10. If the hero receives damage, calculate a damage from each zombie using their respective attack. The hero will receive the sum of their attacks as damage in return.
+10. Inform the user whether or not their shot made contact, whether a zombie was hit (display the damage done to the zombie if they were), how much damage the hero received, and the hero's remaining health. 
 
-11. Inform the user whether or not their shot made contact, whether a zombie was hit (display the damage done to the zombie if they were), how much damage the hero received, and the hero's remaining health. 
+11. If a zombie's health is at or below 0, that zombie should no longer be able to do damage and should be removed from displays and as an attack choice. 
 
-12. If a zombie's health is at or below 0, that zombie should no longer be able to do damage and should be removed from displays and as an attack choice. 
-
-13. The hero wins if all the zombies' health is at or below 0. The zombies win if the hero's health is at or below 0. 
+12. The hero wins if all the zombies' health is at or below 0. The zombies win if the hero's health is at or below 0. 
 
 
 
@@ -95,8 +90,7 @@ var zombie1 = {
     name: "Bare Hands",
     reach: 1,
     attack: [5, 5],
-    risk: 95,
-    reliability: 90,
+    accuracy: 90,
     uses: 1000000000000000
   }
 
@@ -104,8 +98,7 @@ var zombie1 = {
     name: "Machete",
     reach: 1,
     attack: [40, 60],
-    risk: 80,
-    reliability: 90,
+    accuracy: 90,
     uses: 5
   }
 
@@ -113,8 +106,7 @@ var zombie1 = {
     name: "Shotgun",
     reach: 2,
     attack: [30, 50],
-    risk: 65,
-    reliability: 80,
+    accuracy: 80,
     uses: 5
   }
 
@@ -122,8 +114,7 @@ var zombie1 = {
     name: "Pistol",
     reach: 2,
     attack: [25, 40],
-    risk: 50,
-    reliability: 75,
+    accuracy: 75,
     uses: 5;
   }
 
@@ -131,8 +122,7 @@ var zombie1 = {
     name: "Machine Gun",
     reach: 3,
     attack: [15, 30],
-    risk: 30,
-    reliability: 65,
+    accuracy: 65,
     uses: 5
   }
 
@@ -140,8 +130,7 @@ var zombie1 = {
     name: "Sniper",
     reach: 1,
     attack: [40, 60],
-    risk: 30,
-    reliability: 20,
+    accuracy: 20,
     uses: 5
   }
 
@@ -149,12 +138,9 @@ var zombie1 = {
     name: "RPG",
     reach: 4,
     attack: [20, 35],
-    risk: 95,
-    reliability: 40,
+    accuracy: 40,
     uses: 5
   }
-
-
 
 
   zombie1: {
