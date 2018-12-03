@@ -1,14 +1,14 @@
 ## Things you did well
-- Demonstrated understanding of how media queries work
-- Demonstrated understanding of how the grid system works.
-- Appropriate number of commits (no need to put the version before the commits though).
+- Properly increment score
+- Solid readme (in the future, ass pictures and code snippets where appropriate).
+- Informative comments in your code.
 
-## Things to improve
-- Keep your footer outside of your container
-- Apply background to the body so they cover the page.
+## Things to improve 
+- User can guess same letter multiple times
+- Add instructions on how to use the game on the page.
 
 ## Final comments
-You were able to get the main takeaways from this assignment: media queries and the grid system. The other stylistic errors can be cleaned up with some time, but you learned the most important lessons from the assignment. Good job!
+Congratulations! You demonstrated in this assignment that you understood the most important mechanics in javascript to make this game work. Though the logic is simple, this app can look surprisingly polished with some good styling and a buffed readme. Keep it up!
 
 
 ## Things you did well

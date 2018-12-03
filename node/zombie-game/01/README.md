@@ -11,20 +11,19 @@ Create a game where a hero must confront five zombies.
 
 This game is played out in rounds. Each round the hero will pick a method of attack. Each choice yields different chances of dealing damage, and taking damage back in return. 
 
-You will need to create three different `types` of objects:
+You will need to create three different "types" of objects:
 
 1. Our Hero object. It should look like this: 
-```
+```javascript
 var hero = {
   health: 100,
-
 }
 ```
 * Health represents the player's current health. When it hits 0, the game is over.
 
 2. A gun object:
-```
-var bearHands = {
+```javascript
+var bareHands = {
   reach: 1,
   attack: [5,5],
   risk: 95,
@@ -44,7 +43,7 @@ var bearHands = {
 * Uses is the amount of rounds a gun can be played before it is no longer usable
 
 3. A zombie object:
-```
+```javascript
 var zombie1 = {
   health: 100,
   attack: [0, 5],
@@ -90,7 +89,7 @@ var zombie1 = {
 
 #### If you're not feeling creative, feel free to use the following stats:
 
-```
+```javascript
 
   bearHands: {
     name: "Bare Hands",
@@ -125,7 +124,7 @@ var zombie1 = {
     attack: [25, 40],
     risk: 50,
     reliability: 75,
-    uses: 5
+    uses: 5;
   }
 
   machineGun: {
@@ -196,3 +195,6 @@ var zombie1 = {
 
 
 ```
+
+
+

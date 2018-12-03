@@ -51,7 +51,7 @@ profile1 = {
 
 
 # OR
-# This arrow notation is called a has rocket
+# This arrow notation is called a hash rocket
 profile2 = {
   :name => "John Doe",
   :phone => 415-555-5555,
