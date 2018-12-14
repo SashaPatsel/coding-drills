@@ -59,3 +59,4 @@ console.log(three)
 console.log(tree.search(0))
 
 console.log(tree.search(220))
+
