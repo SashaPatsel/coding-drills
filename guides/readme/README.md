@@ -39,9 +39,9 @@ Pictures and/or gifs bring your README to life. They are easily the most interes
 #### Images
 
 Images are simple enough. The syntax is the same as it is in HTML:
-
+```
 <img src="link/to-your/image.png">
-
+```
 The easiest way to add this image is to take a screenshot(s) of your app and to store that image somewhere in your file structure. 
 
 #### Gifs
@@ -66,8 +66,24 @@ If your making a README for a large group project, you may want to have a fairly
 
 As with any writing, you want to be informative, but not to the extent where the reader is overwhelmed with information. Give a high level overview of your app that touches on some of its highlights. 
 
+### Technologies used
 
+You always want to include a "Technologies Used" section. This is helpful to people interested in your app or even job recruiters looking to see what technologies you have experience with. 
 
+Instead of listing the technologies you used like this:
 
+HTML, CSS, javascript
+
+You should display the tools you used to build your project like this:
+
+- [HTML](https://html.com/)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [Javascript](https://www.javascript.com/)
+
+This way, each technology is easy to read and the person perusing your README can read more about that technology by clicking on the provided link.
 
 ### For static applications (applications that don't run on a server)
+ 
+ If you checked out the README template provided at the beginning of this guide and you're writing a README for an app deployed to github pages, or an app that doesn't run on a server, you may have noticed some sections in that template that don't quite apply to your project.
+
+ These may include versioning, tests, installing and others. If you feel that a section doesn't quite fit, there's no need to include it.  
