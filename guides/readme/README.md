@@ -48,7 +48,15 @@ The easiest way to add this image is to take a screenshot(s) of your app and to 
 
 Gifs are a bit trickier. Rendering them once you have them is just fine. In fact its exactly the same as images. The only difference is that the file extension will be `.gif`.
 
-It is making the gif of you using your app in the first place that is somewhat more complicated. There is no native way to do this, so we can install an extension (assuming you're using chrome) called [screencastify]()
+It is making the gif of you using your app in the first place that is somewhat more complicated. There is no native way to do this, so we can install an extension (assuming you're using chrome) called [screencastify](https://www.screencastify.com/).
+
+Once you've installed the extension, you can click on it in your browser. This will initiate a pop-up. In that pop-up you can choose whether you'd like to record your desktop or just the browser. Go ahead and select on of the options. Once you do so, you can start your recording. Go back and click the extension once you have finished your recording. There will be a pop-up that allows you to stop recording.
+
+When your recording is finished, a new tab will open with your recently captured video. You'll notice that it is not in gif format, and if you want to convert it to a gif, you'll need to pay for the entire service. We are not going to do that. Instead, we'll download the file already provided to us. 
+
+Once you've downloaded the screen capture with screencastify, visit [this link](https://ezgif.com/video-to-gif). You will find, right in the middle of the screen, a button that allows you to upload a file. Upload the file you just downloaded from screencastify. Once you've done so, click `upload file`.
+
+This will allow you to crop the video to whatever range you choose. Once that's finished, you can finally downolad your gif, and store it within your app's file structure. 
 
 ### Description
 
