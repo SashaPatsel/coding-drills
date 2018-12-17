@@ -4,9 +4,9 @@
 
 READMEs are an extremely important part of your software projects. 
 
-When someone visits your project home on Github, one of the first things they'll see is your README. Think of it as how a house looks from the outside. You can have a house with king size beds, clean tiling etc... but if it looks ugly from the outside, it definitely takes away from the overall beauty of the house.
+When someone visits your project home on Github, one of the first things they'll see is your README. Think of it as how a house looks from the outside. You can have the most pristine house with king size beds, clean tiling etc... but if it looks ugly from the outside, it definitely takes away from the overall beauty of the house.
 
-A README is much the same. It is the outside of the house. Just like the outside of a house doesn't impact the living experience inside the house, a README does not affect the functionality or aesthetics of an app. Nevertheless, both the outside of a house and a README make a very strong first impression
+A README is much the same. It is the outside of the house. Just like the outside of a house doesn't impact the living experience inside the house, a README does not affect the functionality or aesthetics of an app. Nevertheless, both the outside of a house and a README make a very strong first impression.
 
 A good README includes some of the following:
 - An informative description of the app
@@ -19,8 +19,7 @@ A good README includes some of the following:
 
 There are many good templates for READMEs out there that provide structure. Using one of these templates can be super helpful and makes writing a README more of an "insert information here" process. 
 
-You can google templates on your own, but [here's a good one to get you started](https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md)
-hdh
+You can google templates on your own, but [here's a good one to get you started](https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md).
 
 ### The Heading
 
@@ -46,13 +45,13 @@ The easiest way to add this image is to take a screenshot(s) of your app and to 
 
 #### Gifs
 
-Gifs are a bit trickier. Rendering them once you have them is just fine. In fact its exactly the same as images. The only difference is that the file extension will be `.gif`.
+Gifs are a bit trickier. Rendering them once you have them is just fine. In fact, its exactly the same as images. The only difference is that the file extension will be `.gif`.
 
 It is making the gif of you using your app in the first place that is somewhat more complicated. There is no native way to do this, so we can install an extension (assuming you're using chrome) called [screencastify](https://www.screencastify.com/).
 
 Once you've installed the extension, you can click on it in your browser. This will initiate a pop-up. In that pop-up you can choose whether you'd like to record your desktop or just the browser. Go ahead and select on of the options. Once you do so, you can start your recording. Go back and click the extension once you have finished your recording. There will be a pop-up that allows you to stop recording.
 
-When your recording is finished, a new tab will open with your recently captured video. You'll notice that it is not in gif format, and if you want to convert it to a gif, you'll need to pay for the entire service. We are not going to do that. Instead, we'll download the file already provided to us. 
+When your recording is finished, a new tab will open with your recently captured video. You'll notice that it is not in gif format, and if you want to convert it to a gif, you'll need to pay for the entire service. _We are not going to do that._ Instead, we'll download the file already provided to us. 
 
 Once you've downloaded the screen capture with screencastify, visit [this link](https://ezgif.com/video-to-gif). You will find, right in the middle of the screen, a button that allows you to upload a file. Upload the file you just downloaded from screencastify. Once you've done so, click `upload file`.
 
@@ -66,7 +65,7 @@ If your making a README for a large group project, you may want to have a fairly
 
 As with any writing, you want to be informative, but not to the extent where the reader is overwhelmed with information. Give a high level overview of your app that touches on some of its highlights. 
 
-### Technologies used
+### Technologies Used
 
 You always want to include a "Technologies Used" section. This is helpful to people interested in your app or even job recruiters looking to see what technologies you have experience with. 
 
@@ -81,6 +80,27 @@ You should display the tools you used to build your project like this:
 - [Javascript](https://www.javascript.com/)
 
 This way, each technology is easy to read and the person perusing your README can read more about that technology by clicking on the provided link.
+
+### Code Snippets
+
+Code snippets provide readers a sneak-peak under the hood of your app. This is a great opportunity for you to demostrate both a knowledge of your code as well as an excitement for your work. 
+
+In markdown, the syntax for a code snippet looks like this:
+
+```javascript
+
+function reallyCoolAlgorithm() {
+    var one = 1
+    var anothaOne = 1
+    var result = one + anothaOne
+    return result
+}
+
+```
+
+DO NOT leave code snippets without context. It is best to put them under some kind of heading so that the reader has an idea of what they're about to look at before they dive into your code. 
+
+Even more important than a heading is a description/explanation of the code. Talk about your thought process, a challenge you overcame, why its a cool bit of code, what it accomplishes, etc... You do not need to write an essay, but it should be clear to the reader why this bit of code is significant. 
 
 ### For static applications (applications that don't run on a server)
  
