@@ -102,8 +102,31 @@ DO NOT leave code snippets without context. It is best to put them under some ki
 
 Even more important than a heading is a description/explanation of the code. Talk about your thought process, a challenge you overcame, why its a cool bit of code, what it accomplishes, etc... You do not need to write an essay, but it should be clear to the reader why this bit of code is significant. 
 
-### For static applications (applications that don't run on a server)
+### For Static Applications (applications that don't run on a server)
  
  If you checked out the README template provided at the beginning of this guide and you're writing a README for an app deployed to github pages, or an app that doesn't run on a server, you may have noticed some sections in that template that don't quite apply to your project.
 
  These may include versioning, tests, installing and others. If you feel that a section doesn't quite fit, there's no need to include it.  
+
+### For Applications Running on a Server
+ 
+ In the last section of this guide, we spoke about some sections of a README that don't quite apply to static applications.
+
+ In more complex applications, or even simple command line applications, we have a bit more explaining to do. 
+
+### Prerequisites
+
+Take some time to consider technologies you may have taken for granted while developping your app. Did you use github? Node? 
+
+Take some time to list all of the technologies working in the background that helped make your app possible. Make sure that others are made aware of these technologies so they may try to replicate your app on their own. 
+
+### Installing
+
+This process will get faster the more apps you develop. Sometimes, it'll help if you try to install your app from scratch as though you were someone else. 
+
+This is where you'll list step by step what someone needs to do to use your app on their own device (in development, not through a deployed link).
+
+From cloning down the repo to installing all of your app's dependencies, make sure you remember all the steps necessry for others to use your app from its development state.
+
+
+
