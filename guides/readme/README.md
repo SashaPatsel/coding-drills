@@ -25,7 +25,7 @@ You can google templates on your own, but [here's a good one to get you started]
 
 If you initialize your repository with a README, a heading with the name of your repository will already be included in that README. If this is the case, you may want to remove the `-` characters or whatever you are using in the place of spaces. 
 
-Either way, the main heading is usually the name of your app. You can make this heading with an <h1> tag, or one `#`.
+Either way, the main heading is usually the name of your app. You can make this heading with an `<h1>` tag, or one `#`.
 
 Additionally, it is best to make your app as accessible as possible. If you want to create a link to your app from the heading, the syntax is as follows:
 
