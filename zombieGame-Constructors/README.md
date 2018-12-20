@@ -2,10 +2,10 @@
 
 ## Recreate the zombie game using constructor functions
 
-## Prerequisites
+### Prerequisites
 Install inquirer.
 
-## Overview
+### Overview
 In this exercise you are given a completed zombie game. Go ahead and run original.js to test it out.
 
 You may notice that over a hundred lines of code are dedicated to defining our weapons and zombies. That's definitely overkill.
@@ -20,18 +20,18 @@ Your game should run exactly the same as the one in original.js does.
 
 It may be helpful for you to leave both the file you are working on and original.js open next to one another.
 
-## Reminder
+### Reminder
 The zombie game has a lot of different moving pieces. Several stats are being tracked at once. Here is an overview of all the properties and what they do:
 - Name: The name of a weapon or zombie
 - Reach: The number of zombies a gun can potentially damage in a given round
 - Attack: a range of possible damage. Damage is an array with two indices. The first is the minimum amount of damage a zombie or weapon can do. The second is the maximum amount of damage a zombie or weapon can do. 
-- Reliability: The chance (in percentage) a weapon has of being on target.
+- accuracy: The chance (in percentage) a weapon has of being on target.
 - Uses: The amount of rounds a weapon can be used.
 - Health: The amoun of health a zombie or hero has remaining.
 - Agility: The chance (in percentage) a zombie has of dodging an attack from a weapon.
 
 
-## Instructions
+### Instructions
 Follow the steps below to complete the assignment. There is a lot of code, but if you follow these steps, you should be able to navigate through it without doing a deep-dive into the code original.js.
 
 You will also notice that each step is found in between comments. This is so you can easily refer back to the corresponding step in this README for instructions. 

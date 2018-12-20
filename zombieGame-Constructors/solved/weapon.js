@@ -1,10 +1,9 @@
 //Weapon constructor
-function Weapon(name, reach, attack, risk, reliability, uses) {
+function Weapon(name, reach, attack, accuracy, uses) {
   this.name = name
   this.reach = reach
   this.attack = attack
-  this.risk = risk
-  this.reliability = reliability
+  this.accuracy = accuracy
   this.uses = uses
   this.didDam = false
   this.receivedDam = false

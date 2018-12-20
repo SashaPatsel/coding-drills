@@ -1,19 +1,19 @@
 //Zombie constructor
-function Zombie(name, health, attack, agility) {
+function Zombie(name, health, attack, accuracy) {
   this.name = name
   this.health = health
   this.attack = attack
-  this.agility = agility
-  this.receivedDam = false
+  this.accuracy = accuracy
+  this.didDamage = false
   this.roundDamage = 0
 
   this.damageBool = function (perc) {
     var comp = Math.floor(Math.random() * 100) + 1
 
     if (perc - comp > 0) {
-      this.receivedDam = false
+      this.didDamage = false
     } else {
-      this.receivedDam = true
+      this.didDamage = true
     }
   }
 
