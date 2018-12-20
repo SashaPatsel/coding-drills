@@ -35,16 +35,15 @@ var zombieChoices = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
 var zombieIndex = ["zombie1", "zombie2", "zombie3", "zombie4", "zombie5"]
 
 var weapons = {
-  bearHands: {
-    name: "Bear Hands",
+  bareHands: {
+    name: "Bare Hands",
     //number of zombies affected
     reach: 1,
     //Range of possible damage
     attack: [5, 5],
     //Chance of taking damge back (%)
-    risk: 95,
     //chance of landing damage (%)
-    reliability: 90,
+    accuracy: 90,
     //"health" of gun
     uses: 1000000000000000
   },
@@ -56,9 +55,8 @@ var weapons = {
     //Range of possible damage
     attack: [40, 60],
     //Chance of taking damge back (%)
-    risk: 80,
     //chance of landing damage (%)
-    reliability: 90,
+    accuracy: 90,
     //"health" of gun
     uses: 5
   },
@@ -70,8 +68,7 @@ var weapons = {
     //Range of possible damage
     attack: [30, 50],
     //Chance of taking damge back (%)
-    risk: 65,
-    reliability: 80,
+    accuracy: 80,
     //"health" of gun
     uses: 5
   },
@@ -83,8 +80,7 @@ var weapons = {
     //Range of possible damage
     attack: [25, 40],
     //Chance of taking damge back (%)
-    risk: 50,
-    reliability: 75,
+    accuracy: 75,
     //"health" of gun
     uses: 5
   },
@@ -96,8 +92,7 @@ var weapons = {
     //Range of possible damage
     attack: [15, 30],
     //Chance of taking damge back (%)
-    risk: 30,
-    reliability: 65,
+    accuracy: 65,
     //"health" of gun
     uses: 5
   },
@@ -107,12 +102,11 @@ var weapons = {
     //number of zombies affected
     reach: 1,
     //Range of possible damage
-    attack: [40, 60],
+    attack: [75, 90],
     //Chance of taking damge back (%)
-    risk: 30,
-    reliability: 20,
+    accuracy: 50,
     //"health" of gun
-    uses: 5
+    uses: 3
   },
 
   rpg: {
@@ -122,8 +116,7 @@ var weapons = {
     //Range of possible damage
     attack: [20, 35],
     //Chance of taking damge back (%)
-    risk: 95,
-    reliability: 40,
+    accuracy: 40,
     //"health" of gun
     uses: 5
   }
@@ -135,24 +128,21 @@ var zombies = {
     health: 100,
     attack: [0, 5],
     //Chance of dodging (%)
-    agility: 15,
-    receivedDam: false
+    accuracy: 15
   },
 
   zombie2: {
     health: 90,
     attack: [1, 6],
     //Chance of dodging (%)
-    agility: 18,
-    receivedDam: false
+    accuracy: 18
   },
 
   zombie3: {
     health: 85,
     attack: [2, 4],
     //Chance of dodging (%)
-    agility: 20,
-    receivedDam: false
+    accuracy: 20
   },
 
 
@@ -160,8 +150,7 @@ var zombies = {
     health: 80,
     attack: [2, 5],
     //Chance of dodging (%)
-    agility: 22,
-    receivedDam: false
+    accuracy: 22
   },
 
 
@@ -169,12 +158,11 @@ var zombies = {
     health: 60,
     attack: [7, 10],
     //Chance of dodging (%)
-    agility: 10,
-    receivedDam: false
+    accuracy: 10
   }
 }
 
-var guns = ["Bear hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG", "View Weapon Stats"]
+var guns = ["Bare hands", "Machete", "Shotgun", "Pistol", "Machine Gun", "Sniper", "RPG", "View Weapon Stats"]
 
 
 // Created a generic function that checks if the user won or lost.
@@ -249,56 +237,55 @@ console.log("\n=============================\n")
     console.log("You chose a " + game.gun + "!")
     switch (game.gun) {
 
-      case "Bear hands":
-        //Set the player's damae to the range
-        playerDam = calcDamage(weapons.bearHands.attack[0], weapons.bearHands.attack[1]);
-        playerDidDam = damageBool(weapons.bearHands.reliability)
+      case "Bare hands":
+        playerDam = calcDamage(weapons.bareHands.attack[0], weapons.bareHands.attack[1]);
+        playerDidDam = damageBool(weapons.bareHands.accuracy)
 
-        weapons.bearHands.uses--
+        weapons.bareHands.uses--
 
-        pickZombie(weapons.bearHands)
+        pickZombie(weapons.bareHands)
         break;
       case "Machete":
         playerDam = calcDamage(weapons.machete.attack[0], weapons.machete.attack[1]);
-        playerDidDam = damageBool(weapons.machete.reliability)
+        playerDidDam = damageBool(weapons.machete.accuracy)
         weapons.machete.uses--
         pickZombie(weapons.machete)
         break;
       case "Shotgun":
         playerDam = calcDamage(weapons.shotgun.attack[0], weapons.shotgun.attack[1]);
-        playerDidDam = damageBool(weapons.shotgun.reliability)
+        playerDidDam = damageBool(weapons.shotgun.accuracy)
         weapons.shotgun.uses--
         pickZombie(weapons.shotgun)
         break;
       case "Pistol":
         playerDam = calcDamage(weapons.pistol.attack[0], weapons.pistol.attack[1]);
-        playerDidDam = damageBool(weapons.pistol.reliability)
+        playerDidDam = damageBool(weapons.pistol.accuracy)
         weapons.pistol.uses--
         pickZombie(weapons.pistol)
         break;
       case "Machine Gun":
         playerDam = calcDamage(weapons.machineGun.attack[0], weapons.machineGun.attack[1]);
-        playerDidDam = damageBool(weapons.machineGun.reliability)
+        playerDidDam = damageBool(weapons.machineGun.accuracy)
         weapons.machineGun.uses--
         pickZombie(weapons.machineGun)
         break;
       case "Sniper":
         playerDam = calcDamage(weapons.sniper.attack[0], weapons.sniper.attack[1]);
-        playerDidDam = damageBool(weapons.sniper.reliability)
+        playerDidDam = damageBool(weapons.sniper.accuracy)
         weapons.sniper.uses--
         pickZombie(weapons.sniper)
         break;
 
       case "RPG":
         playerDam = calcDamage(weapons.rpg.attack[0], weapons.rpg.attack[1]);
-        playerDidDam = damageBool(weapons.rpg.reliability)
+        playerDidDam = damageBool(weapons.rpg.accuracy)
         weapons.rpg.uses--
         pickZombie(weapons.rpg)
 
         break;
 
         case "View Weapon Stats":
-        console.log( "Bear Hands:\n reach: 1\n attack: 5 \n risk:95\n reliability: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n risk: 80\n reliability: 90\n uses: 5\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n risk: 65\n reliability: 80\n uses: 5\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n risk: 50\n reliability: 75\n uses: 5\n\nMachine Gun:\n reach: 3\n attack: min(15), max(30)\n risk: 30\n reliability: 65\n uses: 5\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n risk: 30\n reliability: 20\n uses: 5\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n risk: 95\n reliability: 40\n uses: 5\n\n")
+        console.log( "Bare hands:\n reach: 1\n attack: 5\n accuracy: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n accuracy: 90\n uses: "+ weapons.machete.uses +"\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n accuracy: 80\n uses: "+ weapons.shotgun.uses +"\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n accuracy: 75\n uses: "+ weapons.pistol.uses +"\n\nMachine Gun:\n reach: 3\n attack: min(15), max(30)\n accuracy: 65\n uses: "+ weapons.machineGun.uses +"\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n accuracy: 20\n uses: "+ weapons.sniper.uses +"\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n accuracy: 40\n uses: "+ weapons.rpg.uses +"\n\n")
 
         nextRound()
         break;
@@ -328,33 +315,17 @@ function pickZombie(weapon) {
       }
     }
 
-    if (!damageBool(weapon.reliability)) {
+    if (!damageBool(weapon.accuracy)) {
       console.log("\nShot on target")
-
       for (var i = 0; i < zombieVictims.length; i++) {
-        zombies[zombieVictims[i]].receivedDam = damageBool(zombies[zombieVictims[i]].agility)
-
-
-
-        if (zombies[zombieVictims[i]].receivedDam === true) {
           console.log("\nCongrats, you landed a shot for " + playerDam + " damage on " + zombieVictims[i] + "!")
           zombies[zombieVictims[i]].health -= playerDam
-
-        } else {
-          console.log("\n"+zombieVictims[i] + " dodged your attack")
-        }
-
-
-
-
       }
     } else {
       console.log("\nOooooh, tough miss. Your shot was not on target.")
     }
 
     //If a zombie is defeated
-
-
       for (var i = 0; i < zombieVictims.length; i++) {
         if (zombies[zombieVictims[i]].health <= 0) {
           console.log("\nCongrats, you defeated " + zombieVictims[i])
@@ -368,16 +339,13 @@ function pickZombie(weapon) {
 
 
     // If the hero takes damage
-    if (!damageBool(weapon.risk)) {
       var zombieDamSum = calcDamage(zombies.zombie1.attack[0], [1]) + calcDamage(zombies.zombie2.attack[0], [1]) + calcDamage(zombies.zombie3.attack[0], [1]) + calcDamage(zombies.zombie4.attack[0], [1]) + calcDamage(zombies.zombie5.attack[0], [1]);
 
       hero.health -= zombieDamSum
       console.log("\nThe hero has been dealt " + zombieDamSum + " damage.")
       console.log("\nThe hero has " + hero.health + " health.")
 
-    } else {
-      console.log("\nPhew, that was a close one. You avoided all damage")
-    }
+
     
     if (weapon.uses < 1) {
       guns.splice(guns.indexOf(weapon.name), 1)
@@ -406,7 +374,7 @@ console.log("\nWELCOME TO ZOMBIE FIGHTER PRO. USE STRATEGY AND GRIT TO ELIMINATE
 
 console.log("\n===========================================\n")
 
-console.log("Bear hands: Zombies don't feel punches the same way humans do. Only use these as a last resort \n uses: ∞ \n\n", 
+console.log("Bare hands: Zombies don't feel punches the same way humans do. Only use these as a last resort \n uses: ∞ \n\n", 
 
 "Machete: Go up close and personal for critical damage to a single zombie. \n uses: " + weapons.machete.uses + " \n\n", 
 

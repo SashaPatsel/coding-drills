@@ -191,4 +191,3 @@ This function:
   - When invoked, the taunt method puts: "Prepare to meet your maker, <Insert opponent name>! I don't care if you can <Insert opponent power>, or if you have <Insert opponent attack> attack!"
 - Create a method `lose_health`, which takes an argument `enemy_attack`. This method reduces the villain's health by the enemy's attack.
 
-8. 
