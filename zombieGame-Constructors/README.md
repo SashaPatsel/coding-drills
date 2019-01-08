@@ -25,11 +25,9 @@ The zombie game has a lot of different moving pieces. Several stats are being tr
 - Name: The name of a weapon or zombie
 - Reach: The number of zombies a gun can potentially damage in a given round
 - Attack: a range of possible damage. Damage is an array with two indices. The first is the minimum amount of damage a zombie or weapon can do. The second is the maximum amount of damage a zombie or weapon can do. 
-- accuracy: The chance (in percentage) a weapon has of being on target.
+- accuracy: The chance (in percentage) a weapon or zombie has of being on target.
 - Uses: The amount of rounds a weapon can be used.
 - Health: The amoun of health a zombie or hero has remaining.
-- Agility: The chance (in percentage) a zombie has of dodging an attack from a weapon.
-
 
 ### Instructions
 Follow the steps below to complete the assignment. There is a lot of code, but if you follow these steps, you should be able to navigate through it without doing a deep-dive into the code original.js.
@@ -44,8 +42,7 @@ You will not need to work outside of the sections demarcated by a step.
 - name (string)
 - reach (number)
 - attack (array with two indices)
-- risk (number)
-- reliability (number)
+- accuracy (number)
 - uses (number)
 
 `Weapon` has the following properties:
@@ -53,10 +50,9 @@ You will not need to work outside of the sections demarcated by a step.
 - this.reach, set to reach
 - this.attack, set to attack
 - this.risk, set to risk
-- this.reliability, set to reliabilitiy
+- this.accuracy, set to accuracy
 - this.uses, set to uses
-- this.didDam, set to false
-- this.receivedDam, set to false
+- this.didDam, set to false 
 - this.roundDamage, set to 0
 - this.used, a function which decrements this.uses by 1 when invoked
 - this.damageBool, a function that, given a number representing a percentage, returns true or false depending on the probability of that percentage (can be found in original.js)
@@ -70,15 +66,15 @@ Export the `Weapon` constructor once you've built the constructor.
 - name (string)
 - health (number)
 - attack (array with two indices)
-- agility (number)
+- accuracy (number)
 
 
 `Zombie` has the following properties:
 - this.name, set to name 
 - this.health, set to health
 - this.attack, set to attack
-- this.agility, set to agility
-- this.receivedDam, set to false
+- this.accuracy, set to accuracy
+- this.didDamage set to false
 - this.roundDamage, set to 0
 - this.damageBool, a function that, given a number representing a percentage, returns true or false depending on the probability of that percentage (can be found in original.js)
 - this.calcDamage, a function that, given a min and a max (in other words, a range), sets this.roundDamage to a random number within the given range. 

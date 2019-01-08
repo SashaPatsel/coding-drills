@@ -6,7 +6,6 @@ function Weapon(name, reach, attack, accuracy, uses) {
   this.accuracy = accuracy
   this.uses = uses
   this.didDam = false
-  this.receivedDam = false
   this.roundDamage = 0
 
   this.used = function () {
