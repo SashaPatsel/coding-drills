@@ -7,5 +7,6 @@ describe('Card', () => {
     const component = shallow(<Card debug />);
   
     expect(component).toMatchSnapshot();
+    expect(component.find("img").length).toEqual(1)
   });
 });

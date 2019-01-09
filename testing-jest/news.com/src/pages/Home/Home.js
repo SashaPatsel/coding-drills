@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./home.css"
 import API from "../../utils/API";
 import Card from "../../components/Card/Card"
@@ -11,14 +11,14 @@ class Home extends Component {
     stories: [],
   }
 
-   componentDidMount() {
+  componentDidMount() {
     const name = window.localStorage.getItem("name")
 
     API.getNews("bleacher-report").then(data => {
-       data.data.articles.map(story => (
-        this.state.stories.push(story) 
+      data.data.articles.map(story => (
+        this.state.stories.push(story)
       ))
-      
+
     }).then(wait => {
       this.setState({
         name: name
@@ -27,14 +27,14 @@ class Home extends Component {
   }
 
   pickNews(news) {
-   
-     const stories = []
+
+    const stories = []
 
     API.getNews(news).then(data => {
-       data.data.articles.map(story => (
-        stories.push(story) 
+      data.data.articles.map(story => (
+        stories.push(story)
       ))
-      
+
     }).then(wait => {
       this.setState({
         stories: stories
@@ -42,24 +42,24 @@ class Home extends Component {
     })
   }
 
-  render () {
-    
+  render() {
+
     return (
       <div>
-      <h1 className="home__heading">Welcome, {this.state.name}</h1>
-  
-      <h2 className="home__heading">Pick a Source!</h2>
-      <div className="home__buttons">
-        <Button onClick={() => this.pickNews("bleacher-report")} source="Bleacher Report"/>
-        <Button onClick={() => this.pickNews("bbc-news")} source="BBC"/>
-        <Button onClick={() => this.pickNews("the-hill")} source="The Hill"/>
+        <h1 className="home__heading">Welcome, {this.state.name}</h1>
+
+        <h2 className="home__heading">Pick a Source!</h2>
+        <div className="home__buttons">
+          <Button onClick={() => this.pickNews("bleacher-report")} source="Bleacher Report" />
+          <Button onClick={() => this.pickNews("bbc-news")} source="BBC" />
+          <Button onClick={() => this.pickNews("the-hill")} source="The Hill" />
+        </div>
+        <div className="home__cards">
+          {this.state.stories.map(story => (
+            <Card link={story.url} img={story.urlToImage} title={story.title} description={story.description} />
+          ))}
+        </div>
       </div>
-      <div className="home__cards">
-      {this.state.stories.map(story => (
-          <Card link={story.url} img={story.urlToImage} title={story.title} description={story.description}/>
-        ))}
-      </div>  
-      </div>  
     )
   }
 }
