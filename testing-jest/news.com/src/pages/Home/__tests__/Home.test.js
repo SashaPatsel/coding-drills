@@ -8,4 +8,8 @@ describe('Home', () => {
     
     expect(component).toMatchSnapshot();
   });
+
+  // beforeEach() = {
+  //   app.find('.btn').simulate('click');
+  // }
 });

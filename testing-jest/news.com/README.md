@@ -15,3 +15,4 @@ If you use CRA (Create React App), you will already have a testing library inclu
 ```
 4. Can help you find syntax errors that might run locally but aren't sustainable. For example: using `class` instead of `className`.
 5. Jest gives us methods like expect, describe, it. Enzyme gives us things like shallow
+6. Jest dont work with axios and react smh

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render correctly in "debug" mode 1`] = `
+<div>
+  <h1
+    className="home__heading"
+  >
+    Welcome, 
+    loading
+  </h1>
+  <h2
+    className="home__heading"
+  >
+    Pick a Source!
+  </h2>
+  <div
+    className="home__buttons"
+  >
+    <Button
+      onClick={[Function]}
+      source="Bleacher Report"
+    />
+    <Button
+      onClick={[Function]}
+      source="BBC"
+    />
+    <Button
+      onClick={[Function]}
+      source="The Hill"
+    />
+  </div>
+  <div
+    className="home__cards"
+  />
+</div>
+`;

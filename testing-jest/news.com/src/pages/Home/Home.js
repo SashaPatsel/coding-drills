@@ -7,22 +7,28 @@ import Button from "../../components/Button/Button"
 class Home extends Component {
 
   state = {
-    name: "",
-    stories: [],
+    name: this.props.name,
+    stories: []
   }
 
   componentDidMount() {
-    const name = window.localStorage.getItem("name")
-
+    let name;
+    if (this.props.location) {
+       name = this.props.location.state.name
+    } else {
+       name = "loading"
+    }
+    const stories = []
     API.getNews("bleacher-report").then(data => {
       data.data.articles.map(story => (
-        this.state.stories.push(story)
+        stories.push(story)
       ))
-
-    }).then(wait => {
-      this.setState({
-        name: name
-      })
+        
+      }).then(wait => {
+        this.setState({
+          name: name,
+          stories: stories
+        })
     })
   }
 
@@ -65,3 +71,4 @@ class Home extends Component {
 }
 
 export default Home;
+
