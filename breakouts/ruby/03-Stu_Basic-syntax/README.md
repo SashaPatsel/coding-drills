@@ -13,7 +13,7 @@ In `prompt.rb`:
 
 2. Print out a short bio about your store using some of the keys in the hash you just created.
 
-3. Print all the items your store sells.
+3. Print all the items your store sells using your hash.
 
 4. Add 5 new items to your "warehouse" (array) and print out your updated stores.
 
