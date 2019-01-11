@@ -73,9 +73,12 @@ end
 
 
 
-# Functionally, the two examples of classes above are exactly the same. 
+# Functionally, the two examples of classes above are almost exactly the same. 
 
 # You can think of `attr_reader` as the arguments passed to the constructor function.
+
+# Conversely, we can have `attr_setter` or attr_accessor`. 
+# These names are indicative of what they do. For attr_reader, we can only set values when we instantiate the class. With setter, we can retoractively change those values after we've already instantiated the class. attr_accessor lets us do both. As such, you will probably want to default to "accessor" unless you want some more explicit restrictions on your classes. 
 
 # Similarly, the variables prefixed with `@` act as `this.thing`.
 
@@ -105,7 +108,7 @@ joe.say_hi()
 
 #### Convert strings to numbers
 
-I#n javascript, we can convert string to numbers with the `parseInt()` method. In ruby, that works like this:
+# In javascript, we can convert string to numbers with the `parseInt()` method. In ruby, that works like this:
 
 
 string = "53"
