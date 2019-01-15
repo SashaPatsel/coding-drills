@@ -20,8 +20,8 @@ class Store
         end    
     end
 
-    def add_item(item)
-        @items += [item]
+    def add_item(*others)
+        @items += others
     end
 
     def remove_item(item)
