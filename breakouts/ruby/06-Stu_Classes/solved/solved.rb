@@ -1,19 +1,17 @@
 require "./definitions"
+require "./helpers"
 
-safeway_items = [
-    {
-        :name => "hummus",
-        :price => 4.50
-    },
-    {
-        :name => "cream cheese",
-        :price => 2.50
-    },
-    {
-        :name => "guacamole",
-        :price => 
-    }
+safeway = Store.new("Safeway", "San Francisco", "Grocery")
 
-]
+hummus = Item.new("Hummus", 4.50, 300)
 
-safeway = Store.new "Safeway", "San Francisco", "Grocery", safeway_items
+cream_cheese = Item.new("Cream cheese", 1.95, 1237)
+
+coffee_creamer = Item.new("Coffee cream", 2.45, 568)
+
+safeway.add_item(hummus)
+safeway.add_item(cream_cheese)
+safeway.add_item(coffee_creamer)
+
+safeway.print_inventory()
+

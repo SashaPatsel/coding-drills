@@ -1,7 +1,7 @@
 class Store 
     attr_accessor :store_name, :location, :category, :items
 
-    def initialize(store_name, location, category, items)
+    def initialize(store_name = "No name yet", location = "No location set yet", category = "No category set yet", items = [])
         @store_name = store_name
         @location = location
         @category = category
@@ -14,20 +14,25 @@ class Store
         puts "Store location: #{@location}"
     end
 
-    def add_items(item)
-        @items += item
+    def print_inventory
+        @items.each do | item |
+            puts item.item_name
+        end    
     end
 
-    def remove_items(item)
-        @items -= item
-    end   
+    def add_item(item)
+        @items += [item]
+    end
 
+    def remove_item(item)
+        @items -= [item]
+    end   
 end
 
-class item
+class Item
     attr_accessor :item_name, :price, :stock
 
-    def initialize(item_name, price, stock)
+    def initialize(item_name = "No name yet", price = 0, stock = 0)
         @item_name = item_name
         @price = price
         @stock = stock
@@ -38,11 +43,10 @@ class item
     end
 
     def less_stock(amount)
-        @stock -= amount
+        @stock -= [amount]
     end
 
     def add_stock(amount)
-        @stock += amount
+        @stock += [amount]
     end
-
 end
