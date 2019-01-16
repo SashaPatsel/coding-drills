@@ -1,7 +1,7 @@
 class Store 
     attr_accessor :store_name, :location, :category, :items
 
-    def initialize(store_name = "No name yet", location = "No location set yet", category = "No category set yet", items = [])
+    def initialize(store_name = "No name set yet", location = "No location set yet", category = "No category set yet", items = [])
         @store_name = store_name
         @location = location
         @category = category
@@ -24,15 +24,15 @@ class Store
         @items += others
     end
 
-    def remove_item(item)
-        @items -= [item]
+    def remove_item(*others)
+        @items -= others
     end   
 end
 
 class Item
     attr_accessor :item_name, :price, :stock
 
-    def initialize(item_name = "No name yet", price = 0, stock = 0)
+    def initialize(item_name = "No name set yet", price = 0, stock = 0)
         @item_name = item_name
         @price = price
         @stock = stock
