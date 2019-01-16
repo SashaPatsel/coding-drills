@@ -1,8 +1,10 @@
 console.log("hi")
 
 $.ajax({
-    url: "/data",
+    url: "/api",
     method: "GET"
 }).then(function(data) {
-    console.log(data)
+    newData = JSON.parse(data)
+    console.log(newData.urls.full)
+    $(".test").append(`<img class="img" src= ${newData.urls.full}>`)
 })
