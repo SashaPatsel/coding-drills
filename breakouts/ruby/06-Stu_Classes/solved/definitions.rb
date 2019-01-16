@@ -43,10 +43,14 @@ class Item
     end
 
     def less_stock(amount)
-        @stock -= [amount]
+        if @stock - amount < 0 
+            puts "Not enough #{item_name} in store to remove that many. Please enter a different amount"
+        else 
+        @stock -= amount
+        end
     end
 
     def add_stock(amount)
-        @stock += [amount]
+        @stock += amount
     end
 end
