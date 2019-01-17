@@ -10,11 +10,7 @@ require "mysql2"
 require "sequel"
 
 
-MySQL = Mysql2::Client.new(host: 'localhost',
-                                 username: 'root',
-                                 password: 'password',
-                                 database: 'sinatra_db')
-
+mysql = Mysql2::Client.new(host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
 
 
 # def get_cats
@@ -22,6 +18,20 @@ MySQL = Mysql2::Client.new(host: 'localhost',
 # end
 
 # puts get_cats
+DB = Sequel.connect(adapter: "mysql2",host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
+
+
+DB.create_table :items do
+    primary_key :id
+    String :name, unique: true, null: false
+    Float :price, null: false
+end
+
+items = DB[:items]
+
+items.insert(name: 'chicken', price: rand * 100)
+items.insert(name: 'bacon', price: rand * 100)
+items.insert(name: 'farley', price: rand * 100)
 
 class HiSinatra < Sinatra::Base
     get "/" do
