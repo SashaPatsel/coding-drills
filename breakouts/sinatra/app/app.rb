@@ -1,3 +1,5 @@
+
+# DEPENDENCIES
 # For web scraping
 require 'nokogiri'
 # Lets us hit external API
@@ -9,33 +11,40 @@ require "mysql2"
 # ORM
 require "sequel"
 
+# LOCAL FILES
 
-mysql = Mysql2::Client.new(host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
 
-
-# def get_cats
-#   MySQL.query('SELECT * FROM cats', :as => :hash).to_a
+# WITH NO ORM
+# mysql = Mysql2::Client.new(host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
+# def get_items
+#   MySQL.query('SELECT * FROM items', :as => :hash).to_a
 # end
+# puts get_items
 
-# puts get_cats
-DB = Sequel.connect(adapter: "mysql2",host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
+# SEQUEL CONFIG 
+DB = Sequel.connect(adapter: "mysql2", host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
 
-
-DB.create_table :items do
-    primary_key :id
-    String :name, unique: true, null: false
-    Float :price, null: false
+# Defining our models
+items = DB[:items]
+if !DB[:items] 
+    # Create the table w/ validations
+    DB.create_table :items do
+        primary_key :id
+        String :name, unique: true, null: false
+        Float :price, null: false
+    end
+    # 
+    items.insert(name: 'chicken', price: rand * 100)
+    items.insert(name: 'bacon', price: rand * 100)
+    items.insert(name: 'farley', price: rand * 100)
 end
 
-items = DB[:items]
-
-items.insert(name: 'chicken', price: rand * 100)
-items.insert(name: 'bacon', price: rand * 100)
-items.insert(name: 'farley', price: rand * 100)
 
 class HiSinatra < Sinatra::Base
     get "/" do
         "Hey Sinatra"
+        birds_table = DB[:birds]
+        birds_table.insert(name: "chicken", color: "red")
         erb :index
     end    
 
@@ -59,4 +68,3 @@ class HiSinatra < Sinatra::Base
         puts doc
     end
 end
-

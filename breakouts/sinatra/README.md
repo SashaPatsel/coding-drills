@@ -4,6 +4,7 @@
 - VS code extensions:   
     - erb
     - In settings: `"emmet.includeLanguages": {"erb": "html"}`
+- Use `bundle install` rather than `gem install` to install dependencies to a single project rather than on your device.
 
 ## Running the program
 - run `rackup` from project root
