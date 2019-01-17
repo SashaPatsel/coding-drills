@@ -1,20 +1,27 @@
-
+# For web scraping
 require 'nokogiri'
+# Lets us hit external API
 require 'rest-client'
+# The backbone. With Sinatra, we can easily set up our routes. Think of it as express for Ruby
 require "sinatra"
+# DB
 require "mysql2"
+# ORM
+require "sequel"
 
 
-Mysqlclient = Mysql2::Client.new(host: 'localhost',
+MySQL = Mysql2::Client.new(host: 'localhost',
                                  username: 'root',
                                  password: 'password',
-                                 database: 'cat_db')
+                                 database: 'sinatra_db')
 
-def get_cats
-  Mysqlclient.query('SELECT * FROM cats', :as => :hash).to_a
-end
 
-puts get_cats
+
+# def get_cats
+#   MySQL.query('SELECT * FROM cats', :as => :hash).to_a
+# end
+
+# puts get_cats
 
 class HiSinatra < Sinatra::Base
     get "/" do
