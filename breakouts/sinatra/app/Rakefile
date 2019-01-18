@@ -1,0 +1,4 @@
+require 'sinatra/activerecord/rake'
+require './app'
+
+# rake db:create_migration NAME=create_users_table

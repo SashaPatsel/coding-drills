@@ -9,14 +9,10 @@ require "sinatra"
 # DB
 require "mysql2"
 # ORM
-# require "sequel"
+require 'sinatra/activerecord'
 
-require 'active_record'
+ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db', host: 'localhost', username: 'root', password: 'password'
 
-ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db' 
-# host: 'localhost', username: 'root', password: 'password'
-
-# LOCAL FILES
 
 
 # WITH NO ORM
@@ -25,24 +21,6 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 #   MySQL.query('SELECT * FROM items', :as => :hash).to_a
 # end
 # puts get_items
-
-# SEQUEL CONFIG 
-# DB = Sequel.connect(adapter: "mysql2", host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
-
-# # Defining our models
-# items = DB[:items]
-# if !DB[:items] 
-#     # Create the table w/ validations
-#     DB.create_table :items do
-#         primary_key :id
-#         String :name, unique: true, null: false
-#         Float :price, null: false
-#     end
-#     # 
-#     items.insert(name: 'chicken', price: rand * 100)
-#     items.insert(name: 'bacon', price: rand * 100)
-#     items.insert(name: 'farley', price: rand * 100)
-# end
 
 
 class HiSinatra < Sinatra::Base
