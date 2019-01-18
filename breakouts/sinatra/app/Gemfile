@@ -5,8 +5,6 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # DEPENDENCIES
-# For web scraping
-gem 'nokogiri'
 # Lets us hit external API
 gem 'rest-client'
 # The backbone. With Sinatra, we can easily set up our routes. Think of it as express for Ruby

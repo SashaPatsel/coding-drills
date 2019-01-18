@@ -27,3 +27,5 @@
 - Hit reddit API
 - Serve up reddit's json to our client
 - Store that data
+
+## Other ideas
