@@ -9,7 +9,12 @@ require "sinatra"
 # DB
 require "mysql2"
 # ORM
-require "sequel"
+# require "sequel"
+
+require 'active_record'
+
+ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db' 
+# host: 'localhost', username: 'root', password: 'password'
 
 # LOCAL FILES
 
@@ -22,22 +27,22 @@ require "sequel"
 # puts get_items
 
 # SEQUEL CONFIG 
-DB = Sequel.connect(adapter: "mysql2", host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
+# DB = Sequel.connect(adapter: "mysql2", host: 'localhost', username: 'root', password: 'password', database: 'sinatra_db')
 
-# Defining our models
-items = DB[:items]
-if !DB[:items] 
-    # Create the table w/ validations
-    DB.create_table :items do
-        primary_key :id
-        String :name, unique: true, null: false
-        Float :price, null: false
-    end
-    # 
-    items.insert(name: 'chicken', price: rand * 100)
-    items.insert(name: 'bacon', price: rand * 100)
-    items.insert(name: 'farley', price: rand * 100)
-end
+# # Defining our models
+# items = DB[:items]
+# if !DB[:items] 
+#     # Create the table w/ validations
+#     DB.create_table :items do
+#         primary_key :id
+#         String :name, unique: true, null: false
+#         Float :price, null: false
+#     end
+#     # 
+#     items.insert(name: 'chicken', price: rand * 100)
+#     items.insert(name: 'bacon', price: rand * 100)
+#     items.insert(name: 'farley', price: rand * 100)
+# end
 
 
 class HiSinatra < Sinatra::Base
