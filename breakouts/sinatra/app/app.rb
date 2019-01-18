@@ -2,6 +2,8 @@
 # DEPENDENCIES
 # For web scraping
 require 'nokogiri'
+# In conjunction with nokogiri
+require 'open-uri'
 # Lets us hit external API
 require 'rest-client'
 # The backbone. With Sinatra, we can easily set up our routes. Think of it as express for Ruby
@@ -47,8 +49,10 @@ class HiSinatra < Sinatra::Base
 
     get "/scrape" do
         doc = Nokogiri::HTML(open('http://www.nokogiri.org/tutorials/installing_nokogiri.html'))
-        "hello"
-        puts doc
+        puts "### Search for nodes by css"
+        doc.css('nav ul.menu li a', 'article h2').each do |link|
+            puts link.content
+        end
     end
 end
 
