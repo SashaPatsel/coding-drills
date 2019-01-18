@@ -10,6 +10,8 @@ require "sinatra"
 require "mysql2"
 # ORM
 require 'sinatra/activerecord'
+# Models
+require './models/store.rb'
 
 ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db', host: 'localhost', username: 'root', password: 'password'
 
@@ -25,9 +27,7 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 
 class HiSinatra < Sinatra::Base
     get "/" do
-        "Hey Sinatra"
-        birds_table = DB[:birds]
-        birds_table.insert(name: "chicken", color: "red")
+        @stores = Store.all
         erb :index
     end    
 
@@ -51,3 +51,4 @@ class HiSinatra < Sinatra::Base
         puts doc
     end
 end
+
