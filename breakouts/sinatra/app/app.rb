@@ -23,6 +23,15 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 # end
 # puts get_items
 
+test_user = User.find(1)
+puts test_user.movies
+
+# test_user.movies << Movie.create({
+#     movie_name: "Chicken little",
+#     movie_poster: "http://www.gstatic.com/tv/thumb/v22vodart/12628458/p12628458_v_v8_an.jpg",
+#     movie_year: "2016"
+#   })
+
 
 class HiSinatra < Sinatra::Base
     get "/" do
