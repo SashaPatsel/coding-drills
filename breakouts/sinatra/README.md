@@ -29,3 +29,10 @@
 - Store that data
 
 ## Other ideas
+- Form to sign in as user 
+    - Can log out/switch user
+    - If not "signed in", you cant search movies
+- Once "signed in", a user can search for movies. 
+- Once they've searched for a movie, they can choose to save it.
+- A user has many movies
+- Movies belong to many users

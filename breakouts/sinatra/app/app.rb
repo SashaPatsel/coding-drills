@@ -55,5 +55,13 @@ class HiSinatra < Sinatra::Base
         puts data
         data.to_json
     end    
+
+
+    post "/signin" do
+        puts "confirm"
+        puts params[:username]
+        # redirect "/home"
+    end
+    
 end
 
