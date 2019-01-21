@@ -4,11 +4,6 @@
     <title>Stores</title>
 </head>
 <body>
-    <ul>
-        <% @stores.each do |store| %>
-            <li><%= store.name %></li>
-        <% end %>
-    </ul>
 
     <form id="signUpForm" action="/signin" method="post">
         <input id="username" type="text" name="username">

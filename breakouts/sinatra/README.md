@@ -36,3 +36,31 @@
 - Once they've searched for a movie, they can choose to save it.
 - A user has many movies
 - Movies belong to many users
+
+
+
+## Database
+1. Create a file called Rakefile
+2. Run the following command: `db:create_migration NAME=<name_of_migration>`
+    - This will automatically create a migrate folder inside of your db folder.
+3. Populate your new file with the desired columns and validations
+4. Run `rake db:migrate`
+5. Create a model in /models. For example: models/user.rb It should look like this:
+    ```ruby
+    class User < ActiveRecord::Base
+    end
+    ```
+6. Require the above file in app.rb
+7. Create db/seeds.rb
+8. Enter code similar to this (depending on what you put in your model)
+```ruby
+users = [
+  {username: "Hermione_Granger"},
+  {username: "Jon_Snow"}
+]
+
+users.each do |u|
+  User.create(u)
+end
+
+```

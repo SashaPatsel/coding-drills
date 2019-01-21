@@ -12,6 +12,5 @@ function getImages() {
 // getImages()
 
 $("#signUpForm").on("submit", function(e) {
-    const 
     e.preventDefault()
 })

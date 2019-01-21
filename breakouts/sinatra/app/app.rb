@@ -9,7 +9,8 @@ require "mysql2"
 # ORM
 require 'sinatra/activerecord'
 # Models
-require './models/store.rb'
+require './models/user.rb'
+require './models/movie.rb'
 
 ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db', host: 'localhost', username: 'root', password: 'password'
 
@@ -25,7 +26,6 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 
 class HiSinatra < Sinatra::Base
     get "/" do
-        @stores = Store.all
         erb :index
     end    
 
@@ -60,8 +60,14 @@ class HiSinatra < Sinatra::Base
     post "/signin" do
         puts "confirm"
         puts params[:username]
-        # redirect "/home"
+        redirect "/home"
+    end
+
+    get "/home" do
+        erb :home
     end
     
 end
+
+
 
