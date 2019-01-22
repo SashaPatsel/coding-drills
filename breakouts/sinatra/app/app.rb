@@ -70,23 +70,47 @@ class HiSinatra < Sinatra::Base
         erb :index
     end
 
-    get "/movies" do 
-        data = RestClient.get('https://www.omdbapi.com/?t=harry%20potter&y=&plot=short&apikey=trilogy')
+    get "/movies/:movie" do 
+        movie_url = 'https://www.omdbapi.com/?t=&y=&plot=short&apikey=trilogy'
+        data = RestClient.get('https://www.omdbapi.com/?t=&y=&plot=short&apikey=trilogy')
         puts data
         data.to_json
     end    
 
 
     post "/signin/:username" do
-        # grab username from form at "/"
-        puts "================================"
-        puts params[:username]
-        # Create new user
-        new_user = User.create({username: params[:username]})
-        # Send the new user's data as json to client
-        new_user
-        cookies[:userid] = new_user.id
-        puts cookies
+        # Check to see if username exists. If it does, log them in. If not, sign them up.
+        check_user = User.where({"username": params[:username]})
+        puts "check_user"
+        puts check_user
+        if check_user[0]
+            puts "======="
+            puts check_user[0].id
+            puts "======="
+            puts check_user[0].id
+            check_user[0]
+            cookies[:userid] = check_user[0].id
+        else   
+            puts "================================"
+            puts params[:username]
+            # Create new user
+            new_user = User.create({username: params[:username]})
+            # Send the new user's data as json to client
+            new_user
+            cookies[:userid] = new_user.id
+            puts cookies
+        end
+
+        # # grab username from form at "/"
+        # puts "================================"
+        # puts params[:username]
+        # # Create new user
+        # new_user = User.create({username: params[:username]})
+        # # Send the new user's data as json to client
+        # new_user
+        # cookies[:userid] = new_user.id
+        # puts cookies
+        
     end
 
     get "/home" do
