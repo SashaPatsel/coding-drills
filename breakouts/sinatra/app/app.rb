@@ -90,6 +90,7 @@ class HiSinatra < Sinatra::Base
             puts check_user[0].id
             check_user[0]
             cookies[:userid] = check_user[0].id
+            puts cookies
         else   
             puts "================================"
             puts params[:username]
