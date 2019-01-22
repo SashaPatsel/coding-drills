@@ -5,6 +5,7 @@ require 'rest-client'
 # The backbone. With Sinatra, we can easily set up our routes. Think of it as express for Ruby
 require "sinatra"
 require "sinatra/cookies"
+require "json"
 # DB
 require "mysql2"
 # ORM
@@ -91,6 +92,19 @@ class HiSinatra < Sinatra::Base
     get "/home" do
         erb :home
     end
+
+    get "/user" do
+        # Informs the server that we'd like to return json
+        content_type :json
+        # Send back the cookies as json
+        # cookies.to_json
+        logged_in_user = User.find(cookies[:userid])
+        if (logged_in_user)
+            logged_in_user.to_json
+        else 
+            {"error": "Please sign in first"}  
+        end 
+    end   
     
 end
 

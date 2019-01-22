@@ -1,5 +1,3 @@
-
-
 $(document).on("submit", "#signUpForm", function(e) {
     console.log("eyo")
     e.preventDefault()
