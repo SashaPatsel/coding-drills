@@ -59,11 +59,6 @@ class HiSinatra < Sinatra::Base
         data
     end
 
-    get "/data" do 
-        {"test": "string"}.to_json
-    end    
-
-
     get "/reddit" do
         data = RestClient.get('https://www.reddit.com/r/animals/about')
         puts data
@@ -79,7 +74,17 @@ class HiSinatra < Sinatra::Base
     end    
 
     post "/movies/save" do 
-        puts params[:name]
+        logged_in_user = User.find(cookies[:userid])
+
+        logged_in_user.movies << Movie.create({
+            movie_name: params[:name],
+            movie_poster: params[:poster],
+            movie_year: params[:year]
+        })
+
+        logged_in_user.movies.each do | movie |
+            puts movie.id
+        end
     end
 
     # Signs a user up if they haven't already, signs them in if their username exists
