@@ -87,6 +87,16 @@ class HiSinatra < Sinatra::Base
         end
     end
 
+
+    get "/movies/user/all" do 
+        # Informs the server that we'd like to return json
+        content_type :json
+        # The user currently logged in
+        logged_in_user = User.find(cookies[:userid])
+        puts logged_in_user.movies
+        # Send back all their movies as JSON
+        logged_in_user.movies.to_json
+    end
     # Signs a user up if they haven't already, signs them in if their username exists
     post "/signin/:username" do
         # Check to see if username exists. If it does, log them in. If not, sign them up.

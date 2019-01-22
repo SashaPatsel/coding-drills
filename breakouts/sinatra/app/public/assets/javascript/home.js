@@ -8,6 +8,17 @@ $.ajax({
     $(".username").text(data.username)
 })
 
+// Get all user's movies
+$.ajax({
+    url: "/movies/user/all",
+    method: "GET"
+}).then(function(data) {
+    console.log("/movies/user/all")
+    console.log(data)
+   
+})
+
+
 $("#movieSearch").on("submit", function(e) {
     e.preventDefault()
     var movie = $("#movie").val().trim()
@@ -16,7 +27,7 @@ $("#movieSearch").on("submit", function(e) {
         method: "GET"
     }).then(function(data) {
         console.log(data)
-        $("#searchedMovie").append(
+        $("#searchedMovie").html(
         `
         <h3>${data.Title}</h3>
         <img src=${data.Poster}>
