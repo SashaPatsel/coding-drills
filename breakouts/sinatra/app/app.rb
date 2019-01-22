@@ -78,6 +78,10 @@ class HiSinatra < Sinatra::Base
         data
     end    
 
+    post "/movies/save" do 
+        puts params[:name]
+    end
+
     # Signs a user up if they haven't already, signs them in if their username exists
     post "/signin/:username" do
         # Check to see if username exists. If it does, log them in. If not, sign them up.
