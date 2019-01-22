@@ -13,9 +13,20 @@ $.ajax({
     url: "/movies/user/all",
     method: "GET"
 }).then(function(data) {
-    console.log("/movies/user/all")
     console.log(data)
-   
+    $("#savedMovies").empty()
+    for (var i = 0 ; i < data.length ; i++) {
+        console.log(data[i].name)
+     $("#savedMovies").append(   `
+        <div class="card" style="width: 18rem;">
+        <img src="${data[i].movie_poster}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${data[i].movie_name}</h5>
+                <p class="card-text">${data[i].movie_year}</p>
+            </div>
+        </div>
+        `)
+    }
 })
 
 
