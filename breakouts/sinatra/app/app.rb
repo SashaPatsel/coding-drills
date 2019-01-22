@@ -4,6 +4,7 @@
 require 'rest-client'
 # The backbone. With Sinatra, we can easily set up our routes. Think of it as express for Ruby
 require "sinatra"
+require "sinatra/cookies"
 # DB
 require "mysql2"
 # ORM
@@ -11,6 +12,7 @@ require 'sinatra/activerecord'
 # Models
 require './models/user.rb'
 require './models/movie.rb'
+
 
 ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db', host: 'localhost', username: 'root', password: 'password'
 
@@ -23,9 +25,15 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 # end
 # puts get_items
 
-test_user = User.find(1)
-puts test_user.movies
+# test_user = User.find(1)
+# puts test_user.movies
 
+# Gets all movie ids associated with one user
+# test_user.movies.each do | movie |
+#     puts movie.id
+# end
+
+# Add a new movie to be associated with a user
 # test_user.movies << Movie.create({
 #     movie_name: "Chicken little",
 #     movie_poster: "http://www.gstatic.com/tv/thumb/v22vodart/12628458/p12628458_v_v8_an.jpg",
@@ -34,6 +42,8 @@ puts test_user.movies
 
 
 class HiSinatra < Sinatra::Base
+    helpers Sinatra::Cookies
+
     get "/" do
         erb :index
     end    
@@ -66,10 +76,16 @@ class HiSinatra < Sinatra::Base
     end    
 
 
-    post "/signin" do
-        puts "confirm"
+    post "/signin/:username" do
+        # grab username from form at "/"
+        puts "================================"
         puts params[:username]
-        redirect "/home"
+        # Create new user
+        new_user = User.create({username: params[:username]})
+        # Send the new user's data as json to client
+        new_user
+        cookies[:userid] = new_user.id
+        puts cookies
     end
 
     get "/home" do
