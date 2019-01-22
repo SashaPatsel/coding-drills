@@ -71,25 +71,22 @@ class HiSinatra < Sinatra::Base
     end
 
     get "/movies/:movie" do 
-        movie_url = 'https://www.omdbapi.com/?t=&y=&plot=short&apikey=trilogy'
-        data = RestClient.get('https://www.omdbapi.com/?t=&y=&plot=short&apikey=trilogy')
+        # Informs the server that we'd like to return json
+        content_type :json
+        data = RestClient.get("https://www.omdbapi.com/?t=#{params[:movie]}&y=&plot=short&apikey=trilogy")
         puts data
-        data.to_json
+        data
     end    
 
-
+    # Signs a user up if they haven't already, signs them in if their username exists
     post "/signin/:username" do
         # Check to see if username exists. If it does, log them in. If not, sign them up.
         check_user = User.where({"username": params[:username]})
-        puts "check_user"
-        puts check_user
         if check_user[0]
-            puts "======="
-            puts check_user[0].id
-            puts "======="
-            puts check_user[0].id
+            # Send the user back as a response
             check_user[0]
-            cookies[:userid] = check_user[0].id
+            # Store the existing user's id as a cookie
+            cookies[:userid] = check_user[0].id         
             puts cookies
         else   
             puts "================================"
@@ -98,20 +95,10 @@ class HiSinatra < Sinatra::Base
             new_user = User.create({username: params[:username]})
             # Send the new user's data as json to client
             new_user
+            # Set the new user's id as a cookie
             cookies[:userid] = new_user.id
             puts cookies
         end
-
-        # # grab username from form at "/"
-        # puts "================================"
-        # puts params[:username]
-        # # Create new user
-        # new_user = User.create({username: params[:username]})
-        # # Send the new user's data as json to client
-        # new_user
-        # cookies[:userid] = new_user.id
-        # puts cookies
-        
     end
 
     get "/home" do
