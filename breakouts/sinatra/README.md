@@ -50,6 +50,71 @@ gem "json"
 ```
 Copy the above code and paste it inside you gemfile. If you are curious about what you are adding to your app, please refer to the comments above each dependency.
 
-5. From the root of your app, run `bundle install`. This will read our `Gemfile` and install all the dependencies we've listed within it.
+5. From the root of your app, run `bundle install`. This will read our `Gemfile` and install all the dependencies we've listed within it. You shoulde see `Gemfile.lock` in your app's root once this command has run. 
 
-6. 
+6. At your app's root, create the files `app.rb` and `config.ru`
+
+7. In `config.run`, write the following code. 
+
+```ruby
+require "./app"
+
+run HiSinatra
+
+```
+
+This code will allow us to start our app by running `rackup` from our project's root.
+
+8. Let's require all the packages we've installed for future use. In `app.rb`, write the following code: 
+```ruby
+# DEPENDENCIES
+# Lets us hit external API
+require 'rest-client'
+require "sinatra/base"
+require "sinatra/cookies"
+require "json"
+require "mysql2"
+require 'sinatra/activerecord'
+```
+
+9. Let's test our app to see if we've set everything up correctly to this point. Let's instantiate the classs that will contain all of our routes.
+
+```ruby
+class HiSinatra < Sinatra::Base
+
+end
+
+```
+
+What we're doing here is making a new class called HiSinatra (it does not need to be called that), and building it on top of Sinatra's Base class. Put more simply though, we're creating a class where we'll define our routes. 
+
+Inside of the class we just created, we can define routes like so:
+
+```ruby
+
+get "/" do
+    "Hello World"
+end
+
+```
+
+If you write the above code within the class we defined in this step, and then run `rackup` from the command line, you should see a page with "hello world" written on it at localhost:9292. 
+
+If you are able to see "hello world" on your browser at localhost:9292, you've done everything correctly up to this point.
+
+10. Now let's build out our file structure:
+
+<img src= "file_structure.png">
+
+Replicate the above file structure. This includes the following:
+
+- Create a folder `db`
+- Create a folder `models`
+    - Within models, create `movie.rb`
+    - Within models, create `user.rb`
+- Create a folder `views`
+    - Within views, create `index.erb`
+    - Within views, create `home.erb`
+- The public folder is already provided for you. 
+
+11. 

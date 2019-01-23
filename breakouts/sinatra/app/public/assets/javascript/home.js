@@ -1,5 +1,3 @@
-// Display all saved movies off the bat
-displayAllSaved()
 // Get user info
 $.ajax({
     url: "/api/user",

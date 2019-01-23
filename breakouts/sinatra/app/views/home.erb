@@ -33,6 +33,17 @@
         
 
         <div id="savedMovies" class="row">
+            <% @movies.each do |movie| %>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                    <img class="movie__card--img" src="<%= movie.movie_poster %>.movie_poster}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= movie.movie_name%></h5>
+                            <p class="card-text"><%= movie.movie_year %></p>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         </div>
     </div>
     <!-- CDNs-->

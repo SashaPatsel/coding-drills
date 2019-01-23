@@ -2,7 +2,6 @@
 # DEPENDENCIES
 # Lets us hit external API
 require 'rest-client'
-# The backbone. With Sinatra, we can easily set up our routes. Think of it as express for Ruby
 require "sinatra/base"
 require "sinatra/cookies"
 require "json"
@@ -44,6 +43,13 @@ class HiSinatra < Sinatra::Base
     
     # Render the home page
     get "/home" do
+
+        logged_in_user = User.find(cookies[:userid])
+        puts logged_in_user.movies
+        # Send back all their movies as JSON
+        # logged_in_user.movies.to_json
+
+        @movies = logged_in_user.movies
         erb :home
     end
 
