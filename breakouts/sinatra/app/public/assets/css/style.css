@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     position: fixed;
     z-index: -1;
+    top: 0;
     height: 100vh;
     width: 100vw;
 }
@@ -14,6 +15,7 @@
     background-repeat: no-repeat;
     position: fixed;
     z-index: -1;
+    top: 0;
     height: 100vh;
     width: 100vw;
 }
@@ -24,4 +26,10 @@
 
 div[class^='col-'] {
     margin-bottom: 50px;
+}
+
+/* Utilities */
+
+.mt-lg {
+    margin-top: 100px;
 }
