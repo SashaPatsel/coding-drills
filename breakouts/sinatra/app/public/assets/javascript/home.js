@@ -1,7 +1,8 @@
-
+// Display all saved movies off the bat
+displayAllSaved()
 // Get user info
 $.ajax({
-    url: "/user",
+    url: "/api/user",
     method: "GET"
 }).then(function(data) {
     console.log(data)
@@ -9,32 +10,34 @@ $.ajax({
 })
 
 // Get all user's movies
-$.ajax({
-    url: "/movies/user/all",
-    method: "GET"
-}).then(function(data) {
-    console.log(data)
-    $("#savedMovies").empty()
-    for (var i = 0 ; i < data.length ; i++) {
-        console.log(data[i].name)
-     $("#savedMovies").append(   `
-        <div class="card" style="width: 18rem;">
-        <img src="${data[i].movie_poster}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${data[i].movie_name}</h5>
-                <p class="card-text">${data[i].movie_year}</p>
+function displayAllSaved() {
+    $.ajax({
+        url: "/api/movies/user/all",
+        method: "GET"
+    }).then(function(data) {
+        console.log(data)
+        $("#savedMovies").empty()
+        for (var i = 0 ; i < data.length ; i++) {
+         $("#savedMovies").append(`
+            <div class="card" style="width: 18rem;">
+            <img src="${data[i].movie_poster}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${data[i].movie_name}</h5>
+                    <p class="card-text">${data[i].movie_year}</p>
+                </div>
             </div>
-        </div>
-        `)
-    }
-})
+            `)
+        }
+    })
+}
+
 
 
 $("#movieSearch").on("submit", function(e) {
     e.preventDefault()
     var movie = $("#movie").val().trim()
     $.ajax({
-        url: `/movies/${movie}`,
+        url: `/api/movies/${movie}`,
         method: "GET"
     }).then(function(data) {
         console.log(data)
@@ -60,10 +63,12 @@ $(document).on("click", ".saveMovie", function(e) {
     }
 
     $.ajax({
-        url: "/movies/save",
+        url: "/api/movies/save",
         method: "POST",
         data: movieObj
     }).then(function(data) {
         console.log(data)
+        displayAllSaved()
     })
 })
+

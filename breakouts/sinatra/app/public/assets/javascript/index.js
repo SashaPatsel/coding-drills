@@ -3,7 +3,7 @@ $(document).on("submit", "#signUpForm", function(e) {
     e.preventDefault()
     var username = $("#username").val().trim()
     $.ajax({
-        url: `/signin/${username}`,
+        url: `/api/signin/${username}`,
         method: "POST"
     }).then(function(data) {
         window.location.href = "/home"

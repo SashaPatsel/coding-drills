@@ -44,28 +44,21 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 
 class HiSinatra < Sinatra::Base
     helpers Sinatra::Cookies
-
+    # Let's us see errors
+    configure :production, :development do
+        enable :logging
+    end
+    
+    # RENDER VIEWS
     get "/" do
         erb :index
     end    
-
-    get "/thing/:thing" do 
-        "Yo yo yo #{params[:thing]}"
-    end    
-
-    get "/api" do
-        data = RestClient.get('https://api.unsplash.com//photos/random?client_id=07dacab89ab64ea68532f6383a048daac380765c1f6e20a9b5e3d60961db4e2b&query=chicken')
-        puts data
-        data
+    
+    get "/home" do
+        erb :home
     end
 
-    get "/reddit" do
-        data = RestClient.get('https://www.reddit.com/r/animals/about')
-        puts data
-        erb :index
-    end
-
-    get "/movies/:movie" do 
+    get "/api/movies/:movie" do 
         # Informs the server that we'd like to return json
         content_type :json
         data = RestClient.get("https://www.omdbapi.com/?t=#{params[:movie]}&y=&plot=short&apikey=trilogy")
@@ -73,7 +66,7 @@ class HiSinatra < Sinatra::Base
         data
     end    
 
-    post "/movies/save" do 
+    post "/api/movies/save" do 
         logged_in_user = User.find(cookies[:userid])
 
         logged_in_user.movies << Movie.create({
@@ -82,13 +75,15 @@ class HiSinatra < Sinatra::Base
             movie_year: params[:year]
         })
 
+        
         logged_in_user.movies.each do | movie |
             puts movie.id
         end
+        puts request.body
     end
 
 
-    get "/movies/user/all" do 
+    get "/api/movies/user/all" do 
         # Informs the server that we'd like to return json
         content_type :json
         # The user currently logged in
@@ -98,7 +93,7 @@ class HiSinatra < Sinatra::Base
         logged_in_user.movies.to_json
     end
     # Signs a user up if they haven't already, signs them in if their username exists
-    post "/signin/:username" do
+    post "/api/signin/:username" do
         # Check to see if username exists. If it does, log them in. If not, sign them up.
         check_user = User.where({"username": params[:username]})
         if check_user[0]
@@ -120,11 +115,8 @@ class HiSinatra < Sinatra::Base
         end
     end
 
-    get "/home" do
-        erb :home
-    end
 
-    get "/user" do
+    get "/api/user" do
         # Informs the server that we'd like to return json
         content_type :json
         # Send back the cookies as json
