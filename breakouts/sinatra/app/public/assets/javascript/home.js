@@ -19,11 +19,13 @@ function displayAllSaved() {
         $("#savedMovies").empty()
         for (var i = 0 ; i < data.length ; i++) {
          $("#savedMovies").append(`
-            <div class="card" style="width: 18rem;">
-            <img src="${data[i].movie_poster}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${data[i].movie_name}</h5>
-                    <p class="card-text">${data[i].movie_year}</p>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                <img src="${data[i].movie_poster}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${data[i].movie_name}</h5>
+                        <p class="card-text">${data[i].movie_year}</p>
+                    </div>
                 </div>
             </div>
             `)
