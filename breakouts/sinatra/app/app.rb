@@ -26,38 +26,30 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 # end
 # puts get_items
 
-# test_user = User.find(1)
-# puts test_user.movies
-
-# Gets all movie ids associated with one user
-# test_user.movies.each do | movie |
-#     puts movie.id
-# end
-
-# Add a new movie to be associated with a user
-# test_user.movies << Movie.create({
-#     movie_name: "Chicken little",
-#     movie_poster: "http://www.gstatic.com/tv/thumb/v22vodart/12628458/p12628458_v_v8_an.jpg",
-#     movie_year: "2016"
-#   })
-
 
 class HiSinatra < Sinatra::Base
     helpers Sinatra::Cookies
+    
     # Let's us see errors
     configure :production, :development do
         enable :logging
     end
     
     # RENDER VIEWS
+    # Render the landing page
     get "/" do
+        # We can simply refer to our HTML (stored in this app as .erb files) with the following syntax.
         erb :index
     end    
     
+    # Render the home page
     get "/home" do
         erb :home
     end
 
+    # API ROUTES
+    
+    # Query OMDBs API for a single movie. Return the results to the client as JSON.
     get "/api/movies/:movie" do 
         # Informs the server that we'd like to return json
         content_type :json
@@ -66,6 +58,7 @@ class HiSinatra < Sinatra::Base
         data
     end    
 
+    # Save a particular movie
     post "/api/movies/save" do 
         logged_in_user = User.find(cookies[:userid])
 
@@ -82,7 +75,7 @@ class HiSinatra < Sinatra::Base
         puts request.body
     end
 
-
+    # Get back all of a user's movies
     get "/api/movies/user/all" do 
         # Informs the server that we'd like to return json
         content_type :json
@@ -115,7 +108,7 @@ class HiSinatra < Sinatra::Base
         end
     end
 
-
+    #  Get a user's info (in this case, just their username).
     get "/api/user" do
         # Informs the server that we'd like to return json
         content_type :json
@@ -123,8 +116,10 @@ class HiSinatra < Sinatra::Base
         # cookies.to_json
         logged_in_user = User.find(cookies[:userid])
         if (logged_in_user)
+            # Send a JSON response with the user's info.
             logged_in_user.to_json
         else 
+            # Send this json back if the user is not logged in
             {"error": "Please sign in first"}  
         end 
     end   
