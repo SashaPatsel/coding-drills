@@ -3,7 +3,7 @@
 # Lets us hit external API
 require 'rest-client'
 # The backbone. With Sinatra, we can easily set up our routes. Think of it as express for Ruby
-require "sinatra"
+require "sinatra/base"
 require "sinatra/cookies"
 require "json"
 # DB
@@ -44,6 +44,7 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 
 class HiSinatra < Sinatra::Base
     helpers Sinatra::Cookies
+    enable :static
     # Let's us see errors
     configure :production, :development do
         enable :logging
