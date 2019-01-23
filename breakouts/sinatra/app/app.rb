@@ -44,7 +44,6 @@ ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db
 
 class HiSinatra < Sinatra::Base
     helpers Sinatra::Cookies
-    enable :static
     # Let's us see errors
     configure :production, :development do
         enable :logging
