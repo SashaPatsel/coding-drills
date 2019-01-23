@@ -43,13 +43,11 @@ class HiSinatra < Sinatra::Base
     
     # Render the home page
     get "/home" do
-
+        # Identify the logged in user
         logged_in_user = User.find(cookies[:userid])
-        puts logged_in_user.movies
-        # Send back all their movies as JSON
-        # logged_in_user.movies.to_json
-
+        # Initialize the word movies to point to all the movies associated to the logged in user so we have a keyword to use in our .erb files. 
         @movies = logged_in_user.movies
+        # Send the home page
         erb :home
     end
 
