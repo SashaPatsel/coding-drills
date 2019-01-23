@@ -45,11 +45,20 @@ $("#movieSearch").on("submit", function(e) {
         console.log(data)
         $("#searchedMovie").html(
         `
-        <h3>${data.Title}</h3>
-        <img src=${data.Poster}>
-        <button class="saveMovie" data-name="${data.Title}" data-poster="${data.Poster}" data-year="${data.Year}">Save</button>
+
+        <div class="card" style="width: 18rem;">
+        <img class="searched-movie--img" src="${data.Poster}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${data.Title}</h5>
+                <p class="card-text">${data.Year}</p>
+                <button class="saveMovie" data-name="${data.Title}" data-poster="${data.Poster}" data-year="${data.Year}">Save</button>
+            </div>
+        </div>
         `
         )
+        // <h3>${data.Title}</h3>
+        // <img src=${data.Poster}>
+        // <button class="saveMovie" data-name="${data.Title}" data-poster="${data.Poster}" data-year="${data.Year}">Save</button>
     })
 }) 
 
@@ -71,6 +80,7 @@ $(document).on("click", ".saveMovie", function(e) {
     }).then(function(data) {
         console.log(data)
         displayAllSaved()
+        $("#searchedMovie").html("Movie Saved!")
     })
 })
 

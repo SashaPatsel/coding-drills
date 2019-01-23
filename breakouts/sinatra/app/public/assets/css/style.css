@@ -20,12 +20,21 @@
     width: 100vw;
 }
 
-
+.searched-movie--img {
+    height: 300px;
+    object-fit: cover;
+}
 
 /* Bootstrap adjustments */
 
 div[class^='col-'] {
     margin-bottom: 50px;
+}
+
+.jumbotron {
+    background-color: rgba(230,230,230,.9);
+    box-shadow: 0 20px 20px rgba(0,0,0,.4);
+    height: 550px;
 }
 
 /* Utilities */
