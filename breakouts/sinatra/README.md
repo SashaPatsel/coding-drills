@@ -255,7 +255,27 @@ c. Finally, we'll create the schema for our join table, where we'll keep track o
 
 17. Now that we've defined our schema, we are ready to migrate them. Run `rake db:migrate`. To make sure it worked, go to your MySQL workbench, and see if those tables have been created under our database.
 
-18. Now suppose we want to seed our database. One option would be to navigate to our MySQL workbench, and write raw SQL statements. That would work just fine, but ActiveRecord can seed our db for us. 
+18. In this step, we will configure our data models. Our models will allow us to write to and read from the tables we just defined. In a model, you can define custom methods and create associations. 
+
+The type of associations we will use here are a `has_and_belongs_to_many`. We will also want to validate the username column so that it is both required, (presence) and so that it can't be duplicated (uniqueness). Have a look below to see how it works. 
+
+```ruby
+class User < ActiveRecord::Base
+    has_and_belongs_to_many :movies
+    validates :username, :presence => true, :uniqueness => true
+end
+
+```
+
+The movie model will be very similar, except even more simple given that we don't need any validations on it. 
+
+```ruby
+class Movie < ActiveRecord::Base
+    has_and_belongs_to_many :users
+end
+```
+
+19. Now suppose we want to seed our database. One option would be to navigate to our MySQL workbench, and write raw SQL statements. That would work just fine, but ActiveRecord can seed our db for us. 
 
 Inside the `db` folder, create a file called `seeds.rb`. Inside of our seeds file, we can populate our db with the following syntax:
 
@@ -275,3 +295,5 @@ end
 Notice that we've created an array of objects, where the keys in those objects map exactly to the column(s) we defined in our schema. Feel free to seed the movies table for some extra practice!
 
 To actually implement the seeds, run `rake db:seed`. Check you MySQL workbench again to see if the seeding was successful.
+
+20. OK, we've done a bunch of set up to this point, but haven't really been able to see the product of our work much. Now, we can finally start to bring the whole thing together. 
