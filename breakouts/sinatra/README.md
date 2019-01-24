@@ -192,4 +192,26 @@ Change out the above code so that it matches with your own device's settings.
 
 Active record is an ORM (Object Relational Model) that we can use with Sinatra. With the above code, we are configuring it to communciate with our MySQL server. In other words, all database queries we make will be made with MySQL. 
 
-14. 
+14. Navigate to the `Rakefile` we created in step 10. Inside that file, write the following code:
+```ruby
+require 'sinatra/activerecord/rake'
+require './app'
+
+```
+
+15. The `Rakefile` we wrote to in the last step will help use with our database migrations. In Node, we may have had .sql files inside of a folder called db. We would then paste the schema into MySQL workbench, for example. Sinatra can handle this work for us. 
+
+In this app, we will be using two models:
+ - User
+ - Movie
+
+Let's define our SQL tables. We're going to run three commands from the command line.
+- rake db:create_migration NAME=create_users_table
+- rake db:create_migration NAME=create_movies_table
+- rake db:create_migration NAME=create_movies_users_able
+
+Once you've run these three commands, open the `db` folder we created in step 10. You should notice a new folder called `migrate`. Open `migrate`. Inside should be three files, each beginning with a random sequence of numbers. It is inside of these files that we will define our tables.
+
+* Note: Before, we mentioned that we would be using two models. However, we rand three commands above, creating three migration files. The reason for this is that we need to create a join table for our users and movies. A user has many movies, and a movie can belong to many users. This third join table will help us with our queries. 
+
+15. 
