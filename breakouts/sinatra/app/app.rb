@@ -72,10 +72,10 @@ class HiSinatra < Sinatra::Base
             movie_poster: params[:poster],
             movie_year: params[:year]
         })
-        # Print the movie ids to our console
         logged_in_user.movies.each do | movie |
             puts movie.id
         end
+        puts "Movie saved"
     end
 
     # Get back all of a user's movies

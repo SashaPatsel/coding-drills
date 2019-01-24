@@ -20,6 +20,10 @@ This means we will cover:
 - Database migration
 - Data model associations
 
+### Prerequisites
+- MySQL
+- Ruby 
+
 ### Instructions
 
 1. Run `Gem install bundle` (it does not matter where this command is run).
@@ -108,6 +112,7 @@ If you are able to see "hello world" on your browser at localhost:9292, you've d
 
 Replicate the above file structure. This includes the following:
 
+- Create a file `Rakefile`
 - Create a folder `db`
 - Create a folder `models`
     - Within models, create `movie.rb`
@@ -117,4 +122,74 @@ Replicate the above file structure. This includes the following:
     - Within views, create `home.erb`
 - The public folder is already provided for you. 
 
-11. 
+11. Now that our app's basic structure has been filled out. We can start to talk about rendering some views. This is extremely simple in Sinatra. First though, let's create some content to render.
+
+In the last step, we created a file called `index.erb`. Fill it out with the following code: 
+
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FavFlix</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+    <div class="index__parallax"></div>
+
+    <div class="container">
+        <div class="jumbotron mt-lg">
+            <h1 class="display-4">HELLO!</h1>
+            <p class="lead">Please enter your username if you've already made an account with us.</p>
+            <p class="lead">If you haven't made a username yet, go ahead and enter one below to get started.</p>
+            <hr class="my-4">
+            <form id="signUpForm">
+                <input id="username" type="text" name="username">
+                <input id="signUpButton" type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- CDNs-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/index.js"></script>
+</body>
+</html>
+
+```
+
+If you look at the code above, you may notice that both the link tag refering to our local stylesheet, and the script tag refering to our local javascript file. Do not have the proper relative path from this erb file. That is because sinatra is serving up our public folder as static assets. What this means for us is that we can refer to things inside the `public` folder (it _must_ be called `public`, sinatra is looking specifically for a folder with this name), we can act as though we are already inside the public folder. Therefore, our relative path begins at `assets`.
+
+12. Once you've pasted the above code, go back to `app.rb`. The last time we were in this file, we wrote "hello world" to the root route of our app. Now, we'll actually serve up a view.
+
+The code looks like this:
+
+```ruby
+
+ get "/" do
+        # We can simply refer to our HTML (stored in this app as .erb files) with the following syntax.
+        erb :index
+    end     
+
+```
+
+Run `rackup` again from your project's root. Open localhost:9292 in your browesr. If you see a background image and a form, you're all set to this point. 
+
+13. Now that we've learned how to render a basic view, let's talk about our database. First off, configure your code to connect with your MySQL database.
+Write the code below in `app.rb` towards the top of the file. 
+
+```ruby
+ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db', host: 'localhost', username: 'root', password: 'password' 
+
+```
+
+Change out the above code so that it matches with your own device's settings. 
+
+Active record is an ORM (Object Relational Model) that we can use with Sinatra. With the above code, we are configuring it to communciate with our MySQL server. In other words, all database queries we make will be made with MySQL. 
+
+14. 
