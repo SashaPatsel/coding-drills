@@ -254,3 +254,24 @@ c. Finally, we'll create the schema for our join table, where we'll keep track o
 ```
 
 17. Now that we've defined our schema, we are ready to migrate them. Run `rake db:migrate`. To make sure it worked, go to your MySQL workbench, and see if those tables have been created under our database.
+
+18. Now suppose we want to seed our database. One option would be to navigate to our MySQL workbench, and write raw SQL statements. That would work just fine, but ActiveRecord can seed our db for us. 
+
+Inside the `db` folder, create a file called `seeds.rb`. Inside of our seeds file, we can populate our db with the following syntax:
+
+```ruby
+
+# USER SEEDS
+users = [
+  {username: "Hermione_Granger"},
+  {username: "Jon_Snow"}
+]
+
+users.each do |u|
+  User.create(u)
+end
+```
+
+Notice that we've created an array of objects, where the keys in those objects map exactly to the column(s) we defined in our schema. Feel free to seed the movies table for some extra practice!
+
+To actually implement the seeds, run `rake db:seed`. Check you MySQL workbench again to see if the seeding was successful.
