@@ -199,7 +199,9 @@ require './app'
 
 ```
 
-15. The `Rakefile` we wrote to in the last step will help use with our database migrations. In Node, we may have had .sql files inside of a folder called db. We would then paste the schema into MySQL workbench, for example. Sinatra can handle this work for us. 
+15. In this step, we'll be configuring `ActiveRecord`, our ORM, with our app. If you want to take on a challenge and figure it out on your own, follow [this excellent guide](https://gist.github.com/jtallant/fd66db19e078809dfe94401a0fc814d2). Otherwise, read on! 
+
+In this The `Rakefile` we wrote to in the last step will help use with our database migrations. In Node, we may have had .sql files inside of a folder called db. We would then paste the schema into MySQL workbench, for example. Sinatra can handle this work for us. 
 
 In this app, we will be using two models:
  - User
@@ -214,4 +216,41 @@ Once you've run these three commands, open the `db` folder we created in step 10
 
 * Note: Before, we mentioned that we would be using two models. However, we rand three commands above, creating three migration files. The reason for this is that we need to create a join table for our users and movies. A user has many movies, and a movie can belong to many users. This third join table will help us with our queries. 
 
-15. 
+16. Even though the last step created three new files for us, you'll notice that there isn't too much content inside of those files. Let's go ahead and populate those schema now. 
+a. First off, we'll create our user schema. We will not tackle proper authentication in this tutorial, so the only custom column we'll ask for is `username`. In addition, we'll ask for `created_at` and `updated_at` columns, which will automatically be filled out by ActiveRecord. Inside of the `create user` migration file, write the following code (place this inside of the class that was generated along with the file):
+```ruby
+
+  def change
+    create_table :users do | t |
+      t.string :username
+      t.datetime :created_at
+      t.datetime :updated_at 
+    end
+  end
+
+``` 
+b. Next, we'll create our movie table. Here, we'll want columns for movie_name, movie_poster, and movie_year. 
+```ruby
+  def change
+    create_table :movies do | t | 
+      t.string :movie_name
+      t.string :movie_poster
+      t.string :movie_year 
+      t.datetime :created_at
+      t.datetime :updated_at 
+    end
+  end
+```
+c. Finally, we'll create the schema for our join table, where we'll keep track of the movie's id, and the user's id.
+
+```ruby
+
+  def change 
+    create_table :movies_users do | t | 
+      t.integer :user_id
+      t.integer :movie_id
+    end
+  end
+```
+
+17. Now that we've defined our schema, we are ready to migrate them. Run `rake db:migrate`. To make sure it worked, go to your MySQL workbench, and see if those tables have been created under our database.
