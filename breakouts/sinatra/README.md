@@ -437,3 +437,28 @@ Finally, let's examine the simplicity of the Ruby code. In javascript, we would 
 ```
 
 Let's have a look inside the div with the id of `savedMovies`. We'll notice that there's some code that does not look like HTML in there. Remember, this is a .erb file, not a .html file. We can take advantage of this by using Sinatra's built in templating language. If you've used `Handlebars` (another templating language), you'll notice that it's quite similar. Keep this syntax in mind. We'll revisit this in the next step.
+
+23. We're going to create our second and final get route that renders a view in this step. However, this one won't be as simple as the last one we made. 
+
+In the last step, we made note of the new syntax we observed in `home.erb`. What that code is doing is looping through n amount of movies and rendering them all to the page. We are looping through `@movies`, but that doesn't mean anything until we explicitly give it meaning, just like in Handlebars. 
+
+We will do this work inside of the `/home` route. Observe the code below and then add it to your own app. 
+
+```ruby
+    # Render the home page
+    get "/home" do
+        # Identify the logged in user
+        logged_in_user = User.find(cookies[:userid])
+        # Initialize the word movies to point to all the movies associated to the logged in user so we have a keyword to use in our .erb files. 
+        @movies = logged_in_user.movies
+        # Send the home page
+        erb :home
+    end
+
+```
+
+We are doing three things in the route above:
+1. Using cookies, we grab a hold of the user's username, then query our database with it to grab a hold of the logged-in user.
+2. We create an arbitrarily named variable (though we must use the `@` symbol) called movies. Movies is set to all of the movies associated with our logged in users.
+3. We render the home page. 
+
