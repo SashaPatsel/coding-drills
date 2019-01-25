@@ -53,6 +53,28 @@ class HiSinatra < Sinatra::Base
 
     # API ROUTES
     
+    # Signs a user up if they haven't already, signs them in if their username exists
+    post "/api/signin/:username" do
+        # Check to see if username exists. If it does, log them in. If not, sign them up.
+        check_user = User.where({"username": params[:username]})
+        if check_user[0]
+            # Send the user back as a response
+            check_user[0]
+            # Store the existing user's id as a cookie
+            cookies[:userid] = check_user[0].id         
+            puts cookies
+        else   
+            puts params[:username]
+            # Create new user
+            new_user = User.create({username: params[:username]})
+            # Send the new user's data as json to client
+            new_user
+            # Set the new user's id as a cookie
+            cookies[:userid] = new_user.id
+            puts cookies
+        end
+    end
+
     # Query OMDBs API for a single movie. Return the results to the client as JSON.
     get "/api/movies/:movie" do 
         # Informs the server that we'd like to return json
@@ -87,28 +109,6 @@ class HiSinatra < Sinatra::Base
         puts logged_in_user.movies
         # Send back all their movies as JSON
         logged_in_user.movies.to_json
-    end
-    # Signs a user up if they haven't already, signs them in if their username exists
-    post "/api/signin/:username" do
-        # Check to see if username exists. If it does, log them in. If not, sign them up.
-        check_user = User.where({"username": params[:username]})
-        if check_user[0]
-            # Send the user back as a response
-            check_user[0]
-            # Store the existing user's id as a cookie
-            cookies[:userid] = check_user[0].id         
-            puts cookies
-        else   
-            puts "================================"
-            puts params[:username]
-            # Create new user
-            new_user = User.create({username: params[:username]})
-            # Send the new user's data as json to client
-            new_user
-            # Set the new user's id as a cookie
-            cookies[:userid] = new_user.id
-            puts cookies
-        end
     end
 
     #  Get a user's info (in this case, just their username).

@@ -296,4 +296,82 @@ Notice that we've created an array of objects, where the keys in those objects m
 
 To actually implement the seeds, run `rake db:seed`. Check you MySQL workbench again to see if the seeding was successful.
 
-20. OK, we've done a bunch of set up to this point, but haven't really been able to see the product of our work much. Now, we can finally start to bring the whole thing together. 
+20. The last thing we're going to do before we begin to give are app functiality is just a little bit of house-keeping. At the top of your HiSinatra class, add the following code:
+
+```ruby
+    # Lets us read and write cookies
+    helpers Sinatra::Cookies
+    
+    # Let's us see errors
+    configure :production, :development do
+        enable :logging
+    end
+  
+```
+
+21. OK, we've done a bunch of set up to this point, but haven't really been able to see the product of our work much. Now, we can finally start to bring the whole thing together.  
+
+The first functionality we'll handle is "authentication" (put in quotes because we'll be implementing just about as little of an authentication apparatus as possible).
+
+In our case, we'll be handling both through one form (and one input too)
+. In public you'll find that the form already has a `submit listener` for that form which makes an AJAX POST request to `/api/signin/:username`.
+
+To this point, we've only set up one route: "/". As we saw from the keyword `get` preceding it, that route was made for `get requests` sent to the root route. 
+
+So how do we make POST requests? Simple, we use the word post instead. Have a look:
+
+```ruby
+
+    post "/api/signin/:username" do
+
+    end
+
+```
+
+Implement the above into your own HiSinatra class. 
+
+Before we proceed, let's talk about what we just did. Remember, on our index page, we have one single form with one single input. We will use this one route to handle anything submited from that form. That means that this route will contain separate conditions for both a signup and signin. 
+
+We will do this by grabbing a hold of the username submitted in the input, and checking it against our users table. If the name exists, sign the user in. If it doesn't sign them up. The practical difference here will be using ActiveRecord's `create method` or its `where` method. Furthermore, we will set cookies with the user's username to immitate authenticated sessions.
+
+Notice how, in our route, we have the following: `/:username`. If you've worked with express, you'll recognize this as a parameter--an arbitrary word that can take act as any other. So if we print `params[:username]` inside this route, we will see whatever the given username is. This is how we will inform our server of the username that has been submitted. 
+
+Ok, now for some code. Write the following inside of the signing route:
+
+```ruby
+    post "/api/signin/:username" do
+        # Check to see if username exists. If it does, log them in. If not, sign them up.
+        check_user = User.where({"username": params[:username]})
+        # Check to see if the user exists in the database
+        if check_user[0]
+            # Send the user back as a response
+            check_user[0]
+            # Store the existing user's id as a cookie
+            cookies[:userid] = check_user[0].id         
+            puts cookies
+        # If no one is found with the given username
+        else   
+            puts params[:username]
+            # Create new user
+            new_user = User.create({username: params[:username]})
+            # Send the new user's data as json to client
+            new_user
+            # Set the new user's id as a cookie
+            cookies[:userid] = new_user.id
+            puts cookies
+        end
+    end
+
+```
+
+Above, we are using the check_user variable as a way of seeing whether or not the username given through our route's parameters exists. 
+
+The first condition (if) handles the "sign in" logic. If the check_user array is populated at all (it will only ever have one value object if it is given that we set unique validations in our data model).
+
+The second condition (else) handles the logic of an unrecognized username. 
+
+Notice that in both cases, we create cookies equal to the username provided to us. We will read these cookies later to identify which user is logged in when they are on the home page, our other view. 
+
+Finally, let's examine the simplicity of the Ruby code. In javascript, we would need to set up a promise to determine what happens once the query to our database is finally complete. In Ruby, we can simply set a variable equal to our query. When we use that variable a couple lines later, it has already waited for the query to be finished. No promises needed--pretty cool!
+
+22. 
