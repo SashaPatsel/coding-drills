@@ -75,6 +75,22 @@ class HiSinatra < Sinatra::Base
         end
     end
 
+    #  Get a user's info (in this case, just their username).
+    get "/api/user" do
+        # Informs the server that we'd like to return json
+        content_type :json
+        # Send back the cookies as json
+        # cookies.to_json
+        logged_in_user = User.find(cookies[:userid])
+        if (logged_in_user)
+            # Send a JSON response with the user's info.
+            logged_in_user.to_json
+        else 
+            # Send this json back if the user is not logged in
+            {"error": "Please sign in first"}  
+        end 
+    end   
+
     # Query OMDBs API for a single movie. Return the results to the client as JSON.
     get "/api/movies/:movie" do 
         # Informs the server that we'd like to return json
@@ -111,21 +127,7 @@ class HiSinatra < Sinatra::Base
         logged_in_user.movies.to_json
     end
 
-    #  Get a user's info (in this case, just their username).
-    get "/api/user" do
-        # Informs the server that we'd like to return json
-        content_type :json
-        # Send back the cookies as json
-        # cookies.to_json
-        logged_in_user = User.find(cookies[:userid])
-        if (logged_in_user)
-            # Send a JSON response with the user's info.
-            logged_in_user.to_json
-        else 
-            # Send this json back if the user is not logged in
-            {"error": "Please sign in first"}  
-        end 
-    end   
+
     
 end
 

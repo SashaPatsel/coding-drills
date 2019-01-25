@@ -364,7 +364,7 @@ Ok, now for some code. Write the following inside of the signing route:
 
 ```
 
-Above, we are using the check_user variable as a way of seeing whether or not the username given through our route's parameters exists. 
+Above, we are using the check_user variable as a way of seeing whether or not the username given through our route's parameters exists. We are using the User model we defined earlier to make our queries possible.
 
 The first condition (if) handles the "sign in" logic. If the check_user array is populated at all (it will only ever have one value object if it is given that we set unique validations in our data model).
 
@@ -374,4 +374,66 @@ Notice that in both cases, we create cookies equal to the username provided to u
 
 Finally, let's examine the simplicity of the Ruby code. In javascript, we would need to set up a promise to determine what happens once the query to our database is finally complete. In Ruby, we can simply set a variable equal to our query. When we use that variable a couple lines later, it has already waited for the query to be finished. No promises needed--pretty cool!
 
-22. 
+22. In our client-side code (already provided), we have logic that brings the user to a new page once they've submitted the sign-in/up form. We have some work to do in order to make that possible. First, let's populate `views/home.erb`. Use the following code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <title>FavFlix</title>
+</head>
+<body>
+    <div class="home__parallax"></div>
+    <div class="container">
+
+    <div class="jumbotron">
+        <div class="row">
+        <div class="col-6">
+            <h1>Welcome, <span class="username"></span>! </h1>
+            <h2>Search for movies here.</h2>
+
+            <form id="movieSearch">
+                <input type="text" id="movie">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="col-6">
+            <div id="searchedMovie"></div>
+        </div>
+        </div>
+    </div>
+       
+        <h2 class="your-movies">Your movies</h2>
+        
+
+        <div id="savedMovies" class="row">
+            <% @movies.each do |movie| %>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                    <img class="movie__card--img" src="<%= movie.movie_poster %>.movie_poster}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= movie.movie_name%></h5>
+                            <p class="card-text"><%= movie.movie_year %></p>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <!-- CDNs-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/javascript/home.js"></script>
+</body>
+</html>
+
+```
+
+Let's have a look inside the div with the id of `savedMovies`. We'll notice that there's some code that does not look like HTML in there. Remember, this is a .erb file, not a .html file. We can take advantage of this by using Sinatra's built in templating language. If you've used `Handlebars` (another templating language), you'll notice that it's quite similar. Keep this syntax in mind. We'll revisit this in the next step.
