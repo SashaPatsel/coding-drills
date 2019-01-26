@@ -16,6 +16,8 @@
     - If you see the following error `You must use Bundler 2 or greater with this lockfile.`, run `gem update --system`
 4. Navigate to localhost:3000 to see if it worked. (You'll see a welcome page)
 5. Lets generate a controller for our pages. Run `rails g controller Pages`. Check out the controllers folder, you'll see a new file there.
+    - `rails g controller User`
+    - `rails g controller Movie`
 6. In addition to creating the controller file, this will also create a new folder under views. Inside `views/pages` create `index.html.erb`.
 7. Before we populate that view, let's add Bootstrap's CDN. Inside of `views/layouts` is a file called `application.html.erb`. Inside of the file is the following line of code: `<%= yield %>`. This is similar to `{{{body}}}` in Handlebars. All other views will build on this one. Therefore, we only need to add our CDNs to one place.  
 ```html
@@ -116,6 +118,10 @@ end
 ```
 
 11. Run `rake db:migrate`. Then check MySQL workbench to see if the content is there. 
+
+12. Paste HTML/JS/CSS
+
+13. 
 
 
 
