@@ -14,8 +14,8 @@
 3. Run `rails s` or `rails server`
     - If you see the following error `You must use Bundler 2 or greater with this lockfile.`, run `gem update --system`
 4. Navigate to localhost:3000 to see if it worked. (You'll see a welcome page)
-5. Lets generate a controller for our movies. Run `rails g controller Movies`. Check out the controllers folder, you'll see a new file there.
-6. In addition to creating the controller file, this will also create a new folder under views. Inside `views/movies` create `index.html.erb`.
+5. Lets generate a controller for our pages. Run `rails g controller Pages`. Check out the controllers folder, you'll see a new file there.
+6. In addition to creating the controller file, this will also create a new folder under views. Inside `views/pages` create `index.html.erb`.
 7. Before we populate that view, let's add Bootstrap's CDN. Inside of `views/layouts` is a file called `application.html.erb`. Inside of the file is the following line of code: `<%= yield %>`. This is similar to `{{{body}}}` in Handlebars. All other views will build on this one. Therefore, we only need to add our CDNs to one place.  
 ```html
 
@@ -32,8 +32,9 @@
 ```ruby
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "movies#index"
+  root "pages#index"
 end
 
 ```
-`movies` is reffering to our movies controller, where as `index` is referring to the view we just made. 
+`pages` is reffering to our movies controller, where as `index` is referring to the view we just made. 
+
