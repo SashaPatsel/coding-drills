@@ -39,7 +39,35 @@ end
 ```
 `pages` is reffering to our movies controller, where as `index` is referring to the view we just made. 
 
-9. in `config/database.yml`, replace every instance of `sqlite3` with `mysql2`
+9. in `config/database.yml`
+```yml
+
+default: &default
+  host: localhost
+  username: root 
+  password: password
+  adapter: mysql2
+  host: 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: "rails_db"
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.mysql2
+
+production:
+  <<: *default
+  database: db/production.mysql2
+
+```
+Then, in musql workbench, create the database `rails_db`
 
 10. Run `rails g model User`, `rails g model Movie` and `rails g model Movie_User`
 
@@ -75,7 +103,7 @@ end
 
 
 ```ruby
-class CreateMoviesUsers < ActiveRecord::Migration[5.2]
+class CreateMovieUsers < ActiveRecord::Migration[5.2]
   def change 
     create_table :movies_users do | t | 
       t.integer :user_id
@@ -84,7 +112,10 @@ class CreateMoviesUsers < ActiveRecord::Migration[5.2]
   end
 end
 
+
 ```
+
+11. Run `rake db:migrate`. Then check MySQL workbench to see if the content is there. 
 
 
 
