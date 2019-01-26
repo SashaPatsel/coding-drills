@@ -458,7 +458,65 @@ We will do this work inside of the `/home` route. Observe the code below and the
 ```
 
 We are doing three things in the route above:
-1. Using cookies, we grab a hold of the user's username, then query our database with it to grab a hold of the logged-in user.
-2. We create an arbitrarily named variable (though we must use the `@` symbol) called movies. Movies is set to all of the movies associated with our logged in users.
-3. We render the home page. 
+- Using cookies, we grab a hold of the user's username, then query our database with it to grab a hold of the logged-in user.
+- We create an arbitrarily named variable (though we must use the `@` symbol) called movies. Movies is set to all of the movies associated with our logged in users.
+- We render the home page. 
 
+24. OK, now we just need to create one more route, and then we'll be ready to test out our home page. We're going to set up an API route that looks through the broweser's cookies (just like we did in `/home`). This route is hit in our client-side javascript when we visit `/home`.
+
+```ruby
+
+    #  Get a user's info (in this case, just their username).
+    get "/api/user" do
+        # Informs the server that we'd like to return json
+        content_type :json
+        # Send back the cookies as json
+        # cookies.to_json
+        logged_in_user = User.find(cookies[:userid])
+        if (logged_in_user)
+            # Send a JSON response with the user's info.
+            logged_in_user.to_json
+        else 
+            # Send this json back if the user is not logged in
+            {"error": "Please sign in first"}  
+        end 
+    end   
+
+```
+
+25. Great, now we can test how well the last few steps went. Run `rackup`, create a username, and submit the form. If you are greeted by your username on the next page, you're all set to this point. If not, please review the prior steps to see what might be holding you up. 
+
+26. In step 23, we sent along some data with our `home` view. When testing the home view in the last step we probably didn't see any movies listed. Of course, that is what we would expect given that we didn't save any movies under the username you chose. To make that possible though, we have three final API routes we need to set up.
+- A route that searches OMDB's database based on the user's search
+- A route that saves that movie to our own database
+- A route that retrieves all movies associated with a given user. 
+
+Of course, the first of these we want to tackle is the movie search. Without that, there are no movies to save.
+
+Remember earlier, we installed a dependency called Rest Client. We will use this package to communicate with external APIs. In this case, we want to use OMDB's API.
+
+We will set up a GET route `/api/movies/:movie` for this query. Again, the client-side javascript to help us make this query is already set up. 
+
+Write out the route below in your HiSinatra class:
+
+
+```ruby
+    # Query OMDBs API for a single movie. Return the results to the client as JSON.
+    get "/api/movies/:movie" do 
+        # Informs the server that we'd like to return json
+        content_type :json
+        # Query the omdb API with whatever movie the user searched for. 
+        data = RestClient.get("https://www.omdbapi.com/?t=#{params[:movie]}&y=&plot=short&apikey=trilogy")
+        puts data
+        # Send the results of our query to the client
+        data
+    end    
+
+```
+
+Notice how simple this request is. We simply declare that we would like to send JSON to whoever hits this route. We make our query using the movie passed as a parameter. Then we finally send the result of that query to the client. 
+
+To test this. Run your app and try to search a movie. If you see the movie poster pop up in your browser, you're all set up to this point. 
+
+
+27. 
