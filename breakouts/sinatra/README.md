@@ -210,7 +210,7 @@ In this app, we will be using two models:
 Let's define our SQL tables. We're going to run three commands from the command line.
 - rake db:create_migration NAME=create_users_table
 - rake db:create_migration NAME=create_movies_table
-- rake db:create_migration NAME=create_movies_users_able
+- rake db:create_migration NAME=create_movies_users_table
 
 Once you've run these three commands, open the `db` folder we created in step 10. You should notice a new folder called `migrate`. Open `migrate`. Inside should be three files, each beginning with a random sequence of numbers. It is inside of these files that we will define our tables.
 

@@ -9,6 +9,7 @@
 
 ## Instructions
 1. Run `rails new app` (where `app` is the name of our app)
+    - Add `gem 'mysql2'` to your gem file
 2. Run `bundle install` from `/app`
     - If you see this error `Your Ruby version is 2.6.0, but your Gemfile specified 2.3.7`, or something similar, navigate to your Gemfile, and change the version specified at the top to the one you have on your device.
 3. Run `rails s` or `rails server`
@@ -38,3 +39,53 @@ end
 ```
 `pages` is reffering to our movies controller, where as `index` is referring to the view we just made. 
 
+9. in `config/database.yml`, replace every instance of `sqlite3` with `mysql2`
+
+10. Run `rails g model User`, `rails g model Movie` and `rails g model Movie_User`
+
+Then, inside of `db/migrate`
+
+```ruby
+class CreateMovies < ActiveRecord::Migration[5.2]
+  def change
+    create_table :movies do | t | 
+      t.string :movie_name
+      t.string :movie_poster
+      t.string :movie_year 
+      t.datetime :created_at
+      t.datetime :updated_at 
+    end
+  end
+end
+
+```
+
+```ruby
+
+class CreateUsers < ActiveRecord::Migration[5.2]
+  def change
+    create_table :users do | t |
+      t.string :username
+      t.datetime :created_at
+      t.datetime :updated_at 
+    end
+  end
+end
+```
+
+
+```ruby
+class CreateMoviesUsers < ActiveRecord::Migration[5.2]
+  def change 
+    create_table :movies_users do | t | 
+      t.integer :user_id
+      t.integer :movie_id
+    end
+  end
+end
+
+```
+
+
+
+* `rake routes` shows you all the routes in your app. 
