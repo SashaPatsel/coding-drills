@@ -1,1 +1,38 @@
-Home
+ <div class="home__parallax"></div>
+    <div class="container">
+
+    <div class="jumbotron">
+        <div class="row">
+        <div class="col-6">
+            <h1>Welcome, <span class="username"></span>! </h1>
+            <h2>Search for movies here.</h2>
+
+            <form id="movieSearch">
+                <input type="text" id="movie">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="col-6">
+            <div id="searchedMovie"></div>
+        </div>
+        </div>
+    </div>
+       
+        <h2 class="your-movies">Your movies</h2>
+        
+<% if false %>
+    <div id="savedMovies" class="row">
+            <% @movies.each do |movie| %>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                    <img class="movie__card--img" src="<%= movie.movie_poster %>.movie_poster}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= movie.movie_name%></h5>
+                            <p class="card-text"><%= movie.movie_year %></p>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
