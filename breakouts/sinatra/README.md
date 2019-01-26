@@ -519,4 +519,53 @@ Notice how simple this request is. We simply declare that we would like to send 
 To test this. Run your app and try to search a movie. If you see the movie poster pop up in your browser, you're all set up to this point. 
 
 
-27. 
+27. OK, now for the saving functionality. We need to be able to make sure that the movie we save is associated with the user.
+
+Write out the following route. 
+
+```ruby
+
+    # Save a particular movie
+    post "/api/movies/save" do 
+        # Identify the logged in user
+        logged_in_user = User.find(cookies[:userid])
+        # Create a new movie in our db associated to the logged in user
+        logged_in_user.movies << Movie.create({
+            movie_name: params[:name],
+            movie_poster: params[:poster],
+            movie_year: params[:year]
+        })
+        # For our own purposes only, just so we can see the movies coming back from our db. 
+        logged_in_user.movies.each do | movie |
+            puts movie.id
+        end
+        puts "Movie saved"
+    end
+
+```
+Similar to the work we've already done in this app, we first need to identify the logged-in user. 
+
+Next, we create a new movie explicitly associated to that user. This is made possible because of the relationships we defined in our models. 
+
+28. We've finally made it to the last step. The only thing left for us to do is to grab a hold of all the movies associated with a given user. The client will do the work of asking for these movies and rendering them to the DOM. 
+
+
+```ruby
+
+    # Get back all of a user's movies
+    get "/api/movies/user/all" do 
+        # Informs the server that we'd like to return json
+        content_type :json
+        # The user currently logged in
+        logged_in_user = User.find(cookies[:userid])
+        puts logged_in_user.movies
+        # Send back all their movies as JSON
+        logged_in_user.movies.to_json
+    end
+
+
+```
+
+There are only really two things happening in this final route. As always, we need to establish which user is logged in. Once we have that information, we can simply send all of that user's movies as JSON to the client.
+
+THE END. Happy Coding.
