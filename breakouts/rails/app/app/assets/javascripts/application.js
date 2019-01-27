@@ -46,8 +46,6 @@ function displayAllSaved() {
     })
 }
 
-
-
 $("#movieSearch").on("submit", function(e) {
     e.preventDefault()
     var movie = $("#movie").val().trim()

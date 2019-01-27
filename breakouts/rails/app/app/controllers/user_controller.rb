@@ -29,7 +29,6 @@ class UserController < ApplicationController
         # cookies.to_json
         logged_in_user = User.find(cookies[:userid])
         if (logged_in_user)
-            puts "if hit"
             puts logged_in_user
             # Send a JSON response with the user's info.
             render :json => logged_in_user
