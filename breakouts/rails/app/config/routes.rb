@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   post "/api/signin/:username" => "user#signin"
 
+  get "/api/user" => "user#current_user"
+
   
 end

@@ -14,13 +14,13 @@
 //= require jquery_ujs
 //= require_tree .
 // Get user info
-// $.ajax({
-//     url: "/api/user",
-//     method: "GET"
-// }).then(function(data) {
-//     console.log(data)
-//     $(".username").text(data.username)
-// })
+$.ajax({
+    url: "/api/user",
+    method: "GET"
+}).then(function(data) {
+    console.log(data)
+    $(".username").text(data.username)
+})
 
 // Get all user's movies
 function displayAllSaved() {

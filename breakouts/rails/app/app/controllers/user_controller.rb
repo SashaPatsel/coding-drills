@@ -24,13 +24,15 @@ class UserController < ApplicationController
 
     def current_user
         # Informs the server that we'd like to return json
-        content_type :json
+        # content_type :json
         # Send back the cookies as json
         # cookies.to_json
         logged_in_user = User.find(cookies[:userid])
         if (logged_in_user)
+            puts "if hit"
+            puts logged_in_user
             # Send a JSON response with the user's info.
-            logged_in_user.to_json
+            render :json => logged_in_user
         else 
             # Send this json back if the user is not logged in
             {"error": "Please sign in first"}  
