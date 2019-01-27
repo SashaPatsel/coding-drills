@@ -50,7 +50,7 @@ $(document).on("submit", "#movieSearch", function(e) {
     e.preventDefault()
     var movie = $("#movie").val().trim()
     $.ajax({
-        url: `/api/movies`,
+        url: `/api/movies/${movie}`,
         method: "GET"
     }).then(function(data) {
         console.log(data)

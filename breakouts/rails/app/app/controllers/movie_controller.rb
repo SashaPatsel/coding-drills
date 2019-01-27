@@ -3,8 +3,9 @@ class MovieController < ApplicationController
           data = RestClient.get("https://www.omdbapi.com/?t=#{params[:movie]}&y=&plot=short&apikey=trilogy")
           puts data
         #   data
-        @search = "data"
-        render :partial => "search-result"
+        # @search = "data"
+        # render :partial => "search-result"
+        render :json => data
         # render "search-result"
     end
 

@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
   get "/api/user" => "user#current_user"
 
-  get "/api/movies" => "movie#search"
+  get "/api/movies/:movie" => "movie#search"
   
 end
