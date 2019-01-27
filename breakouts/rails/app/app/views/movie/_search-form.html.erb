@@ -1,6 +1,6 @@
 
 
-<%= form_tag("/api/movies", method: "get", :remote =>true) do %>
+<%= form_tag(action: "search", controller: "movie", method: "get", :remote =>true) do %>
   <%= text_field_tag(:movie, "", {:class => "form-control"}) %>
   <%= submit_tag("Search") %>
 <% end %>

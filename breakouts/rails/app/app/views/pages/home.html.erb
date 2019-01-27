@@ -1,5 +1,6 @@
- <div class="home__parallax"></div>
-    <div class="container">
+
+<div class="home__parallax"></div>
+<div class="container">
 
     <div class="jumbotron">
         <div class="row">
@@ -8,21 +9,22 @@
             <h2>Search for movies here.</h2>
 
             
-            <%= render partial: "movie/search" %>
+            <%= render partial: "movie/search-form" %>
             <form id="movieSearch">
                 <input type="text" id="movie">
                 <input type="submit" value="submit">
             </form>
         </div>
         <div class="col-6">
-            <div id="searchedMovie"></div>
+            <div id="searchedMovie">
+                
+            </div>
         </div>
         </div>
     </div>
         <h2 class="your-movies">Your movies</h2>
-        <%= link_to "index", index_path %>
-<% if false %>
-    <div id="savedMovies" class="row">
+    <% if false %>
+        <div id="savedMovies" class="row">
             <% @movies.each do |movie| %>
                 <div class="col-4">
                     <div class="card" style="width: 18rem;">
@@ -35,5 +37,5 @@
                 </div>
             <% end %>
         </div>
-        <% end %>
-    </div>
+    <% end %>
+</div>

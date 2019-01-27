@@ -46,11 +46,11 @@ function displayAllSaved() {
     })
 }
 
-$("#movieSearch").on("submit", function(e) {
+$(document).on("submit", "#movieSearch", function(e) {
     e.preventDefault()
     var movie = $("#movie").val().trim()
     $.ajax({
-        url: `/api/movies/${movie}`,
+        url: `/api/movies`,
         method: "GET"
     }).then(function(data) {
         console.log(data)
@@ -67,9 +67,6 @@ $("#movieSearch").on("submit", function(e) {
         </div>
         `
         )
-        // <h3>${data.Title}</h3>
-        // <img src=${data.Poster}>
-        // <button class="saveMovie" data-name="${data.Title}" data-poster="${data.Poster}" data-year="${data.Year}">Save</button>
     })
 }) 
 

@@ -1,13 +1,11 @@
 class MovieController < ApplicationController
-
     def search
-          # Informs the server that we'd like to return json
-        #   content_type :json
-        puts params
-        puts "WE MADE IT"
           data = RestClient.get("https://www.omdbapi.com/?t=#{params[:movie]}&y=&plot=short&apikey=trilogy")
           puts data
         #   data
+        @search = "data"
+        render :partial => "search-result"
+        # render "search-result"
     end
 
     def new

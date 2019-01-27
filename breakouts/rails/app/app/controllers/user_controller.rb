@@ -34,7 +34,7 @@ class UserController < ApplicationController
             render :json => logged_in_user
         else 
             # Send this json back if the user is not logged in
-            {"error": "Please sign in first"}  
+            render :json => {"error": "Please sign in first"}  
         end 
     end
 end
