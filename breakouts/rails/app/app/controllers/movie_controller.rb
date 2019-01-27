@@ -1,4 +1,5 @@
 class MovieController < ApplicationController
+    skip_before_action :verify_authenticity_token
     def search
           data = RestClient.get("https://www.omdbapi.com/?t=#{params[:movie]}&y=&plot=short&apikey=trilogy")
           puts data
@@ -9,7 +10,7 @@ class MovieController < ApplicationController
         # render "search-result"
     end
 
-    def new
+    def save
          # Identify the logged in user
          logged_in_user = User.find(cookies[:userid])
          # Create a new movie in our db associated to the logged in user
@@ -24,13 +25,12 @@ class MovieController < ApplicationController
          puts "Movie saved"
     end
 
-    def get_all
-           # Informs the server that we'd like to return json
-           content_type :json
+    def all
+        
            # The user currently logged in
            logged_in_user = User.find(cookies[:userid])
            puts logged_in_user.movies
            # Send back all their movies as JSON
-           logged_in_user.movies.to_json
+           render :json => logged_in_user.movies
     end 
 end

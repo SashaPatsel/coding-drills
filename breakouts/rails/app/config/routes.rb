@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   get "/api/user" => "user#current_user"
 
   get "/api/movies/:movie" => "movie#search"
+
+  post "/api/movies/save" => "movie#save"
+
+  get "/api/movies/user/all" => "movie#all"
   
 end
