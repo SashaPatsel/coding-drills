@@ -7,6 +7,10 @@
 #### For Mac
 - `sudo gem install rails`
 
+
+## Resources 
+https://www.youtube.com/watch?v=pPy0GQJLZUM&t=801s
+
 ## Instructions
 1. Run `rails new app` (where `app` is the name of our app)
     - Add `gem 'mysql2'` to your gem file
