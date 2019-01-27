@@ -10,6 +10,7 @@
 ## Instructions
 1. Run `rails new app` (where `app` is the name of our app)
     - Add `gem 'mysql2'` to your gem file
+    - Add `gem 'jquery-rails'` to your Gemfile
 2. Run `bundle install` from `/app`
     - If you see this error `Your Ruby version is 2.6.0, but your Gemfile specified 2.3.7`, or something similar, navigate to your Gemfile, and change the version specified at the top to the one you have on your device.
 3. Run `rails s` or `rails server`
@@ -121,7 +122,7 @@ end
 
 12. Paste HTML/JS/CSS
 
-13. 
+13. Write `resources :movies` in `routes.rb`. Then run `rake routes`. We can match these given routes in our controllers. 
 
 
 

@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def signin
         # Check to see if username exists. If it does, log them in. If not, sign them up.

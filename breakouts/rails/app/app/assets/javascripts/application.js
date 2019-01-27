@@ -10,18 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
+//= require jquery3
+//= require jquery_ujs
 //= require_tree .
 // Get user info
-$.ajax({
-    url: "/api/user",
-    method: "GET"
-}).then(function(data) {
-    console.log(data)
-    $(".username").text(data.username)
-})
+// $.ajax({
+//     url: "/api/user",
+//     method: "GET"
+// }).then(function(data) {
+//     console.log(data)
+//     $(".username").text(data.username)
+// })
 
 // Get all user's movies
 function displayAllSaved() {

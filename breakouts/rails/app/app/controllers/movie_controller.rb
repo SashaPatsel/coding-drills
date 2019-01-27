@@ -8,7 +8,7 @@ class MovieController < ApplicationController
           data
     end
 
-    def save
+    def new
          # Identify the logged in user
          logged_in_user = User.find(cookies[:userid])
          # Create a new movie in our db associated to the logged in user
@@ -31,5 +31,5 @@ class MovieController < ApplicationController
            puts logged_in_user.movies
            # Send back all their movies as JSON
            logged_in_user.movies.to_json
-    end
+    end 
 end
