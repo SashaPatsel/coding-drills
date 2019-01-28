@@ -56,3 +56,56 @@ https://www.anaconda.com/download/#macos
 13. checkout `http://127.0.0.1:8000/admin`. Log in.
 
 14. run `python manage.py startapp movies`
+
+15. add movies in apps in `settings.py`:
+
+```python
+INSTALLED_APPS = [
+    "movies",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+```
+
+16. In `app/urls`:
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+from movies import views #new
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("", views.index, name = "index") #new
+]
+
+
+```
+
+17. Add this inside of settings.py under `TEMPLATES`. This allows us to refer directly to our templates folder
+
+
+```python
+
+'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
+
+```
+
+
+18. Add this all the way at the bottom of settings.py
+
+```python
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+```
+
+* views.py is like a controller
