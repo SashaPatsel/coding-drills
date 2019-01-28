@@ -11,17 +11,20 @@ patsel_grocery[:foods].each do | food |
 end 
 
 # 2.
+# Store the original array
 all_foods = patsel_grocery[:foods]
-
+# Empty the original, now that we have a copy
 patsel_grocery[:foods] = []
-
+# Set a counter to both back out of our loop and keep an icrementing id
 count = 0
-
+# Loop for as many items as there are in our inventory
 while count < all_foods.length do
+  # For each iteration of the loop, add a new hash, where the key name points to the original element in the array, and id points to an incrementing counter
   patsel_grocery[:foods] << {
       :name => all_foods[count],
       :id => count
   }
+  # Increment count so we can exit the loop and increment for the id
   count += 1  
 end  
 

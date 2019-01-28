@@ -108,4 +108,28 @@ STATICFILES_DIRS = [
 
 ```
 
+19. Make model in `movies/models`
+
+
+```python
+
+from datetime import datetime
+
+# Create your models here.
+class Movies(models.Model):
+    movie_name = models.CharField(max_length=10000)
+    movie_poster = models.CharField(max_length=10000)
+    movie_year = models.CharField(max_length=10000)
+    created_at = models.DateTimeField(default=datetime.now , blank=True)
+
+```
+
+20. run `python manage.py makemigrations movies`
+
+
+
+
+
+
+
 * views.py is like a controller

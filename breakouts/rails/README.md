@@ -10,6 +10,7 @@
 
 ## Resources 
 https://www.youtube.com/watch?v=pPy0GQJLZUM&t=801s
+https://www.railstutorial.org/book 
 
 ## Instructions
 1. Run `rails new app` (where `app` is the name of our app)

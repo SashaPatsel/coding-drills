@@ -9,7 +9,7 @@ patsel_grocery = {
 }
 
 
-print_spaces()
+print_spaces
 
 convert_items_to_hash(patsel_grocery, :foods)
 

@@ -15,6 +15,6 @@ To start, copy the dictionary you created in the last exercise, and paste it int
 
 3. Your store has had to cut down on production because of rising costs! Dynamically create an array of every other item from your inventory (So if my inventory was [1,2,3,4,5,6], I would create [2,4,6]).
 
-4. No that we've listed all the items to be reomved, we're going to go ahead and remove them. Remove all the items in the array you created in the last exercise from your inventory.
+4. No that we've listed all the items to be removed, we're going to go ahead and remove them. Remove all the items in the array you created in the last exercise from your inventory.
 
 5. To keep our store afloat, we need to set prices for the rest of our items. For each item, add a key of price and set it to `2.50`.

@@ -8,7 +8,6 @@ array.each do | item |
   puts item
 end 
 
-
 ### While loops
 # while loops start in much the same way they do in javascript, with the word while. There are a couple of differences though. 
 
@@ -29,12 +28,28 @@ end
 
 number = 8
 
-if number === 8 
+if number == 9 
   puts number
-end  
+else
+  puts "no number" 
+end
+
+if number == 9 
+  puts number
+elsif number == 8 
+  puts "its 8" 
+end
+
+
 
 # For Loops
 
 for i in array
   puts "Value of local variable is #{i}"
 end
+
+
+
+
+
+# https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby

@@ -57,7 +57,7 @@ answer = gets
 
 class Person
 
-  attr_reader :name, :age, :job
+  attr_accessor :name, :age, :job
 
   def initialize(name, age, job)
     @name = name
@@ -88,7 +88,7 @@ end
 # var joe = new Person("Joe", 30, "Bus Driver")
 
 joe = Person.new "joe", 30, "Bus Driver"
-
+joe.name = "Jerome"
 
 # Again, the syntax here is very similar. 
 
