@@ -87,3 +87,10 @@ evenNums = [1,2,3,4,5,6,7,8,9,10]
 evenNums -= [1,3,5,7,9,11]
 
 puts evenNums # Returns all numbers in the first array that were not present in the second
+
+
+# Using variables within strings, we must use double quotes
+
+person = "Joe"
+
+puts "Hello, my name is #{person}"

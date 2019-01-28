@@ -1,5 +1,9 @@
 # Django
 
+## About
+
+Django is made up of separate `apps`. The idea is that one project brings many apps together. Therefore, you can reuse apps you've already made in other projects, making Django development very scalable.
+
 ## Resources
 https://www.youtube.com/watch?v=D6esTdOLXh4
 
@@ -46,3 +50,9 @@ https://www.anaconda.com/download/#macos
 10. `python manage.py migrate`
 
 11. From app (at the same level as venv) `python manage.py runserver`
+
+12. To create a super user: `python manage.py createsuperuser --username=<username> --email=<name@email.com>`
+
+13. checkout `http://127.0.0.1:8000/admin`. Log in.
+
+14. run `python manage.py startapp movies`
