@@ -117,15 +117,20 @@ from datetime import datetime
 
 # Create your models here.
 class Movies(models.Model):
-    movie_name = models.CharField(max_length=10000)
-    movie_poster = models.CharField(max_length=10000)
-    movie_year = models.CharField(max_length=10000)
+    movie_name = models.CharField(max_length=1000)
+    movie_poster = models.CharField(max_length=1000)
+    movie_year = models.CharField(max_length=1000)
     created_at = models.DateTimeField(default=datetime.now , blank=True)
 
 ```
 
-20. run `python manage.py makemigrations movies`
+20. run `python manage.py makemigrations movies` (creates a file in `/migrations`)
 
+21. `python manage.py migrate`.
+
+22. run `python manage.py startapp users`
+
+23. add users in apps in `settings.py`:
 
 
 
