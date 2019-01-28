@@ -128,10 +128,7 @@ class Movies(models.Model):
 
 21. `python manage.py migrate`.
 
-22. run `python manage.py startapp users`
-
-23. add users in apps in `settings.py`:
-
+ß
 
 
 

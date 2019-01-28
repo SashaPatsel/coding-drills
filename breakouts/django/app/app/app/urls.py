@@ -20,5 +20,4 @@ from movies import views # . means all
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name = "index")
-    
 ]
