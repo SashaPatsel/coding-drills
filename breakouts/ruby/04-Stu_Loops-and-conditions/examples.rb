@@ -1,10 +1,11 @@
-### Each loops
+array = [1,2,3,4,5]
 
+### Each loops
 #Similar to javascript, ruby has a .each method. 
 
 # array is the array we're looping through. item is an arbitrary word we've chosen to represent each element of our array in turn. end is essentially a closing curly brace. 
 array.each do | item |
-  print item
+  puts item
 end 
 
 
@@ -16,7 +17,7 @@ end
 count = 0
 
 while count < 10 do
-  print count 
+  puts count 
   count +=1
 end  
 
@@ -28,7 +29,12 @@ end
 
 number = 8
 
-if number == 8 
-  print number
+if number === 8 
+  puts number
 end  
 
+# For Loops
+
+for i in array
+  puts "Value of local variable is #{i}"
+end

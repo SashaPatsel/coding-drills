@@ -6,12 +6,12 @@
   end  
 
   # 2.
-  def convert_items_to_obj(obj, key) 
-    all_foods = obj[key]
-    obj[key] = []
+  def convert_items_to_hash(hash, key) 
+    all_foods = hash[key]
+    hash[key] = []
     count = 0
     while count < all_foods.length do
-      obj[key] << {
+      hash[key] << {
           :name => all_foods[count],
           :id => count,
           :sell_price => 2.50,
@@ -19,13 +19,13 @@
       }
       count += 1  
     end  
-    puts obj[key]
+    puts hash[key]
   end
 
   # 3 
-  def add_props(obj, key, value)
-    obj[:key] = value
-    puts "You added #{obj[:key]}"
+  def add_props(hash, key, value)
+    hash[:key] = value
+    puts "You added #{hash[:key]}"
   end  
 
 
