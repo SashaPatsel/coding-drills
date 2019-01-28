@@ -51,7 +51,7 @@ In this exercise, we'll make a Store class and an Item class. Then using only th
 
 7. Require definitions.rb
 
-8. Use every method from both classes you defined in definitions.rb. Make sure each method works as expected.ß
+8. Use every method from both classes you defined in definitions.rb. Make sure each method works as expected.
 
 9. Only attempt this if you have completed the above steps. 
 

@@ -115,3 +115,9 @@ string = "53"
 # Will return 47
 100 - string.to_i
 
+
+#### Passing n amount of aruments to a method
+
+def print_nums(*others)
+  puts others
+end

@@ -1,5 +1,4 @@
 require "./definitions"
-require "./helpers"
 
 safeway = Store.new("Safeway", "San Francisco", "Grocery")
 
