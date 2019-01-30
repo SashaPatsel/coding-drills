@@ -128,10 +128,13 @@ class Movies(models.Model):
 
 21. `python manage.py migrate`.
 
-ß
+22. run `python manage.py startapp users`
+
+23. add users in apps in `settings.py`:
 
 
 
 
+* If your files seem to not be updating, your browser may have cached older versions of them. Run a hard refresh (`command/control + shift + r`) in your browser
 
 * views.py is like a controller

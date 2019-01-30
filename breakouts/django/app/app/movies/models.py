@@ -7,3 +7,6 @@ class Movies(models.Model):
     movie_poster = models.CharField(max_length=1000)
     movie_year = models.CharField(max_length=1000)
     created_at = models.DateTimeField(default=datetime.now , blank=True)
+    pass
+
+    

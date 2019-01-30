@@ -26,11 +26,12 @@ This means we will cover:
 
 ### Instructions
 
-1. Run `Gem install bundle` (it does not matter where this command is run).
+1. Run `Gem install bundle` (it does not matter where this command is run. This is a package manager like npm or yarn).
 
-2. Navigate to sinatra/unsolved/app
+2. Create a new app. You can call it whatever you want, but if you're not feeling creative, call it favflix.
 
 3. Run `bundle init`. This will create a `Gemfile` for you. Think of this as our package.json. It is where we will list our app's dependencies.
+
 
 4. These are our app's dependencies:
 ```ruby
@@ -58,7 +59,7 @@ Copy the above code and paste it inside you gemfile. If you are curious about wh
 
 6. At your app's root, create the files `app.rb` and `config.ru`
 
-7. In `config.run`, write the following code. 
+7. In `config.ru`, write the following code. 
 
 ```ruby
 require "./app"
@@ -67,7 +68,7 @@ run HiSinatra
 
 ```
 
-This code will allow us to start our app by running `rackup` from our project's root.
+This code will allow us to start our app from the HiSinatra class we will define soon.
 
 8. Let's require all the packages we've installed for future use. In `app.rb`, write the following code: 
 ```ruby
@@ -81,7 +82,7 @@ require "mysql2"
 require 'sinatra/activerecord'
 ```
 
-9. Let's test our app to see if we've set everything up correctly to this point. Let's instantiate the classs that will contain all of our routes.
+9. Let's instantiate the classs that will contain all of our routes.
 
 ```ruby
 class HiSinatra < Sinatra::Base
@@ -183,6 +184,8 @@ Run `rackup` again from your project's root. Open localhost:9292 in your browesr
 13. Now that we've learned how to render a basic view, let's talk about our database. First off, configure your code to connect with your MySQL database.
 Write the code below in `app.rb` towards the top of the file. 
 
+* Create a database in MySQL workbench which you will refer to in the code below.
+
 ```ruby
 ActiveRecord::Base.establish_connection adapter: 'mysql2', database: 'sinatra_db', host: 'localhost', username: 'root', password: 'password' 
 
@@ -214,7 +217,7 @@ Let's define our SQL tables. We're going to run three commands from the command 
 
 Once you've run these three commands, open the `db` folder we created in step 10. You should notice a new folder called `migrate`. Open `migrate`. Inside should be three files, each beginning with a random sequence of numbers. It is inside of these files that we will define our tables.
 
-* Note: Before, we mentioned that we would be using two models. However, we rand three commands above, creating three migration files. The reason for this is that we need to create a join table for our users and movies. A user has many movies, and a movie can belong to many users. This third join table will help us with our queries. 
+* Note: Before, we mentioned that we would be using two models. However, we ran three commands above, creating three migration files. The reason for this is that we need to create a join table for our users and movies. A user has many movies, and a movie can belong to many users. This third join table will help us with our queries. 
 
 16. Even though the last step created three new files for us, you'll notice that there isn't too much content inside of those files. Let's go ahead and populate those schema now. 
 a. First off, we'll create our user schema. We will not tackle proper authentication in this tutorial, so the only custom column we'll ask for is `username`. In addition, we'll ask for `created_at` and `updated_at` columns, which will automatically be filled out by ActiveRecord. Inside of the `create user` migration file, write the following code (place this inside of the class that was generated along with the file):

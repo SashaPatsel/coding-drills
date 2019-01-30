@@ -9,17 +9,17 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('movies', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Movies',
+            name='Users',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('movie_name', models.CharField(max_length=1000)),
-                ('movie_poster', models.CharField(max_length=1000)),
-                ('movie_year', models.CharField(max_length=1000)),
+                ('username', models.CharField(max_length=1000)),
                 ('created_at', models.DateTimeField(blank=True, default=datetime.datetime.now)),
+                ('movies', models.ManyToManyField(to='movies.Movies')),
             ],
         ),
     ]
