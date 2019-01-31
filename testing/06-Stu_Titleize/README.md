@@ -4,21 +4,9 @@ In this activity we will write a function that should title-case a given string 
 
 ## Instructions
 
-* Your task is to write tests for a function that title-cases incoming names. For example: `titleize('mr jones')` returns 'Mr Jones'.
+* Your task is to write tests for a function that title-cases incoming names. For example: `titleize('mr jones')` returns 'Mr Jones'. "joe shmoe" returns "Joe Shmoe"
 
-* Proceed as with `disemvowel`, considering:
-
-  * What constitutes a "representative expected input"?
-
-  * What is unexpected input? How do you want `titleize` to respond to this?
-
-  * Do you want to allow arbitrarily long names, or impose a cutoff? _Hint_: There's no right answer, here. Choose an implementation, and write a test reflecting your choice.
-
-* Once you've written your tests, run them to ensure they fail.
-
-* Next, start implementing `titleize`. Pass one test at a time.
-
-* Once you've passed all tests, congratulate yourself! Be prepared to explain your tests to the rest of the class.
+We will be writing tests one-by-one. Within each sequential folder, you will find a README. Follow the instructions therein, then wait for the instructor before moving to the next folder. 
 
 ### Bonus
 
